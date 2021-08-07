@@ -10,7 +10,8 @@
   - **China University of Mining and Technology - No. 1 University Road - Xuzhou, China**
 - Site
   - **<https://pokerjest.github.io/>**
-- [Resume](https://wu-kan.github.io/resume/resume.pdf)
+  
+<!-->- [Resume](https://wu-kan.github.io/resume/resume.pdf)
 
 <!-- .slide vertical=true -->
 
