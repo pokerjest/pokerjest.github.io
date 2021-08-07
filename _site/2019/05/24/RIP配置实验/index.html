@@ -1,0 +1,3435 @@
+<!DOCTYPE html><html><head><title> RIP配置实验 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="RIP配置实验" /><meta property="og:locale" content="en_US" /><meta name="description" content="实验题目" /><meta property="og:description" content="实验题目" /><link rel="canonical" href="http://localhost:4000/2019/05/24/RIP%E9%85%8D%E7%BD%AE%E5%AE%9E%E9%AA%8C/" /><meta property="og:url" content="http://localhost:4000/2019/05/24/RIP%E9%85%8D%E7%BD%AE%E5%AE%9E%E9%AA%8C/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-05-24T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="RIP配置实验" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/05/24/RIP%E9%85%8D%E7%BD%AE%E5%AE%9E%E9%AA%8C/","datePublished":"2019-05-24T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/05/24/RIP%E9%85%8D%E7%BD%AE%E5%AE%9E%E9%AA%8C/"},"headline":"RIP配置实验","description":"实验题目","dateModified":"2019-05-24T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE">实验题目</a><li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">实验目的</a><li><a href="#%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4">配置命令</a><ol><li><a href="#%E9%85%8D%E7%BD%AE-ripv2-%E5%8D%8F%E8%AE%AE">配置 RIPv2 协议</a><li><a href="#%E6%8A%8A%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%8E%A5%E5%8F%A3%E5%8F%98%E4%B8%BA%E4%B8%89%E5%B1%82%E6%8E%A5%E5%8F%A3%E7%84%B6%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE-ip-%E5%9C%B0%E5%9D%80%E6%9C%AC%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%8A%8A%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%93%E8%B7%AF%E7%94%B1%E5%99%A8%E7%94%A8">把交换机接口变为三层接口，然后就可以配置 IP 地址。（本实验要把交换机当路由器用）</a><li><a href="#%E4%B8%BA%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3%E9%85%8D%E7%BD%AE-ip-%E5%9C%B0%E5%9D%80%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3%E6%98%AF%E8%B7%AF%E7%94%B1%E5%99%A8%E5%86%85%E9%83%A8%E7%9A%84%E8%BD%AF%E6%8E%A5%E5%8F%A3%E9%99%A4%E9%9D%9E%E8%B7%AF%E7%94%B1%E5%99%A8%E5%A4%B1%E6%95%88%E5%90%A6%E5%88%99%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3%E4%B8%80%E7%9B%B4%E6%9C%89%E6%95%88">为环回接口配置 IP 地址。环回接口是路由器内部的软接口，除非路由器失效，否则，环回接口一直有效</a><li><a href="#%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E6%B1%87%E6%80%BB">取消自动汇总</a><li><a href="#%E9%85%8D%E7%BD%AE%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2">配置水平分割</a><li><a href="#%E6%98%BE%E7%A4%BA%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF">显示调试信息</a></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E4%BB%BB%E5%8A%A1">实验任务</a><ol><li><a href="#%E6%8C%89%E4%B8%8B%E5%9B%BE%E9%85%8D%E7%BD%AE-rip-%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE">按下图配置 RIP 路由协议</a><ol><li><a href="#1apc1-ping-pc2-%E5%92%8C-pc3-%E5%90%8E%E6%88%AA%E5%B1%8F">1A、PC1 ping PC2 和 PC3 后截屏</a><li><a href="#1brouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">1B、Router1 的路由表</a><li><a href="#1crouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">1C、Router2 的路由表</a><li><a href="#1d%E6%8A%8A-router1router2-%E7%9A%84-running-config-%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s1txt">1D、把 Router1、Router2 的 Running-Config 保存到文件 s1.txt</a><ol><li><a href="#router1">Router1</a><li><a href="#router2">Router2</a></ol><li><a href="#1e%E6%8B%94%E6%8E%89-router2-%E7%9A%84-f01-%E7%9A%84%E7%BA%BF%E5%90%8E%E6%98%BE%E7%A4%BA-router1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">1E、拔掉 Router2 的 F0/1 的线后显示 Router1 的路由表</a></ol><li><a href="#%E9%85%8D%E7%BD%AE-ripv2%E8%BF%9E%E7%BB%AD%E5%AD%90%E7%BD%91%E6%8A%8A%E4%B8%A4%E5%8F%B0%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%BD%93%E6%88%90%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BD%BF%E7%94%A8%E5%B9%B6%E9%85%8D%E7%BD%AE%E4%B8%89%E5%B1%82%E6%8E%A5%E5%8F%A3%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E6%8A%8A-1921681024-%E5%88%92%E5%88%86%E6%88%90%E5%9B%9B%E4%B8%AA%E5%AD%90%E7%BD%91%E5%AD%90%E7%BD%91-1%E5%AD%90%E7%BD%91-4%E5%B9%B6%E5%92%8C-19216820241921683024-%E4%B8%80%E8%B5%B7%E9%85%8D%E7%BD%AE%E6%88%90%E4%B8%83%E4%B8%AA%E7%BD%91%E7%BB%9C%E8%A7%81%E4%B8%8B%E5%9B%BE%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9D%87%E8%AE%BE%E7%BD%AE%E4%B8%BA%E8%87%AA%E5%8A%A8%E6%B1%87%E6%80%BB%E9%BB%98%E8%AE%A4%E8%AF%B7%E5%85%88%E5%9C%A8%E4%B8%8B%E5%9B%BE%E6%A0%87%E6%B3%A8%E7%BD%91%E7%BB%9C%E5%8F%B7%E6%8E%A5%E5%8F%A3%E5%90%8D%E5%92%8C%E6%8E%A5%E5%8F%A3-ip-%E5%9C%B0%E5%9D%80keyi-%E5%88%A9%E7%94%A8%E5%B7%B2%E6%9C%89%E7%9A%84%E8%BE%93%E5%85%A5%E4%BD%8D%E7%BD%AE%E7%84%B6%E5%90%8E%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE">配置 RIPv2（连续子网）。把两台交换机当成路由器使用，并配置三层接口。如下图所示,把 192.168.1.0/24 划分成四个子网(子网 1~子网 4)，并和 192.168.2.0/24、192.168.3.0/24 一起配置成七个网络，见下图。路由器和交换机均设置为自动汇总（默认）。请先在下图标注网络号、接口名和接口 IP 地址(keyi 利用已有的输入位置.)，然后进行配置</a><ol><li><a href="#2apc1-ping-pc2-%E5%92%8C-pc3-%E5%90%8E%E6%88%AA%E5%B1%8F">2A、PC1 ping PC2 和 PC3 后截屏</a><li><a href="#2brouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">2B、Router1 的路由表</a><li><a href="#2crouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">2C、Router2 的路由表</a><li><a href="#2dswitch1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">2D、Switch1 的路由表</a><li><a href="#2eswitch2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">2E、Switch2 的路由表</a><li><a href="#2f%E6%8A%8A-router1router2switch1switch2-%E7%9A%84-running-config-%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s2txt">2F、把 Router1、Router2、Switch1、Switch2 的 Running-Config 保存到文件 s2.txt</a><ol><li><a href="#router1-1">Router1</a><li><a href="#router2-1">Router2</a><li><a href="#switch1">Switch1</a><li><a href="#switch2">Switch2</a></ol></ol><li><a href="#%E6%8E%A5%E4%B8%8A%E4%B8%80%E6%AD%A5%E8%B0%83%E6%95%B4%E9%85%8D%E4%B8%BA%E4%B8%8B%E5%9B%BE%E7%9A%84%E9%9D%9E%E8%BF%9E%E7%BB%AD%E5%AD%90%E7%BD%91%E6%A0%87%E6%B3%A8%E7%BD%91%E7%BB%9C%E5%8F%B7%E6%8E%A5%E5%8F%A3%E5%90%8D%E5%92%8C%E6%8E%A5%E5%8F%A3-ip-%E5%9C%B0%E5%9D%80%E8%B7%AF%E7%94%B1%E5%99%A8%E5%92%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%9D%87%E8%AE%BE%E7%BD%AE%E4%B8%BA%E8%87%AA%E5%8A%A8%E6%B1%87%E6%80%BB%E9%BB%98%E8%AE%A4">接上一步,调整配为下图的非连续子网，标注网络号、接口名和接口 IP 地址。路由器和交换机均设置为自动汇总（默认）</a><ol><li><a href="#3apc1-pingpc2-%E5%92%8C-pc3-%E5%90%8E%E6%88%AA%E5%B1%8F">3A、PC1 pingPC2 和 PC3 后截屏</a><li><a href="#3bpc1-%E4%BE%9D%E6%AC%A1-ping-%E5%88%B0-pc3-%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84-ip-%E5%9C%B0%E5%9D%80%E5%90%8E%E6%88%AA%E5%B1%8F">3B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</a><li><a href="#3crouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">3C、Router1 的路由表</a><li><a href="#3drouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">3D、Router2 的路由表</a><li><a href="#3eswitch1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">3E、Switch1 的路由表</a><li><a href="#3fswitch2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">3F、Switch2 的路由表</a><li><a href="#3g%E6%8A%8A-router1router2switch1switch2-%E7%9A%84-running-config-%E5%88%86%E5%88%AB%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s3txt">3G、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s3.txt</a><ol><li><a href="#router1-2">Router1</a><li><a href="#router2-2">Router2</a><li><a href="#switch1-1">Switch1</a><li><a href="#switch2-1">Switch2</a></ol></ol><li><a href="#%E6%8E%A5%E4%B8%8A%E4%B8%80%E6%AD%A5%E5%9C%A8%E5%87%BA%E9%97%AE%E9%A2%98%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%E6%88%96%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E6%B1%87%E6%80%BB%E7%84%B6%E5%90%8E">接上一步，在出问题的路由器或交换机上取消自动汇总，然后</a><ol><li><a href="#4apc1-%E4%BE%9D%E6%AC%A1-ping-pc2-%E5%92%8C-pc3-%E5%90%8E%E6%88%AA%E5%B1%8F">4A、PC1 依次 ping PC2 和 PC3 后截屏</a><li><a href="#4bpc1-%E4%BE%9D%E6%AC%A1-ping-%E5%88%B0-pc3-%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84-ip-%E5%9C%B0%E5%9D%80%E5%90%8E%E6%88%AA%E5%B1%8F">4B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</a><li><a href="#4crouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">4C、Router1 的路由表</a><li><a href="#4drouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">4D、Router2 的路由表</a><li><a href="#4eswitch1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">4E、Switch1 的路由表</a><li><a href="#4fswitch2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">4F、Switch2 的路由表</a><li><a href="#4g%E6%8A%8A-router1router2switch1switch2-%E7%9A%84-running-config-%E5%88%86%E5%88%AB%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s4txt">4G、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s4.txt</a><ol><li><a href="#router1-3">Router1</a><li><a href="#router2-3">Router2</a><li><a href="#switch1-2">Switch1</a><li><a href="#switch2-2">Switch2</a></ol></ol><li><a href="#%E6%8E%A5%E4%B8%8A%E4%B8%80%E6%AD%A5%E5%9C%A8%E6%89%80%E6%9C%89%E8%B7%AF%E7%94%B1%E5%99%A8%E6%88%96%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E5%8F%96%E6%B6%88%E8%87%AA%E5%8A%A8%E6%B1%87%E6%80%BB%E5%AF%B9%E4%BA%8E-switch1-%E9%80%9A%E5%BE%80-switch2-%E7%9A%84%E6%8E%A5%E5%8F%A3%E5%9C%A8%E8%B0%83%E8%AF%95%E7%8A%B6%E6%80%81%E4%B8%8B%E5%85%88%E9%85%8D%E7%BD%AE%E4%B8%BA%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E9%BB%98%E8%AE%A4%E6%9F%A5%E7%9C%8B%E5%92%8C%E8%AE%B0%E5%BD%95%E5%8F%91%E5%87%BA%E7%9A%84-rip-update-%E5%88%86%E7%BB%84%E7%84%B6%E5%90%8E%E5%86%8D%E5%8F%96%E6%B6%88%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E6%9F%A5%E7%9C%8B%E5%92%8C%E8%AE%B0%E5%BD%95%E5%8F%91%E5%87%BA%E7%9A%84-rip-update-%E5%88%86%E7%BB%84%E5%88%86%E6%9E%90%E5%9C%A8%E8%BF%99%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%8B-rip-update-%E5%88%86%E7%BB%84%E5%B7%AE%E5%BC%82">接上一步，在所有路由器或交换机上取消自动汇总，对于 Switch1 通往 Switch2 的接口，在调试状态下先配置为水平分割(默认)，查看和记录发出的 RIP Update 分组，然后再取消水平分割，查看和记录发出的 RIP Update 分组。分析在这两种情况下 RIP Update 分组差异</a><ol><li><a href="#5apc1-%E4%BE%9D%E6%AC%A1-ping-pc2-%E5%92%8C-pc3-%E5%90%8E%E6%88%AA%E5%B1%8F">5A、PC1 依次 ping PC2 和 PC3 后截屏</a><li><a href="#5bpc1-%E4%BE%9D%E6%AC%A1-ping-%E5%88%B0-pc3-%E7%9A%84%E8%B7%AF%E5%BE%84%E4%B8%8A%E7%9A%84-ip-%E5%9C%B0%E5%9D%80%E5%90%8E%E6%88%AA%E5%B1%8F">5B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</a><li><a href="#5crouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">5C、Router1 的路由表</a><li><a href="#5drouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">5D、Router2 的路由表</a><li><a href="#5eswitch1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">5E、Switch1 的路由表</a><li><a href="#5fswitch2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">5F、Switch2 的路由表</a><li><a href="#5g%E6%9C%89%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E6%97%B6%E7%9A%84-rip-update-%E5%88%86%E7%BB%84">5G、有水平分割时的 RIP Update 分组</a><li><a href="#5h%E5%8F%96%E6%B6%88%E6%B0%B4%E5%B9%B3%E5%88%86%E5%89%B2%E6%97%B6%E7%9A%84-rip-update-%E5%88%86%E7%BB%84">5H、取消水平分割时的 RIP Update 分组</a><li><a href="#5i%E6%8A%8A-router1router2switch1switch2-%E7%9A%84-running-config-%E5%88%86%E5%88%AB%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s5txt">5I、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s5.txt</a><ol><li><a href="#router1-4">Router1</a><li><a href="#router2-4">Router2</a><li><a href="#switch1-3">Switch1</a><li><a href="#switch2-3">Switch2</a></ol></ol><li><a href="#%E6%8E%A5%E4%B8%8A%E4%B8%80%E6%AD%A5%E6%8B%94%E6%8E%89-switch2-%E6%8E%A5-pc2-%E7%9A%84%E7%BA%BF%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E8%B7%AF%E7%94%B1%E5%99%A8%E6%88%96%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8%E7%9A%84%E5%8F%98%E5%8C%96">接上一步，拔掉 Switch2 接 PC2 的线，查看所有路由器或交换机的路由表的变化</a><ol><li><a href="#6arouter1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">6A、Router1 的路由表</a><li><a href="#6brouter2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">6B、Router2 的路由表</a><li><a href="#6cswitch1-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">6C、Switch1 的路由表</a><li><a href="#6dswitch2-%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8">6D、Switch2 的路由表</a><li><a href="#6e%E6%8A%8A-router1router2switch1switch2-%E7%9A%84-running-config-%E5%88%86%E5%88%AB%E4%BF%9D%E5%AD%98%E5%88%B0%E6%96%87%E4%BB%B6-s6txt">6E、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s6.txt</a><ol><li><a href="#route1">Route1</a><li><a href="#route2">Route2</a><li><a href="#switch1-4">Switch1</a><li><a href="#switch2-4">Switch2</a></ol></ol></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90">实验分析</a><ol><li><a href="#%E9%80%9A%E8%BF%87%E5%88%86%E6%9E%90%E6%AD%A5%E9%AA%A43%E7%9A%84%E8%B7%AF%E7%94%B1%E8%A1%A8%E8%A7%A3%E9%87%8A3b%E6%9F%90%E4%BA%9B-ip-%E7%9A%84-ping-%E4%B8%8D%E9%80%9A%E7%9A%84%E5%8E%9F%E5%9B%A0">通过分析步骤[3]的路由表，解释[3B]某些 IP 的 ping 不通的原因</a><li><a href="#%E6%8A%8A%E6%AD%A5%E9%AA%A44b%E5%92%8C%E6%AD%A5%E9%AA%A43b%E6%89%80%E5%BE%97%E7%BB%93%E6%9E%9C%E8%BF%9B%E8%A1%8C%E5%AF%B9%E6%AF%94%E5%B9%B6%E8%BF%9B%E8%A1%8C%E8%A7%A3%E9%87%8A">把步骤[4B]和步骤[3B]所得结果进行对比,并进行解释</a><li><a href="#%E5%88%86%E6%9E%90%E5%9C%A8%E6%AD%A5%E9%AA%A45g%E5%92%8C5h%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%8B-rip-update-%E5%88%86%E7%BB%84%E5%B7%AE%E5%BC%82">分析在步骤[5G]和[5H]的两种情况下 RIP Update 分组差异</a></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A">实验体会</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">RIP配置实验</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 24 May 2019 <i class="fas fa-file-word fa-fw"></i> 34478字 <i class="fas fa-clock fa-fw"></i> 115分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="实验题目">实验题目</h2><p>RIP 配置实验</p><h2 id="实验目的">实验目的</h2><p>学习 RIPv2 的配置方法。</p><h2 id="配置命令">配置命令</h2><h3 id="配置-ripv2-协议">配置 RIPv2 协议</h3><pre><code class="language-bash">       R1(config)# router rip
+       R1(config-router)# version 2
+       R1(config-router)# network 192.168.2.0   ! 发布属于有类网络的网络的接口的子网
+       R1(config-router)# network 192.168.3.0
+</code></pre><h3 id="把交换机接口变为三层接口然后就可以配置-ip-地址本实验要把交换机当路由器用">把交换机接口变为三层接口，然后就可以配置 IP 地址。（本实验要把交换机当路由器用）</h3><pre><code class="language-bash">   (config)#interface f0/1
+   (config-if)#no switchport
+   (config-if)#ip address  192.168.1.5  255.255.255.0
+</code></pre><h3 id="为环回接口配置-ip-地址环回接口是路由器内部的软接口除非路由器失效否则环回接口一直有效">为环回接口配置 IP 地址。环回接口是路由器内部的软接口，除非路由器失效，否则，环回接口一直有效</h3><pre><code class="language-bash">   (config)#interface loopback 0              ！号码范围：0~2147483647
+   (config-if)#ip address  192.168.1.5  255.255.255.0
+</code></pre><h3 id="取消自动汇总">取消自动汇总</h3><pre><code class="language-bash">   (config-router)#router rip
+       (config-router)#auto-summary       !启动自动汇总
+       (config-router)#no auto-summary    !取消自动汇总
+</code></pre><h3 id="配置水平分割">配置水平分割</h3><pre><code class="language-bash">   (config)#interface f0/1
+       (config-if)#ip split-horizon        ! 配置水平分割(默认)
+       (config-if)#no ip split-horizon     ! 取消水平分割
+</code></pre><h3 id="显示调试信息">显示调试信息</h3><pre><code class="language-bash">       #debug ip rip      ！显示rip调试信息
+       #no debug ip rip   ！停止显示rip调试信息
+       #no debug all      ！停止显示所有调试信息
+</code></pre><h2 id="实验任务">实验任务</h2><h3 id="按下图配置-rip-路由协议">按下图配置 RIP 路由协议</h3><h4 id="1apc1-ping-pc2-和-pc3-后截屏">1A、PC1 ping PC2 和 PC3 后截屏</h4><p><img src="/assets/image/2019-05-24-1.jpg" alt="图片描述" /></p><h4 id="1brouter1-的路由表">1B、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-2.jpg" alt="图片描述" /></p><h4 id="1crouter2-的路由表">1C、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-3.jpg" alt="图片描述" /></p><h4 id="1d把-router1router2-的-running-config-保存到文件-s1txt">1D、把 Router1、Router2 的 Running-Config 保存到文件 s1.txt</h4><h5 id="router1">Router1</h5><pre><code class="language-bash">Building configuration...
+Current configuration : 1898 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 14134e00281c
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="router2">Router2</h5><pre><code class="language-bash">Routing Protocol is "rip"
+  Sending updates every 30 seconds
+  Invalid after 180 seconds, flushed after 120 seconds
+  Outgoing update filter list for all interface is: not set
+  Incoming update filter list for all interface is: not set
+  Redistribution default metric is 1
+  Redistributing:
+  Default version control: send version 2, receive version 2
+    Interface                      Send  Recv
+    GigabitEthernet 0/0            2     2
+    GigabitEthernet 0/1            2     2
+  Routing for Networks:
+    192.168.2.0 255.255.255.0
+    192.168.3.0 255.255.255.0
+  Distance: (default is 120)
+  Graceful-restart disabled
+
+Ruijie(config)#show ip route
+
+Codes:  C - connected, S - static, R - RIP, B - BGP
+        O - OSPF, IA - OSPF inter area
+        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+        E1 - OSPF external type 1, E2 - OSPF external type 2
+        i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+        ia - IS-IS inter area, * - candidate default
+
+Gateway of last resort is no set
+R    192.168.1.0/24 [120/1] via 192.168.2.1, 00:02:56, GigabitEthernet 0/1
+C    192.168.2.0/24 is directly connected, GigabitEthernet 0/1
+C    192.168.2.2/32 is local host.
+C    192.168.3.0/24 is directly connected, GigabitEthernet 0/0
+C    192.168.3.2/32 is local host.
+Ruijie(config)#show running-config
+
+Building configuration...
+Current configuration : 1918 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 073f07221c1c
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h4 id="1e拔掉-router2-的-f01-的线后显示-router1-的路由表">1E、拔掉 Router2 的 F0/1 的线后显示 Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-4.jpg" alt="图片描述" /></p><h3 id="配置-ripv2连续子网把两台交换机当成路由器使用并配置三层接口如下图所示把-1921681024-划分成四个子网子网-1子网-4并和-19216820241921683024-一起配置成七个网络见下图路由器和交换机均设置为自动汇总默认请先在下图标注网络号接口名和接口-ip-地址keyi-利用已有的输入位置然后进行配置">配置 RIPv2（连续子网）。把两台交换机当成路由器使用，并配置三层接口。如下图所示,把 192.168.1.0/24 划分成四个子网(子网 1~子网 4)，并和 192.168.2.0/24、192.168.3.0/24 一起配置成七个网络，见下图。路由器和交换机均设置为自动汇总（默认）。请先在下图标注网络号、接口名和接口 IP 地址(keyi 利用已有的输入位置.)，然后进行配置</h3><h4 id="2apc1-ping-pc2-和-pc3-后截屏">2A、PC1 ping PC2 和 PC3 后截屏</h4><p><img src="/assets/image/2019-05-24-5.jpg" alt="图片描述" /></p><h4 id="2brouter1-的路由表">2B、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-6.jpg" alt="图片描述" /></p><h4 id="2crouter2-的路由表">2C、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-7.jpg" alt="图片描述" /></p><h4 id="2dswitch1-的路由表">2D、Switch1 的路由表</h4><p><img src="/assets/image/2019-05-24-8.jpg" alt="图片描述" /></p><h4 id="2eswitch2-的路由表">2E、Switch2 的路由表</h4><p><img src="/assets/image/2019-05-24-9.jpg" alt="图片描述" /></p><h4 id="2f把-router1router2switch1switch2-的-running-config-保存到文件-s2txt">2F、把 Router1、Router2、Switch1、Switch2 的 Running-Config 保存到文件 s2.txt</h4><h5 id="router1-1">Router1</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1902 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 0121474e3e16
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.1.130 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+End
+</code></pre><h5 id="router2-1">Router2</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1982 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 111323081b44
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Loopback 0
+ ip address 192.168.4.1 255.255.255.0
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+End
+</code></pre><h5 id="switch1">Switch1</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1470 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h5 id="switch2">Switch2</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1549 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.193 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.129 255.255.255.192
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+End
+</code></pre><h3 id="接上一步调整配为下图的非连续子网标注网络号接口名和接口-ip-地址路由器和交换机均设置为自动汇总默认">接上一步,调整配为下图的非连续子网，标注网络号、接口名和接口 IP 地址。路由器和交换机均设置为自动汇总（默认）</h3><h4 id="3apc1-pingpc2-和-pc3-后截屏">3A、PC1 pingPC2 和 PC3 后截屏</h4><p><img src="/assets/image/2019-05-24-10.jpg" alt="图片描述" /></p><h4 id="3bpc1-依次-ping-到-pc3-的路径上的-ip-地址后截屏">3B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</h4><p>见 3A 中的图，截在一起了。</p><h4 id="3crouter1-的路由表">3C、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-11.jpg" alt="图片描述" /></p><h4 id="3drouter2-的路由表">3D、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-12.jpg" alt="图片描述" /></p><h4 id="3eswitch1-的路由表">3E、Switch1 的路由表</h4><p><img src="/assets/image/2019-05-24-13.jpg" alt="图片描述" /></p><h4 id="3fswitch2-的路由表">3F、Switch2 的路由表</h4><p><img src="/assets/image/2019-05-24-14.jpg" alt="图片描述" /></p><h4 id="3g把-router1router2switch1switch2-的-running-config-分别保存到文件-s3txt">3G、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s3.txt</h4><h5 id="router1-2">Router1</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1898 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 0121474e3e16
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="router2-2">Router2</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1986 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 111323081b44
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.1.129 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface Loopback 0
+ ip address 192.168.4.1 255.255.255.0
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="switch1-1">Switch1</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1470 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h5 id="switch2-1">Switch2</h5><pre><code class="language-bash">show running-config
+
+Building configuration...
+Current configuration : 1567 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.193 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.3.1 255.255.255.0
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.3.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h3 id="接上一步在出问题的路由器或交换机上取消自动汇总然后">接上一步，在出问题的路由器或交换机上取消自动汇总，然后</h3><h4 id="4apc1-依次-ping-pc2-和-pc3-后截屏">4A、PC1 依次 ping PC2 和 PC3 后截屏</h4><p><img src="/assets/image/2019-05-24-15.jpg" alt="图片描述" /></p><h4 id="4bpc1-依次-ping-到-pc3-的路径上的-ip-地址后截屏">4B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</h4><p><img src="/assets/image/2019-05-24-16.jpg" alt="图片描述" /> <img src="/assets/image/2019-05-24-17.jpg" alt="图片描述" /></p><h4 id="4crouter1-的路由表">4C、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-18.jpg" alt="图片描述" /></p><h4 id="4drouter2-的路由表">4D、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-19.jpg" alt="图片描述" /></p><h4 id="4eswitch1-的路由表">4E、Switch1 的路由表</h4><p><img src="/assets/image/2019-05-24-20.jpg" alt="图片描述" /></p><h4 id="4fswitch2-的路由表">4F、Switch2 的路由表</h4><p><img src="/assets/image/2019-05-24-21.jpg" alt="图片描述" /></p><h4 id="4g把-router1router2switch1switch2-的-running-config-分别保存到文件-s4txt">4G、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s4.txt</h4><h5 id="router1-3">Router1</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 1898 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 0121474e3e16
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="router2-3">Router2</h5><pre><code class="language-bash">show running-config
+Building configuration...
+Current configuration : 2004 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 111323081b44
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.1.129 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface Loopback 0
+ ip address 192.168.4.1 255.255.255.0
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+ no auto-summary
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="switch1-2">Switch1</h5><pre><code class="language-bash">show running-config
+
+Building configuration...
+Current configuration : 1470 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h5 id="switch2-2">Switch2</h5><pre><code class="language-bash">show running-config
+
+Building configuration...
+Current configuration : 1567 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.193 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.3.1 255.255.255.0
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.3.0
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h3 id="接上一步在所有路由器或交换机上取消自动汇总对于-switch1-通往-switch2-的接口在调试状态下先配置为水平分割默认查看和记录发出的-rip-update-分组然后再取消水平分割查看和记录发出的-rip-update-分组分析在这两种情况下-rip-update-分组差异">接上一步，在所有路由器或交换机上取消自动汇总，对于 Switch1 通往 Switch2 的接口，在调试状态下先配置为水平分割(默认)，查看和记录发出的 RIP Update 分组，然后再取消水平分割，查看和记录发出的 RIP Update 分组。分析在这两种情况下 RIP Update 分组差异</h3><h4 id="5apc1-依次-ping-pc2-和-pc3-后截屏">5A、PC1 依次 ping PC2 和 PC3 后截屏</h4><p><img src="/assets/image/2019-05-24-22.jpg" alt="图片描述" /></p><h4 id="5bpc1-依次-ping-到-pc3-的路径上的-ip-地址后截屏">5B、PC1 依次 ping 到 PC3 的路径上的 IP 地址后截屏</h4><p><img src="/assets/image/2019-05-24-23.jpg" alt="图片描述" /> <img src="/assets/image/2019-05-24-24.jpg" alt="图片描述" /></p><h4 id="5crouter1-的路由表">5C、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-25.jpg" alt="图片描述" /></p><h4 id="5drouter2-的路由表">5D、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-26.jpg" alt="图片描述" /></p><h4 id="5eswitch1-的路由表">5E、Switch1 的路由表</h4><p><img src="/assets/image/2019-05-24-27.jpg" alt="图片描述" /></p><h4 id="5fswitch2-的路由表">5F、Switch2 的路由表</h4><p><img src="/assets/image/2019-05-24-28.jpg" alt="图片描述" /></p><h4 id="5g有水平分割时的-rip-update-分组">5G、有水平分割时的 RIP Update 分组</h4><p><img src="/assets/image/2019-05-24-29.jpg" alt="图片描述" /></p><h4 id="5h取消水平分割时的-rip-update-分组">5H、取消水平分割时的 RIP Update 分组</h4><p><img src="/assets/image/2019-05-24-30.jpg" alt="图片描述" /></p><h4 id="5i把-router1router2switch1switch2-的-running-config-分别保存到文件-s5txt">5I、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s5.txt</h4><h5 id="router1-4">Router1</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 1916 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 0121474e3e16
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+ no auto-summary
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="router2-4">Router2</h5><pre><code class="language-bash">sh run
+
+Building configuration...
+Current configuration : 2004 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 111323081b44
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.1.129 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Loopback 0
+ ip address 192.168.4.1 255.255.255.0
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+ no auto-summary
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="switch1-3">Switch1</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 1514 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip rip split-horizon
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ no auto-summary
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h5 id="switch2-3">Switch2</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 1585 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.193 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.3.1 255.255.255.0
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.3.0
+ no auto-summary
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h3 id="接上一步拔掉-switch2-接-pc2-的线查看所有路由器或交换机的路由表的变化">接上一步，拔掉 Switch2 接 PC2 的线，查看所有路由器或交换机的路由表的变化</h3><h4 id="6arouter1-的路由表">6A、Router1 的路由表</h4><p><img src="/assets/image/2019-05-24-31.jpg" alt="图片描述" /></p><h4 id="6brouter2-的路由表">6B、Router2 的路由表</h4><p><img src="/assets/image/2019-05-24-32.jpg" alt="图片描述" /></p><h4 id="6cswitch1-的路由表">6C、Switch1 的路由表</h4><p><img src="/assets/image/2019-05-24-33.jpg" alt="图片描述" /></p><h4 id="6dswitch2-的路由表">6D、Switch2 的路由表</h4><p><img src="/assets/image/2019-05-24-34.jpg" alt="图片描述" /></p><h4 id="6e把-router1router2switch1switch2-的-running-config-分别保存到文件-s6txt">6E、把 Router1、Router2、Switch1、Switch2 的 Running-Config 分别保存到文件 s6.txt</h4><h5 id="route1">Route1</h5><pre><code class="language-bash">sh run
+
+Building configuration...
+Current configuration : 1916 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 0121474e3e16
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+ no auto-summary
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="route2">Route2</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 2004 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+webmaster level 0 username admin password 7 111323081b44
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+control-plane protocol
+ no acpp
+!
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp
+!
+control-plane data
+ no glean-car
+ no acpp
+!
+!
+!
+!
+enable service web-server http
+enable service web-server https
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial 2/0
+ encapsulation HDLC
+!
+interface Serial 3/0
+ encapsulation HDLC
+ clock rate 64000
+!
+interface FastEthernet 1/0
+!
+interface FastEthernet 1/1
+!
+interface FastEthernet 1/2
+!
+interface FastEthernet 1/3
+!
+interface FastEthernet 1/4
+!
+interface FastEthernet 1/5
+!
+interface FastEthernet 1/6
+!
+interface FastEthernet 1/7
+!
+interface FastEthernet 1/8
+!
+interface FastEthernet 1/9
+!
+interface FastEthernet 1/10
+!
+interface FastEthernet 1/11
+!
+interface FastEthernet 1/12
+!
+interface FastEthernet 1/13
+!
+interface FastEthernet 1/14
+!
+interface FastEthernet 1/15
+!
+interface FastEthernet 1/16
+!
+interface FastEthernet 1/17
+!
+interface FastEthernet 1/18
+!
+interface FastEthernet 1/19
+!
+interface FastEthernet 1/20
+!
+interface FastEthernet 1/21
+!
+interface FastEthernet 1/22
+!
+interface FastEthernet 1/23
+!
+interface GigabitEthernet 0/0
+ ip address 192.168.1.129 255.255.255.192
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet 0/1
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Loopback 0
+ ip address 192.168.4.1 255.255.255.0
+!
+interface VLAN 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+ no auto-summary
+!
+!
+!
+!
+!
+!
+!
+!
+ref parameter 75 140
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+!
+end
+</code></pre><h5 id="switch1-4">Switch1</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 1514 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip rip split-horizon
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ no auto-summary
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h5 id="switch2-4">Switch2</h5><pre><code class="language-bash">sh run
+Building configuration...
+Current configuration : 1585 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 19-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet 0/1
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.193 255.255.255.192
+!
+interface GigabitEthernet 0/2
+!
+interface GigabitEthernet 0/3
+!
+interface GigabitEthernet 0/4
+!
+interface GigabitEthernet 0/5
+!
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!
+interface GigabitEthernet 0/7
+!
+interface GigabitEthernet 0/8
+!
+interface GigabitEthernet 0/9
+!
+interface GigabitEthernet 0/10
+!
+interface GigabitEthernet 0/11
+!
+interface GigabitEthernet 0/12
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.3.1 255.255.255.0
+!
+interface GigabitEthernet 0/13
+!
+interface GigabitEthernet 0/14
+!
+interface GigabitEthernet 0/15
+!
+interface GigabitEthernet 0/16
+!
+interface GigabitEthernet 0/17
+!
+interface GigabitEthernet 0/18
+!
+interface GigabitEthernet 0/19
+!
+interface GigabitEthernet 0/20
+!
+interface GigabitEthernet 0/21
+!
+interface GigabitEthernet 0/22
+!
+interface GigabitEthernet 0/23
+!
+interface GigabitEthernet 0/24
+!
+interface GigabitEthernet 0/25
+!
+interface GigabitEthernet 0/26
+!
+interface GigabitEthernet 0/27
+!
+interface GigabitEthernet 0/28
+!
+!
+!
+!
+!
+!
+!
+!
+!
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.3.0
+ no auto-summary
+!
+!
+!
+line con 0
+line vty 0 4
+ login
+ password b402
+!
+!
+end
+</code></pre><h2 id="实验分析">实验分析</h2><h3 id="通过分析步骤3的路由表解释3b某些-ip-的-ping-不通的原因">通过分析步骤[3]的路由表，解释[3B]某些 IP 的 ping 不通的原因</h3><p>PingPC2 可以 ping 通，pingPC3 不通，经检查，到 PC3 路径上第一个 ping 不通的 ip 是 192.168.2.1。原因是，Router2 路由表中，没有子网 1~4 的项（在不连续子网的网络边界，路由汇总会引起路由协议的丢失），ping 子网 3 的消息没有办法到达。</p><h3 id="把步骤4b和步骤3b所得结果进行对比并进行解释">把步骤[4B]和步骤[3B]所得结果进行对比,并进行解释</h3><p>这一步中，PC1 到 PC3 路径上每一个地址都可以 ping 通了。原因是，Router2 关闭自动汇总之后不再收集，因此其路由表中的项没有丢失，就可以 ping 通。</p><h3 id="分析在步骤5g和5h的两种情况下-rip-update-分组差异">分析在步骤[5G]和[5H]的两种情况下 RIP Update 分组差异</h3><p>在 5G-&gt;5H 后，GibgabitEthernet 0/6 分组下增加了很多项，而这些项也可以在上一个分组里找到。原因是取消水平分割之后，从本节点发送出去的那些路由又被发送了回来。</p><h2 id="实验体会">实验体会</h2><p>本次实验中，我们在多种情况下配置了 RIPv2 协议，并探究了自动汇总、水平分割等多种 RIP 协议的技术的实际效果。在实验的最后，我们还自行探究了毒性反转技术避免计数到无穷问题的实际效果。总之，本次实验帮助我较好地理解了 RIP 协议的实际效果，还是很有意义的。</p></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

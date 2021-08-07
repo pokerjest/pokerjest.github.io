@@ -1,0 +1,266 @@
+<!DOCTYPE html><html><head><title> 数据表示实验 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="数据表示实验" /><meta property="og:locale" content="en_US" /><meta name="description" content="实验题目 数据表示实验 实验目的 掌握结构数据的保存和读取的方法。 参考资料 C语言函数分类：http://msdn.microsoft.com/zh-cn/library/2aza74he(v=vs.110).aspx C语言字符串函数：http://msdn.microsoft.com/zh-cn/library/f0151s4x(v=vs.110).aspx" /><meta property="og:description" content="实验题目 数据表示实验 实验目的 掌握结构数据的保存和读取的方法。 参考资料 C语言函数分类：http://msdn.microsoft.com/zh-cn/library/2aza74he(v=vs.110).aspx C语言字符串函数：http://msdn.microsoft.com/zh-cn/library/f0151s4x(v=vs.110).aspx" /><link rel="canonical" href="http://localhost:4000/2019/03/01/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%AE%9E%E9%AA%8C/" /><meta property="og:url" content="http://localhost:4000/2019/03/01/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%AE%9E%E9%AA%8C/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-03-01T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="数据表示实验" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/03/01/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%AE%9E%E9%AA%8C/","datePublished":"2019-03-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/01/%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA%E5%AE%9E%E9%AA%8C/"},"headline":"数据表示实验","description":"实验题目 数据表示实验 实验目的 掌握结构数据的保存和读取的方法。 参考资料 C语言函数分类：http://msdn.microsoft.com/zh-cn/library/2aza74he(v=vs.110).aspx C语言字符串函数：http://msdn.microsoft.com/zh-cn/library/f0151s4x(v=vs.110).aspx","dateModified":"2019-03-01T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE">实验题目</a><li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">实验目的</a><li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a><li><a href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83">实验环境</a><li><a href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">实验内容</a><ol><li><a href="#%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AE%E4%BF%9D%E5%AD%98%E5%92%8C%E8%AF%BB%E5%87%BA">结构数据保存和读出</a><ol><li><a href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82">实验要求</a><li><a href="#%E6%BA%90%E4%BB%A3%E7%A0%81">源代码</a></ol><li><a href="#%E5%A4%9A%E6%96%87%E4%BB%B6%E5%90%88%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%92%8C%E8%AF%BB%E5%87%BA">多文件合并保存和读出</a><ol><li><a href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82-1">实验要求</a><li><a href="#%E6%BA%90%E4%BB%A3%E7%A0%81-1">源代码</a><ol><li><a href="#encodecpp">encode.cpp</a><li><a href="#decodecpp">decode.cpp</a></ol></ol></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E4%BD%93%E4%BC%9A">实验体会</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">数据表示实验</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 01 Mar 2019 <i class="fas fa-file-word fa-fw"></i> 7158字 <i class="fas fa-clock fa-fw"></i> 24分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="实验题目">实验题目</h2><p>数据表示实验</p><h2 id="实验目的">实验目的</h2><p>掌握结构数据的保存和读取的方法。</p><h2 id="参考资料">参考资料</h2><ul><li>C语言函数分类：http://msdn.microsoft.com/zh-cn/library/2aza74he(v=vs.110).aspx<li>C语言字符串函数：http://msdn.microsoft.com/zh-cn/library/f0151s4x(v=vs.110).aspx</ul><h2 id="实验环境">实验环境</h2><ul><li>Windows + VS 2012 http://172.18.187.11/netdisk/default.aspx?vm=16net<li>Linux + gcc</ul><p>这里我使用的环境是Windows 10 + VSCode + gcc version 8.1.0 (x86_64-posix-sjlj-rev0, Built by MinGW-W64 project)</p><h2 id="实验内容">实验内容</h2><h3 id="结构数据保存和读出">结构数据保存和读出</h3><h4 id="实验要求">实验要求</h4><p>循环输入员工(Person)的信息，每输入一个员工的信息，立即写入文件(Persons.stru)，直到输入的姓名为空时跳出循环。然后，读出该文件，显示每个Person的信息。 Person的信息表示：</p><pre><code class="language-cpp">struct Person
+{
+  char username[USER_NAME_LEN];      // 员工名
+  int level;                         // 工资级别
+  char email[EMAIL_LEN];             // email地址
+  DWORD sendtime;                    // 发送时间
+  time_t regtime;                    // 注册时间
+};
+</code></pre><h4 id="源代码">源代码</h4><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef unsigned long DWORD;
+struct CSV //按照CSV格式保存。
+{
+	vector&lt;vector&lt;string&gt;&gt; v;
+	void get(istream &amp;is)
+	{
+		string s;
+		for (v.clear(); getline(is, s);)
+		{
+			v.push_back({});
+			for (istringstream sin(s); getline(sin, s, ',');)
+				v.back().push_back(s);
+		}
+	}
+	void put(ostream &amp;os)
+	{
+		for (int i = 0; i &lt; v.size(); ++i)
+			for (int j = 0; j &lt; v[i].size(); ++j)
+				os &lt;&lt; v[i][j] &lt;&lt; (j + 1 &lt; v[i].size() ? ',' : '\n');
+	}
+};
+struct Person
+{
+	string username;				   // 员工名
+	int level;						   // 工资级别
+	string email;					   // email地址
+	DWORD sendtime;					   // 发送时间
+	time_t regtime;					   // 注册时间
+	bool get(istream &amp;is, ostream &amp;os) //从is中读入，并将提示信息写入os；若读入终止返回false
+	{
+		os &lt;&lt; "Input username: ";
+		getline(is, username);
+		while (!username.empty() &amp;&amp; username.back() == ' ')
+			username.pop_back(); //删除多余空格
+		if (username.empty())	//读入空串，说明已经终止
+			return 0;
+		os &lt;&lt; "Input level: ";
+		is &gt;&gt; level;
+		os &lt;&lt; "Input email: ";
+		is &gt;&gt; email;
+		os &lt;&lt; "Input sendtime: ";
+		is &gt;&gt; sendtime;
+		os &lt;&lt; "Input regtime: ";
+		is &gt;&gt; regtime;
+		string s;
+		return getline(is, s), 1; //要读掉上一行的行末的回车，以免对下一次读入产生影响
+	}
+	void getCSV(vector&lt;string&gt; &amp;v) //从CSV的某一行读入信息
+	{
+		username = v[0];
+		level = stoi(v[1]);
+		email = v[2];
+		sendtime = stoull(v[3]);
+		regtime = stoull(v[4]);
+	}
+	string putFileCSV() //返回CSV格式的信息
+	{
+		return username + "," + to_string(level) + "," + email + "," + to_string(sendtime) + "," + to_string(regtime) + "\n";
+	}
+	friend ostream &amp;operator&lt;&lt;(ostream &amp;os, Person &amp;p) //打印p的信息到os
+	{
+		return os &lt;&lt; "username: " &lt;&lt; p.username &lt;&lt; "\n"
+				  &lt;&lt; "level: " &lt;&lt; p.level &lt;&lt; "\n"
+				  &lt;&lt; "email: " &lt;&lt; p.email &lt;&lt; "\n"
+				  &lt;&lt; "sendtime: " &lt;&lt; p.sendtime &lt;&lt; "\n"
+				  &lt;&lt; "regtime: " &lt;&lt; p.regtime &lt;&lt; "\n\n";
+	}
+};
+int main()
+{
+	ofstream fout("Persons.stru");
+	for (Person p; p.get(cin, cout);) //从屏幕读入Person直到空
+		fout &lt;&lt; p.putFileCSV();		  //以CSV格式写入文件
+	fout.close();
+	ifstream fin("Persons.stru");
+	CSV csv;
+	csv.get(fin); //读入CSV文件
+	fin.close();
+	for (auto line : csv.v) //对于读入的每一行信息
+	{
+		Person p;
+		p.getCSV(line);
+		cout &lt;&lt; p;
+	}
+}
+</code></pre><h3 id="多文件合并保存和读出">多文件合并保存和读出</h3><h4 id="实验要求-1">实验要求</h4><p>循环输入多个文件名（不超过200MB，可以自己确定），每输入一个，就把该文件的文件名（最多300字节）、文件大小(long)和文件内容写入文件FileSet.pak中，输入文件名为空时跳出循环。然后，读FileSet.pak，每读出一个文件就把它原来的文件名加上一个序号保存起来。</p><p>合并时可以先取得文件大小，然后边读边写。</p><h4 id="源代码-1">源代码</h4><p>数据的交换格式格式使用JSON，正文内容使用Base64编码。</p><h5 id="encodecpp">encode.cpp</h5><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const int BUFSIZE = 200 &lt;&lt; 20;
+const string CONVERT_TABLE =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	"abcdefghijklmnopqrstuvwxyz"
+	"0123456789+/";
+char buf[BUFSIZE];
+string base64Encode(char sourcebuf[], int buflen)
+{
+	string ret;
+	char split3[3];
+	unsigned int split4[4], len = buflen, i = 0;
+	while (len--)
+	{
+		split3[i++] = *(sourcebuf++);
+		if (i == 3)
+		{
+			split4[0] = (split3[0] &amp; 0xfc) &gt;&gt; 2;							   //第一个字节取前6位并将其右移2位
+			split4[1] = ((split3[0] &amp; 0x03) &lt;&lt; 4) + ((split3[1] &amp; 0xf0) &gt;&gt; 4); //第一个字节取后2位并左移4位 + 第二个字节取前4位并右移4位
+			split4[2] = ((split3[1] &amp; 0x0f) &lt;&lt; 2) + ((split3[2] &amp; 0xc0) &gt;&gt; 6); //第二个字节取后4位并左移2位 + 第三个字节取前2位并右移6位
+			split4[3] = (split3[2] &amp; 0x3f);									   //第三个字节取后六位并且无需移位
+			for (int j = 0; j &lt; 4; ++j)										   //从Base64编码表中查询split对应元素索引的Base64编码
+				ret += CONVERT_TABLE[split4[j]];
+			i = 0;
+		}
+	}
+	if (i)
+	{
+		if (i == 1)
+		{
+			split4[0] = (split3[0] &amp; 0xfc) &gt;&gt; 2;
+			split4[1] = (split3[0] &amp; 0x03 &lt;&lt; 4);
+			for (int j = 0; j &lt; 2; ++j)
+				ret += CONVERT_TABLE[split4[j]];
+			ret += "==";
+		}
+		if (i == 2)
+		{
+			split4[0] = (split3[0] &amp; 0xfc) &gt;&gt; 2;
+			split4[1] = ((split3[0] &amp; 0x03) &lt;&lt; 4) + ((split3[1] &amp; 0xf0) &gt;&gt; 4);
+			split4[2] = ((split3[1] &amp; 0x0f) &lt;&lt; 2);
+			for (int j = 0; j &lt; 3; j++)
+				ret += CONVERT_TABLE[split4[j]];
+			ret += "=";
+		}
+	}
+	return ret;
+}
+int main()
+{
+	ofstream fout("FileSet.pak");
+	fout &lt;&lt; "{\"data\": [\n";
+	int first = 1;
+	for (string name; cout &lt;&lt; "Input file name:", getline(cin, name);)
+	{
+		ifstream fin(name, ios::binary);
+		if (!fin.is_open())
+		{
+			cout &lt;&lt; "Can not open " &lt;&lt; name &lt;&lt; "\n";
+			continue;
+		}
+		fin.read(buf, BUFSIZE);
+		if (first)
+			first = 0;
+		else
+			fout &lt;&lt; " ,\n";
+		fout &lt;&lt; " {\n"
+			 &lt;&lt; "  \"name\": \"" &lt;&lt; name &lt;&lt; "\",\n"
+			 &lt;&lt; "  \"size\": \"" &lt;&lt; to_string(fin.gcount()) &lt;&lt; "\",\n"
+			 &lt;&lt; "  \"content\": \"" &lt;&lt; base64Encode(buf, fin.gcount()) &lt;&lt; "\"\n"
+			 &lt;&lt; " }";
+	}
+	fout &lt;&lt; "\n]}";
+}
+</code></pre><h5 id="decodecpp">decode.cpp</h5><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+const string CONVERT_TABLE =
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+	"abcdefghijklmnopqrstuvwxyz"
+	"0123456789+/";
+string base64Decode(const string &amp;s)
+{
+	string::const_iterator sourcebuf = s.begin();
+	const int buflen = s.size();
+	string ret;
+	unsigned char split3[3];
+	unsigned char split4[4];
+	int len = buflen, ec = 0, seg = buflen / 4; //计算共可以切成几组
+	while (sourcebuf[--len] == '=')				//判断末尾有几个等号，由此可知最后四个字节该如何处理
+		++ec;
+	for (int k = 0; k &lt; seg; ++k)
+	{
+		for (int j = 0; j &lt; 4; ++j) //每四字节为一组进行处理
+		{
+			int index = 0;
+			char c = *(sourcebuf++);
+			for (int i = 0; i &lt; CONVERT_TABLE.size(); ++i) //由码索引数
+			{
+				if (CONVERT_TABLE[i] == c)
+				{
+					index = i;
+					break;
+				}
+			}
+			split4[j] = index;
+		}
+		if (k + 1 == seg)
+		{
+			if (ec == 2) //当末尾有两个等号时的处理
+			{
+				split3[0] = (split4[0] &lt;&lt; 2) + ((split4[1] &amp; 0x30) &gt;&gt; 4);
+				ret += split3[0];
+			}
+			else if (ec == 1) //当末尾有一个等号时的处理
+			{
+				split3[0] = (split4[0] &lt;&lt; 2) + ((split4[1] &amp; 0x30) &gt;&gt; 4);
+				split3[1] = ((split4[1] &amp; 0x0f) &lt;&lt; 4) + ((split4[2] &amp; 0x3c) &gt;&gt; 2);
+				ret += split3[0];
+				ret += split3[1];
+			}
+			else
+			{
+				split3[0] = ((split4[0] &amp; 0x3f) &lt;&lt; 2) + ((split4[1] &amp; 0x30) &gt;&gt; 4);
+				split3[1] = ((split4[1] &amp; 0x0f) &lt;&lt; 4) + ((split4[2] &amp; 0x3c) &gt;&gt; 2);
+				split3[2] = ((split4[2] &amp; 0x03) &lt;&lt; 6) + split4[3];
+				for (int j = 0; j &lt; 3; ++j)
+					ret += split3[j];
+			}
+		}
+		else
+		{
+			split3[0] = ((split4[0] &amp; 0x3f) &lt;&lt; 2) + ((split4[1] &amp; 0x30) &gt;&gt; 4);
+			split3[1] = ((split4[1] &amp; 0x0f) &lt;&lt; 4) + ((split4[2] &amp; 0x3c) &gt;&gt; 2);
+			split3[2] = ((split4[2] &amp; 0x03) &lt;&lt; 6) + split4[3];
+			for (int j = 0; j &lt; 3; ++j)
+				ret += split3[j];
+		}
+	}
+	return ret;
+}
+int main()
+{
+	ifstream fin("FileSet.pak");
+	unordered_map&lt;string, string&gt; mp;
+	int cnt = 0, tmp;
+	for (string s; getline(fin, s);)
+	{
+		if (s.find("[") != s.npos)
+			continue;
+		if (s.find("]") != s.npos)
+			break;
+		if (tmp = s.rfind(","), tmp != s.npos)
+			s.erase(tmp);
+		if (s.find("}") != s.npos)
+		{
+			ofstream fout(to_string(++cnt) + "." + mp["name"]);
+			fout &lt;&lt; base64Decode(mp["content"]);
+			mp.clear();
+		}
+		else if (tmp = s.find(":"), tmp != s.npos)
+		{
+			string t = s.substr(tmp + 1);
+			s.erase(tmp);
+			s.erase(s.find_last_not_of("\" ") + 1);
+			t.erase(t.find_last_not_of("\" ") + 1);
+			mp.insert({s.substr(s.find_first_not_of("\" ")), t.substr(t.find_first_not_of("\" "))});
+		}
+	}
+}
+</code></pre><h2 id="实验体会">实验体会</h2><p>在结构数据保存和读出实验中，使用了CSV表格的格式来存储数据，然而这个格式操作有些繁琐，因此单独设计了一个struct对其进行操作，使得代码更加清晰易读。</p><p>在多文件的合并保存和读出实验中，使用了流行的JSON格式来保存数据。然而，使用JSON保存文件的正文时，很难区分JSON本身格式上的内容和文本文档的内容；并且很多文件是不可以按照ascii文本文档的方式打开的。解决方式是使用二进制方式打开文件，并对其内容使用Base64形式进行编码，最终得以解决问题。</p></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>
