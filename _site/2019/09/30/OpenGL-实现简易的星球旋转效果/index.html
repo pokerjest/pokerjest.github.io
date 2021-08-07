@@ -1,0 +1,277 @@
+<!DOCTYPE html><html><head><title> OpenGL 实现简易的星球旋转效果 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="OpenGL 实现简易的星球旋转效果" /><meta property="og:locale" content="en_US" /><meta name="description" content="使用 OpenGL 实现简易的星球旋转效果，如图 1。程序执行效果见附带压缩包的 EXE 程序（EXE 文件为 Win 程序，使用 Mac OS 和 Linux 的同学请参照 Win 平台下的执行效果） 。" /><meta property="og:description" content="使用 OpenGL 实现简易的星球旋转效果，如图 1。程序执行效果见附带压缩包的 EXE 程序（EXE 文件为 Win 程序，使用 Mac OS 和 Linux 的同学请参照 Win 平台下的执行效果） 。" /><link rel="canonical" href="http://localhost:4000/2019/09/30/OpenGL-%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93%E7%9A%84%E6%98%9F%E7%90%83%E6%97%8B%E8%BD%AC%E6%95%88%E6%9E%9C/" /><meta property="og:url" content="http://localhost:4000/2019/09/30/OpenGL-%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93%E7%9A%84%E6%98%9F%E7%90%83%E6%97%8B%E8%BD%AC%E6%95%88%E6%9E%9C/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-09-30T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="OpenGL 实现简易的星球旋转效果" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/09/30/OpenGL-%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93%E7%9A%84%E6%98%9F%E7%90%83%E6%97%8B%E8%BD%AC%E6%95%88%E6%9E%9C/","datePublished":"2019-09-30T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/09/30/OpenGL-%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93%E7%9A%84%E6%98%9F%E7%90%83%E6%97%8B%E8%BD%AC%E6%95%88%E6%9E%9C/"},"headline":"OpenGL 实现简易的星球旋转效果","description":"使用 OpenGL 实现简易的星球旋转效果，如图 1。程序执行效果见附带压缩包的 EXE 程序（EXE 文件为 Win 程序，使用 Mac OS 和 Linux 的同学请参照 Win 平台下的执行效果） 。","dateModified":"2019-09-30T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E5%8A%9F%E8%83%BD%E8%A6%81%E6%B1%82">功能要求</a><li><a href="#%E5%AE%9E%E7%8E%B0%E6%8F%90%E7%A4%BA">实现提示</a><li><a href="#project3">Project3</a><ol><li><a href="#%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C">运行效果</a><li><a href="#%E5%8E%9F%E7%90%86">原理</a><ol><li><a href="#%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E4%B8%8B%E7%BB%95%E5%8E%9F%E7%82%B9%E8%87%AA%E8%BD%AC">二维坐标下绕原点自转</a><li><a href="#%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E4%B8%8B%E7%BB%95%E5%8E%9F%E7%82%B9%E5%85%AC%E8%BD%AC">二维坐标下绕原点公转</a></ol><li><a href="#%E6%BA%90%E4%BB%A3%E7%A0%81maincpp">源代码main.cpp</a></ol><li><a href="#starc">star.c</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">OpenGL 实现简易的星球旋转效果</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 30 Sep 2019 <i class="fas fa-file-word fa-fw"></i> 8124字 <i class="fas fa-clock fa-fw"></i> 28分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><p>使用 OpenGL 实现简易的星球旋转效果，如图 1。程序执行效果见附带压缩包的 EXE 程序（EXE 文件为 Win 程序，使用 Mac OS 和 Linux 的同学请参照 Win 平台下的执行效果） 。</p><h2 id="功能要求">功能要求</h2><ol><li>使用不同尺寸的线框球体（Wire Sphere）表示大小两个星球<li>使用平移和旋转操作实现小星球自转和绕大星球旋转的功能，键盘事件响应如下： d 和 shift+d: 分别控制小星球正反两个方向的自转； y 和 shift+y: 分别控制小星球绕大星球的正方向和反方向旋转<li>语言不限，开发平台不限。具体效果展示允许略有差异。<li>要求使用 OpenGL 着色器编程方式实现程序。</ol><h2 id="实现提示">实现提示</h2><p>正方向旋转可以通过以下方式求得：d = (d + 10) % 360；反方向则为 d = (d - 10) % 360</p><h2 id="project3">Project3</h2><p>一开始我的开发环境是搭在 Linux 环境下的，但是运行时发生了各种异常，在吴飚、王威等同学讨论之后（感谢他们），重新在 Windows 下使用 VS2019 开发。相关项目目录是<code>/Project3</code>，打包好的成品是<code>project3.exe</code>。</p><h3 id="运行效果">运行效果</h3><p>这里不太会画线框球体，于是用二十个三角形去模拟这个球体。</p><p>另外，遇到很迷的问题，恒星没有显示出来…</p><p>打开的效果如下。</p><p><img src="/assets/image/2019-09-30-2.jpg" alt="2" /></p><p>按了若干下 d 和 y 之后如图，行星转到了上方，并且发生了一定的自转（极点位置变动了）。</p><p><img src="/assets/image/2019-09-30-3.jpg" alt="3" /></p><h3 id="原理">原理</h3><h4 id="二维坐标下绕原点自转">二维坐标下绕原点自转</h4><p>记$\theta$是要旋转的角度，记$dayd$是幅角为$\theta$的单位向量。考虑复数的乘法意义：幅角相加、模长相乘，只需要将原来的点在复数域上与<code>dayd</code>做一次乘法即可。</p><p>$aPos’=(aPos.x<em>dayd.x-aPos.y</em>dayd.y, aPos.y<em>dayd.x+aPos.x</em>dayd.y)$</p><h4 id="二维坐标下绕原点公转">二维坐标下绕原点公转</h4><p>公转相对容易，只要算出现在位置和原位置的向量差$yeard$即可。</p><p>$aPos’=aPos+yeard$</p><h3 id="源代码maincpp">源代码<code>main.cpp</code></h3><pre><code class="language-cpp">#include &lt;glad/glad.h&gt;
+#include &lt;GLFW/glfw3.h&gt;
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int year = 0, day = 0;
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+void processInput(GLFWwindow* window);
+
+// settings
+const unsigned int SCR_WIDTH = 1024;
+const unsigned int SCR_HEIGHT = 768;
+
+const char* vertexShaderSource =
+"#version 330 core\n"
+"layout (location = 0) in vec3 aPos;\n"
+"uniform vec2 yeard;\n"
+"uniform vec2 dayd;\n"
+"void main()\n"
+"{\n"
+"if(aPos.x*aPos.x+ aPos.y * aPos.y+ aPos.x * aPos.y&lt;0.06)\n"
+"   gl_Position = vec4(aPos.x*dayd.x-aPos.y*dayd.y+yeard.x, aPos.y*dayd.x+aPos.x*dayd.y+yeard.y, aPos.z, 1.0);\n"
+"else\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0";
+const char* fragmentShaderSource =
+"#version 330 core\n"
+"out vec4 FragColor;\n"
+"void main()\n"
+"{\n"
+"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"}\n\0";
+
+int main()
+{
+	//glfw初始化
+	glfwInit();
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	//glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);//MacOS
+
+	//glfw window creation
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "17341163 WuK", NULL, NULL);
+	if (window == NULL)
+	{
+		std::cout &lt;&lt; "Failed to create GLFW window" &lt;&lt; std::endl;
+		glfwTerminate();
+		return -1;
+	}
+	glfwMakeContextCurrent(window);
+	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+	//glad: load all OpenGL function pointers
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout &lt;&lt; "Failed to initialize GLAD" &lt;&lt; std::endl;
+		return -1;
+	}
+
+	//build and compile 着色器程序
+
+		//顶点着色器
+	unsigned int vertexShader;
+	vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShader, 1, &amp;vertexShaderSource, NULL);
+	glCompileShader(vertexShader);
+	//检查顶点着色器是否编译错误
+	int  success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &amp;success);
+	if (!success)
+	{
+		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+		std::cout &lt;&lt; "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" &lt;&lt; infoLog &lt;&lt; std::endl;
+	}
+	else {
+		std::cout &lt;&lt; "vertexShader complie SUCCESS" &lt;&lt; std::endl;
+	}
+	//片段着色器
+	unsigned int fragmentShader;
+	fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &amp;fragmentShaderSource, NULL);
+	glCompileShader(fragmentShader);
+	//检查片段着色器是否编译错误
+	glGetShaderiv(fragmentShader, GL_LINK_STATUS, &amp;success);
+	if (!success) {
+		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+		std::cout &lt;&lt; "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" &lt;&lt; infoLog &lt;&lt; std::endl;
+	}
+	else {
+		std::cout &lt;&lt; "fragmentShader complie SUCCESS" &lt;&lt; std::endl;
+	}
+
+	//连接到着色器程序
+	unsigned int shaderProgram;
+	shaderProgram = glCreateProgram();
+	glAttachShader(shaderProgram, vertexShader);
+	glAttachShader(shaderProgram, fragmentShader);
+	glLinkProgram(shaderProgram);
+	//检查片段着色器是否编译错误
+	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &amp;success);
+	if (!success) {
+		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+		std::cout &lt;&lt; "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" &lt;&lt; infoLog &lt;&lt; std::endl;
+	}
+	else {
+		std::cout &lt;&lt; "shaderProgram complie SUCCESS" &lt;&lt; std::endl;
+	}
+	//连接后删除
+	glDeleteShader(vertexShader);
+	glDeleteShader(fragmentShader);
+
+	const double r1 = 0.2,r2=0.3,r3=0.7,pi=acos(-1);
+	const int num = 9;
+
+	float vertices[(2+num)*3*2] = {
+		0.0f, -0.1f, sqrt(r1*r1-0.01),
+		0.0f, 0.1f, -sqrt(r1*r1-0.01)
+	};
+	unsigned int indices[num * 2 * 3 * 2];
+	for (int i = 0; i &lt; num; ++i)
+	{
+		vertices[i * 3 + 6] = r1*cos(2*pi*i/num);
+		vertices[i * 3 + 1 + 6] = r1*sin(2 * pi * i / num);
+		vertices[i * 3 + 2 + 6] = 0;
+	}
+	for (int i = 0; i &lt; (2 + num) * 3; ++i)
+		vertices[i + (2 + num) * 3] = r2 / r1 * vertices[i];
+	for (int i = 0; i &lt; num; ++i)
+	{
+		int j = (i + 1) % num;
+		indices[2 * i * 3]= indices[2 * i * 3 + 3] = i+2 ;
+		indices[2 * i * 3 + 1] = indices[2 * i * 3+ 4]= j+2;
+		indices[2 * i * 3 + 2] = 0 ;
+		indices[2 * i * 3 + 5] = 1 ;
+
+		indices[2 * i * 3+ num * 2 * 3] = indices[2 * i * 3 + 3+ num * 2 * 3] = i + 2+ (2 + num) * 3;
+		indices[2 * i * 3 + 1+ num * 2 * 3] = indices[2 * i * 3 + 4+ num * 2 * 3] = j + 2+ (2 + num) * 3;
+		indices[2 * i * 3 + 2+ num * 2 * 3] = 0+ (2 + num) * 3;
+		indices[2 * i * 3 + 5+ num * 2 * 3] = 1+ (2 + num) * 3;
+	}
+
+	unsigned int VBO;
+	glGenBuffers(1, &amp;VBO);
+	unsigned int VAO;
+	glGenVertexArrays(1, &amp;VAO);
+	unsigned int EBO;
+	glGenBuffers(1, &amp;EBO);
+
+	//初始化代码（只运行一次 (除非你的物体频繁改变))
+		// 1. 绑定VAO
+	glBindVertexArray(VAO);
+	// 2. 把我们的顶点数组复制到一个顶点缓冲中，供OpenGL使用
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+	// 3. 复制我们的索引数组到一个索引缓冲中，供OpenGL使用
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	// 4. 设定顶点属性指针
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glEnableVertexAttribArray(0);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+	//线框模式wireframe
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+	// 渲染循环
+	while (!glfwWindowShouldClose(window))
+	{
+		// 输入
+		processInput(window);
+
+		// 渲染指令
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		glUseProgram(shaderProgram);
+		glBindVertexArray(VAO);
+		glDrawElements(GL_TRIANGLES, sizeof(indices)/sizeof(indices[0]), GL_UNSIGNED_INT, 0);
+
+		glUseProgram(shaderProgram);//通过glUniform4f函数设置uniform值
+		glUniform2f(glGetUniformLocation(shaderProgram, "yeard"),r3*cos(2*pi*year/360),r3*sin(2*pi*year/360));
+		glUniform2f(glGetUniformLocation(shaderProgram, "dayd"), cos(2 * pi * day / 360),sin(2 * pi * day / 360));
+
+		// 检查并调用事件，交换缓冲
+		glfwSwapBuffers(window);
+		glfwPollEvents();
+	}
+	glDeleteVertexArrays(1, &amp;VAO);
+	glDeleteBuffers(1, &amp;VBO);
+	glDeleteBuffers(1, &amp;EBO);
+
+	glfwTerminate();
+	return 0;
+}
+
+void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window)
+{
+	int dday=0, dyear=0;
+	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
+		dday = 1;
+	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS)
+		dyear = 1;
+	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS||glfwGetKey(window,GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS)//是否按下了返回键
+		dday = 360 - dday, dyear = 360 - dyear;
+	day = (day + dday) % 360;
+	year = (year + dyear) % 360;
+}
+</code></pre><h2 id="starc">star.c</h2><p>一开始没有仔细阅读老师要求（「使用着色器编程」），因此先用 OpenGL 的固定管线实现了要求（简单了好多啊）。这一版是在 Linux 下开发的，得到的生成文件是<code>star.out</code>。后来我在 Windows 下重新编译了这段代码得到了<code>star.exe</code>。</p><p>运行<code>star.exe</code>结果如下。</p><p><img src="/assets/image/2019-09-30-1.jpg" alt="运行结果" /></p><pre><code class="language-c">/*
+gcc star.c -o star.exe -lGL -lGLU -lglut
+./star.exe
+*/
+#include &lt;GL/glut.h&gt;
+int year = 0, day = 0;
+void display()
+{
+	glClear(GL_COLOR_BUFFER_BIT); //清空颜色缓冲区
+	glPushMatrix();				  //压栈
+	glColor3f(1, 0.5, 0);		  //恒星是橙黄色的
+	glutWireSphere(3, 20, 16);	//绘制恒星
+	glRotatef(year, 0, 1, 0);	 //沿y轴旋转
+	glTranslatef(6, 0, 0);		  //移动画笔，画行星
+	glRotatef(day, 0, 1, 0);	  //沿y轴旋转
+	glColor3f(0, 0.5, 1);		  //行星是蔚蓝色的
+	glutWireSphere(1, 15, 12);	//绘制行星
+	glPopMatrix();				  //弹栈，恢复绘制坐标
+	glutSwapBuffers();
+	glFlush(); //刷新窗口以显示当前绘制图形
+}
+void reshape(int w, int h)
+{
+	glViewport(0, 0, (GLsizei)w, (GLsizei)h); //设置机口
+	glMatrixMode(GL_PROJECTION);			  //指定哪一个矩阵是当前矩阵
+	glLoadIdentity();
+	gluPerspective(60, (GLfloat)w / (GLfloat)h, 1.0, 20); //透视投影矩阵(fovy,aspect,zNear,zFar);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(9, 9, 9, 0, 0, 0, 0, 1, 0); //观察者位置，观察者朝向的位置，观察者头顶位置
+}
+void keyboard(unsigned char key, int x, int y)
+{
+	if (key == 'd')
+		day = (day + 10) % 360;
+	else if (key == 'D') // 大写情况下是逆向的
+		day = (day + 350) % 360;
+	else if (key == 'y')
+		year = (year + 10) % 360;
+	else if (key == 'Y') // 大写情况下是逆向的
+		year = (year + 350) % 360;
+	else
+		return;
+	glutPostRedisplay();
+}
+int main(int argc, char **argv)
+{
+	glutInit(&amp;argc, argv);
+	glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE); //缓存模式
+	glutInitWindowSize(600, 600);				 //显示框的大小
+	glutInitWindowPosition(100, 100);			 //确定显示框左上角的位置
+	glutCreateWindow("17341163_吴坎_CG_HW3");
+	glClearColor(0, 0, 0, 0); // 初始化
+	glShadeModel(GL_FLAT);	//选择平面明暗模式或光滑明暗模式
+	glutDisplayFunc(display);
+	glutReshapeFunc(reshape);
+	glutKeyboardFunc(keyboard);
+	glutMainLoop();
+}
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

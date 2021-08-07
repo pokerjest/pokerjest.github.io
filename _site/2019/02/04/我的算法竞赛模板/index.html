@@ -1,0 +1,3243 @@
+<!DOCTYPE html><html><head><title> 我的算法竞赛模板 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="我的算法竞赛模板" /><meta property="og:locale" content="en_US" /><meta name="description" content="本页是一个汇总页。" /><meta property="og:description" content="本页是一个汇总页。" /><link rel="canonical" href="http://localhost:4000/2019/02/04/%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/" /><meta property="og:url" content="http://localhost:4000/2019/02/04/%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-02-04T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="我的算法竞赛模板" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/02/04/%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/","datePublished":"2019-02-04T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/04/%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/"},"headline":"我的算法竞赛模板","description":"本页是一个汇总页。","dateModified":"2019-02-04T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF">我的算法竞赛模板</a><li><a href="#-posttitle-">{{ post.title }}</a><li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">数据结构</a><ol><li><a href="#%E7%A6%BB%E6%95%A3%E5%8C%96">离散化</a><li><a href="#%E5%B9%B6%E6%9F%A5%E9%9B%86">并查集</a><li><a href="#%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E5%92%8C%E5%8D%95%E8%B0%83%E6%A0%88">单调队列和单调栈</a><li><a href="#st-%E8%A1%A8">ST 表</a><li><a href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84">树状数组</a><ol><li><a href="#%E4%B8%80%E7%BB%B4">一维</a><li><a href="#%E4%BA%8C%E7%BB%B4">二维</a></ol><li><a href="#%E5%8A%A8%E6%80%81%E5%BC%80%E7%82%B9%E7%BA%BF%E6%AE%B5%E6%A0%91">动态开点线段树</a><li><a href="#%E6%97%A0%E6%97%8B-treap">无旋 Treap</a><ol><li><a href="#%E6%8C%89%E5%AD%90%E6%A0%91%E5%A4%A7%E5%B0%8F%E5%88%86%E8%A3%82">按子树大小分裂</a><li><a href="#%E6%8C%89%E5%80%BC%E5%A4%A7%E5%B0%8F%E5%88%86%E8%A3%82">按值大小分裂</a></ol><li><a href="#%E8%8E%AB%E9%98%9F">莫队</a><ol><li><a href="#%E5%B8%A6%E4%BF%AE%E8%8E%AB%E9%98%9F">带修莫队</a><li><a href="#%E6%A0%91%E4%B8%8A%E8%8E%AB%E9%98%9F">树上莫队</a><li><a href="#%E6%A0%91%E4%B8%8A%E5%B8%A6%E4%BF%AE%E8%8E%AB%E9%98%9F">树上带修莫队</a></ol><li><a href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D">字符串/模式匹配</a><ol><li><a href="#hashstring">HashString</a><li><a href="#kmp">KMP</a><li><a href="#ac-%E8%87%AA%E5%8A%A8%E6%9C%BA">AC 自动机</a><li><a href="#%E6%9A%B4%E5%8A%9B%E5%9B%9E%E6%96%87">暴力回文</a><li><a href="#%E7%BA%BF%E6%80%A7%E5%9B%9E%E6%96%87">线性回文</a><li><a href="#%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84">后缀数组</a></ol></ol><li><a href="#%E5%9B%BE%E8%AE%BA">图论</a><ol><li><a href="#%E6%9C%80%E7%9F%AD%E8%B7%AF">最短路</a><ol><li><a href="#dijkstra-%E7%AE%97%E6%B3%95">Dijkstra 算法</a><li><a href="#bellmanford-%E7%AE%97%E6%B3%95">BellmanFord 算法</a><ol><li><a href="#%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F">差分约束系统</a></ol><li><a href="#floyed-%E6%B1%82%E5%A4%9A%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF">Floyed 求多源最短路</a><li><a href="#astar-%E6%B1%82-k-%E7%9F%AD%E8%B7%AF">Astar 求 k 短路</a></ol><li><a href="#%E7%BD%91%E7%BB%9C%E6%B5%81">网络流</a><ol><li><a href="#isap-%E6%B1%82%E6%9C%80%E5%A4%A7%E6%B5%81">ISAP 求最大流</a><li><a href="#primaldual-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">PrimalDual 求费用流</a><li><a href="#ek-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">EK 求费用流</a><li><a href="#zkw-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">ZKW 求费用流</a><li><a href="#%E4%B8%8A%E4%B8%8B%E7%95%8C%E6%9C%89%E6%BA%90%E6%B1%87%E7%BD%91%E7%BB%9C%E6%B5%81">上下界有源汇网络流</a><li><a href="#%E5%88%A4%E6%96%AD%E8%BE%B9%E6%98%AF%E5%90%A6%E5%B1%9E%E4%BA%8E%E6%9F%90%E4%B8%80%E5%89%B2%E9%9B%86">判断边是否属于某一割集</a><li><a href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E8%BD%AC%E8%B4%B9%E7%94%A8%E6%B5%81">线性规划转费用流</a></ol><li><a href="#%E6%AC%A7%E6%8B%89%E8%B7%AF">欧拉路</a><ol><li><a href="#%E6%B7%B7%E5%90%88%E5%9B%BE%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF%E5%88%A4%E5%AE%9A">混合图欧拉回路判定</a></ol><li><a href="#%E8%BF%9E%E9%80%9A%E6%80%A7">连通性</a><ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE%E6%B1%82%E5%89%B2%E5%92%8C%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F">无向图求割和双连通分量</a><ol><li><a href="#%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%9B%BE%E7%9A%84%E6%9E%84%E9%80%A0">双连通图的构造</a></ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE%E6%B1%82%E8%BE%B9%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E6%9C%89%E5%90%91%E5%9B%BE%E6%B1%82%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F">无向图求边双连通分量&amp;有向图求强连通分量</a><ol><li><a href="#2-sat">2-SAT</a><ol><li><a href="#2-sat-%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E6%B1%82%E5%AD%97%E5%85%B8%E5%BA%8F%E6%9C%80%E5%B0%8F%E7%9A%84%E8%A7%A3">2-SAT 暴力搜索求字典序最小的解</a></ol></ol></ol><li><a href="#%E4%BA%8C%E5%88%86%E5%9B%BE">二分图</a><ol><li><a href="#hungary-%E6%B1%82%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">Hungary 求最大匹配</a><li><a href="#hopcroftkarp-%E6%B1%82%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">HopcroftKarp 求最大匹配</a><li><a href="#kuhnmunkres-%E6%B1%82%E6%9C%80%E4%BC%98%E5%AE%8C%E5%A4%87%E5%8C%B9%E9%85%8D">KuhnMunkres 求最优完备匹配</a></ol><li><a href="#%E5%B8%A6%E8%8A%B1%E6%A0%91">带花树</a><ol><li><a href="#%E4%B8%80%E8%88%AC%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">一般图最大匹配</a></ol><li><a href="#%E6%A0%91%E5%BD%A2%E5%9B%BE">树形图</a><ol><li><a href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91">最小生成树</a><ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE">无向图</a><li><a href="#%E6%9C%89%E5%90%91%E5%9B%BE">有向图</a></ol><li><a href="#%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E4%B8%8E-lca">树链剖分与 LCA</a><li><a href="#%E7%82%B9%E5%89%96%E7%82%B9%E5%88%86%E6%B2%BB">点剖（点分治）</a></ol></ol><li><a href="#%E6%95%B0%E8%AE%BA">数论</a><ol><li><a href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95">辗转相除法</a><ol><li><a href="#%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">裴蜀定理</a><ol><li><a href="#%E6%8E%A8%E8%AE%BA">推论</a></ol></ol><li><a href="#%E5%90%8C%E4%BD%99%E7%B3%BB%E8%BF%90%E7%AE%97">同余系运算</a><ol><li><a href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86%E8%A7%A3%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E7%BB%84">中国剩余定理解同余方程组</a><li><a href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99">二次剩余</a></ol><li><a href="#%E6%AC%A7%E6%8B%89%E7%AD%9B">欧拉筛</a><ol><li><a href="#%E7%9B%B4%E6%8E%A5%E6%B1%82%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">直接求欧拉函数</a><li><a href="#%E5%B8%B8%E8%A7%81%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0%E5%8F%98%E6%8D%A2">常见数论函数变换</a><ol><li><a href="#%E5%89%8D%E7%BC%80%E5%92%8C">前缀和</a><li><a href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94">莫比乌斯反演</a></ol></ol><li><a href="#pollardrho-%E5%A4%A7%E6%95%B0%E7%B4%A0%E5%9B%A0%E5%AD%90%E5%88%86%E8%A7%A3">PollardRho 大数素因子分解</a><li><a href="#%E5%BF%AB%E9%80%9F%E5%8F%98%E6%8D%A2">快速变换</a><ol><li><a href="#%E8%9D%B4%E8%9D%B6%E5%8F%98%E6%8D%A2%E9%9B%B7%E5%BE%B7%E5%8F%98%E6%8D%A2">蝴蝶变换（雷德变换）</a><li><a href="#%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2">快速傅里叶变换</a><li><a href="#%E5%BF%AB%E9%80%9F%E6%95%B0%E8%AE%BA%E5%8F%98%E6%8D%A2">快速数论变换</a><ol><li><a href="#%E5%B8%B8%E8%A7%81%E7%B4%A0%E6%95%B0%E7%9A%84%E5%8E%9F%E6%A0%B9">常见素数的原根</a></ol><li><a href="#%E5%BF%AB%E9%80%9F%E6%B2%83%E5%B0%94%E4%BB%80%E5%8F%98%E6%8D%A2">快速沃尔什变换</a><ol><li><a href="#and">AND</a><li><a href="#or">OR</a><li><a href="#xor">XOR</a><li><a href="#xnornandnor">XNOR、NAND、NOR</a></ol></ol><li><a href="#pell-%E6%96%B9%E7%A8%8B">Pell 方程</a><li><a href="#bertrand-%E7%8C%9C%E6%83%B3">Bertrand 猜想</a><li><a href="#%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86">威尔逊定理</a><li><a href="#jacobis-four-square-theorem">Jacobi’s Four Square Theorem</a></ol><li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6">组合数学</a><ol><li><a href="#%E7%BB%84%E5%90%88%E6%95%B0%E5%8F%96%E6%A8%A1">组合数取模</a><li><a href="#%E7%BB%84%E5%90%88%E6%95%B0-lcm">组合数 LCM</a><li><a href="#stirling-%E6%95%B0">Stirling 数</a><ol><li><a href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0">第一类斯特林数</a><li><a href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0">第二类斯特林数</a><li><a href="#%E6%96%AF%E7%89%B9%E6%9E%97%E8%BF%91%E4%BC%BC%E5%85%AC%E5%BC%8F">斯特林近似公式</a></ol><li><a href="#%E5%B0%8F%E7%90%83%E5%85%A5%E7%9B%92%E6%A8%A1%E5%9E%8B%E9%80%9A%E8%A7%A3">小球入盒模型通解</a><li><a href="#%E7%BD%AE%E6%8D%A2">置换</a><li><a href="#%E7%94%9F%E6%88%90%E5%AD%97%E5%85%B8%E5%BA%8F">生成字典序</a><ol><li><a href="#%E4%B8%8B%E4%B8%80%E6%8E%92%E5%88%97">下一排列</a></ol><li><a href="#%E4%BA%8C%E9%A1%B9%E5%BC%8F%E5%8F%8D%E6%BC%94">二项式反演</a><li><a href="#%E7%AC%AC-k-%E5%B0%8F%E6%9C%9F%E6%9C%9B">第 k 小期望</a><li><a href="#%E9%94%99%E6%8E%92%E6%95%B0">错排数</a><li><a href="#bonuli-%E6%95%B0">Bonuli 数</a><li><a href="#catalan-%E6%95%B0">Catalan 数</a><li><a href="#bell-%E6%95%B0">Bell 数</a><ol><li><a href="#%E7%AD%89%E4%BB%B7%E7%B1%BB%E5%AE%B9%E6%96%A5">等价类容斥</a></ol><li><a href="#grey-%E7%A0%81">Grey 码</a><li><a href="#%E6%89%A9%E5%B1%95-cayley-%E5%85%AC%E5%BC%8F">扩展 Cayley 公式</a><li><a href="#%E8%B6%85%E7%AB%8B%E6%96%B9%E4%BD%93">超立方体</a><li><a href="#%E6%9E%9A%E4%B8%BE%E4%BD%8D%E9%9B%86-i-%E7%9A%84%E9%9D%9E%E7%A9%BA%E5%AD%90%E9%9B%86-j">枚举位集 I 的非空子集 J</a></ol><li><a href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0">线性代数</a><ol><li><a href="#%E7%9F%A9%E9%98%B5">矩阵</a><ol><li><a href="#%E4%B9%98%E6%B3%95%E5%92%8C%E5%BF%AB%E9%80%9F%E5%B9%82">乘法和快速幂</a><li><a href="#%E8%A1%8C%E5%88%97%E5%BC%8F">行列式</a><li><a href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83">高斯消元</a></ol><li><a href="#%E7%BA%BF%E6%80%A7%E5%9F%BA">线性基</a><ol><li><a href="#%E5%90%91%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9F%BA">向量线性基</a><li><a href="#%E5%BC%82%E6%88%96%E7%BA%BF%E6%80%A7%E5%9F%BA">异或线性基</a></ol></ol><li><a href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6">离散数学</a><ol><li><a href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E6%B1%82%E9%80%86%E5%BA%8F%E5%AF%B9">归并排序求逆序对</a><li><a href="#%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98">约瑟夫问题</a><li><a href="#%E5%A0%86%E7%9A%84%E6%93%8D%E4%BD%9C">堆的操作</a><li><a href="#%E8%94%A1%E5%8B%92%E5%85%AC%E5%BC%8F">蔡勒公式</a><li><a href="#%E6%9B%BC%E5%93%88%E9%A1%BF%E8%B7%9D%E7%A6%BB%E7%9A%84%E5%8F%98%E6%8D%A2">曼哈顿距离的变换</a><li><a href="#%E7%9A%AE%E5%85%8B%E5%AE%9A%E7%90%86">皮克定理</a><li><a href="#%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4%E7%9F%A9%E5%BD%A2%E5%91%A8%E9%95%BF%E5%B9%B6%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%89%AB%E6%8F%8F%E7%BA%BF%E6%80%BB%E7%BB%93">矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）</a></ol><li><a href="#%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90">数学分析</a><ol><li><a href="#%E5%A2%9E%E9%95%BF%E8%B6%8B%E5%8A%BF">增长趋势</a><li><a href="#%E7%A7%AF%E5%88%86%E8%A1%A8">积分表</a><li><a href="#%E7%A7%AF%E5%88%86%E6%B1%82%E5%87%A0%E4%BD%95%E9%87%8F">积分求几何量</a><ol><li><a href="#%E5%BC%A7%E9%95%BF">弧长</a><li><a href="#%E9%9D%A2%E7%A7%AF">面积</a><li><a href="#%E4%BD%93%E7%A7%AF">体积</a><li><a href="#%E6%97%8B%E8%BD%AC%E4%BD%93%E4%BE%A7%E9%9D%A2%E7%A7%AF">旋转体侧面积</a><li><a href="#%E6%96%B9%E5%90%91%E5%AF%BC%E6%95%B0">方向导数</a><li><a href="#%E6%9B%B2%E7%8E%87">曲率</a><li><a href="#%E7%A9%BA%E9%97%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%88%87%E7%BA%BF%E4%B8%8E%E6%B3%95%E5%B9%B3%E9%9D%A2">空间曲线的切线与法平面</a><li><a href="#%E7%A9%BA%E9%97%B4%E6%9B%B2%E9%9D%A2%E7%9A%84%E5%88%87%E5%B9%B3%E9%9D%A2%E4%B8%8E%E6%B3%95%E7%BA%BF">空间曲面的切平面与法线</a></ol><li><a href="#%E9%AB%98%E9%98%B6%E5%AF%BC%E6%95%B0%E4%B8%8E%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F">高阶导数与泰勒公式</a><ol><li><a href="#%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0">对数函数</a><li><a href="#%E5%B9%82%E5%87%BD%E6%95%B0">幂函数</a><li><a href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0">三角函数</a><li><a href="#%E6%8C%87%E6%95%B0%E5%87%BD%E6%95%B0">指数函数</a><li><a href="#%E4%BA%8C%E5%85%83%E5%87%BD%E6%95%B0">二元函数</a></ol><li><a href="#%E7%BA%A7%E6%95%B0%E9%83%A8%E5%88%86%E5%92%8C">级数部分和</a><ol><li><a href="#%E5%B9%82%E7%BA%A7%E6%95%B0">幂级数</a><li><a href="#%E8%B0%83%E5%92%8C%E7%BA%A7%E6%95%B0">调和级数</a></ol><li><a href="#%E4%BA%8C%E5%88%86%E6%B1%82%E9%9B%B6%E7%82%B9%E4%B8%89%E5%88%86%E6%B1%82%E6%9E%81%E5%80%BC%E7%82%B9">二分求零点、三分求极值点</a><li><a href="#%E8%87%AA%E9%80%82%E5%BA%94%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%B1%82%E7%A7%AF%E5%88%86">自适应辛普森求积分</a><li><a href="#%E6%8F%92%E5%80%BC%E6%B3%95">插值法</a></ol><li><a href="#%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95">计算几何</a><ol><li><a href="#%E4%BA%8C%E7%BB%B4">二维</a><li><a href="#%E4%B8%89%E7%BB%B4">三维</a></ol><li><a href="#%E9%AB%98%E7%B2%BE%E5%BA%A6">高精度</a><ol><li><a href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B4%E6%95%B0">无符号整数</a><li><a href="#%E5%88%86%E6%95%B0">分数</a><li><a href="#bitset-%E9%AB%98%E7%B2%BE%E5%BA%A6">bitset 高精度</a></ol><li><a href="#c%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B3">C++语言相关</a><ol><li><a href="#gcc-%E5%86%85%E7%BD%AE%E4%BD%8D%E8%BF%90%E7%AE%97">GCC 内置位运算</a><li><a href="#%E5%BC%80%E6%A0%88">开栈</a><ol><li><a href="#for-c">For C++</a><li><a href="#for-g">For G++</a></ol><li><a href="#%E8%AF%BB%E5%85%A5%E4%BC%98%E5%8C%96">读入优化</a><ol><li><a href="#c-%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88%E7%89%88">C 文件指针版</a><li><a href="#%E4%BB%BF-cio-%E6%B5%81%E6%B2%99%E9%9B%95%E7%89%88">仿 C++IO 流沙雕版</a></ol></ol></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">我的算法竞赛模板</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 04 Feb 2019 <i class="fas fa-file-word fa-fw"></i> 92087字 <i class="fas fa-clock fa-fw"></i> 307分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><blockquote><p>本页是一个汇总页。</p></blockquote><h1 id="我的算法竞赛模板"><a href="/2019/02/04/%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/">我的算法竞赛模板</a></h1><blockquote><p>本页是一个汇总页。</p></blockquote><p>{% for post in site.tags[‘算法竞赛模板’] %}</p><h1 id="-posttitle-"><a href="{{ post.url }}">{{ post.title }}</a></h1><p>{{post.content}}</p><p>{% endfor %}</p><h1 id="数据结构"><a href="/2019/02/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></h1><p>以下数据结构均采用 ll 作为值类型，应用时根据需求调整。</p><pre><code class="language-cpp">typedef long long ll;
+const ll INF = 1e9;  //表示（值）正无穷，且两个正无穷相加不会溢出
+const int NPOS = -1; //表示（下标）不存在
+</code></pre><h2 id="离散化">离散化</h2><p>在 vector 基础上的离散化，使用 push_back()向其中插值，init()排序并离散化，ask 查询离散化之后的值，at/[]运算符查离散前的值。</p><pre><code class="language-cpp">struct Ranker : vector&lt;ll&gt;
+{
+	void init() { sort(begin(), end()), resize(unique(begin(), end()) - begin()); }
+	int ask(ll x) const { return lower_bound(begin(), end(), x) - begin(); }
+};
+</code></pre><h2 id="并查集">并查集</h2><pre><code class="language-cpp">struct UnionfindSet : vector&lt;int&gt;
+{
+	UnionfindSet(int n) : vector&lt;int&gt;(n)
+	{
+		for (int i = 0; i &lt; n; ++i)
+			at(i) = i;
+	}
+	void merge(int u, int w)
+	{
+		if (w = ask(w), u = ask(u), w != u)
+			at(w) = u;
+	}
+	int ask(int u) { return at(u) != u ? at(u) = ask(at(u)) : u; }
+};
+</code></pre><h2 id="单调队列和单调栈">单调队列和单调栈</h2><p><a href="https://vjudge.net/solution/23585451">使用示例</a></p><p>每次取队尾就是单调栈，取队头就是单调队列。</p><pre><code class="language-cpp">typedef pair&lt;ll, int&gt; pli;
+struct Monotone : deque&lt;pli&gt;
+{
+	void push(const pli &amp;p, int k)
+	{
+		while (!empty() &amp;&amp; back().first &gt;= p.first)
+			pop_back();
+		for (push_back(p); p.second - front().second &gt;= k;)
+			pop_front();
+	}
+};
+</code></pre><h2 id="st-表">ST 表</h2><p><a href="https://vjudge.net/solution/14470893">使用示例</a></p><p>$O(n\log n)$预处理，$O(1)$求静态区间最小值。</p><pre><code class="language-cpp">/*
+//可选优化
+#define log2(n) LOG2[n]
+struct Log : vector&lt;ll&gt;
+{
+	Log(int N, ll E) : vector&lt;ll&gt;(N, -1)
+	{
+		for (int i = 1; i &lt; N; ++i)
+			at(i) = at(i / E) + 1;
+	}
+} LOG2(N, 2);
+*/
+struct SparseTable
+{
+	vector&lt;vector&lt;ll&gt;&gt; f;
+	SparseTable(const vector&lt;ll&gt; &amp;a) : f(log2(a.size()) + 1, a)
+	{
+		for (int k = 0; k + 1 &lt; f.size(); ++k)
+			for (int i = 0; i + (1 &lt;&lt; k) &lt; a.size(); ++i)
+				f[k + 1][i] = min(f[k][i], f[k][i + (1 &lt;&lt; k)]);
+	}
+	ll ask(int l, int r)
+	{
+		int k = log2(r - l + 1);
+		return min(f[k][l], f[k][r + 1 - (1 &lt;&lt; k)]);
+	}
+};
+</code></pre><h2 id="树状数组">树状数组</h2><p>模板中 Base 是对应的基础版本，支持单点修改区间查询。</p><h3 id="一维">一维</h3><pre><code class="language-cpp">struct Fenwick
+{
+	struct BaseFenwick
+	{
+		vector&lt;ll&gt; v;
+		BaseFenwick(int n) : v(n, 0) {}
+		void add(int x, ll w)
+		{
+			for (; x &lt; v.size(); x += x &amp; -x)
+				v[x] += w;
+		}
+		ll ask(int x)
+		{
+			ll ans = 0;
+			for (; x; x -= x &amp; -x)
+				ans += v[x];
+			return ans;
+		}
+	};
+	pair&lt;BaseFenwick, BaseFenwick&gt; p;
+	Fenwick(int n) : p(n, n) {}
+	void add(int x, ll w) { p.first.add(x, w), p.second.add(x, x * w); }
+	void add(int l, int r, ll w) { add(l, w), add(r + 1, -w); }
+	ll ask(int x) { return (x + 1) * p.first.ask(x) - p.second.ask(x); }
+	ll ask(int l, int r) { return ask(r) - ask(l - 1); }
+};
+</code></pre><h3 id="二维">二维</h3><p>高维的数据结构只要每一维维护低一维的数据（树套树）即可。其余数据结构亦同理。</p><pre><code class="language-cpp">struct Fenwick2
+{
+	struct BaseFenwick2
+	{
+		vector&lt;Fenwick&gt; v;
+		BaseFenwick2(int r, int c) : v(r, c) {}
+		void add(int x, int b, int t, ll w)
+		{
+			for (; x &lt; v.size(); x += x &amp; -x)
+				v[x].add(b, t, w);
+		}
+		ll ask(int x, int b, int t)
+		{
+			ll ans = 0;
+			for (; x; x -= x &amp; -x)
+				ans += v[x].ask(b, t);
+			return ans;
+		}
+	};
+	pair&lt;BaseFenwick2, BaseFenwick2&gt; p;
+	Fenwick2(int r, int c) : p(BaseFenwick2(r, c), BaseFenwick2(r, c)) {}
+	void add(int x, int b, int t, ll w) { p.first.add(x, b, t, w), p.second.add(x, b, t, x * w); }
+	void add(int l, int b, int r, int t, ll w) { add(l, b, t, w), add(r + 1, b, t, -w); } //(l,b)~(r,t)
+	ll ask(int x, int b, int t) { return (x + 1) * p.first.ask(x, b, t) - p.second.ask(x, b, t); }
+	ll ask(int l, int b, int r, int t) { return ask(r, b, t) - ask(l - 1, b, t); }
+};
+</code></pre><h2 id="动态开点线段树">动态开点线段树</h2><p><a href="https://vjudge.net/solution/21600921">使用示例</a>，支持区间线性变换、区间查询（最大值最小值区间和）。</p><p>这样写改可持久化也很方便，只要改<code>down</code>函数为每次都新建节点即可，<a href="https://vjudge.net/solution/21600829">示例</a>。</p><pre><code class="language-cpp">struct SegmentTree
+{
+	struct Seg
+	{
+		int l, r;
+		ll min, max, sum;
+		void upd(ll mul, ll add) { min = min * mul + add, max = max * mul + add, sum = sum * mul + add * (r - l + 1); }
+		friend Seg operator+(const Seg &amp;lc, const Seg &amp;rc) { return {lc.l, rc.r, std::min(lc.min, rc.min), std::max(lc.max, rc.max), lc.sum + rc.sum}; }
+	};
+	struct Node : Seg
+	{
+		int lc, rc;
+		ll mul, add;
+	};
+	vector&lt;Node&gt; v;
+	SegmentTree(int l, int r) { build(l, r); }
+	void build(int l, int r)
+	{
+		int rt = v.size();
+		v.push_back({});
+		v[rt].Seg::operator=({l, r, 0, 0, 0});
+		v[rt].lc = v[rt].rc = NPOS;
+		v[rt].mul = 1, v[rt].add = 0;
+		//if (l &lt; r) //动态开点的时候注释掉本行和下一行
+		//down(rt), v[rt].Seg::operator=(v[v[rt].lc] + v[v[rt].rc]);
+	}
+	void down(int rt)
+	{
+		int m = v[rt].l + (v[rt].r - v[rt].l &gt;&gt; 1);
+		if (v[rt].lc == NPOS)
+			v[rt].lc = v.size(), build(v[rt].l, m);
+		//else //非可持久化的时候注释掉本行和下一行
+		//v.push_back(v[v[rt].lc]), v[rt].lc = v.size() - 1;
+		if (v[rt].rc == NPOS)
+			v[rt].rc = v.size(), build(m + 1, v[rt].r);
+		//else //非可持久化的时候注释掉本行和下一行
+		//v.push_back(v[v[rt].rc]), v[rt].rc = v.size() - 1;
+		upd(v[v[rt].lc].l, v[v[rt].lc].r, v[rt].mul, v[rt].add, v[rt].lc);
+		upd(v[v[rt].rc].l, v[v[rt].rc].r, v[rt].mul, v[rt].add, v[rt].rc);
+		v[rt].mul = 1, v[rt].add = 0;
+	}
+	void upd(int l, int r, ll mul, ll add, int rt = 0)
+	{
+		if (l &lt;= v[rt].l &amp;&amp; v[rt].r &lt;= r)
+			return v[rt].mul *= mul, v[rt].add = v[rt].add * mul + add, v[rt].upd(mul, add);
+		down(rt);
+		if (r &lt;= v[v[rt].lc].r)
+			upd(l, r, mul, add, v[rt].lc);
+		else if (l &gt;= v[v[rt].rc].l)
+			upd(l, r, mul, add, v[rt].rc);
+		else
+			upd(l, v[v[rt].lc].r, mul, add, v[rt].lc), upd(v[v[rt].rc].l, r, mul, add, v[rt].rc);
+		v[rt].Seg::operator=(v[v[rt].lc] + v[v[rt].rc]);
+	}
+	Seg ask(int l, int r, int rt = 0)
+	{
+		if (l &lt;= v[rt].l &amp;&amp; v[rt].r &lt;= r)
+			return v[rt];
+		down(rt);
+		if (r &lt;= v[v[rt].lc].r)
+			return ask(l, r, v[rt].lc);
+		if (l &gt;= v[v[rt].rc].l)
+			return ask(l, r, v[rt].rc);
+		return ask(l, v[v[rt].lc].r, v[rt].lc) + ask(v[v[rt].rc].l, r, v[rt].rc);
+	}
+};
+</code></pre><h2 id="无旋-treap">无旋 Treap</h2><h3 id="按子树大小分裂">按子树大小分裂</h3><p><a href="https://vjudge.net/solution/18405379">使用示例</a></p><pre><code class="language-cpp">struct FhqTreap
+{
+	struct Node
+	{
+		int ch[2], siz, rev;
+		ll key, val, min, add;
+		void upd(ll v, int r)
+		{
+			val += v, min += v, add += v;
+			if (r)
+				rev ^= 1, swap(ch[0], ch[1]);
+		}
+	};
+	vector&lt;Node&gt; v;
+	int root;
+	FhqTreap() : v(1), root(0) {}
+	void down(int k)
+	{
+		if (!k)
+			return;
+		for (int i = 0, *ch = v[k].ch; i &lt; 2; ++i)
+			if (ch[i])
+				v[ch[i]].upd(v[k].add, v[k].rev);
+		v[k].add = v[k].rev = 0;
+	}
+	void up(int k)
+	{
+		if (!k)
+			return;
+		v[k].siz = 1, v[k].min = v[k].val;
+		for (int i = 0, *ch = v[k].ch; i &lt; 2; ++i)
+			if (ch[i])
+				v[k].siz += v[ch[i]].siz, v[k].min = min(v[k].min, v[ch[i]].min);
+	}
+	int merge(int a, int b)
+	{
+		if (!a || !b)
+			return a + b;
+		if (v[a].key &lt; v[b].key)
+			return down(a), v[a].ch[1] = merge(v[a].ch[1], b), up(a), a;
+		return down(b), v[b].ch[0] = merge(a, v[b].ch[0]), up(b), b;
+	}
+	void split(int a, int s, int &amp;l, int &amp;r)
+	{
+		if (!s)
+			l = 0, r = a;
+		else if (v[v[a].ch[0]].siz &lt; s)
+			down(a), split(v[a].ch[1], s - v[v[a].ch[0]].siz - 1, v[a].ch[1], r), up(l = a);
+		else
+			down(a), split(v[a].ch[0], s, l, v[a].ch[0]), up(r = a);
+	}
+	void push_back(ll d) { v.push_back(Node{{0, 0}, 1, 0, rand(), d, d, d}), root = merge(root, v.size() - 1); }
+	void insert(int x, ll d)
+	{
+		v.push_back(Node{{0, 0}, 1, 0, rand(), d, d, d});
+		int a, b, c;
+		split(root, x - 1, a, b), root = merge(merge(a, v.size() - 1), b);
+	}
+	void erase(int x)
+	{
+		int a, b, c;
+		split(root, x, a, b), split(a, x - 1, a, c), root = merge(a, b);
+	}
+	Node ask(int l, int r)
+	{
+		int a, b, c;
+		split(root, r, b, c), split(b, l - 1, a, b);
+		Node ret = v[b];
+		return root = merge(merge(a, b), c), ret;
+	}
+	void upd(int l, int r, ll add, int rev)
+	{
+		int a, b, c;
+		split(root, r, b, c), split(b, l - 1, a, b), v[b].upd(add, rev), root = merge(merge(a, b), c);
+	}
+	void revolve(int l, int r, int d)
+	{
+		int a, b, c, e = r - l + 1;
+		split(root, r, b, c), split(b, l - 1, a, b), split(b, (e - d % e) % e, b, e), root = merge(merge(a, merge(e, b)), c);
+	}
+};
+</code></pre><h3 id="按值大小分裂">按值大小分裂</h3><p><a href="https://vjudge.net/solution/18405431">使用示例</a>，即排序树。</p><pre><code class="language-cpp">struct FhqTreap
+{
+	struct Node
+	{
+		int ch[2], siz;
+		ll key, val;
+	};
+	vector&lt;Node&gt; v;
+	int root;
+	FhqTreap() : v(1), root(0) {}
+	void up(int k) { v[k].siz = v[v[k].ch[0]].siz + v[v[k].ch[1]].siz + 1; }
+	int merge(int a, int b)
+	{
+		if (!a || !b)
+			return a + b;
+		if (v[a].key &lt; v[b].key)
+			return v[a].ch[1] = merge(v[a].ch[1], b), up(a), a;
+		return v[b].ch[0] = merge(a, v[b].ch[0]), up(b), b;
+	}
+	void splitVal(int a, ll w, int &amp;l, int &amp;r) //按值将树划分，使得左子树上的值恰小于w
+	{
+		if (!a)
+			l = r = 0;
+		else if (v[a].val &gt; w)
+			splitVal(v[a].ch[0], w, l, v[a].ch[0]), up(r = a);
+		else
+			splitVal(v[a].ch[1], w, v[a].ch[1], r), up(l = a);
+	}
+	void insert(ll x)
+	{
+		int a, b;
+		v.push_back(Node{{0, 0}, 1, rand(), x}), splitVal(root, x, a, b), root = merge(merge(a, v.size() - 1), b);
+	}
+	void erase(ll x)
+	{
+		int a, b, c;
+		splitVal(root, x, a, b), splitVal(a, x - 1, a, c), root = merge(merge(a, merge(v[c].ch[0], v[c].ch[1])), b);
+	}
+	ll kth(int k)
+	{
+		for (int u = root, ls;;)
+		{
+			if (ls = v[v[u].ch[0]].siz, ls + 1 == k)
+				return v[u].val;
+			if (ls &lt; k)
+				k -= ls + 1, u = v[u].ch[1];
+			else
+				u = v[u].ch[0];
+		}
+	}
+	int lower_bound(ll x) { return upper_bound(x - 1); }
+	int upper_bound(ll x)
+	{
+		int a, b, ret;
+		return splitVal(root, x, a, b), ret = v[a].siz + 1, root = merge(a, b), ret;
+	}
+};
+</code></pre><h2 id="莫队">莫队</h2><p><a href="https://vjudge.net/solution/14265915">使用示例</a></p><pre><code class="language-cpp">struct Mo
+{
+	struct Query
+	{
+		int l, r, id;
+		bool operator&lt;(const Query &amp;n) const
+		{
+			return l / BS != n.l / BS ? l &lt; n.l : r &lt; n.r;
+		}
+	};
+	vector&lt;Query&gt; q;
+	int L, R;
+	void query(int l, int r) { q.push_back(Query{l, r, q.size()}); }
+	void rev(int x) {}
+	void cal(int id) {}
+	void ask()
+	{
+		L = 0, R = -1;
+		sort(q.begin(), q.end());
+		for (int i = 0; i &lt; q.size(); ++i)
+		{
+			while (L &lt; q[i].l)
+				rev(L++);
+			while (L &gt; q[i].l)
+				rev(--L);
+			while (R &lt; q[i].r)
+				rev(++R);
+			while (R &gt; q[i].r)
+				rev(R--);
+			cal(q[i].id);
+		}
+	}
+};
+</code></pre><h3 id="带修莫队">带修莫队</h3><p><a href="https://vjudge.net/solution/14269038">使用示例</a></p><pre><code class="language-cpp">struct Mo
+{
+	struct Update
+	{
+		int pos, NEW, OLD;
+	};
+	struct Query
+	{
+		int t, l, r, id;
+		bool operator&lt;(const Query &amp;n) const
+		{
+			return l / BS != n.l / BS ? l &lt; n.l : r / BS != n.r / BS ? r &lt; n.r : t &lt; n.t;
+		}
+	};
+	vector&lt;Update&gt; cq;
+	vector&lt;Query&gt; q;
+	int T, L, R;
+	Mo() : cq(1) {}
+	void query(int x, int y) { q.push_back(Query{cq.size() - 1, x, y, q.size()}); }
+	void update(int x, int y) { cq.push_back(Update{x, y, t[x]}), t[x] = y; }
+	void set(int x, int d)
+	{
+		if (vis[x])
+			return rev(x), a[x] = d, rev(x);
+		a[x] = d;
+	}
+	void rev(int x) {}
+	void cal(int id) {}
+	void ask()
+	{
+		T = L = 0, R = -1;
+		sort(q.begin(), q.end());
+		for (int i = 0; i &lt; q.size(); ++i)
+		{
+			while (T &lt; q[i].t)
+				++T, set(cq[T].pos, cq[T].NEW);
+			while (T &gt; q[i].t)
+				set(cq[T].pos, cq[T].OLD), --T;
+			while (L &lt; q[i].l)
+				rev(L++);
+			while (L &gt; q[i].l)
+				rev(--L);
+			while (R &lt; q[i].r)
+				rev(++R);
+			while (R &gt; q[i].r)
+				rev(R--);
+			cal(q[i].id);
+		}
+	}
+};
+</code></pre><h3 id="树上莫队">树上莫队</h3><p><a href="https://vjudge.net/solution/14284324">使用示例</a></p><p>按照欧拉序分块，使用 Tarjan 在生成欧拉序的同时预处理所有询问的 lca，预处理时间复杂度$O(n+q)$。 h 为查询图，即如果有一个询问(u,v)，即在 h 上连$u\to v,v\to u$。多个询问边有序插入 h。</p><pre><code class="language-cpp">struct TreeMo : Graph
+{
+	struct Query
+	{
+		int l, r, lca, id;
+		bool operator&lt;(const Query &amp;b) const
+		{
+			return l / BS != b.l / BS ? l &lt; b.l : r &lt; b.r;
+		}
+	};
+	vector&lt;Query&gt; q;
+	vector&lt;int&gt; dfp, dfi, dfo;
+	UnionFindSet ufs;
+	Graph h;
+	int L, R;
+	TreeMo(int n) : Graph(n), h(n), dfp(n * 2 + 1), dfi(n), dfo(n), ufs(n) {}
+	void query(int x, int y)
+	{
+		h.add(Edge{x, y}), h.add(Edge{y, x});
+		q.push_back(Query{0, 0, 0, q.size()});
+	}
+	void rev(int x) {}
+	void cal(int id) {}
+	void dfs(int u, int &amp;cnt)
+	{
+		dfp[dfi[u] = ++cnt] = u;
+		for (int i = 0, k, to; i &lt; v[u].a.size(); ++i)
+			if (k = v[u].a[i], to = e[k].second, !dfi[to])
+				dfs(to, cnt), ufs.merge(u, to);
+		dfp[dfo[u] = ++cnt] = u;
+		for (int i = 0, k, to, id; i &lt; h.v[u].a.size(); ++i)
+			if (k = h.v[u].a[i], id = k / 2, to = h.e[k].second, dfo[to])
+			{
+				q[id].lca = ufs.fa(to);
+				q[id].l = q[id].lca != u ? dfo[u] : dfi[u];
+				q[id].r = dfi[to];
+			}
+	}
+	void ask(int root = 1)
+	{
+		dfs(root, BS = 0), BS = sqrt(BS);
+		sort(q.begin(), q.end());
+		L = 0, R = -1;
+		for (int i = 0; i &lt; q.size(); ++i)
+		{
+			while (L &lt; q[i].l)
+				rev(dfp[L++]);
+			while (L &gt; q[i].l)
+				rev(dfp[--L]);
+			while (R &lt; q[i].r)
+				rev(dfp[++R]);
+			while (R &gt; q[i].r)
+				rev(dfp[R--]);
+			if (q[i].lca != dfp[L])
+				rev(q[i].lca);
+			cal(q[i].id);
+			if (q[i].lca != dfp[L])
+				rev(q[i].lca);
+		}
+	}
+};
+</code></pre><h3 id="树上带修莫队">树上带修莫队</h3><p><a href="https://vjudge.net/solution/14269069">使用示例</a></p><pre><code class="language-cpp">struct CapitalTreeMo : Graph
+{
+	struct Update
+	{
+		int pos, NEW, OLD;
+	};
+	struct Query
+	{
+		int t, l, r, lca, id;
+		bool operator&lt;(const Query &amp;b) const
+		{
+			return l / BS != b.l / BS ? l &lt; b.l : r / BS != b.r / BS ? r &lt; b.r : t &lt; b.t; //在BZOJ4129上去掉r/BS还快100ms?
+		}
+	};
+	vector&lt;Update&gt; cq;
+	vector&lt;Query&gt; q;
+	vector&lt;int&gt; dfp, dfi, dfo;
+	UnionFindSet ufs;
+	Graph h;
+	int T, L, R;
+	CapitalTreeMo(int n) : cq(1), Graph(n), h(n), dfp(n * 2 + 1), dfi(n), dfo(n), ufs(n) {}
+	void query(int x, int y)
+	{
+		h.add(Edge{x, y}), h.add(Edge{y, x});
+		q.push_back(Query{cq.size() - 1, 0, 0, 0, q.size()});
+	}
+	void update(int x, int y)
+	{
+		cq.push_back(Update{x, y, t[x]}), t[x] = y;
+	}
+	void dfs(int u, int &amp;cnt)
+	{
+		dfp[dfi[u] = ++cnt] = u;
+		for (int i = 0, k, to; i &lt; v[u].a.size(); ++i)
+			if (k = v[u].a[i], to = e[k].second, !dfi[to])
+				dfs(to, cnt), ufs.merge(u, to);
+		dfp[dfo[u] = ++cnt] = u;
+		for (int i = 0, k, to, id; i &lt; h.v[u].a.size(); ++i)
+			if (k = h.v[u].a[i], id = k / 2, to = h.e[k].second, dfo[to])
+			{
+				q[id].lca = ufs.fa(to);
+				q[id].l = q[id].lca != u ? dfo[u] : dfi[u];
+				q[id].r = dfi[to];
+			}
+	}
+	void set(int u, int d)
+	{
+		if (vis[u])
+			return rev(u), a[u] = d, rev(u);
+		a[u] = d;
+	}
+	void rev(int u) {}
+	void cal(int id) {}
+	void ask(int root = 1)
+	{
+		dfs(root, BS = 0), BS = sqrt(BS);
+		sort(q.begin(), q.end());
+		T = L = 0, R = -1;
+		for (int i = 0; i &lt; q.size(); ++i)
+		{
+			while (T &lt; q[i].t)
+				++T, set(cq[T].pos, cq[T].NEW);
+			while (T &gt; q[i].t)
+				set(cq[T].pos, cq[T].OLD), --T;
+			while (L &lt; q[i].l)
+				rev(dfp[L++]);
+			while (L &gt; q[i].l)
+				rev(dfp[--L]);
+			while (R &lt; q[i].r)
+				rev(dfp[++R]);
+			while (R &gt; q[i].r)
+				rev(dfp[R--]);
+			if (q[i].lca != dfp[L])
+				rev(q[i].lca);
+			cal(q[i].id);
+			if (q[i].lca != dfp[L])
+				rev(q[i].lca);
+		}
+	}
+};
+</code></pre><h2 id="字符串模式匹配">字符串/模式匹配</h2><h3 id="hashstring">HashString</h3><p><a href="https://vjudge.net/solution/18293901">使用示例</a>，如果要修改模数或者直接使用<code>unsigned long long</code>的自然溢出的话直接修改 Mod 即可。</p><p>使用<code>unsigned long long</code>的自然溢出<a href="https://vjudge.net/solution/18293930">快了 5 倍</a>，但是容易被卡。</p><pre><code class="language-cpp">struct HashString : Mod
+{
+	vector&lt;ll&gt; f, p;
+	HashString(const string &amp;s, ll M = 1e9 + 7, ll P = 131) : Mod(M), f(s.size() + 1), p(s.size() + 1, 1)
+	{
+		for (int i = 0; i &lt; s.size(); ++i)
+		{
+			f[i + 1] = add(mul(f[i], P), s[i]);
+			p[i + 1] = mul(p[i], P);
+		}
+	}
+	ll ask(int pos, int len) { return add(f[pos + len], -mul(f[pos], p[len])); } //从pos位置开始的长度为len的子串的hash值
+};
+</code></pre><h3 id="kmp">KMP</h3><pre><code class="language-cpp">struct KMP
+{
+	vector&lt;int&gt; next;
+	string pattern;
+	KMP(const string &amp;pattern) : pattern(pattern), next(pattern.size() + 1, -1)
+	{
+		for (int i = 0, j = -1; i &lt; pattern.size();)
+		{
+			if (j == -1 || pattern[i] == pattern[j])
+				next[++i] = ++j;
+			else
+				j = next[j];
+		}
+	}
+	int find_in(const string &amp;text)
+	{
+		for (int i = 0, j = 0;;)
+		{
+			if (j == pattern.size())
+				return i - j; //不return可得到所有匹配地址
+			if (i == text.size())
+				return -1;
+			if (j == -1 || text[i] == pattern[j])
+				++i, ++j;
+			else
+				j = next[j];
+		}
+	}
+};
+</code></pre><h3 id="ac-自动机">AC 自动机</h3><pre><code class="language-cpp">struct AhoCorasick
+{
+	struct Node
+	{
+		int ch[26], val, f, last;
+		int &amp;to(char c)
+		{
+			return ch[c - 'a'];
+		} //如果不确定c的范围，使用map
+	};
+	vector&lt;Node&gt; v;
+	AhoCorasick() : v(1) {}
+	void getFail()
+	{
+		for (deque&lt;int&gt; q(1, v[0].last = v[0].f = 0); !q.empty(); q.pop_front())
+			for (char c = 'a'; c &lt;= 'z'; ++c)
+			{
+				int r = q.front(), u = v[r].to(c), w = v[r].f;
+				if (!r &amp;&amp; u)
+				{
+					q.push_back(u);
+					v[u].f = v[u].last = 0;
+					continue;
+				}
+				if (!u)
+				{
+					v[r].to(c) = v[w].to(c);
+					continue;
+				}
+				q.push_back(u);
+				while (w &amp;&amp; !v[w].to(c))
+					w = v[w].f;
+				v[u].f = v[w].to(c);
+				v[u].last = v[v[u].f].val ? v[u].f : v[v[u].f].last;
+			}
+	}
+	void add(const string &amp;s, int val, int u = 0)
+	{
+		for (int i = 0; i &lt; s.size(); u = v[u].to(s[i++]))
+			if (!v[u].to(s[i]))
+			{
+				v[u].to(s[i]) = v.size();
+				v.push_back(Node());
+			}
+		v[u].val = val;
+	}
+	bool find_in(const string &amp;s, int u = 0) //调用需要调用`getFail()`生成失配函数。
+	{
+		for (int i = 0; i &lt; s.size(); ++i)
+			if (u = v[u].to(s[i]),
+				v[u].val || v[u].last)
+				return 1;
+		return 0;
+	}
+};
+</code></pre><h3 id="暴力回文">暴力回文</h3><p><a href="https://vjudge.net/solution/14387201">使用示例</a></p><p>时间复杂度$O(n^2)$，常数低，但会被<code>ababababa</code>这样的数据卡。</p><pre><code class="language-cpp">int palindrome(const char *s)
+{
+	int ans = 0;
+	for (int i = 0, b, e; s[i]; ++i)
+	{
+		for (b = i; s[i] == s[i + 1];)
+			++i;
+		for (e = i + 1; b &amp;&amp; s[b - 1] == s[e];)
+			--b, ++e;
+		if (ans &lt; e - b)
+			ans = e - b; //此时[b,e)为最大回文区间
+	}
+	return ans;
+}
+</code></pre><h3 id="线性回文">线性回文</h3><p><a href="https://vjudge.net/solution/14387164">使用示例</a></p><p>对于一个位置 i，[i−f[i]+1,i+f[i]−1]是最长的以 i 为中心的奇回文串，g[i]−i 是最长的以 i 为开头的回文串长度。</p><pre><code class="language-cpp">struct Manacher
+{
+	vector&lt;int&gt; t, f, g;
+	Manacher(const string &amp;s) : t(s.size() + 1 &lt;&lt; 1, 0), f(t), g(t) //t初始值为s中没有出现过的值，g开始为0
+	{
+		for (int i = 0; i &lt; s.size(); ++i)
+			t[i + 1 &lt;&lt; 1] = s[i];
+		for (int i = 1, p = 0, m = 0; i &lt; t.size(); ++i)
+		{
+			for (f[i] = i &lt; m ? min(f[2 * p - i], m - i) : 1;
+				 0 &lt; i - f[i] &amp;&amp; i + f[i] &lt; t.size() &amp;&amp;
+				 t[i - f[i]] == t[i + f[i]];)
+				++f[i];
+			if (m &lt; i + f[i])
+				m = i + f[p = i];
+		}
+		for (int i = 2; i &lt; t.size(); ++i)
+			if (g[i - f[i] + 1] &lt; i + 1)
+				g[i - f[i] + 1] = i + 1;
+		for (int i = 1; i &lt; t.size(); ++i)
+			if (g[i] &lt; g[i - 1])
+				g[i] = g[i - 1];
+	}
+	int ask(int l, int r) //多次询问可做一个ST表
+	{
+		int ans = 0;
+		for (int i = l + 1 &lt;&lt; 1, e = r + 1 &lt;&lt; 1; i &lt;= e; i += 2)
+			if (ans &lt; g[i] - i)
+				ans = g[i] - i;
+		return ans;
+	}
+};
+</code></pre><h3 id="后缀数组">后缀数组</h3><p><a href="https://vjudge.net/solution/14316681">使用示例</a></p><p>m：字符集大小。</p><p>s：字符串，其中最后一位为加入的 0。</p><p>sa[i]：字典序第 i 小的是哪个后缀。</p><p>rk[i]：后缀 i 的排名。</p><p>h[i]：lcp(sa[i],sa[i−1])。</p><pre><code class="language-cpp">struct SufArr
+{
+	vector&lt;int&gt; sa, rk, h;
+	SufArr(const vector&lt;int&gt; &amp;s, int m) : sa(s.size(), 0), rk(s), h(s.size(), 0)
+	{
+		vector&lt;int&gt; cnt(s.size() + m, 0);
+		for (int i = 0; i &lt; s.size(); ++i)
+			++cnt[rk[i]];
+		for (int i = 1; i &lt; m; ++i)
+			cnt[i] += cnt[i - 1];
+		for (int i = 0; i &lt; s.size(); ++i)
+			sa[--cnt[rk[i]]] = i;
+		for (int k = 1, j = 0; k &lt;= s.size() &amp;&amp; j &lt; s.size() - 1; k &lt;&lt;= 1)
+		{
+			for (int i = 0; i &lt; s.size(); ++i)
+			{
+				if (j = sa[i] - k, j &lt; 0)
+					j += s.size();
+				h[cnt[rk[j]]++] = j;
+			}
+			cnt[0] = sa[h[0]] = j = 0;
+			for (int i = 1; i &lt; s.size(); ++i)
+			{
+				if (rk[h[i]] != rk[h[i - 1]] || rk[h[i] + k] != rk[h[i - 1] + k])
+					cnt[++j] = i;
+				sa[h[i]] = j;
+			}
+			swap(rk, sa), swap(sa, h);
+		}
+		for (int i = 0, k = 0, j = rk[0]; i &lt; s.size() - 1; ++i, ++k)
+			for (; ~k &amp;&amp; s[i] != s[sa[j - 1] + k]; j = rk[sa[j] + 1], --k)
+				h[j] = k;
+	}
+};
+</code></pre><h1 id="图论"><a href="/2019/02/02/%E5%9B%BE%E8%AE%BA/">图论</a></h1><p>这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。</p><pre><code class="language-cpp">struct Graph
+{
+	struct Vertex
+	{
+		vector&lt;int&gt; o, i;		//相关出边和入边编号
+		int siz, dep, top, dfn; //树链剖分中使用，依次代表子树节点数、深度、所在链的顶端节点、dfs序
+	};
+	struct Edge : pair&lt;int, int&gt;
+	{
+		ll len, cap; //边长、容量，图论算法使用
+	};
+	vector&lt;Vertex&gt; v; //点集
+	vector&lt;Edge&gt; e;   //边集
+	Graph(int n) : v(n) {}
+	void add(const Edge &amp;ed)
+	{
+		if (ed.first == ed.second)
+			return; //如果有需要请拆点
+		v[ed.first].o.push_back(e.size());
+		v[ed.second].i.push_back(e.size());
+		e.push_back(ed);
+	}
+	int ch(int u, int i = 0) { return e[v[u].o[i]].second; } //u的第i个孩子节点
+	int fa(int u, int i = 0) { return e[v[u].i[i]].first; } //u的第i个父节点
+};
+</code></pre><h2 id="最短路">最短路</h2><h3 id="dijkstra-算法">Dijkstra 算法</h3><p><a href="https://vjudge.net/solution/19427495">使用示例</a>，适用于边权为正的情况（无论有向图还是无向图），用于求单源最短路。</p><p>直接给出其优先队列优化的版本。另外，由于<code>priority_queue</code>并不提供修改优先级的操作，为避免重复扩展，这里选择将新元素直接插入队列并在运行时判断该点是否被处理，并不影响结果的正确性。</p><pre><code class="language-cpp">struct Dijkstra : Graph
+{
+	vector&lt;ll&gt; d;
+	vector&lt;int&gt; p;
+	Dijkstra(int n) : Graph(n) {}
+	void ask(int s)
+	{
+		d.assign(v.size(), INF);
+		p.assign(v.size(), e.size());
+		priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+		for (q.push(make_pair(d[s] = 0, s)); !q.empty();)
+		{
+			ll dis = -q.top().first;
+			int u = q.top().second;
+			if (q.pop(), d[u] &lt; dis)
+				continue;
+			for (int i = 0, k, to; i != v[u].o.size(); ++i)
+				if (k = v[u].o[i], to = e[k].second,
+					d[to] &gt; d[u] + e[k].len)
+				{
+					d[to] = d[u] + e[k].len, p[to] = k;
+					q.push(make_pair(-d[to], to));
+				}
+		}
+	}
+};
+</code></pre><h3 id="bellmanford-算法">BellmanFord 算法</h3><p><a href="https://vjudge.net/solution/16970652">使用示例</a>，直接给出其队列优化、国内称之为 SPFA 算法的版本。较之 Dijkstra 算法，此算法不够快速稳定但是可以允许负边存在，当 s 到达负权回路时会直接返回 0。稀疏图上性能优秀。</p><pre><code class="language-cpp">struct BellmanFord : Graph
+{
+	vector&lt;ll&gt; d;
+	vector&lt;int&gt; p;
+	BellmanFord(int n) : Graph(n) {}
+	bool ask(int s)
+	{
+		d.assign(v.size(), INF);
+		p.assign(v.size(), e.size());
+		vector&lt;int&gt; cnt(v.size(), 0), flag(v.size(), d[s] = 0);
+		for (deque&lt;int&gt; q(cnt[s] = flag[s] = 1, s); !q.empty(); q.pop_front())
+			for (int u = q.front(), i = flag[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+				if (k = v[u].o[i], to = e[k].second,
+					d[to] &gt; d[u] + e[k].len)
+				{
+					d[to] = d[u] + e[k].len, p[to] = k;
+					if (!flag[to])
+					{
+						if (v.size() == ++cnt[to])
+							return 0;
+						flag[to] = 1, q.push_back(to);
+					}
+				}
+		return 1;
+	}
+};
+</code></pre><h4 id="差分约束系统">差分约束系统</h4><p>按如下方式建图、跑 SPFA：</p><p>对每个不等式$x_i−x_j\leq d$，从$j$向$i$连一条边，边长为$d$。</p><p>若不等号的方向相反，即$x_i−x_j\geq d$，则在不等式两边同时乘以$-1$，变成$x_j−x_i\leq -d$，即从$i$到$j$连一条边，边长为$d$。</p><h3 id="floyed-求多源最短路">Floyed 求多源最短路</h3><p>不连通的权置 INF。</p><pre><code class="language-cpp">void floyed(Mat &amp;a, int n) // 其实一般手打即可，没必要套这个鬼模板…
+{
+	for (int k = 0; k &lt; n; ++k)
+		for (int i = 0; i &lt; n; ++i)
+			for (int j = 0; j &lt; n; ++j)
+				if (a[i][j] &gt; a[i][k] + a[k][j])
+					a[i][j] = a[i][k] + a[k][j];
+}
+</code></pre><h3 id="astar-求-k-短路">Astar 求 k 短路</h3><p><a href="https://vjudge.net/solution/16970766">使用示例</a>，在这个比较坑的例子中需要在调用前补一句<code>if(s==t)++k;</code>。<strong>k 下标从 0 开始，即最短路==第 0 短路</strong>。</p><p>朴素的想法是使用<code>priority_queue</code>从原点出发向外探索，当取出终点 t 第 k 次时就得到第 k 短路，类似 bfs 的思想，缺陷是越往后状态数越多。</p><p>我们在反向图上从$t\to s$跑 Astar 算法，通过优先展开到 s 近的状态，使搜索方向靠近答案，而不是一层一层全都展开，估价函数$f\approx g+h$，f 是估计的 s 到 t 的距离，g 是到达当前点已经点的花费，h 是预计剩下的花费。这里 h 取当前点的距离到 s 距离，可通过从 s 跑一遍 Dijkstra 可以预处理得出。</p><p>Astar 算法是只有到达终点的时候才能统计答案，这导致可能拓展很多个状态才能得到一个用来更新答案的有效状态。例如一个 n 元环，当我们到达终点之后,可能还要拓展 n 次才能得到下一个状态，于是时间复杂度就被卡到$O(nk)$。</p><pre><code class="language-cpp">struct Astar : Dijkstra
+{
+	vector&lt;ll&gt; ans;
+	Astar(int n) : Dijkstra(n) {}
+	void ask(int s, int t, int k)
+	{
+		Dijkstra::ask(s);
+		ans.assign(k, INF);
+		if (d[t] == INF)
+			return;
+		vector&lt;int&gt; cnt(v.size(), 0);
+		priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+		for (q.push(make_pair(-d[t], t)); cnt[s] &lt; k &amp;&amp; !q.empty();)
+		{
+			ll dis = -q.top().first;
+			int u = q.top().second;
+			if (u == s)
+				ans[cnt[s]] = dis;
+			if (q.pop(), ++cnt[u] &gt; k)
+				continue;
+			for (int i = 0, k; i &lt; v[u].i.size(); ++i)
+				k = v[u].i[i], q.push(make_pair(d[u] - d[e[k].first] - e[k].len - dis, e[k].first));
+		}
+	}
+};
+</code></pre><h2 id="网络流">网络流</h2><h3 id="isap-求最大流">ISAP 求最大流</h3><p><a href="https://vjudge.net/solution/16970964">使用示例</a></p><pre><code class="language-cpp">struct ISAP : Graph
+{
+	ll flow;
+	vector&lt;ll&gt; f;
+	vector&lt;int&gt; h, cur, gap;
+	ISAP(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0;
+		Graph::add(ed);
+	}
+	ll dfs(int s, int u, int t, ll r)
+	{
+		if (r == 0 || u == t)
+			return r;
+		ll _f, _r = 0;
+		for (int &amp;i = cur[u], k; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], h[u] == h[e[k].second] + 1)
+			{
+				_f = dfs(s, e[k].second, t, min(r - _r, e[k].cap - f[k]));
+				f[k] += _f, f[k ^ 1] -= _f, _r += _f;
+				if (_r == r || h[s] &gt;= v.size())
+					return _r;
+			}
+		if (!--gap[h[u]])
+			h[s] = v.size();
+		return ++gap[++h[u]], cur[u] = 0, _r;
+	}
+	void ask(int s, int t)
+	{
+		h.assign(v.size(), 0);
+		cur.assign(v.size(), 0);
+		gap.assign(v.size() + 2, 0);
+		/*
+		for (deque&lt;int&gt; q(h[t] = gap[t] = 1, t); !q.empty(); q.pop_front()) //优化，加了能快一点
+			for (int i = 0, u = q.front(), k, to; i &lt; v[u].o.size(); ++i)
+				if (to = e[v[u].o[i]].second, !h[to])
+					++gap[h[to] = h[u] + 1], q.push_back(to);
+		*/
+		for (f.assign(e.size(), flow = 0); h[s] &lt; v.size();)
+			flow += dfs(s, s, t, INF);
+	}
+};
+</code></pre><h3 id="primaldual-求费用流">PrimalDual 求费用流</h3><p><a href="https://vjudge.net/solution/16971249">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。性能优秀，只能跑非负权图。</p><pre><code class="language-cpp">struct PrimalDual : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; f;
+	PrimalDual(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	void ask(int s, int t) //询问s到t的最小费用最大流，答案存在flow、cost中
+	{
+		vector&lt;int&gt; p(v.size(), e.size());
+		vector&lt;ll&gt; d(v.size(), INF), h(v.size(), 0);
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+			for (q.push(make_pair(d[s] = 0, s)); !q.empty();)
+			{
+				ll dis = -q.top().first;
+				int u = q.top().second;
+				if (q.pop(), d[u] &lt; dis)
+					continue;
+				for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], to = e[k].second,
+						e[k].cap &gt; f[k] &amp;&amp; d[to] &gt; d[u] + e[k].len + h[u] - h[to])
+					{
+						d[to] = d[u] + e[k].len + h[u] - h[to], p[to] = k;
+						q.push(make_pair(-d[to], to));
+					}
+			}
+			if (d[t] == INF)
+				return;
+			for (int i = 0; i &lt; d.size(); ++i)
+				if (d[i] != INF)
+					h[i] += d[i], d[i] = INF;
+			ll _f = INF;
+			for (int u = t; u != s; u = e[p[u]].first)
+				_f = min(_f, e[p[u]].cap - f[p[u]]);
+			for (int u = t; u != s; u = e[p[u]].first)
+				cost += _f * e[p[u]].len, f[p[u]] += _f, f[p[u] ^ 1] -= _f;
+			flow += _f;
+		}
+	}
+};
+</code></pre><h3 id="ek-求费用流">EK 求费用流</h3><p><a href="https://vjudge.net/solution/16971149">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。BellmanFord 算法找增广路，可能被卡但是可以跑负费用流（最大费用流）。</p><pre><code class="language-cpp">struct EdmondKarp : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; f;
+	EdmondKarp(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	void ask(int s, int t)
+	{
+		vector&lt;int&gt; p(v.size(), e.size());
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			vector&lt;ll&gt; d(v.size(), INF);
+			vector&lt;int&gt; flag(v.size(), d[s] = 0);
+			for (deque&lt;int&gt; q(flag[s] = 1, s); !q.empty(); q.pop_front())
+				for (int u = q.front(), i = flag[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], to = e[k].second,
+						e[k].cap &gt; f[k] &amp;&amp; d[to] &gt; d[u] + e[k].len)
+					{
+						d[to] = d[u] + e[k].len, p[to] = k;
+						if (!flag[to])
+							q.push_back(to), flag[to] = 1;
+					}
+			if (d[t] == INF)
+				return;
+			ll _f = INF;
+			for (int u = t; u != s; u = e[p[u]].first)
+				_f = min(_f, e[p[u]].cap - f[p[u]]);
+			for (int u = t; u != s; u = e[p[u]].first)
+				cost += _f * e[p[u]].len, f[p[u]] += _f, f[p[u] ^ 1] -= _f;
+			flow += _f;
+		}
+	}
+};
+</code></pre><h3 id="zkw-求费用流">ZKW 求费用流</h3><p><a href="https://vjudge.net/solution/16971099">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。</p><p>对于最终流量较大，而费用取值范围不大的图，或者是增广路径比较短的图（如二分图），zkw 算法都会比较快，原因是充分发挥优势。比如流多说明可以同一费用反复增广，费用窄说明不用改太多距离标号就会有新增广路，增广路径短可以显著改善最坏情况，因为即使每次就只增加一条边也可以很快凑成最短路。如果恰恰相反，流量不大，费用不小，增广路还较长，就不适合 zkw 算法了。</p><pre><code class="language-cpp">struct ZKW : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; h, f;
+	vector&lt;int&gt; vis;
+	ZKW(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	ll dfs(int u, int t, ll r)
+	{
+		if (r == 0 || u == t)
+			return r;
+		if (vis[u])
+			return 0;
+		ll _f = vis[u] = 1, _r = 0;
+		for (int i = 0, k; r &gt; _r &amp;&amp; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], h[e[k].second] + e[k].len == h[u])
+				_f = dfs(e[k].second, t, min(r - _r, e[k].cap - f[k])), f[k] += _f, f[k ^ 1] -= _f, _r += _f;
+		return _r;
+	}
+	void ask(int s, int t)
+	{
+		h.assign(v.size(), 0);
+		vis.assign(v.size(), 0);
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			ll _f = dfs(s, t, INF), d = INF;
+			flow += _f, cost += _f * h[s];
+			for (int u = 0; u &lt; v.size(); ++u)
+				for (int i = 0, k; vis[u] &amp;&amp; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], !vis[e[k].second] &amp;&amp; e[k].cap &gt; f[k])
+						d = min(d, e[k].len + h[e[k].second] - h[e[k].first]);
+			if (d == INF)
+				return;
+			for (int i = 0; i &lt; v.size(); ++i)
+				if (vis[i])
+					h[i] += d, vis[i] = 0;
+		}
+	}
+};
+</code></pre><h3 id="上下界有源汇网络流">上下界有源汇网络流</h3><p>T 向 S 连容量正无穷的边，将有源汇转化为无源汇。每条边容量减去下界，设$in[i]$表示流入 i 的下界之和减去流出 i 的下界之和。新建超级源汇 SS,TT，对于$in[i]&gt;0$的点，SS 向 i 连容量为$in[i]$的边。对于$in[i]&lt;0$的点，i 向 TT 连容量为$−in[i]$的边。</p><p>求出以 SS,TT 为源汇的最大流，如果等于$\sum in<a href="in[i] &gt; 0">i</a>$则存在可行流。再求出以 S,T 为源汇的最大流即为最大流。</p><p>费用流：建完图后等价于求以 SS,TT 为源汇的的费用流。</p><p>上下界费用流：先把下界的费用加入答案。</p><h3 id="判断边是否属于某一割集">判断边是否属于某一割集</h3><p>在残余网络 (还有流量的边) 中求强连通分量，顶点不在同一 SCC 且满流的边。</p><p>判断边是否为全部最小割集的边： 在上一条的基础上，还要满足起点与 S 在同一 SCC，且终点与 T 在同一 SCC。</p><h3 id="线性规划转费用流">线性规划转费用流</h3><p>首先添加松弛变量，将不等号都变为等号。分别用下一个式子减去上一个式子，如果每个变量只出现了两次且符号一正一负，那么可以转化为费用流。对于每个式子建立一个点，那么每个变量对应一条边，从一个点流出，向另一个点流入。这样，对于等式右边的常数，如果是正的，对应从源点向该点连一条流量 C，费用 0 的边；如果是负的对应从该点向汇点连一条流量 −C，费用 0 的边。对于每个变量，从它系数为正的式子向系数为负的式子连一条容量为 inf，费用为它在目标函数里系数的边。这样网络流模型就构造完毕了。</p><h2 id="欧拉路">欧拉路</h2><p><a href="https://vjudge.net/solution/16970884">使用示例</a>，给定无孤立结点图 G，若存在一条路，经过图中每边一次且仅一次，该条路称为欧拉路。</p><ul><li>无向图：当仅当该图所有顶点的度数为偶数（此时为回路），或除两个度数为奇数外（作为路径的起点和终点）、其余全为偶数。<li>有向图：当仅当该图所有顶点出度=入度（此时为回路），或一个顶点出度=入度+1（作为起点）、另一个顶点入度=出度+1（作为终点）、其他顶点出度=入度。</ul><pre><code class="language-cpp">struct Fleury : Graph
+{
+	vector&lt;int&gt; vis, cur, p;
+	Fleury(int n) : Graph(n) {}
+	void dfs(int u)
+	{
+		for (int &amp;i = cur[u], k; i &lt; v[u].i.size(); ++i) //遍历原图的反向图，这里加了一个「当前弧」优化
+			if (k = v[u].i[i], !vis[k] &amp;&amp; !vis[k ^ 1])   //无向图需要同时检查反向边未被访问过
+			{
+				vis[k] = 1;
+				dfs(e[k].first);
+				p.push_back(k);
+			}
+	}
+	void ask() //查询欧拉回路，路径上边的序号按顺序存在p中
+	{
+		vis.assign(e.size(), 0), cur.assign(v.size(), 0), p.clear();
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (v[i].i.size() % 2)
+				return dfs(i);
+		dfs(0);
+	}
+};
+</code></pre><h3 id="混合图欧拉回路判定">混合图欧拉回路判定</h3><p>首先给无向边随便定一个方向，设$\deg x$为 x 连出去的边数 − 连入 x 的边数。若存在$\deg x$为奇数，或者图不连通，则无解。否则建立源点 S，汇点 T。对于一个点 x，若$\deg x&gt;0$，则 S 向 x 连边，容量$\frac{\deg x}{2}$；若$\deg x&lt;0$，则 x 向 T 连边，容量$-\frac{\deg x}{2}$。 对于一条定了向的无向边$x\to y$，x 向 y 连边，容量 1，求出最大流，若与 S 和 T 连的每条边都满流，则有解。</p><h2 id="连通性">连通性</h2><h3 id="无向图求割和双连通分量">无向图求割和双连通分量</h3><p><a href="https://vjudge.net/solution/19427352">使用示例 1</a></p><p><a href="https://vjudge.net/solution/19427379">使用示例 2</a></p><ul><li>割边：在连通图中，删除了连通图的某条边后，图不再连通。这样的边被称为割边，也叫做桥。<li>割点：在连通图中，删除了连通图的某个点以及与这个点相连的边后，图不再连通。这样的点被称为割点。构造 dfs 搜索树，在树上有两类节点可以成为割点：<ul><li>对根节点 u，若其有两棵或两棵以上的子树，则该根结点 u 为割点；<li>对非根非叶节点 u，若其中的某棵子树的节点均没有指向 u 的祖先节点的回边，说明删除 u 之后，根结点与该棵子树的节点不再连通；则节点 u 为割点。</ul></ul><p>对于一个无向图的子图，当删除其中任意一条边后，不改变图内点的连通性，这样的子图叫做边的双连通子图。而当子图的边数达到最大时，叫做边的双连通分量。原理是图中所有割边再求一次 SCC，可<strong>直接</strong>使用求 SCC 的代码。</p><p>对于一个无向图的子图，当删除其中任意一个点后，不改变图内点的连通性，这样的子图叫做点的双连通子图。而当子图的边数达到最大时，叫做点的双连通分量。下面给出求点双连通分量的代码。</p><pre><code class="language-cpp">struct BiconnectedConnectedComponenet : Graph
+{
+	vector&lt;int&gt; dep, bid, stak, cutPoint, cutEdge; //bid边的端点所属双连通块
+	BiconnectedConnectedComponenet(int n) : Graph(n) {}
+	void ask()
+	{
+		dep.assign(v.size(), v.size());
+		bid.assign(e.size(), e.size());
+		cutPoint.assign(v.size(), 0);
+		cutEdge.assign(e.size(), 0);
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (dep[i] == v.size())
+				dfs(i, v.size());
+	}
+	int dfs(int u, int fa)
+	{
+		int low = dep[u] = fa != v.size() ? dep[fa] + 1 : 0;
+		for (int i = 0, k, to, lowto; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa)
+			{
+				if (dep[to] == v.size())
+				{
+					stak.push_back(k);
+					low = min(low, lowto = dfs(to, u));
+					if (lowto &gt; dep[u])
+						cutEdge[k] = cutEdge[k ^ 1] = 1;
+					if (lowto &gt;= dep[u])
+						for (cutPoint[u] = fa != v.size() || i;;)
+						{
+							int x = stak.back();
+							stak.pop_back();
+							bid[x] = bid[x ^ 1] = k;
+							if (x == k)
+								break;
+						}
+				}
+				else if (dep[to] &lt; dep[u])
+				{
+					stak.push_back(k);
+					low = min(low, dep[to]);
+				}
+			}
+		return low;
+	}
+};
+</code></pre><h4 id="双连通图的构造">双连通图的构造</h4><p>先求出所有的桥，然后删除这些桥边，剩下的每个连通块都是一个双连通子图。把每个双连通子图收缩为一个顶点，再把桥边加回来，最后的这个图一定是一棵树，边连通度为 1。统计出树中度为 1 的节点的个数，即为叶节点的个数，记为<code>leaf</code>。至少在树上添加<code>(leaf+1)/2</code>条边，就能使树达到边双连通：先把两个最近公共祖先最远的两个叶节点之间连接一条边，这样可以把这两个点到祖先的路径上所有点收缩到一起，因为一个形成的环一定是双连通的；然后再找两个最近公共祖先最远的两个叶节点，这样一对一对找完，恰好是<code>(leaf+1)/2</code>次，把所有点收缩到了一起。</p><h3 id="无向图求边双连通分量有向图求强连通分量">无向图求边双连通分量&amp;有向图求强连通分量</h3><p><a href="https://vjudge.net/solution/19427182">无向图求边双连通分量</a></p><p><a href="https://vjudge.net/solution/19427243">有向图求强连通分量</a></p><pre><code class="language-cpp">struct StronglyConnectedComponenet : Graph
+{
+	vector&lt;int&gt; dep, sid, stak; //sid=点所属连通块内一点
+	StronglyConnectedComponenet(int n) : Graph(n) {}
+	void ask()
+	{
+		dep.assign(v.size(), v.size());
+		sid.assign(v.size(), v.size());
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (dep[i] == v.size())
+				dfs(i, v.size());
+	}
+	int dfs(int u, int fa)
+	{
+		int low = dep[u] = fa != v.size() ? dep[fa] + 1 : 0;
+		stak.push_back(u);
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa /*, 1*/) //求强连通分量把注释去掉，即允许走回边
+			{
+				if (dep[to] == v.size())
+					low = min(low, dfs(to, u));
+				else if (sid[to] == v.size())
+					low = min(low, dep[to]);
+			}
+		if (low == dep[u])
+			for (;;)
+			{
+				int x = stak.back();
+				stak.pop_back();
+				sid[x] = u;
+				if (x == u)
+					break;
+			}
+		return low;
+	}
+};
+</code></pre><h4 id="2-sat">2-SAT</h4><p><a href="https://vjudge.net/solution/23340315">使用示例</a>，n 个布尔变量$x_0\dots x_{n-1}$，逻辑表达式$Y=(A_0+B_0)(A_1+B_1)\dots(A_{m-1}+B_{m-1})$，其中$A_i,B_i\in\lbrace x_j,\overline{x_j}\rbrace $，判断是否存在$x_0\dots x_{n-1}$的取值使得 Y 值为 1。因为$A+B=(\overline A\to B)(\overline B\to A)$，所以对于一个要求$A+B$，我们连$\overline A\to B,\overline B\to A$两条边。如果有一条边$A\to B$，意味着如果 A 成立那么 B 必然成立。若$\exists i,x_i,\overline{x_i}\in$同一 SCC，则不存在。</p><p>模板要求顶点数<code>v.size()</code>是偶数，<code>i</code>与<code>i ^ 1</code>互为相反变量且奇数下标代表布尔变量为真的情况。最后输出结果在<code>ok</code>中。不满足对任意 i<code>ok[i] ^ ok[i ^ 1] == 1</code>时，<code>ask</code>函数返回<code>false</code>。</p><pre><code class="language-cpp">struct TwoSat : StronglyConnectedComponenet
+{
+	vector&lt;int&gt; ok;
+	TwoSat(int n) : StronglyConnectedComponenet(n) {}
+	void addOR(int a, int b) { add({a ^ 1, b}), add({b ^ 1, a}); }
+	void addXOR(int a, int b) { addOR(a, b), addOR(a ^ 1, b ^ 1); }
+	void addXNOR(int a, int b) { addOR(a, b ^ 1), addOR(a ^ 1, b); }
+	int ask()
+	{
+		StronglyConnectedComponenet::ask();
+		for (int i = 0; i &lt; v.size(); i += 2)
+			if (sid[i] == sid[i ^ 1])
+				return 0;
+		vector&lt;vector&lt;int&gt;&gt; g(v.size());
+		vector&lt;int&gt; ind(v.size(), 0), cf(v.size(), 0), stak;
+		for (int i = 0; i &lt; v.size(); ++i)
+		{
+			cf[sid[i]] = sid[i ^ 1];
+			for (int j = 0, k; j &lt; v[i].o.size(); ++j)
+				if (sid[e[k = v[i].o[j]].second] != sid[i])
+					g[sid[e[k].second]].push_back(sid[i]), ++ind[sid[i]];
+		}
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (sid[i] == i &amp;&amp; !ind[i])
+				stak.push_back(i);
+		for (ok.assign(v.size(), -1); !stak.empty();)
+		{
+			int u = stak.back();
+			stak.pop_back();
+			if (ok[u] &lt; 0)
+				ok[u] = 1, ok[cf[u]] = 0;
+			for (int i = 0; i &lt; g[u].size(); ++i)
+				if (!--ind[g[u][i]])
+					stak.push_back(g[u][i]);
+		}
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (i != sid[i])
+				ok[i] = ok[sid[i]];
+		return 1;
+	}
+};
+</code></pre><h5 id="2-sat-暴力搜索求字典序最小的解">2-SAT 暴力搜索求字典序最小的解</h5><p><a href="https://vjudge.net/solution/23340324">使用示例</a>，时间复杂度最坏为为$O(VE)$。</p><pre><code class="language-cpp">struct TwoSat : Graph
+{
+	vector&lt;int&gt; ok;
+	TwoSat(int n) : Graph(n) {}
+	void addOR(int a, int b) { add({a ^ 1, b}), add({b ^ 1, a}); }
+	void addXOR(int a, int b) { addOR(a, b), addOR(a ^ 1, b ^ 1); }
+	void addXNOR(int a, int b) { addOR(a, b ^ 1), addOR(a ^ 1, b); }
+	int dfs(int u, vector&lt;int&gt; &amp;stak)
+	{
+		if (ok[u ^ 1])
+			return 0;
+		if (ok[u])
+			return 1;
+		ok[u] = 1;
+		stak.push_back(u);
+		for (int i = 0; i &lt; v[u].o.size(); ++i)
+			if (!dfs(e[v[u].o[i]].second, stak))
+				return 0;
+		return 1;
+	}
+	int ask()
+	{
+		ok.assign(v.size(), 0);
+		for (int i = 0; i &lt; v.size(); i += 2)
+			if (!ok[i] &amp;&amp; !ok[i ^ 1])
+			{
+				vector&lt;int&gt; stak;
+				if (!dfs(i, stak))
+				{
+					for (int j = 0; j &lt; stak.size(); ++j)
+						ok[stak[j]] = 0;
+					if (!dfs(i ^ 1, stak))
+						return 0;
+				}
+			}
+		return 1;
+	}
+};
+</code></pre><h2 id="二分图">二分图</h2><p>二分图的一个等价定义是：不含有含奇数条边的环的图。</p><p>完美匹配图中所有的顶点都是匹配点。</p><p>二分图的最小点覆盖（最小割）是指最少的顶点数使得二分图 G 中的每条边都至少与其中一个点相关联。二分图中，最小割=最大匹配。</p><p>二分图的最小边覆盖（最大独立集）是指用尽量少的不相交简单路径覆盖二分图中的所有顶点。二分图中，最小点覆盖+最小边覆盖=总点数。</p><p>Hall 定理：二分图中的两部分顶点组成的集合分别为 X,Y ，则有一组无公共点的边，一端恰好为组成 X 的点的充分必要条件是：X 中的任意 k 个点至少与 Y 中的 k 个点相邻。对于区间图只需要考虑极端情况，线段树维护。</p><p>关键点：一定在最大匹配中的点。 求出任意一个最大匹配，那么只需要考虑哪些匹配点不一定在。 假设是考虑左侧的点，右侧类似： 将匹配边从右往左，非匹配边从左到右，从左侧每个未匹配点开始 DFS 到的匹配点都不是关键点。</p><p>关键边：求出任意一个最大匹配，将匹配边从右到左，剩余边从左到右，求出 SCC。 对于一条边：若它位于当前匹配中，那么若两端点位于同一 SCC，则是可能在，否则必定在；若它不位于当前匹配中，那么若两端点位于同一 SCC，则是可能在，否则必定不在。</p><h3 id="hungary-求最大匹配">Hungary 求最大匹配</h3><p><a href="https://vjudge.net/solution/21880920">使用示例</a></p><p>左边 nl 个点$0\dots nl-1$，右边 nr 个点$0\dots nr-1$，取<code>n=max(nl,nr)</code>，左 i 右 j 间相连则<code>g[i].push_back(j);</code>。</p><p>生成<code>fl[i]</code>表示左边第 i 个匹配右边第<code>fl[i]</code>个，<code>fr</code>同理。时间复杂度$O(n^3)$。未匹配的值为<code>fl[i] == N</code>。匹配是一个边集，其中任意两条边都没有公共顶点；扫一遍<code>fl</code>或<code>fr</code>判断有多少不等于<code>N</code>即为最大匹配数。</p><pre><code class="language-cpp">struct Hungary
+{
+	vector&lt;int&gt; g[N];
+	int n, fl[N], fr[N], vr[N];
+	int dfs(int x, int rt)
+	{
+		for (auto y : g[x])
+			if (vr[y] != rt)
+				if (vr[y] = rt, fr[y] == N || dfs(fr[y], rt))
+					return fl[fr[y] = x] = y, 1;
+		return 0;
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N), fill(vr, vr + n, N);
+		for (int i = 0; i &lt; n; ++i)
+			if (fl[i] == N)
+				dfs(i, i); //找完全匹配时如果返回值为0可直接return
+	}
+};
+</code></pre><h3 id="hopcroftkarp-求最大匹配">HopcroftKarp 求最大匹配</h3><p><a href="https://vjudge.net/solution/21880796">使用示例</a>，时间复杂度$O(\sqrt{\vert V\vert }\vert E\vert )$，稀疏图上效果明显。</p><pre><code class="language-cpp">struct HopcroftKarp
+{
+	vector&lt;int&gt; g[N];
+	int n, fl[N], fr[N], hl[N], hr[N], q[N];
+	bool dfs(int x)
+	{
+		int c = hl[x] + 1, y = hl[x] = N;
+		for (auto y : g[x])
+			if (hr[y] == c)
+				if (hr[y] = N, fr[y] == N || dfs(fr[y]))
+					return fl[fr[y] = x] = y, 1;
+		return 0;
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N);
+		for (int x = 0; x &lt; n; ++x)
+			for (auto y : g[x])
+				if (fr[y] == N)
+				{
+					fl[fr[y] = x] = y;
+					break;
+				}
+		for (int ql, qr, ok;;)
+		{
+			fill(hl, hl + n, N), fill(hr, hr + n, N);
+			for (int x = ql = qr = ok = 0; x &lt; n; ++x)
+				if (fl[x] == N)
+					hl[q[qr++] = x] = 0;
+			while (ql &lt; qr)
+				for (auto y : g[q[ql++]])
+					if (hr[y] == N)
+					{
+						hr[y] = hl[q[ql - 1]] + 1;
+						if (fr[y] == N)
+							ok = 1;
+						else if (hl[fr[y]] == N)
+							hl[q[qr++] = fr[y]] = hr[y] + 1;
+					}
+			if (!ok)
+				return;
+			for (int x = 0; x &lt; n; ++x)
+				if (fl[x] == N)
+					dfs(x);
+		}
+	}
+};
+</code></pre><h3 id="kuhnmunkres-求最优完备匹配">KuhnMunkres 求最优完备匹配</h3><p><a href="https://vjudge.net/solution/21880965">使用示例</a>。</p><p>左 x 右 y 代价<code>a[x][y]</code>。最大费用流时，a 初始化 0；最大费用最大流时，a 初始化<code>-N*INF</code>。</p><pre><code class="language-cpp">struct KuhnMunkres
+{
+	ll a[N][N], hl[N], hr[N], slk[N];
+	int n, fl[N], fr[N], vl[N], vr[N], pre[N], q[N], ql, qr;
+	int check(int i)
+	{
+		if (vl[i] = 1, fl[i] != N)
+			return vr[q[qr++] = fl[i]] = 1;
+		while (i != N)
+			swap(i, fr[fl[i] = pre[i]]);
+		return 0;
+	}
+	void bfs(int s)
+	{
+		fill(slk, slk + n, INF), fill(vl, vl + n, 0), fill(vr, vr + n, 0);
+		for (vr[q[ql = 0] = s] = qr = 1;;)
+		{
+			for (ll d; ql &lt; qr;)
+				for (int i = 0, j = q[ql++]; i &lt; n; ++i)
+					if (!vl[i] &amp;&amp; slk[i] &gt;= (d = hl[i] + hr[j] - a[i][j]))
+						if (pre[i] = j, d)
+							slk[i] = d;
+						else if (!check(i))
+							return;
+			ll d = INF;
+			for (int i = 0; i &lt; n; ++i)
+				if (!vl[i] &amp;&amp; d &gt; slk[i])
+					d = slk[i];
+			for (int i = 0; i &lt; n; ++i)
+			{
+				if (vl[i])
+					hl[i] += d;
+				else
+					slk[i] -= d;
+				if (vr[i])
+					hr[i] -= d;
+			}
+			for (int i = 0; i &lt; n; ++i)
+				if (!vl[i] &amp;&amp; !slk[i] &amp;&amp; !check(i))
+					return;
+		}
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N), fill(hr, hr + n, 0);
+		for (int i = 0; i &lt; n; ++i)
+			hl[i] = *max_element(a[i], a[i] + n);
+		for (int j = 0; j &lt; n; ++j)
+			bfs(j);
+	}
+};
+</code></pre><h2 id="带花树">带花树</h2><h3 id="一般图最大匹配">一般图最大匹配</h3><p><a href="http://uoj.ac/submission/342734">使用示例</a></p><pre><code class="language-cpp">struct Blossom : Graph
+{
+	vector&lt;int&gt; f;
+	Blossom(int n) : Graph(n) {}
+	void ask()
+	{
+		f.assign(v.size(), v.size());
+		vector&lt;int&gt; vis(v.size());
+		for (int s = 0, cnt = vis.back(); s &lt; v.size(); ++s)
+			if (f[s] == v.size())
+			{
+				UnionfindSet ufs(v.size());
+				vector&lt;int&gt; pre(v.size(), v.size()), flag(v.size(), 2);
+				for (deque&lt;int&gt; q(flag[s] = 1, s); !q.empty() &amp;&amp; f[s] == v.size(); q.pop_front())
+					for (int i = 0, x = q.front(), y, a, b; i &lt; v[x].o.size(); ++i)
+						if (y = e[v[x].o[i]].second, y != f[x] &amp;&amp; flag[y] &amp;&amp; ufs.ask(x) != ufs.ask(y))
+						{
+							if (flag[y] == 1)
+							{
+								for (a = x, b = y, ++cnt;; swap(a, b))
+									if (a != v.size())
+									{
+										if (vis[a = ufs.ask(a)] == cnt)
+											break;
+										vis[a] = cnt, a = f[a] != v.size() ? pre[f[a]] : v.size();
+									}
+								if (ufs.ask(x) != a)
+									pre[x] = y;
+								if (ufs.ask(y) != a)
+									pre[y] = x;
+								for (int p[2] = {x, y}, j = 0; j &lt; 2; ++j)
+									for (int x = p[j], y, z; x != a; ufs.merge(y, x), ufs.merge(x = z, y))
+									{
+										if (ufs.ask(z = pre[y = f[x]]) != a)
+											pre[z] = y;
+										if (!flag[y])
+											flag[y] = 1, q.push_back(y);
+										if (!flag[z])
+											flag[z] = 1, q.push_back(z);
+									}
+							}
+							else if (f[y] != v.size())
+								pre[y] = x, flag[y] = 0, flag[f[y]] = 1, q.push_back(f[y]);
+							else
+							{
+								for (pre[y] = x; y != v.size();)
+									swap(y, f[f[y] = pre[y]]);
+								break;
+							}
+						}
+			}
+	}
+};
+</code></pre><h2 id="树形图">树形图</h2><h3 id="最小生成树">最小生成树</h3><h4 id="无向图">无向图</h4><p>同时给出 Prim 算法（生成新树）、Kruskal 算法（消耗小）。</p><pre><code class="language-cpp">struct Prim : Graph
+{
+	struct DisGreater
+	{
+		bool operator()(const Edge &amp;e1, const Edge &amp;e2)
+		{
+			return e1.len &gt; e2.len;
+		}
+	};
+	ll ans;
+	vector&lt;int&gt; vis;
+	priority_queue&lt;Edge, vector&lt;Edge&gt;, DisGreater&gt; q;
+	Prim(const Graph &amp;g, int root) : Tree(n), ans(0), vis(g.v.size(), 0) //生成新树，每条边都要有等长反向边
+	{
+		for (insert(root, g); !q.empty();)
+		{
+			Edge ed = q.top();
+			if (q.pop(), !vis[ed.second])
+				insert(ed.second, g), ans += ed.len, add(ed);
+		}
+	}
+	void insert(int u, const Graph &amp;g) //把点和对应的相连的边加入集合
+	{
+		vis[u] = 1;
+		for (int i = 0, k; i &lt; g.v[u].o.size(); ++i)
+			if (k = g.v[u].o[i], !vis[g.e[k].second])
+				q.push(g.e[k]);
+	}
+};
+ll kruskal(vector&lt;Edge&gt; &amp;e, int n) //会清空边集e，每条边被认作无向边
+{
+	ll ret = 0;
+	UnionFindSet ufs(n);
+	for (sort(e.begin(), e.end(), DisGreater()); !e.empty(); e.pop_back())
+		if (ufs.fa(e.back().from) != ufs.fa(e.back().to))
+		{
+			ufs.merge(e.back().from, e.back().to);
+			ret += e.back().len;
+		}
+	return /*ufs.siz&gt;1?INF:*/ ret; //视情况选择去注释
+}
+</code></pre><h4 id="有向图">有向图</h4><p><a href="https://vjudge.net/solution/16971789">使用示例</a></p><p>指定以 root 为根，如果没有限定根那么新建一个虚拟点作为根，向所有边连边长<strong>最大边长+1</strong>的边，在最后生成的图中去掉此边。时间复杂度$O(VE)$。</p><pre><code class="language-cpp">ll zhuLiu(vector&lt;Edge&gt; &amp;e, int root, int n) //不存在返回INF
+{
+	for (ll ret = 0;;)
+	{
+		vector&lt;ll&gt; in(n, INF);
+		vector&lt;int&gt; pre(n, n);
+		for (int i = 0, to; i &lt; e.size(); ++i)
+		{
+			if (e[i].first == (to = e[i].second))
+				swap(e[i--], e.back()), e.pop_back();
+			else if (in[to] &gt; e[i].len)
+				in[to] = e[i].len, pre[to] = e[i].first;
+		}
+		for (int i = in [root] = 0; i &lt; n; ++i)
+			if (in[i] == INF)
+				return INF;
+		vector&lt;int&gt; id(n, n), vis(n, n);
+		int tn = 0;
+		for (int i = 0, v; i &lt; n; ++i)
+		{
+			for (ret += in [v = i]; vis[v] != i &amp;&amp; id[v] == n &amp;&amp; v != root; v = pre[v])
+				vis[v] = i;
+			if (v != root &amp;&amp; id[v] == n)
+			{
+				for (int u = pre[v]; u != v; u = pre[u])
+					id[u] = tn;
+				id[v] = tn++;
+			}
+		}
+		if (!tn)
+			return ret;
+		for (int i = 0; i &lt; n; ++i)
+			if (id[i] == n)
+				id[i] = tn++;
+		for (int i = 0, v; i &lt; e.size(); ++i)
+			if ((e[i].first = id[e[i].first]) != (e[i].second = id[v = e[i].second]))
+				e[i].len -= in[v];
+		n = tn, root = id[root];
+	}
+}
+</code></pre><h3 id="树链剖分与-lca">树链剖分与 LCA</h3><p><a href="https://vjudge.net/solution/16971586">使用示例</a></p><pre><code class="language-cpp">struct Diagram : Graph
+{
+	Fenwick data; //暂用树状数组作为默认数据结构
+	Diagram(const Graph &amp;g, int root) : Graph(g.v.size()), data(g.v.size())
+	{
+		build(root, g);
+		int cnt = v[root].dfn = v[root].dep = 1;
+		dfs(v[root].top = root, cnt);
+	}
+	void build(int u, const Graph &amp;g) //无向图dfs建树，且重边在最前，u为根节点
+	{
+		v[u].siz = 1;
+		for (int i = 0, k, to; i &lt; g.v[u].o.size(); ++i)
+			if (k = g.v[u].o[i], to = g.e[k].second, !v[to].siz) //没访问过的点siz默认0
+			{
+				build(to, g);
+				v[u].siz += v[to].siz;
+				Graph::add(g.e[k]);
+				if (v[ch(u)].siz &lt; v[to].siz) //重边移到最前
+					swap(v[u].o.front(), v[u].o.back());
+			}
+	}
+	void dfs(int u, int &amp;cnt)
+	{
+		for (int i = 0, to; i &lt; v[u].o.size(); ++i)
+		{
+			v[to = ch(u, i)].dfn = ++cnt;
+			v[to].top = i ? to : v[u].top;
+			v[to].dep = v[u].dep + 1;
+			dfs(to, cnt);
+		}
+	}
+	int lca(int x, int y)
+	{
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		return y;
+	}
+	ll ask(int x, int y)
+	{
+		ll ans = 0;
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			ans += data.ask(v[v[x].top].dfn, v[x].dfn);
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		return ans += data.ask(v[y].dfn, v[x].dfn);
+	}
+	void add(int x, int y, ll pv)
+	{
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			data.add(v[v[x].top].dfn, v[x].dfn, pv);
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		data.add(v[y].dfn, v[x].dfn, pv);
+	}
+};
+</code></pre><h3 id="点剖点分治">点剖（点分治）</h3><p><a href="https://vjudge.net/solution/16971666">使用示例</a>，零号点为虚节点。</p><pre><code class="language-cpp">struct TreeDiv : Graph
+{
+	int root;
+	vector&lt;int&gt; mx, siz, vis;
+	TreeDiv(int n) : Graph(n), mx(n, n), siz(n), vis(n) {}
+	void dfsRoot(int u, int fa)
+	{
+		for (int i = mx[u] = siz[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa &amp;&amp; !vis[to])
+				if (dfsRoot(to, u), siz[u] += siz[to], mx[u] &lt; siz[to])
+					mx[u] = siz[to];
+		if (mx[u] &lt; mx[0] - ++siz[u])
+			mx[u] = mx[0] - siz[u];
+		if (mx[root] &gt;= mx[u])
+			root = u;
+	}
+	void dfsDis(int u, int fa, ll d)
+	{
+		//用d更新答案
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa &amp;&amp; !vis[to])
+				dfsDis(to, u, d + e[k].len);
+	}
+	int cal(int u, ll d) //返回符合要求的点对数
+	{
+		return dfsDis(u, 0, d), /*得到答案*/;
+	}
+	void dfs(int u = 1)
+	{
+		dfsRoot(u, root = 0), ans += cal(u = root, 0), vis[u] = 1;
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, !vis[to])
+				ans -= cal(to, e[k].len), mx[0] = siz[to], dfs(to);
+	}
+};
+</code></pre><h1 id="数论"><a href="/2019/02/01/%E6%95%B0%E8%AE%BA/">数论</a></h1><h2 id="辗转相除法">辗转相除法</h2><pre><code class="language-cpp">ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; } //a、b的最大公约数
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }	 //a、b的最小公倍数
+ll gcd(ll a, ll b, ll &amp;x, ll &amp;y)					 //扩展欧几里得，引用返回a*x+b*y=gcd(a,b)绝对值之和最小的解
+{
+	if (!a)
+		return x = 0, y = 1, b;
+	ll d = gcd(b % a, a, y, x);
+	return x -= b / a * y, d;
+}
+ll gcd(ll a, ll b) //无取模求gcd
+{
+	for (ll t = 1, c, d;;)
+	{
+		if (a == b)
+			return t * a;
+		if (a &lt; b)
+			swap(a, b);
+		if (a &amp; 1)
+			c = 0;
+		else
+			a &gt;&gt;= 1, c = 1;
+		if (b &amp; 1)
+			d = 0;
+		else
+			b &gt;&gt;= 1, d = 1;
+		if (c &amp;&amp; d)
+			t &lt;&lt;= 1;
+		else if (!c &amp;&amp; !d)
+			a -= b;
+	}
+}
+</code></pre><h3 id="裴蜀定理">裴蜀定理</h3><p>对任何$a,b\in Z$和它们的最大公约数$d$，关于未知数$x,y$的线性不定方程（称为裴蜀等式）：$ax+by=c$当仅当$d\vert c$，可知有无穷多解。特别地，$ax+by=d$一定有解。</p><h4 id="推论">推论</h4><p>$a,b$互质的充要条件是$ax+by=1$有整数解。</p><h2 id="同余系运算">同余系运算</h2><p>三种乘法的比较，结论是如果可以用<code>__int128</code>就用，否则就用第一种：</p><ul><li><a href="https://vjudge.net/solution/19521824">使用<code>__int128</code></a><li><a href="https://vjudge.net/solution/19853184">第一种同余乘法</a><li><a href="https://vjudge.net/solution/19521800">第二种同余乘法</a></ul><p>求乘法逆元的另外一种方法是用欧拉定理$x^{\phi(m)}\equiv1\pmod m$，x 的逆是$x^{\phi(m)-1}$。特别地，m 为素数时$\phi(m)=m-1$，此时 x 的逆就是<code>pow(x,m-2,m)</code>。</p><p>log 函数：m 为素数时<a href="https://vjudge.net/solution/19395246">求解模方程</a>$a^x\equiv b\pmod m$。设 P 为质数，G 为 P 的原根，则$x^y\equiv b\pmod P$等价于$y\ ind\ x\equiv b\pmod{P-1}$，其中$G\ ind\ x\equiv x\pmod P$。</p><pre><code class="language-cpp">struct Mod
+{
+	const ll M, SM;
+	Mod(ll M) : M(M), SM(sqrt(M) + 0.5) {}
+	ll qadd(ll &amp;a, ll b) const { return a += b, a &gt;= M ? a -= M : a; } //假如a+b&lt;2*M，就不必取模了，取模运算耗时很高
+	ll add(ll a, ll b) const { return qadd(a = (a + b) % M, M); }	  //考虑a和b不在同余系内甚至为负数的情况
+	ll mul(ll a, ll b) const { return add(a * b, M); } //ll类型是int的时候小心 a*b 爆精度
+	ll inv(ll a) const { return pow(a, M - 2); } //要求M为素数，否则return pow(a, phi(M) - 1);
+	ll pow(ll a, ll b) const
+	{
+		ll r = 1;
+		/*
+		if (b &lt; 0)
+			b = -b, a = inv(a);
+		*/
+		for (a = add(a, M); b; b &gt;&gt;= 1, a = mul(a, a))
+			if (b &amp; 1)
+				r = mul(r, a);
+		return r;
+	}
+	/*
+	ll mul(ll a, ll b) const { return add(a * b, -M * (ll)((long double)a / M * b)); } //long double 有效位数16~18位，模数过大时慎用！
+	ll mul(ll a, ll b) const //Head算法，无循环快速计算同余乘法，根据a*b是否爆ll替换a*b%M，需要a&lt;M且b&lt;M，可以调用时手动取模
+	{
+		ll c = a / SM, d = b / SM;
+		a %= SM, b %= SM;
+		ll e = add(add(a * d, b * c), c * d / SM * (SM * SM - M));
+		return add(add(a * b, e % SM * SM), add(c * d % SM, e / SM) * (SM * SM - M));
+	}
+	ll mul(ll a, ll b) const //龟速乘
+	{
+		ll r = 0;
+		for (a %= M; b; b &gt;&gt;= 1, qadd(a, a))
+			if (b &amp; 1)
+				qadd(r, a);
+		return r;
+	}
+	ll inv(ll a) const //模m下a的乘法逆元，不存在返回-1（m为素数时a不为0必有逆元）
+	{
+		ll x, y, d = gcd(a, M, x, y);
+		return d == 1 ? add(x, M) : -1;
+	}
+	vector&lt;ll&gt; sol(ll a, ll b) const //解同余方程，返回ax=b(mod M)循环节内所有解
+	{
+		vector&lt;ll&gt; ans;
+		ll x, y, d = gcd(a, M, x, y);
+		if (b % d)
+			return ans;
+		ans.push_back(mul((b / d) % (M / d), x));
+		for (ll i = 1; i &lt; d; ++i)
+			ans.push_back(add(ans.back(), M / d));
+		return ans;
+	}
+	ll log(ll a, ll b) const
+	{
+		unordered_map&lt;ll, ll&gt; x;
+		for (ll i = 0, e = 1; i &lt;= SM; ++i, e = mul(e, a))
+			if (!x.count(e))
+				x[e] = i;
+		for (ll i = 0, v = inv(pow(a, SM)); i &lt;= SM; ++i, b = mul(b, v))
+			if (x.count(b))
+				return i * SM + x[b];
+		return -1;
+	}
+	*/
+};
+</code></pre><h3 id="中国剩余定理解同余方程组">中国剩余定理解同余方程组</h3><p><a href="https://vjudge.net/solution/14375815">使用示例</a></p><pre><code class="language-cpp">ll crt(const vector&lt;pair&lt;ll, ll&gt;&gt; &amp;v) //同余方程组，x%v[i].first==v[i].second，不存在返回-1
+{
+	ll m = v[0].first, r = v[0].second, c, d, x, y, z;
+	for (int i = 1; i &lt; v.size(); ++i)
+	{
+		if (c = v[i].second - r, d = gcd(m, v[i].first, x, y), c % d)
+			return -1;
+		gcd(m / d, z = v[i].first / d, x, y), r += c / d * x % z * m, r %= m *= z;
+	}
+	return r &lt; 0 ? r + m : r;
+}
+struct Excrt
+{
+	vector&lt;ll&gt; b2, a2;
+	int n;
+	void init()
+	{
+		scanf("%d", &amp;n);
+		ll q, qq;
+		for (int i = 0; i &lt; n; i++)
+			scanf("%lld%lld", &amp;q, &amp;qq), b2.push_back(q), a2.push_back(qq);
+	}
+	ll get()
+	{
+		ll M, ans, x = 0, y = 0;
+		M = 1, ans = 0;
+		for (int i = 0; i &lt; n; i++)
+		{
+			ll a = M, b = b2[i], c = (a2[i] - ans % b + b) % b; //ax=c(mod b)
+			ll gcd = exgcd(a, b, x, y), bg = b / gcd;
+			if (c % gcd != 0)
+			{
+				return -1;
+			} //返回-1表示无解
+			x = mul(x, c / gcd, bg);
+			y = M / gcd * b;
+			ans = (x * M + ans) % y; //???k???????
+			if (ans &lt; 0)
+				ans += y;
+			M = y; //M??k?m?lcm
+		}
+		return ans;
+	}
+};
+</code></pre><h3 id="二次剩余">二次剩余</h3><pre><code class="language-cpp">struct QuadraticRes
+{
+	struct numb
+	{
+		ll x, y;
+	};
+	numb mul(const numb &amp;a, const numb &amp;b, ll p)
+	{
+		return (numb){(a.x * b.x % p + a.y * b.y % p * w % p) % p, (a.x * b.y + a.y * b.x) % p};
+	}
+	ll pow2(numb a, ll b, ll p)
+	{
+		numb ret = {1, 0}, tem = a;
+		while (b)
+		{
+			if (b &amp; 1)
+				ret = mul(ret, tem, p);
+			tem = mul(tem, tem, p), b &gt;&gt;= 1;
+		}
+		return ret.x % p;
+	}
+	ll get(ll n, ll p)
+	{
+		if (Mod(p).pow(n, p / 2) == p - 1)
+		{
+			return -1;
+		} //此时无解
+		while (1)
+		{
+			ll a = rand();
+			w = (a * a - n + p) % p;
+			if (Mod(p).pow(w, p / 2) == p - 1)
+			{
+				return pow2((numb){a, 1}, p / 2 + 1, p); //还有一个解是p减去这个值
+			}
+		}
+	}
+};
+</code></pre><h2 id="欧拉筛">欧拉筛</h2><p>欧拉函数$\phi(n)$是小于 n 的正整数中与 n 互素的数的数目。特别地，规定$\phi(1)=1$，易知 n&gt;2 时都为偶数。</p><p>欧拉函数是积性函数，即对任意素数$p,q$满足下列关系：$\phi(pq)=\phi(p)\phi(q)=(p-1)(q-1)$对任何两个互质的正整数$x, m(m\geq2)$有欧拉定理：$x^{\phi(m)}\equiv1\pmod m$当 m 为素数 p 时，此式变为费马小定理：$x^{p-1}\equiv1\pmod p$利用欧拉函数和它本身不同质因数的关系，用筛法$O(N)$预处理某个范围内所有数的欧拉函数值，并求出素数表。同时，利用计算欧拉函数过程中求出的最小素因子 m，可以实现$O(log N)$的素因数分解。</p><p>同时求莫比乌斯函数$\mu(n)$，存在<code>mu</code>中。</p><pre><code class="language-cpp">struct EulerSieve
+{
+	vector&lt;int&gt; p, m, phi, mu; //素数序列，最小素因子，欧拉函数，莫比乌斯函数
+	EulerSieve(int N) : m(N, 0), phi(N, 0), mu(N, 0)
+	{
+		phi[1] = mu[1] = 1;					 //m[1]=0,m[i]==i可判断i是素数
+		for (long long i = 2, k; i &lt; N; ++i) //防i*p[j]爆int
+		{
+			if (!m[i])
+				p.push_back(m[i] = i), phi[i] = i - 1, mu[i] = -1; //i是素数
+			for (int j = 0; j &lt; p.size() &amp;&amp; (k = i * p[j]) &lt; N; ++j)
+			{
+				phi[k] = phi[i] * p[j];
+				if ((m[k] = p[j]) == m[i])
+				{
+					mu[k] = 0;
+					break;
+				}
+				phi[k] -= phi[i];
+				mu[k] = -mu[i];
+			}
+		}
+	}
+};
+</code></pre><h3 id="直接求欧拉函数"><a href="https://vjudge.net/solution/19396361">直接求欧拉函数</a></h3><pre><code class="language-cpp">ll phi(ll n)
+{
+	ll phi = n;
+	for (ll i = 2; i * i &lt;= n; ++i)
+		if (!(n % i))
+			for (phi = phi / i * (i - 1); !(n % i);)
+				n /= i;
+	if (n &gt; 1)
+		phi = phi / n * (n - 1);
+	return phi;
+}
+</code></pre><h3 id="常见数论函数变换">常见数论函数变换</h3><p>$\sum_{d\vert n}\mu(d)=[n=1]$</p><p>$\phi(n)=\sum_{i=1}^n[\gcd(i,n)=1]=\sum_{i=1}^n\sum_{k\mid i,k\mid n}\mu(k)=\sum_{k\mid n}\frac nk\mu(k)$</p><h4 id="前缀和">前缀和</h4><p>欧拉函数前缀和$S_\phi(n)=\frac{(n+1)n}2-\sum_{d=1}^nS_\phi(\frac{n}{d})$</p><p>莫比乌斯函数前缀和$S_\mu(n)=1-\sum_{d=1}^nS_\mu(\frac{n}{d})$</p><h4 id="莫比乌斯反演">莫比乌斯反演</h4><p>若$f(n)=\sum_{d\vert n}g(d)$，则$g(n)=\sum_{d\vert n}\mu(d)f(\frac{n}{d})$</p><p>若$f(n)=\sum_{i=1}^nt(i)g(\frac{n}{i})$，则$g(n)=\sum_{i=1}^n\mu(i)t(i)f(\frac{n}{i})$（此时代$t(i)=[gcd(n,i)&gt;1]$可得上式）</p><p>举例（其中$T=kd$）：</p><p>[\sum_{i=1}^n\sum_{j=1}^m\gcd(i,j)<br /> =\sum_d d\sum_{i=1}^n\sum_{j=1}^m[\gcd (i,j)=d]<br /> =\sum_{d}d\sum_{i=1}^{\lfloor\frac nd\rfloor}\sum_{j=1}^{\lfloor\frac md\rfloor}[\gcd (i,j)=1]<br /> =\sum_{d}d\sum_{i=1}^{\lfloor\frac nd\rfloor}\sum_{j=1}^{\lfloor\frac md\rfloor}\sum_{k\mid i,k\mid j}\mu(k)<br /> =\sum_d d\sum_k\mu(k)\sum_{k\mid i}^{\lfloor\frac nd\rfloor}\sum_{k\mid j}^{\lfloor\frac md\rfloor}<br /> =\sum_{d}d\sum_k\mu(k)\lfloor\frac n{kd}\rfloor\lfloor\frac m{kd}\rfloor<br /> =\sum_{T}\lfloor\frac nT\rfloor\lfloor\frac mT\rfloor\sum_{k\mid T}\frac Tk\mu(k)<br /> =\sum_{T}\lfloor\frac nT\rfloor\lfloor\frac mT\rfloor\varphi(T)]</p><p>$\varphi(T)$可以使用线性筛预处理处理，我们就可以枚举$T$求上式了，时间复杂度$O(n)$。多组数据$n,m$询问上式，时间复杂度就变成了$O(Tn)$。事实上，$\lfloor\frac{n}{T}\rfloor$是不会轻易变化的，是过了连续的一段后才发生变化的，那么我们就可以计算出这一段的结束位置，对$\varphi$函数作前缀和，就可以直接分块了，这样的时间复杂度是$O(T\sqrt{n})$的。</p><h2 id="pollardrho-大数素因子分解">PollardRho 大数素因子分解</h2><p>时间复杂度$O(N^{1/4})$，数据多的时候可考虑欧拉筛优化。</p><p>注意这里模乘法很容易爆 long long，看情况选用快速乘法。</p><pre><code class="language-cpp">struct PollardRho
+{
+	bool isPrime(ll n, int S = 12) //MillerRabin素数测试，S为测试次数，用前S个素数测一遍，S=12可保证unsigned long long范围内无错；n&lt;2请特判
+	{
+		static ll d, u, t, p[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
+		for (d = n - 1; !(d &amp; 1);)
+			d &gt;&gt;= 1; //未对0，1做特判！
+		Mod mo(n);
+		for (int i = 0; i &lt; S; ++i)
+		{
+			if (!(n % p[i]))
+				return n == p[i];
+			for (t = mo.pow(p[i], u = d); t != n - 1 &amp;&amp; t != 1 &amp;&amp; u != n - 1;)
+				t = mo.mul(t, t), u &lt;&lt;= 1;
+			if (t != n - 1 &amp;&amp; !(u &amp; 1))
+				return 0;
+		}
+		return 1;
+	}
+	void fac(ll n, vector&lt;ll&gt; &amp;factor)
+	{
+		/*
+		if (n &lt; e.m.size()) //欧拉筛预处理优化，可以防止很多小素数因子的情况
+		{
+			for (; n &gt; 1; n /= e.m[n])
+				factor.push_back(e.m[n]);
+			return;
+		}
+		*/
+		if (isPrime(n))
+			return factor.push_back(n);
+		Mod mo(n);
+		for (ll c = 1;; ++c)
+			for (ll i = 0, k = 1, x = rand() % (n - 1) + 1, y, p;;)
+			{
+				if (++i == k)
+					y = x, k &lt;&lt;= 1;
+				if (x = mo.add(mo.mul(x, x), c), p = __gcd(abs(x - y), n), p == n)
+					break;
+				if (p &gt; 1)
+					return fac(p, factor), fac(n / p, factor);
+			}
+	}
+};
+</code></pre><h2 id="快速变换">快速变换</h2><h3 id="蝴蝶变换雷德变换">蝴蝶变换（雷德变换）</h3><p>保存 FTT 和 FNTT 时交换的对应位置（即保存的是置换）。</p><pre><code class="language-cpp">struct Rader : vector&lt;int&gt;
+{
+	Rader(int n) : vector&lt;int&gt;(1 &lt;&lt; int(ceil(log2(n))))
+	{
+		for (int i = at(0) = 0; i &lt; size(); ++i)
+			if (at(i) = at(i &gt;&gt; 1) &gt;&gt; 1, i &amp; 1)
+				at(i) += size() &gt;&gt; 1;
+	}
+};
+</code></pre><h3 id="快速傅里叶变换">快速傅里叶变换</h3><p><a href="https://vjudge.net/solution/21912936">使用示例</a>，高精度乘法。</p><p><a href="https://vjudge.net/solution/21914340">任意模数 FFT</a></p><pre><code class="language-cpp">struct FFT : Rader
+{
+	vector&lt;complex&lt;lf&gt;&gt; w;
+	FFT(int n) : Rader(n), w(size())
+	{
+		for (int i = 0; i &lt; size(); ++i)
+			w[i] = polar(1.0, 2 * M_PI * i / size());
+	}
+	void fft(vector&lt;complex&lt;lf&gt;&gt; &amp;x) const
+	{
+		for (int i = 0; i &lt; x.size(); ++i)
+			if (i &lt; at(i))
+				std::swap(x[i], x[at(i)]);
+		for (int i = 1; i &lt; size(); i &lt;&lt;= 1)
+			for (int j = 0; j &lt; i; ++j)
+				for (int k = j; k &lt; size(); k += i &lt;&lt; 1)
+				{
+					complex&lt;lf&gt; t = w[size() / (i &lt;&lt; 1) * j] * x[k + i];
+					x[k + i] = x[k] - t, x[k] += t;
+				}
+	}
+	vector&lt;ll&gt; ask(const vector&lt;ll&gt; &amp;a, const vector&lt;ll&gt; &amp;b) const
+	{
+		vector&lt;complex&lt;lf&gt;&gt; xa(a.begin(), a.end()), xb(b.begin(), b.end());
+		xa.resize(size()), xb.resize(size()), fft(xa), fft(xb);
+		for (int i = 0; i &lt; size(); ++i)
+			xa[i] *= xb[i];
+		fft(xa);
+		vector&lt;ll&gt; ans(size());
+		for (int i = 0; i &lt; size(); ++i)
+			ans[i] = xa[(size() - i) &amp; (size() - 1)].real() / size() + 0.5;
+		return ans;
+	}
+	vector&lt;ll&gt; askMod(const vector&lt;ll&gt; &amp;a, const vector&lt;ll&gt; &amp;b, ll M) const //任意模数
+	{
+		vector&lt;complex&lt;lf&gt;&gt; e(size()), c(size());
+		for (int i = 0; i &lt; a.size(); ++i)
+			e[i].real(a[i] &amp; 0x7fff), e[i].imag(a[i] &gt;&gt; 15);
+		for (int i = 0; i &lt; b.size(); ++i)
+			c[i].real(b[i] &amp; 0x7fff), c[i].imag(b[i] &gt;&gt; 15);
+		fft(e), fft(c);
+		vector&lt;complex&lt;lf&gt;&gt; d(c);
+		for (int i = 0; i &lt; size(); ++i)
+		{
+			int fr = (size() - i) &amp; (size() - 1);
+			c[i] *= 0.5 * complex&lt;lf&gt;(e[i].X + e[fr].X, e[i].Y - e[fr].Y);
+			d[i] *= 0.5 * complex&lt;lf&gt;(e[i].Y + e[fr].Y, e[fr].X - e[i].X);
+		}
+		fft(c), fft(d);
+		vector&lt;ll&gt; ans(size());
+		for (int i = 0; i &lt; size(); ++i)
+		{
+			ll fr = (size() - i) &amp; (size() - 1),
+			   p = c[fr].X / size() + 0.5,
+			   o = c[fr].Y / size() + 0.5,
+			   x = d[fr].X / size() + 0.5,
+			   u = d[fr].Y / size() + 0.5;
+			ans[i] = (p % M + ((o + x) % M &lt;&lt; 15) + (u % M &lt;&lt; 30)) % M;
+		}
+		return ans;
+	}
+};
+</code></pre><h3 id="快速数论变换">快速数论变换</h3><p>原理和 FFT 相同，解决特殊情况下 FFT 的浮点误差，并且可以在同余系进行变换。</p><p>对于形如$m=2^nc+1$的费马素数，记其原根为 g，则旋转因子为$g^{(m-1)/n}$，满足$g^{m-1}=1$且$2^n\mid m-1$。</p><p><a href="https://vjudge.net/solution/21913390">使用示例</a></p><pre><code class="language-cpp">struct FNTT : Rader, Mod
+{
+	vector&lt;ll&gt; w;
+	FNTT(int N, ll M, ll G) : Rader(N), Mod(M), w(size(), pow(G, (M - 1) / size()))
+	{
+		for (int i = w[0] = 1; i &lt; size(); ++i)
+			w[i] = mul(w[i], w[i - 1]);
+	}
+	void fntt(vector&lt;ll&gt; &amp;x) const
+	{
+		for (int i = 0; i &lt; size(); ++i)
+			if (i &lt; at(i))
+				std::swap(x[i], x[at(i)]);
+		for (int i = 1, j; i &lt; size(); i &lt;&lt;= 1)
+			for (int j = 0; j &lt; i; ++j)
+				for (int k = j; k &lt; size(); k += i &lt;&lt; 1)
+				{
+					ll t = mul(w[size() / (i &lt;&lt; 1) * j], x[k + i]);
+					qadd(x[k + i] = x[k], M - t), qadd(x[k], t);
+				}
+	}
+	vector&lt;ll&gt; ask(vector&lt;ll&gt; a, vector&lt;ll&gt; b) const
+	{
+		a.resize(size()), b.resize(size()), fntt(a), fntt(b);
+		for (int i = 0; i &lt; size(); ++i)
+			a[i] = mul(a[i], b[i]);
+		fntt(a), reverse(a.begin() + 1, a.end());
+		ll u = inv(size());
+		for (int i = 0; i &lt; size(); ++i)
+			a[i] = mul(a[i], u);
+		return a;
+	}
+};
+</code></pre><h4 id="常见素数的原根"><a href="https://blog.csdn.net/hnust_xx/article/details/76572828">常见素数的原根</a></h4><table><thead><tr><th>r * 2 ^ k + 1<th>r<th>k<th>g，mod(r * 2 ^ k + 1)的原根<tbody><tr><td>3<td>1<td>1<td>2<tr><td>5<td>1<td>2<td>2<tr><td>17<td>1<td>4<td>3<tr><td>97<td>3<td>5<td>5<tr><td>193<td>3<td>6<td>5<tr><td>257<td>1<td>8<td>3<tr><td>7681<td>15<td>9<td>17<tr><td>12289<td>3<td>12<td>11<tr><td>40961<td>5<td>13<td>3<tr><td>65537<td>1<td>16<td>3<tr><td>786433<td>3<td>18<td>10<tr><td>5767169<td>11<td>19<td>3<tr><td>7340033<td>7<td>20<td>3<tr><td>23068673<td>11<td>21<td>3<tr><td>104857601<td>25<td>22<td>3<tr><td>167772161<td>5<td>25<td>3<tr><td>469762049<td>7<td>26<td>3<tr><td>998244353<td>119<td>23<td>3<tr><td>1004535809<td>479<td>21<td>3<tr><td>2013265921<td>15<td>27<td>31<tr><td>2281701377<td>17<td>27<td>3<tr><td>3221225473<td>3<td>30<td>5<tr><td>75161927681<td>35<td>31<td>3<tr><td>77309411329<td>9<td>33<td>7<tr><td>206158430209<td>3<td>36<td>22<tr><td>2061584302081<td>15<td>37<td>7<tr><td>2748779069441<td>5<td>39<td>3<tr><td>6597069766657<td>3<td>41<td>5<tr><td>39582418599937<td>9<td>42<td>5<tr><td>79164837199873<td>9<td>43<td>5<tr><td>263882790666241<td>15<td>44<td>7<tr><td>1231453023109121<td>35<td>45<td>3<tr><td>1337006139375617<td>19<td>46<td>3<tr><td>3799912185593857<td>27<td>47<td>5<tr><td>4222124650659841<td>15<td>48<td>19<tr><td>7881299347898369<td>7<td>50<td>6<tr><td>31525197391593473<td>7<td>52<td>3<tr><td>180143985094819841<td>5<td>55<td>6<tr><td>1945555039024054273<td>27<td>56<td>5<tr><td>4179340454199820289<td>29<td>57<td>3</table><h3 id="快速沃尔什变换">快速沃尔什变换</h3><p>如果要在同余系中进行运算，则下面代码需要修改。</p><pre><code class="language-cpp">void fwt(vector&lt;ll&gt; &amp;x, void f(ll &amp;l, ll &amp;r))
+{
+	for (int i = 1; i &lt; x.size(); i &lt;&lt;= 1)
+		for (int j = 0; j &lt; i; ++j)
+			for (int k = j; k &lt; x.size(); k += i &lt;&lt; 1)
+				f(x[k], x[k + i]);
+}
+void fwt(ll *b, ll *e, void f(ll &amp;l, ll &amp;r)) //再给一个递归二分的代码便于理解
+{
+	if (e - b &lt; 2)
+		return;
+	ll *m = b + (e - b) / 2;
+	fwt(b, m, f), fwt(m, e, f);
+	while (m &lt; e)
+		f(*(b++), *(m++));
+}
+</code></pre><h4 id="and">AND</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r) { l += r; }
+void utf(ll &amp;l, ll &amp;r) { l -= r; }
+</code></pre><h4 id="or">OR</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r) { r += l; }
+void utf(ll &amp;l, ll &amp;r) { r -= l; }
+</code></pre><h4 id="xor">XOR</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r)
+{
+	ll tl = l + r, tr = l - r;
+	l = tl, r = tr;
+}
+void utf(ll &amp;l, ll &amp;r) { tf(l, r), l &gt;&gt;= 1, r &gt;&gt;= 1; }
+</code></pre><h4 id="xnornandnor">XNOR、NAND、NOR</h4><p>直接用异或运算、与运算、或运算的方法求出来，然后将互反的两位交换即可。</p><h2 id="pell-方程">Pell 方程</h2><p>形如$x^2-Dy^2=1$（D 为任意正整数）的方程称为佩尔方程，必有最小正整数解$(x_0,y_0)$，用</p><p>$x_n=x_0x_{n-1}+Dy_0y_{n-1},y_n=y_0x_{n-1}+x_0y_{n-1}$</p><p>可递推方程的第 n 小整数解（可用矩阵快速幂求），同时还有</p><p>$2x_0x_n=x_{n-1}+x_{n+1},2x_0y_n=y_{n-1}+y_{n+1}$</p><h2 id="bertrand-猜想">Bertrand 猜想</h2><p>$\forall n&gt;3,\exist n&lt;p&lt;n\times 2$其中 n 为整数，p 为质数。</p><h2 id="威尔逊定理">威尔逊定理</h2><p>当且仅当 p 为素数时：$(p-1)!\equiv -1\pmod p$，</p><h2 id="jacobis-four-square-theorem">Jacobi’s Four Square Theorem</h2><p>设$a^2+b^2+c^2+d^2=n$的自然数解个数为$r4(n)$，$d(n)$为$n$的约数和，由 Jacobi’s Four Square Theorem 可知，若$n$是奇数，则$r4(n)=8d(n)$，否则$r4(n)=24d(k)$，$k$是$n$去除所有$2$后的结果。</p><h1 id="组合数学"><a href="/2019/01/31/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a></h1><h2 id="组合数取模">组合数取模</h2><p><a href="https://vjudge.net/solution/18275045">使用示例</a></p><p>为方便，记$C(n,m)=C_n^m=\binom{n}{m}$。</p><pre><code class="language-cpp">struct Factorial : Mod
+{
+	vector&lt;ll&gt; fac, ifac;
+	Factorial(int N, ll M) : fac(N, 1), ifac(N, 1), Mod(M)
+	{
+		for (int i = 2; i &lt; N; ++i)
+			fac[i] = mul(fac[i - 1], i), ifac[i] = mul(M - M / i, ifac[M % i]);
+		for (int i = 2; i &lt; N; ++i)
+			ifac[i] = mul(ifac[i], ifac[i - 1]);
+	}
+	ll c(int n, int m) { return mul(mul(fac[n], ifac[m]), ifac[n - m]); }
+	ll lucas(ll n, ll m) //卢卡斯定理求C(n,m)%M，适用于模数M小于N的情况，或者m较小的时候也可以暴力求
+	{
+		if (!m)
+			return 1;
+		if (n &lt; m || n % M &lt; m % M)
+			return 0;
+		if (n &lt; M &amp;&amp; m &lt; M)
+			return c(n, m);
+		return mul(lucas(n / M, m / M), lucas(n % M, m % M));
+	}
+};
+</code></pre><h2 id="组合数-lcm">组合数 LCM</h2><p>$(n + 1)lcm(C(n,0),C(n,1),\dots,C(n,k))=lcm(n+1,n,n−1,n−2,\dots,n−k+1)$</p><p>区间 lcm 的维护：对于一个数，将其分解质因数，若有因子$p^k$，那么拆分出 k 个数 $p^1,p^2,\dots,p^k$，权值都为 p，那么区间$[l,r]$内所有数的 lcm 的答案=所有在该区间中出现过的数的权值之积，可持久化线段树维护之。</p><h2 id="stirling-数">Stirling 数</h2><h3 id="第一类斯特林数">第一类斯特林数</h3><p>第一类斯特林数$S(p,k)$的一个的组合学解释是：将 p 个物体排成 k 个非空循环排列的方法数。</p><p>递推公式：$S(p,k)=(p−1)S(p−1,k)+S(p−1,k−1),1\leq k\leq p−1;S(p,0)=0,p\ge1;S(p,p)=1,p\ge0$</p><h3 id="第二类斯特林数">第二类斯特林数</h3><p>第二类斯特林数$S(p,k)$的一个的组合学解释是：将 p 个物体划分成 k 个非空不可辨别的（可以理解为盒子没有编号）集合的方法数。</p><p>递推公式：$S(p,k)=kS(p−1,k)+S(p−1,k−1),1\leq k\leq p−1;S(p,0)=0,p\ge 1;S(p,p)=1,p\ge0$</p><p>卷积形式：$S(n,m)=\frac{1}{m!}\sum_{k=0}^m(-1)^kC(m,k)(m-k)^n=\sum_{k=0}^m\frac{(-1)^k}{k!}\frac{(m-k)^n}{(m-k)!}$</p><p>同时有转化：$x^k=\sum_{i=1}^ki!C(x,i)S(k,i)$</p><h3 id="斯特林近似公式">斯特林近似公式</h3><p>$n!\approx\sqrt{2\pi n}(\frac{n}{e})^n$</p><h2 id="小球入盒模型通解">小球入盒模型通解</h2><table><thead><tr><th>k 个球<th>m 个盒子<th>空盒子<th>方案数<tbody><tr><td>各不相同<td>各不相同<td>允许<td>$m^k$<tr><td>各不相同<td>各不相同<td>无<td>$m!Stirling2(k,m)$<tr><td>各不相同<td>完全相同<td>允许<td>$\sum_{i=1}^mStirling2(k,i)$<tr><td>各不相同<td>完全相同<td>无<td>$Stirling2(k,m)$<tr><td>完全相同<td>各不相同<td>允许<td>$C(m+k−1,k)$<tr><td>完全相同<td>各不相同<td>无<td>$C(k−1,m−1)$<tr><td>完全相同<td>完全相同<td>允许<td>$\frac{1}{(1−x)(1−x^2)…(1−x^m)}的x^k项的系数$<tr><td>完全相同<td>完全相同<td>无<td>$\frac{x^m}{(1−x)(1−x^2)…(1−x^m)}的x^k项的系数$</table><h2 id="置换">置换</h2><p><a href="https://vjudge.net/solution/18445975">使用示例</a></p><pre><code class="language-cpp">struct Permutation : vector&lt;int&gt;
+{
+	Permutation(int n = 0) : vector&lt;int&gt;(n) {}
+	friend Permutation operator*(const Permutation &amp;f, const Permutation &amp;g)
+	{
+		Permutation ans(f.size());
+		for (int i = 0; i &lt; f.size(); ++i)
+			ans[i] = g[f[i]];
+		return ans;
+	}
+	friend Permutation inv(const Permutation &amp;f)
+	{
+		Permutation ans(f.size());
+		for (int i = 0; i &lt; f.size(); ++i)
+			ans[f[i]] = i;
+		return ans;
+	}
+	friend vector&lt;vector&lt;int&gt;&gt; cycle(const Permutation &amp;f)
+	{
+		vector&lt;int&gt; vis(f.size(), 0);
+		vector&lt;vector&lt;int&gt;&gt; ans;
+		for (int i = 0; i &lt; f.size(); ++i)
+			if (!vis[i])
+			{
+				ans.push_back(vector&lt;int&gt;());
+				for (int j = i; !vis[j]; j = f[j])
+					vis[j] = 1, ans.back().push_back(j);
+			}
+		return ans;
+	}
+};
+</code></pre><h2 id="生成字典序">生成字典序</h2><h3 id="下一排列">下一排列</h3><p>对给定的排列$a_1a_2\dots a_n$，找到$a_j$使得$a_j&lt;a_{j+1},a_{j+1}&gt;a_{j+2}&gt;\dots&gt;a_n$即这列数中最后一个相邻递增数对，然后把$a_{j+1},a_{j+2},\dots,a_n$中大于$a_j$的最小数放到位置 j，然后$a_j\dots a_n$中剩余的数从小到大排序放到$[j+1,n]$中。</p><pre><code class="language-cpp">bool nextPermutation(ll *b, ll *e) //标准库有这个函数next_permutation
+{
+	ll *i = e - 1, *j = e - 2;
+	while (j &gt;= b &amp;&amp; *j &gt;= *(j + 1))
+		--j;
+	if (j &lt; b)
+		return 0;
+	while (*i &lt;= *j)
+		--i;
+	return swap(*i, *j), reverse(j + 1, e), 1;
+}
+</code></pre><h2 id="二项式反演">二项式反演</h2><p>$f(n)=\sum_{k=0}^nC(n,k)g(k),g(n)=\sum_{k=0}^n(−1)^{n−k}C(n,k)f(k)$</p><h2 id="第-k-小期望">第 k 小期望</h2><p>$f(n,k)$表示有 n 个变量，和为 1，第 k 小的期望。</p><p>$f(n,k)=\frac{1}{n^2}+(1-\frac{1}{n})f(n-1,k-1),f(n,0)=0$</p><h2 id="错排数">错排数</h2><p>考虑一个有 n 个元素的排列，若一个排列中所有的元素都不在自己原来的位置上，那么这样的排列就称为原排 列的一个错排。</p><p>n 个元素的错排数$D_n$满足递推公式：$D_1=0,D_2=1,D_n=(n−1)(D_{n−2}+D_{n−1})$</p><p>通项：$D(n)=n![\frac{(-1)^2}{2!}+\dots+\frac{(-1)^{n-1} }{(n-1)!}+\frac{(-1)^n}{n!}]=\lfloor\frac{n!}{e}+\frac{1}{2}\rfloor$</p><h2 id="bonuli-数">Bonuli 数</h2><p><a href="http://www.51nod.com/Challenge/ProblemSubmitDetail.html#!#judgeId=744601">使用示例</a></p><p>$B_n = -\frac{1}{C(n+1,n)}(C(n+1,0)B_0+C(n+1,1)B_1+\dots+C(n+1,n-1)B_{n-1})=-\frac{1}{n+1}(C(n+1,0)B_0+C(n+1,1)B_1+\dots+C(n+1,n-1)B_{n-1})$</p><p>可用于计算任意<strong>正整数</strong>次数的幂和：$\sum_{i=1}^ni^k=\frac{1}{k+1}\sum_{j=0}^kC(k+1,j)B_jn^{k+1-j}$</p><pre><code class="language-cpp">struct Bonuli : Factorial
+{
+	vector&lt;ll&gt; b;
+	Bonuli(int N, ll M) : Factorial(N, M), b(N, 0)
+	{
+		for (int i = b[0] = 1; i &lt; N; ++i)
+		{
+			for (int j = 0; j &lt; i; ++j)
+				b[i] = qadd(b[i], mul(b[j], c(i + 1, j)));
+			b[i] = qadd(M, -mul(b[i], mul(fac[i], ifac[i + 1])));
+		}
+	}
+	ll ask(ll n, int k)
+	{
+		ll r = 0, w = 1, u = add(n, 1);
+		for (int i = 1; i &lt;= k + 1; ++i)
+			r = qadd(r, mul(mul(b[k + 1 - i], c(k + 1, i)), w = mul(w, u)));
+		return mul(r, mul(fac[k], ifac[k + 1]));
+	}
+};
+
+</code></pre><h2 id="catalan-数">Catalan 数</h2><p>$h_1=1,h_n=\frac{4n−2}{n+1}h_{n−1}=\frac{C(2n,n)}{n+1}=C(2n,n)−C(2n,n−1)$。</p><p>在一个格点阵列中，从$(0,0)$点走到$(n,m)$点且不经过对角线$x=y$的方法数：$C(n+m−1,m)−C(n+m−1,m−1),x&gt;y;C(n+m,m)−C(n+m,m−1),x\ge y$。</p><p>常见的 Catalan 数：括号序的个数、凸多边形三角剖分的方案数等。</p><h2 id="bell-数">Bell 数</h2><p>把 n 个带标号的物品划分为若干不相交集合的方案数称为贝尔数，其递推公式：$B_n=\sum_{i=0}^{N-1}C_{n-1}^iB_i$</p><p>前几项贝尔数：</p><pre><code class="language-bash">1,2,5,15,52,203,877,4140,21147,115975,678570,4213597,27644437,190899322,1382958545,...
+</code></pre><h3 id="等价类容斥">等价类容斥</h3><p>考虑容斥，Bell(p)枚举所有等价情况。对于一种情况，强制了一个等价类里面的数都要相同，其它的可以相同也可以不同。</p><p>容斥系数为：$(−1)^{p−等价类个数}(每个等价类大小−1)!之积$。</p><h2 id="grey-码">Grey 码</h2><p>格雷序列第 i 个是<code>i^(i&gt;&gt;1)</code>。长为 n 的 01 序列共$2^n$个，下标从$0\dots 2^n-1$。</p><h2 id="扩展-cayley-公式">扩展 Cayley 公式</h2><p>对于 n 个点，m 个连通块的图，假设每个连通块有 a[i]个点，那么用 s−1 条边把它连通的方案数为$n^{s−2}a[1]a[2]\dots a[m]$。</p><h2 id="超立方体">超立方体</h2><p>n 维超立方体有$2^{n−i}C(n,i)$个 i 维元素。</p><h2 id="枚举位集-i-的非空子集-j">枚举位集 I 的非空子集 J</h2><pre><code class="language-cpp">for(J=I; J; J=I&amp;J−1) {}
+</code></pre><h1 id="线性代数"><a href="/2019/01/30/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></h1><h2 id="矩阵">矩阵</h2><pre><code class="language-cpp">typedef array&lt;array&lt;ll, N&gt;, N&gt; Mat;
+</code></pre><h3 id="乘法和快速幂">乘法和快速幂</h3><pre><code class="language-cpp">Mat operator*(const Mat &amp;a, const Mat &amp;b)
+{
+	Mat r;
+	for (int i = 0; i &lt; r.size(); ++i)
+		for (int j = 0; j &lt; r.size(); ++j)
+			for (int k = r[i][j] = 0; k &lt; r.size(); ++k)
+				M.qadd(r[i][j], M.mul(a[i][k], b[k][j]));
+	return r;
+}
+Mat pow(Mat a, ll b)
+{
+	Mat r;
+	for (int i = 0; i &lt; r.size(); ++i)
+		for (int j = 0; j &lt; r[i].size(); ++j)
+			r[i][j] = i == j;
+	for (; b; b &gt;&gt;= 1, a = a * a)
+		if (b &amp; 1)
+			r = r * a;
+	return r;
+}
+</code></pre><h3 id="行列式">行列式</h3><pre><code class="language-cpp">ll det(Mat a, int n)
+{
+	ll ans = 1;
+	for (int i = 0; i &lt; n; ++i)
+	{
+		for (int j = i + 1; j &lt; n; ++j)
+			while (fabs(a[j][i]) &gt; EPS)
+			{
+				ll t = a[i][i] / a[j][i];
+				for (int k = i; k &lt; n; ++k)
+					a[i][k] -= t * a[j][k], swap(a[i][k], a[j][k]);
+			}
+		if (fabs(ans *= a[i][i]) &lt; EPS)
+			return 0;
+	}
+	return ans;
+}
+</code></pre><h3 id="高斯消元">高斯消元</h3><pre><code class="language-cpp">void GaussElimination(Mat &amp;a, int n) //a为增广矩阵，要求n*n的系数矩阵可逆，运行结束后a[i][n]为第i个未知数的值
+{
+	for (int i = 0, r; i &lt; n; ++i)
+	{
+		for (int j = r = i; j &lt; n; ++j)
+			if (fabs(a[r][i]) &lt; fabs(a[j][i]))
+				r = j;
+		if (r != i)
+			swap_ranges(a[r].begin(), a[r].begin() + n + 1, a[i]);
+		for (int j = n; j &gt;= i; --j)
+			for (int k = i + 1; k &lt; n; ++k)
+				a[k][j] -= a[k][i] * a[i][j] / a[i][i];
+	}
+	for (int i = n - 1; ~i; --i)
+	{
+		for (int j = i + 1; j &lt; n; ++j)
+			a[i][n] -= a[j][n] * a[i][j];
+		a[i][n] /= a[i][i];
+	}
+}
+</code></pre><h2 id="线性基">线性基</h2><h3 id="向量线性基">向量线性基</h3><p>add 返回要插入的向量 z 是否与已插入的线性无关。</p><pre><code class="language-cpp">struct Base
+{
+	vector&lt;vector&lt;double&gt;&gt; v;
+	Base(int N) : v(N, vector&lt;double&gt;(N, 0)) {} //R^N的子空间
+	bool add(vector&lt;double&gt; x)
+	{
+		for (int i = 0; i &lt; x.size(); ++i)
+			if (fabs(x[i]) &gt; EPS)
+			{
+				if (fabs(v[i][i]) &lt; EPS)
+					return v[i] = x, 1;
+				double t = x[i] / v[i][i];
+				for (int j = 0; j &lt; x.size(); ++j)
+					x[j] -= t * v[i][j];
+			}
+		return 0;
+	}
+};
+</code></pre><h3 id="异或线性基">异或线性基</h3><p>若要查询第 k 小子集异或和，则把 k 写成二进制，对于是 1 的第 i 位，把从低位到高位第 i 个不为 0 的数异或进答案。若要判断是否有非空子集的异或和为 0，如果不存在自由基，那么说明只有空集的异或值为 0，需要高斯消元来判断。</p><pre><code class="language-cpp">struct BaseXOR
+{
+	vector&lt;ll&gt; a;
+	BaseXOR() : a(64, 0) {}
+	ll ask() //查询最大子集异或和
+	{
+		ll t = 0;
+		for (int i = a.size() - 1; ~i; --i)
+			t = max(t, t ^ a[i]);
+		return t;
+	}
+	bool add(ll x)
+	{
+		for (int i = a.size() - 1; ~i; --i)
+			if (x &gt;&gt; i &amp; 1)
+			{
+				if (a[i])
+					x ^= a[i];
+				else
+					return a[i] = x, 1;
+			}
+		return 0;
+	}
+	bool check(ll x) //判断一个数是否能够被异或出，0根据需要特判
+	{
+		for (int i = a.size() - 1; ~i; --i)
+			if (x &gt;&gt; i &amp; 1)
+				if (x ^= a[i], !x)
+					return 1;
+		return 0;
+	}
+};
+</code></pre><h1 id="离散数学"><a href="/2019/01/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a></h1><h2 id="归并排序求逆序对">归并排序求逆序对</h2><p><a href="https://vjudge.net/solution/19421786">使用示例</a></p><pre><code class="language-cpp">ll merge_sort(ll *b, ll *e) //int存答案会爆
+{
+	if (e - b &lt; 2)
+		return 0;
+	ll *m = b + (e - b) / 2, ans = merge_sort(b, m) + merge_sort(m, e);
+	for (ll *i = b, *j = m; i &lt; m &amp;&amp; j &lt; e; ++i)
+		for (; j &lt; e &amp;&amp; *j &lt; *i; ++j)
+			ans += m - i;
+	return inplace_merge(b, m, e), ans;
+}
+</code></pre><h2 id="约瑟夫问题">约瑟夫问题</h2><pre><code class="language-cpp">ll josephus(ll n, ll k) //编号0~n-1，每k个出列，时间复杂度O(min(n,k))
+{
+	if (n &lt; 3)
+		return k % n;
+	if (n &lt; k)
+		return (Josephus(n - 1, k) + k) % n;
+	ll ret = Josephus(n - n / k, k) - n % k;
+	return ret &lt; 0 ? ret + n : ret + ret / (k - 1);
+}
+</code></pre><h2 id="堆的操作"><a href="https://vjudge.net/solution/19943623">堆的操作</a></h2><p>和 STL 的函数<code>push_heap</code>、<code>pop_heap</code>用法完全相同，实现的是大根堆。</p><pre><code class="language-cpp">ll pushHeap(ll *b, ll *e)
+{
+	ll tmp = *--e;
+	for (int i = e - b, p;; b[i] = b[p], i = p)
+		if (i &lt;= 0 || b[p = (i - 1) / 2] &gt;= tmp)
+			return b[i] = tmp;
+}
+ll popHeap(ll *b, ll *e)
+{
+	ll tmp = b[0];
+	for (int i = 0, siz = --e - b, ch;; b[i] = b[ch], i = ch)
+	{
+		if (ch = i * 2 + 1, ch + 1 &lt; siz &amp;&amp; b[ch] &lt; b[ch + 1])
+			++ch;
+		if (i &gt;= siz / 2 || b[siz] &gt;= b[ch])
+			return b[i] = b[siz], b[siz] = tmp;
+	}
+}
+</code></pre><h2 id="蔡勒公式">蔡勒公式</h2><p>$w=(\lfloor\frac{c}{4}\rfloor-2c+y+\lfloor\frac{y}{4}\rfloor+\lfloor\frac{13(m+1)}{5}\rfloor+d-1)\mod7$</p><p>w：$0,1,\dots,6$对应周日，周一，$\dots$，周六</p><p>c：世纪减 1（即年份前两位数）。</p><p>y：年份后两位数。</p><p>m：月（$3\leq m\leq14$，即在蔡勒公式中，1、2 月要看作上一年的 13、14 月来计算）。</p><p>d：日。</p><h2 id="曼哈顿距离的变换">曼哈顿距离的变换</h2><p>$\mid x_1−x_2\mid +\mid y_1−y_2\mid=\max (\mid (x_1 + y_1)−(x_2 + y_2)\mid ,\mid (x_1 −y_1)−(x_2 −y_2)\mid )$</p><h2 id="皮克定理">皮克定理</h2><p>顶点坐标均是整点（或说正方形格点）的简单多边形中，面积 S 和内部格点数目 n、边上格点数目 m 的满足关系$S=n+\frac{m}{2}-1$。</p><h2 id="矩形面积并矩形面积交矩形周长并线段树扫描线总结">矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）</h2><p>详见<a href="https://wu-kan.cn/_posts/2019-02-26-矩形面积并-矩形面积交-矩形周长并-线段树-扫描线总结/">这篇博文</a>。</p><h1 id="数学分析"><a href="/2019/01/28/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/">数学分析</a></h1><h2 id="增长趋势">增长趋势</h2><p>[n\to+\infty,\forall p,q&gt;0,a&gt;1,{(\ln n)}^q\ll n^p\ll a^n\ll n!\ll n^n]</p><h2 id="积分表">积分表</h2><p>反读可得导数表，此处略。</p><p>[\int k\,\mathrm{d}x=kx+C<br /> \int x^a\,dx=\frac{x^{a+1}}{a+1}+C<br /> \int\frac{1}{x}\,dx=\ln\mid x\mid +C<br /> \int e^x\,dx=e^x + C<br /> \int a^x\,dx=\frac{a^x}{\ln a}+C<br /> \int\cos x\,dx=\sin x+C<br /> \int\sin x\,dx=-\cos x+C<br /> \int\frac{1}{cos^2x}\,dx=\int\sec^2 x\,dx=\tan x+C<br /> \int\frac{1}{sin^2x}\,dx=\int\csc^2 x\,dx=-\cot x+C<br /> \int\frac{1}{\sqrt{1-x^2}}\,dx=\arcsin x+C=-\arccos x+C<br /> \int\frac{1}{1+x^2}\,dx=\arctan x+C=-arccot\,x+C<br /> \int\sec x\tan x\,dx=\sec x+C<br /> \int\csc x\cot x\,dx=-\csc x+C<br /> \int\tan x\,dx=-\ln\mid \cos x\mid +C<br /> \int\cot x\,dx=\ln\mid \sin x\mid +C<br /> \int\sec x\,dx=\ln\mid \sec x+\tan x\mid +C<br /> \int\csc x\,dx=\ln\mid \csc x-\cot x\mid +C<br /> \int sh\,x\,dx=ch\,x+C<br /> \int ch\,x\,dx=sh\,x+C<br /> \int\frac{1}{x^2+a^2}\,dx=\frac{1}{a}\arctan\frac{x}{a}+C<br /> \int\frac{1}{x^2-a^2}\,dx=\frac{1}{2a}\ln\mid \frac{x-a}{x+a}\mid +C<br /> \int\frac{1}{\sqrt{a^2-x^2}}\,dx=\arcsin\frac{x}{a}+C<br /> \int\frac{1}{\sqrt{x^2-a^2}}\,dx=\ln\mid x+\sqrt{x^2-a^2}\mid +C<br /> \int\frac{1}{\sqrt{x^2+a^2}}\,dx=\ln\mid x+\sqrt{x^2+a^2}\mid +C\]</p><h2 id="积分求几何量">积分求几何量</h2><h3 id="弧长">弧长</h3><p>若简单闭曲线</p><p>[\begin{cases} x=x(t),<br /> y=y(t), \end{cases} t\in[\alpha,\beta]]</p><p>端点处重合（$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$）且其他地方不自交，$x(t),y(t)$连续且满足</p><p>[[x’(t)]^2+[y’(t)]^2\ne0,\forall t\in[\alpha,\beta]]</p><p>此时称曲线光滑，其长度</p><p>[s=\int_\alpha^\beta\sqrt{[x’(t)]^2+[y’(t)]^2}\,dt]</p><p>此式可对称推广到高维空间曲线。 极坐标下，</p><p>[r=r(\theta),\theta\in[\alpha,\beta]]</p><p>的长度为</p><p>[s=\int_\alpha^\beta\sqrt{[r(\theta)]^2+[r’(\theta)]^2}\,d\theta]</p><h3 id="面积">面积</h3><p>若简单闭曲线</p><p>[\begin{cases} x=x(t),<br /> y=y(t), \end{cases} t\in[\alpha,\beta]]</p><p>端点处连续（$x(\alpha)=x(\beta),y(\alpha)=y(\beta)$）且其他地方不自交，$x(t),y(t)$都逐段有连续微商，则此闭合曲线围起来的有界区域面积</p><p>[S=-\int_\alpha^\beta x’(t)y(t)\,dt=-\int_\alpha^\beta y(t)\,dx(t)=-\oint_\Gamma y\,dx=\oint_\Gamma x\,dy]</p><p>等式右边称为曲线$\Gamma$上的积分，其计算方法是带入参数方程到定积分计算式中，积分上下限为始点与终点对应的参数值。下限并不总是小于上限，参数从下限到上限变化时对应曲线的正向（沿正向观察时，曲线所围的区域永远在左侧）。 极坐标下，连续非负曲线$r=r(\theta)$与向径$\theta=\alpha,\theta=\beta$，其中$0\leq\beta-\alpha\leq2\pi$所围成的平面图形面积</p><p>[S=\frac{1}{2}\int_\alpha^\beta r^2(\theta)\,d\theta]</p><h3 id="体积">体积</h3><p>记立体过 x 点且垂直于 x 轴的截面面积为$S(x)$，则其体积</p><p>[V=\int_a^bS(x)\,dx]</p><p>连续曲线$y=f(x)\ge 0,x\in[a,b]$绕 x 轴旋转一周产生的旋转体体积</p><p>[V=\pi\int_a^by^2\,dx]</p><h3 id="旋转体侧面积">旋转体侧面积</h3><p>若曲线由参数方程</p><p>[\begin{cases} x=x(t),<br /> y=y(t), \end{cases} t\in[\alpha,\beta]]</p><p>给出，则其绕 x 轴旋转体的侧面积</p><p>[s=2\pi\int_\alpha^\beta y(t)\sqrt{[x’(t)]^2+[y’(t)]^2}\,dt]</p><h3 id="方向导数">方向导数</h3><p>设三元函数$u=f(x,y,z)$在点$P_0(x_0,y_0,z_0)$的某邻域内有定义，任意给定始于点$P_0$的射线$l$，$P(x,y,z)$为 l 上且含于定义域内的点。若极限</p><p>[\lim_{r(p,p_0)\to0^+}\frac{f(P)-f(P_0)}{r(P,P_0)}=\lim_{r(p,p_0)\to0^+}\frac{\Delta_lf(P_0)}{r(P,P_0)}]</p><p>存在，则称该极限值为函数$f$在点$P_0$沿方向$l$的方向导数，记为 $\frac{\partial f}{\partial l}\mid _{P_0}$或$\frac{\partial f(P_0)}{\partial l}$，$\frac{\Delta_lf(P_0)}{r(P,P_0)}$称为函数在$P_0$点沿$l$方向的增量。</p><p>特别地，$\frac{\partial f(P_0)}{\partial x}$就是函数在$P_0$点沿$x$轴正向的方向导数，$y,z$轴上的方向导数同理。若函数在$P_0$点可微，则其在$P_0$沿任何方向$l$的方向导数都存在，则有以下公式</p><p>[\frac{\partial f(P_0)}{\partial l}=(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z})\mid _{P_0}\cdot\vec{l_0}]</p><p>其中$\vec{l_0}=(\cos\alpha,\cos\beta,cos\gamma)=\frac{1}{\rho}(\Delta x,\Delta y,\Delta z)$为$l$的方向余弦。</p><h3 id="曲率">曲率</h3><p>若曲线由参数方程</p><p>[\begin{cases} x=x(t),<br /> y=y(t), \end{cases} t\in[\alpha,\beta]]</p><p>给出且有二阶微商，则其在一点的曲率</p><p>[K=\frac{\mid y’‘x’-y’x’‘\mid }{[x’^2+y’^2]^{\frac{3}{2}}}]</p><p>若$y=f(x)$，则</p><p>[K=\frac{\mid y’‘\mid }{(1+y’^2)^\frac{3}{2}}]</p><p>同时记$\frac{1}{K}$为曲率半径。</p><h3 id="空间曲线的切线与法平面">空间曲线的切线与法平面</h3><p>若已知曲线上一点$P(x_0,y_0,z_0)$处的切向量为$\tau(x_0,y_0,z_0)=(A,B,C)$则曲线在该点的切线方程为</p><p>[\frac{x-x_0}A=\frac{y-y_0}B=\frac{z-z_0}C]</p><p>法平面方程为</p><p>[A(x-x_0)+B(y-y_0)+C(z-z_0)=0]</p><p>当曲线由参数方程</p><p>[\begin{cases} x=x(t),<br /> y=y(t),<br /> z=z(t), \end{cases} t\in[\alpha,\beta]]</p><p>给出时，曲线在 P 点的切向量为</p><p>[\tau=\pm(x’(t_0),y’(t_0),z’(t_0))]</p><p>更一般地，若曲线用两曲面的交线给出</p><p>[\begin{cases} F(x,y,z)=0,<br /> G(x,y,z)=0, \end{cases}]</p><p>且在 P 点的某邻域能确定函数组$y=y(x),z=z(x)$满足$y_0=y(x_0),z_0=z(x_0)$，且$y’(x),z’(x)$存在，则曲线在 P 点的切向量</p><p>[\tau=\pm(\frac{\partial(F,G)}{\partial(y,z)},\frac{\partial(F,G)}{\partial(z,x)},\frac{\partial(F,G)}{\partial(x,y)})]</p><h3 id="空间曲面的切平面与法线">空间曲面的切平面与法线</h3><p>若已知曲面上一点$P(x_0,y_0,z_0)$处的切平面的法向量为$\vec n=(A’,B’,C’)$则曲线在该点的法线方程为</p><p>[\frac{x-x_0}{A’}=\frac{y-y_0}{B’}=\frac{z-z_0}{C’}]</p><p>切平面方程为</p><p>[A’(x-x_0)+B’(y-y_0)+C’(z-z_0)=0]</p><p>当曲面方程为$\pi:F(x,y,z)=0$在曲面上任取一条过 P 的曲线，设其方程为</p><p>[\begin{cases} x=x(t),<br /> y=y(t),<br /> z=z(t), \end{cases} t\in[\alpha,\beta]]</p><p>此时有$F(x(t),y(t),z(t))=0$令$t=t_0$两边对 t 求导，并写成向量的内积式，得</p><p>[(F_x,F_y,F_z)_P\cdot(x’(t_0),y’(t_0),z’(t_0))=0]</p><p>则曲线在 P 点的法向量为</p><p>[\vec{n}=\pm(F_x,F_y,F_z)_P]</p><p>若曲线由参数方程给出</p><p>[\begin{cases} x=x(u,v),<br /> y=y(u,v),<br /> z=z(u,v), \end{cases}]</p><p>则曲线在 P 点的法向量</p><p>[\vec{n}=\pm(\frac{\partial(y,z)}{\partial(u,v)},\frac{\partial(z,x)}{\partial(u,v)},\frac{\partial(x,y)}{\partial(u,v)})]</p><h2 id="高阶导数与泰勒公式">高阶导数与泰勒公式</h2><p>用$f^{(n)}(x)$表示 f(x)的 n 阶导数，只要让<code>余项&lt;EPS</code>即可计算指定函数到任意精确度，特别取 a=0 时称为麦克劳林公式。</p><p>[f(x)=f(a)+f^{(1)}(a)(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\dots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x)]</p><p>佩亚诺余项</p><p>[R_n(x)=o((x-a)^n)]</p><p>积分余项</p><p>[R_n(x)=\frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt]</p><p>拉格朗日余项</p><p>[R_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-a)^{n+1},a&lt;\xi&lt;x]</p><p>柯西余项</p><p>[R_n(x)=\frac{(x-a)^{n+1}}{n!}(1-\theta)^nf^{(n+1)}(a+\theta(x-a)),0&lt;\theta&lt;1]</p><h3 id="对数函数">对数函数</h3><p>[[\ln(1+x)]^{(n)}=(-1)^{n-1}(n-1)!(1+x)^{-n} \ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots+(-1)^{n-1}\frac{x^n}{n}+R_n(x)]</p><h3 id="幂函数">幂函数</h3><p>[[(1+x)^a]^{(n)}=a(a-1)\dots(a-n+1)(1+x)^{a-n}<br /> (1+x)^a=1+ax+\frac{a(a-1)}{2!}x^2+\dots+\frac{a(a-1)\dots(a-n+1)}{n!}x^n+R_n(x)]</p><h3 id="三角函数">三角函数</h3><p>[(\sin x)^{(n)}=\sin(x+\frac{n\pi}{2})<br /> \sin x=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots+(-1)^{k-1}\frac{x^{2k-1}}{(2k-1)!}+R<em>{2k}(x) \R</em>{2k}(x)=(-1)^k\frac{\cos\theta x}{(2k+1)!}x^{2k+1}<br /> (\cos x)^{(n)}=\cos(x+\frac{n\pi}{2})<br /> \cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots+(-1)^{k-1}\frac{x^{2k-2}}{(2k-2)!}+R<em>{2k-1}(x)<br /> R</em>{2k-1}(x)=(-1)^k\frac{\cos\theta x}{(2k)!}x^{2k}]</p><h3 id="指数函数">指数函数</h3><p>[(e^x)^{(n)}=e^x<br /> e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots+\frac{x^n}{n!}+R_n(x)<br /> R_n(x)=\frac{e^{\theta x}}{(n+1)!}x^{n+1},\xi=\theta x,0&lt;\theta&lt;1]</p><h3 id="二元函数">二元函数</h3><p>设$f(x,y)$在$P_0(x_0,y_0)$的某邻域$O(P_0)$内有直到$n+1$阶连续偏导数，则对$O(P_0)$内$\forall(x_0+\Delta x,y_0+\Delta y),\exists\theta\in(0,1)$，使得</p><p>[f(x<em>0+\Delta x,y_0+\Delta y)=\sum</em>{k=0}^n\frac{1}{k!}(\frac{\partial}{\partial x}\Delta x+\frac{\partial}{\partial y}\Delta y)^kf(x_0,y_0)+R_n]</p><p>其中</p><p>[R_n=\frac{1}{(n+1)!}(\frac{\partial}{\partial x}\Delta x+\frac{\partial}{\partial y}\Delta y)^{n+1}f(x_0+\theta\Delta x,y_0+\theta\Delta y)]</p><h2 id="级数部分和">级数部分和</h2><h3 id="幂级数">幂级数</h3><p>快速计算幂级数的部分和$\sum_{i=1}^ni^k\mod M$可借助伯努利数，详见组合数学模板。</p><p>[\sum_{i=1}^ni^1=\frac 1 2n(n+1)<br /> \sum_{i=1}^ni^2=\frac 1 6n(n+1)(2n+1)<br /> \sum_{i=1}^ni^3=\frac 1 4[n(n+1)]^2<br /> \sum_{i=1}^ni^4=\frac 1{30}n(n+1)(2n+1)(3n^2+3n-1)<br /> \sum_{i=1}^ni^5=\frac 1{12}[n(n+1)]^2(2n^2+2n-1)<br /> \sum_{i=1}^ni^6=\frac 1{42}n(n+1)(2n+1)(3n^4+6n^3-3n+1)]</p><h3 id="调和级数">调和级数</h3><p>[n\to\infty,\sum_{i=1}^n\frac 1 i\to\ln n+r,r\approx0.5772156649015328\dots]</p><h2 id="二分求零点三分求极值点">二分求零点、三分求极值点</h2><p>需要$f(x)$在区间$[l,r]$上单调/凹凸性唯一。</p><pre><code class="language-cpp">lf bs(lf l, lf r, lf f(lf x))
+{
+	if (r - l &lt; EPS)
+		return l;
+	lf m = (l + r) / 2;
+	return sgn(f(l) * f(m)) &lt; 0 ? bs(l, m, f) : ts(m, r, f);
+}
+lf ts(lf l, lf r, lf f(lf x))
+{
+	if (r - l &lt; EPS)
+		return l;
+	lf d = (r - l) / 3, lm = l + d, rm = r - d;
+	return f(lm) &lt; f(rm) ? ts(l, rm, f) : ts(lm, r, f); //极小值
+}
+</code></pre><h2 id="自适应辛普森求积分">自适应辛普森求积分</h2><p><a href="https://vjudge.net/solution/18698789">使用示例</a></p><p><a href="http://www2.math.umd.edu/~mariakc/teaching/adaptive.pdf">这篇论文</a>论证了加一个十五分之一的偏移收敛会比较快…</p><pre><code class="language-cpp">struct Simpson
+{
+	lf simpson(lf a, lf b, lf f(lf x))
+	{
+		return (f(a) + 4 * f((a + b) / 2) + f(b)) * (b - a) / 6;
+	}
+	lf ask(lf a, lf b, lf f(lf x), lf e = EPS)
+	{
+		lf c = (a + b) / 2, L = simpson(a, c, f), R = simpson(c, b, f), delta = (L + R - simpson(a, b, f)) / 15;
+		return fabs(delta) &lt; e ? L + R + delta : ask(a, c, f, e / 2) + ask(c, b, f, e / 2);
+	}
+};
+</code></pre><h2 id="插值法">插值法</h2><p>拉格朗日插值法：插值多项式和插值基函数的形式对称，容易编程。但是，增加节点时，需要重新计算每一个插值基函数。要在$\pmod p$意义下进行的话，那么 p 只能是质数。 牛顿插值法：当插值节点增加时，之前已计算的结果仍然能用，每增加一个节点，只要再增加一项即可，从而避免了重复性计算。如果要 mod 非质数的话，那么就要用牛顿插值法。</p><pre><code class="language-cpp">typedef complex&lt;lf&gt; Coord;
+#define X real()
+#define Y imag()
+struct Lagrange
+{
+	lf ask(const vector&lt;Coord&gt; &amp;p, lf x) //返回p确定的多项式函数在x处的值
+	{
+		lf ret = 0;
+		for (int i = 0; i &lt; p.size(); ++i)
+		{
+			lf tmp = p[i].Y;
+			for (int j = 0; j &lt; p.size(); ++j)
+				if (i != j)
+					tmp *= (x - p[j].X) / (p[i].X - p[j].X);
+			ret += tmp;
+		}
+		return ret;
+	}
+	vector&lt;lf&gt; ask(vector&lt;Coord&gt; p) //返回p确定的多项式系数向量
+	{
+		vector&lt;lf&gt; ret(p.size()), sum(p.size());
+		ret[0] = p[0].Y, sum[0] = 1;
+		for (int i = 1; i &lt; p.size(); ++i)
+		{
+			for (int j = p.size() - 1; j &gt;= i; --j)
+				p[j].Y = (p[j].Y - p[j - 1].Y) / (p[j].X - p[j - i].X);
+			for (int j = i; ~j; --j)
+				sum[j] = (j ? sum[j - 1] : 0) - sum[j] * p[i - 1].X,
+				ret[j] += sum[j] * p[i].Y;
+		}
+		return ret;
+	}
+};
+struct Newton
+{
+	lf differenceQuotient(const vector&lt;Coord&gt; &amp;p, int k) //计算差商
+	{
+		lf ret = 0;
+		for (int i = 0; i &lt;= k; ++i)
+		{
+			lf tmp = p[i].Y;
+			for (int j = 0; j &lt;= k; ++j)
+				if (i != j)
+					tmp /= p[i].X - p[j].X;
+			ret += tmp;
+		}
+		return ret;
+	}
+	lf ask(const vector&lt;Coord&gt; &amp;p, lf x)
+	{
+		lf ret = p[0].Y;
+		for (int i = 1; i &lt; p.size(); ++i)
+		{
+			lf tmp = differenceQuotient(p, i); //多次求，可O(n^3)预处理优化
+			for (int j = 0; j &lt; i; ++j)
+				tmp *= x - p[j].X;
+			ret += tmp;
+		}
+		return ret;
+	}
+};
+</code></pre><p>[]</p><h1 id="计算几何"><a href="/2019/01/27/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">计算几何</a></h1><h2 id="二维">二维</h2><p>点和向量化为坐标 Coord 进行运算，使用 stl 中的 complex 实现。</p><p>复数相乘的几何意义为长度相乘，极角相加。</p><p>用直线上的一点 p 和方向向量 v 表示一条经过 p 的直线，直线上的所有点 q 满足 q=p+t*v，其中 t 是参数；当限制 t≥0 时，该参数方程表示射线；限制 0≤t≤1 时，该参数方程表示线段。</p><p>此外，如果已知线段端点 a1 和 a2，可以通过 Line(a1,a2-a1)来得到对应的参数形式。</p><p>Morley 定理：三角形每个内角的三等分线相交成等边三角形。</p><p>欧拉定理：平面图的点数 V、边数 E 和面数 F 满足 V+F-E=2。</p><pre><code class="language-cpp">typedef double lf;
+typedef complex&lt;lf&gt; Coord;
+const lf EPS = 1e-9;
+#define X real()
+#define Y imag()
+struct Line
+{
+	Coord p, v;
+	Line(Coord p = Coord(), Coord v = Coord()) : p(p), v(v) {}
+	Coord point(lf t) const { return p + v * t; }
+};
+struct Circle
+{
+	Coord c;
+	lf r;
+	Circle(Coord c = Coord(), lf r = 0) : c(c), r(r) {}
+	Coord point(lf t) const { return c + polar(r, t); } //t为参数，幅角
+};
+/*
+Coord(lf x=0,lf y=0);//构造函数
+lf real(Coord a);//a的实部（复平面的横坐标）,也可写作a.real()
+lf imag(Coord a);//a的虚部（复平面的纵坐标）,也可写作a.imag()
+
+lf abs(Coord a);//向量a的模长，或是点a到原点的距离
+lf norm(Coord a);//abs的平方，比abs快，但是要注意浮点数精度溢出
+
+lf arg(Coord a);//a的幅角，与atan2(a.real(),a.imag())等价
+Coord polar(lf r,lf t);//极坐标生成方式，r为幅值，t为幅角
+
+//运算符重载+、-、*、/（以及对应的赋值运算，但是赋值运算不能写在表达式中，详见参考地址）、&lt;&lt;、&gt;&gt;（输出括号形式的坐标）
+*/
+int sgn(lf d) { return (d &gt; EPS) - (d &lt; -EPS); }
+
+bool operator!=(const Coord &amp;A, const Coord &amp;B) { return sgn(A.X - B.X) || sgn(A.Y - B.Y); } //不等运算符，涉及到浮点数比较要重写
+
+bool operator==(const Coord &amp;A, const Coord &amp;B) { return !(A != B); }
+
+bool cmpCoord(const Coord &amp;A, const Coord &amp;B) { return sgn(A.X - B.X) ? sgn(A.X - B.X) &lt; 0 : sgn(A.Y - B.Y) &lt; 0; } //复数没有小于运算，只能这样定义一个比较函数
+
+bool cmpLine(const Line &amp;A, const Line &amp;B) { return sgn(arg(A.v) - arg(B.v)) &lt; 0; } //按极角排序，求凸包中使用
+
+lf Dot(const Coord &amp;A, const Coord &amp;B) { return A.X * B.X + A.Y * B.Y; }
+
+lf Cross(const Coord &amp;A, const Coord &amp;B) { return A.X * B.Y - B.X * A.Y; }
+
+lf Angle(const Coord &amp;A, const Coord &amp;B) { return acos(Dot(A, B) / abs(A) / abs(B)); }
+
+lf Area2(const Coord &amp;A, const Coord &amp;B, const Coord &amp;C) { return Cross(B - A, C - A); } //三角形ABC有向面积的两倍
+
+Coord Rotate(const Coord &amp;A, lf rad) { return A * polar(1.0, rad);} //向量A逆时针旋转rad弧度
+
+Coord Normal(const Coord &amp;A) //A的法向量，把A逆时针旋转九十度并长度化为1
+{
+	lf L = abs(A);
+	return Coord(-A.Y / L, A.X / L);
+}
+
+bool onLeft(const Coord &amp;P, const Line &amp;L) { return sgn(Cross(L.v, P - L.p)) &gt; 0; } //p是否在有向直线L左侧，不含线上
+
+lf DistanceToLine(const Coord &amp;P, const Line &amp;L) { return Cross(L.v, P - L.p) / abs(L.v); } //点到直线距离（有向）
+
+lf DistanceToLine(const Coord &amp;P, const Coord &amp;A, const Coord &amp;B) { return DistanceToLine(P, Line(A, B - A)); }
+
+lf DistanceToSegment(const Coord &amp;P, const Coord &amp;A, const Coord &amp;B) //点到线段的距离（无向）
+{
+	if (A == B)
+		return abs(P - A);
+	Coord v1 = B - A, v2 = P - A, v3 = P - B;
+	if (sgn(Dot(v1, v2)) &lt; 0)
+		return abs(v2);
+	if (sgn(Dot(v1, v3)) &gt; 0)
+		return abs(v3);
+	return fabs(DistanceToLine(P, Line(A, B - A)));
+}
+
+Coord getLineProjection(const Coord &amp;P, const Line &amp;L) { return L.point(Dot(L.v, P - L.p) / norm(L.v)); } //点在直线上的投影
+
+Coord getLineProjection(const Coord &amp;P, const Coord &amp;A, const Coord &amp;B) { return getLineProjection(P, Line(A, B - A)); }
+
+Coord getSymmetry(const Coord &amp;P, const Coord &amp;O) { return O + O - P; } //P关于O的对称点
+
+Coord getSymmetry(const Coord &amp;P, const Line &amp;L) { return getSymmetry(P, getLineProjection(P, L)); } //P关于L的对称点
+
+Coord getLineIntersection(const Line &amp;L1, const Line &amp;L2) { return L1.point(Cross(L2.v, L1.p - L2.p) / Cross(L1.v, L2.v)); } //直线交点,须确保两直线相交
+
+Coord getLineIntersection(const Coord &amp;A1, const Coord &amp;A2, const Coord &amp;B1, const Coord &amp;B2) { return getLineIntersection(Line(A1, A2 - A1), Line(B1, B2 - B1)); }
+
+bool SegmentProperIntersection(const Coord &amp;A1, const Coord &amp;A2, const Coord &amp;B1, const Coord &amp;B2) //线段相交判定，交点不在一条线段的端点
+{
+	lf C1 = Cross(A2 - A1, B1 - A1), C2 = Cross(A2 - A1, B2 - A1),
+	   C3 = Cross(B2 - B1, A1 - B1), C4 = Cross(B2 - B1, A2 - B1);
+	return sgn(C1) * sgn(C2) &lt; 0 &amp;&amp; sgn(C3) * sgn(C4) &lt; 0;
+}
+
+bool onSegment(const Coord &amp;P, const Coord &amp;A1, const Coord &amp;A2) { return sgn(Dot(A1 - P, A2 - P)) &lt; 0 &amp;&amp; !sgn(Cross(A1 - P, A2 - P)); } //判断点是否在线段上，不包含端点
+
+lf PolygonArea(const vector&lt;Coord&gt; &amp;p) //计算多边形的有向面积，凸多边形即为面积
+{
+	lf s = 0;
+	for (int i = 2; i &lt; p.size(); ++i)
+		s += Area2(p[0], p[i - 1], p[i]);
+	return s / 2;
+}
+
+int inPolygon(const Coord &amp;p, const vector&lt;Coord&gt; &amp;poly) //点在多边形内的判定，转角法，正值为内部，0为外部，-1在边界上
+{
+	int ans = 0;
+	for (int i = 0, k, d1, d2, n = poly.size(); i != n; ++i)
+	{
+		if (onSegment(p, poly[i], poly[(i + 1) % n]))
+			return -1; //在边界上
+		k = sgn(Cross(poly[(i + 1) % n] - poly[i], p - poly[i]));
+		d1 = sgn(poly[i].Y - p.Y);
+		d2 = sgn(poly[(i + 1) % n].Y - p.Y);
+		if (k &gt; 0 &amp;&amp; d1 &lt;= 0 &amp;&amp; d2 &gt; 0)
+			++ans;
+		if (k &lt; 0 &amp;&amp; d2 &lt;= 0 &amp;&amp; d1 &gt; 0)
+			--ans;
+	}
+	return ans;
+}
+
+vector&lt;Coord&gt; ConvexHull(vector&lt;Coord&gt; p, int collineation = 1) //获得凸包，不希望凸包的边上有输入点第二个参数传0
+{
+	vector&lt;Coord&gt; ans;
+	sort(p.begin(), p.end(), cmpCoord); //先比横坐标再比纵坐标
+	for (int i = 0; i &lt; p.size(); ++i)  //求出下凸包
+	{
+		while (ans.size() &gt; 1 &amp;&amp; sgn(Area2(ans[ans.size() - 2], ans[ans.size() - 1], p[i])) &lt; collineation)
+			ans.pop_back();
+		ans.push_back(p[i]);
+	}
+	for (int i = p.size() - 2, k = ans.size(); i &gt;= 0; --i) //求出上凸包
+	{
+		while (ans.size() &gt; k &amp;&amp; -sgn(Area2(ans[ans.size() - 1], ans[ans.size() - 2], p[i])) &lt; collineation)
+			ans.pop_back();
+		ans.push_back(p[i]);
+	}
+	if (p.size() &gt; 1)
+		ans.pop_back();
+	return ans;
+}
+
+vector&lt;Coord&gt; cutPolygon(const vector&lt;Coord&gt; &amp;poly, const Coord &amp;A, const Coord &amp;B) //用有向直线A-&gt;B切割多边形poly， 返回「左侧」。 如果退化，可能会返回一个单点或者线段，复杂度O(n^2)
+{
+	vector&lt;Coord&gt; newpoly;
+	for (int i = 0, n = poly.size(); i != n; ++i)
+	{
+		Coord C = poly[i], D = poly[(i + 1) % n];
+		if (sgn(Cross(B - A, C - A)) &gt;= 0)
+			newpoly.push_back(C);
+		if (!sgn(Cross(B - A, C - D)))
+		{
+			Coord ip = getLineIntersection(Line(A, B - A), Line(C, D - C));
+			if (onSegment(ip, C, D))
+				newpoly.push_back(ip);
+		}
+	}
+	return newpoly;
+}
+
+vector&lt;Coord&gt; getHalfPlaneIntersection(vector&lt;Line&gt; L) //半平面交
+{
+	sort(L.begin(), L.end(), cmpLine);  //按极角排序
+	vector&lt;Coord&gt; p(L.size(), Coord()); //p[i]为q[i]和q[i+1]的交点
+	int first = 0, last = 0;			//双端队列的第一个元素和最后一个元素
+	vector&lt;Line&gt; q(L.size(), Line());   //双端队列
+	q[0] = L[0];						//队列初始化为只有一个半平面L[0]
+
+	for (int i = 0, n = L.size(); i != n; ++i)
+	{
+		while (first &lt; last &amp;&amp; !onLeft(p[last - 1], L[i]))
+			--last;
+		while (first &lt; last &amp;&amp; !onLeft(p[first], L[i]))
+			++first;
+
+		q[++last] = L[i];
+		if (!sgn(Cross(q[last].v, q[last - 1].v)))
+		{
+			--last;
+			if (onLeft(L[i].p, q[last]))
+				q[last] = L[i];
+		}
+		if (first &lt; last)
+			p[last - 1] = getLineIntersection(q[last - 1], q[last]);
+	}
+	while (first &lt; last &amp;&amp; !onLeft(p[last - 1], q[first]))
+		--last; //删除无用平面
+
+	if (last - first &lt;= 1)
+		return vector&lt;Coord&gt;(); //空集
+	p[last] = getLineIntersection(q[last], q[first]);
+	return vector&lt;Coord&gt;(p.begin() + first, p.begin() + last + 1); //从deque复制到输出中
+}
+
+int getLineCircleIntersection(const Line &amp;L, const Circle &amp;C, vector&lt;Coord&gt; &amp;sol)
+{
+	lf a = L.v.X,
+	   b = L.p.X - C.c.X,
+	   c = L.v.Y,
+	   d = L.p.Y - C.c.Y,
+	   e = a * a + c * c,
+	   f = 2 * (a * b + c * d),
+	   g = b * b + d * d - C.r * C.r,
+	   delta = f * f - 4 * e * g;
+
+	if (sgn(delta) &lt; 0)
+		return 0;
+	if (!sgn(delta))
+		return sol.push_back(L.point(-f / (2 * e))), 1;
+	sol.push_back(L.point((-f - sqrt(delta)) / (2 * e)));
+	sol.push_back(L.point((-f + sqrt(delta)) / (2 * e)));
+	return 2;
+}
+
+int getCircleIntersection(const Circle &amp;C1, const Circle &amp;C2, vector&lt;Coord&gt; &amp;sol)
+{
+	lf d = abs(C1.c - C2.c);
+
+	if (!sgn(d))
+		return sgn(C1.r - C2.r) ? 0 : -1; //重合返回-1
+
+	if (sgn(C1.r + C2.r - d) &lt; 0 || sgn(fabs(C1.r - C2.r) - d) &gt; 0) //外离或内含
+		return 0;
+
+	lf a = arg(C2.c - C1.c),
+	   da = acos((C1.r * C1.r + d * d - C2.r * C2.r) / (2 * C1.r * d));
+
+	Coord p1 = C1.point(a - da), p2 = C1.point(a + da);
+
+	sol.push_back(p1);
+
+	if (p1 == p2)
+		return 1; //相切
+	return sol.push_back(p2), 2;
+}
+
+Line getTangent(const Coord &amp;C, const Coord &amp;P) { return Line(P, Normal(C - P)); } //圆心C，圆上一点P处切线
+
+int getTangents(const Coord &amp;p, const Circle &amp;C, vector&lt;Coord&gt; &amp;sol) //点到圆的切点，返回个数
+{
+	Coord u = p - C.c;
+	lf d = abs(u);
+	if (d &lt; C.r)
+		return 0;	  //点在圆内
+	if (!sgn(d - C.r)) //点在圆上
+		return sol.push_back(p), 1;
+	lf base = arg(u), ang = acos(C.r / d);
+	sol.push_back(C.point(base + ang));
+	sol.push_back(C.point(base - ang));
+	return 2;
+}
+
+int getTangents(Circle A, Circle &amp;B, vector&lt;Coord&gt; &amp;a, vector&lt;Coord&gt; &amp;b) //公共切线的切点
+{
+	int cnt = 0;
+
+	if (A.r &lt; B.r)
+		swap(A, B), swap(a, b); //有时需标记交换
+
+	lf d = abs(A.c - B.c),
+	   rdiff = A.r - B.r,
+	   rsum = A.r + B.r;
+
+	if (sgn(d - rdiff) &lt; 0)
+		return 0; //内含
+
+	lf base = arg(B.c - A.c);
+
+	if (!sgn(d) &amp;&amp; !sgn(rdiff))
+		return -1; //重合，无穷多条切线
+
+	if (!sgn(d - rdiff)) //内切，外公切线
+	{
+		a.push_back(A.point(base));
+		b.push_back(B.point(base));
+		return 1;
+	}
+
+	//有外公切线的情形
+	lf ang = acos(rdiff / d);
+	a.push_back(A.point(base + ang));
+	b.push_back(B.point(base + ang));
+	a.push_back(A.point(base - ang));
+	b.push_back(B.point(base - ang));
+	cnt += 2;
+
+	if (!sgn(d - rsum))
+	{
+		a.push_back(A.point(base));
+		b.push_back(B.point(base + M_PI));
+		++cnt;
+	}
+	else if (sgn(d - rsum) &gt; 0)
+	{
+		lf ang_in = acos(rsum / d);
+		a.push_back(A.point(base + ang_in));
+		b.push_back(B.point(base + ang_in + M_PI));
+		a.push_back(A.point(base - ang_in));
+		b.push_back(B.point(base - ang_in + M_PI));
+		cnt += 2;
+	}
+	return cnt;
+}
+
+lf AreaCircleWithTriangle(const Circle &amp;C, Coord A, Coord B) //C和三角形OAB的相交面积，如果三角形顶点不在O上则把圆和三角形同时平移，直到有一个顶点在O上
+{
+	int sg = sgn(Cross(A, B));
+	if (!sg || A == C.c || B == C.c)
+		return 0;
+
+	lf OA = abs(A - C.c), OB = abs(B - C.c), angle = Angle(A, B),
+	   d = DistanceToLine(Coord(), A, B);
+
+	if (sgn(OA - C.r) &lt;= 0 &amp;&amp; sgn(OB - C.r) &lt;= 0)
+		return Cross(A, B) / 2;
+
+	if (sgn(OA - C.r) &gt;= 0 &amp;&amp; sgn(OB - C.r) &gt;= 0 &amp;&amp; sgn(d - C.r) &gt;= 0)
+		return sg * C.r * C.r * angle / 2;
+	if (sgn(OA - C.r) &gt;= 0 &amp;&amp; sgn(OB - C.r) &gt;= 0 &amp;&amp; sgn(d - C.r) &lt; 0)
+	{
+		Coord prj = getLineProjection(Coord(), A, B);
+		if (!onSegment(prj, A, B))
+			return sg * C.r * C.r * angle / 2;
+
+		vector&lt;Coord&gt; p;
+		Line L = Line(A, B - A);
+		getLineCircleIntersection(L, C, p);
+
+		lf s1 = C.r * C.r * angle / 2,
+		   s2 = C.r * C.r * Angle(p[0], p[1]) / 2;
+		s2 -= fabs(Cross(p[0], p[1]) / 2);
+		s1 = s1 - s2;
+
+		return sg * s1;
+	}
+	if (sgn(OB - C.r) &lt; 0)
+		swap(A, B);
+
+	Line L = Line(A, B - A);
+	vector&lt;Coord&gt; inter;
+	getLineCircleIntersection(L, C, inter);
+	Coord inter_point = inter[!onSegment(inter[0], A, B)];
+
+	lf s = fabs(Cross(inter_point, A) / 2);
+	s += C.r * C.r * Angle(inter_point, B) / 2;
+
+	return s * sg;
+}
+
+lf AreaCircleWithPolygon(const Circle &amp;C, const vector&lt;Coord&gt; &amp;p)
+{
+	lf ans = 0;
+	for (int i = 0; i &lt; p.size(); ++i)
+		ans += AreaCircleWithTriangle(C, p[i], p[(i + 1) % p.size()]);
+	return fabs(ans);
+}
+
+Coord getGravityCenter(const vector&lt;Coord&gt; &amp;p) //多边形重心
+{
+	Coord a(0, 0);
+	lf am = 0, mj;
+	for (int i = 0; i &lt; p.size(); ++i)
+	{
+		mj = Cross(p[i], p[(i + 1) % p.size()]);
+		a += mj * (p[i] + p[(i + 1) % p.size()]);
+		am += mj;
+	}
+	return a / am / 3.0;
+}
+</code></pre><h2 id="三维">三维</h2><pre><code class="language-cpp">typedef double lf;
+const lf EPS = 1e-9, INF = 1e9;
+int sgn(lf d) { return (d &gt; EPS) - (d &lt; -EPS); }
+struct Coord3
+{
+	lf X, Y, Z;
+	friend bool operator!=(const Coord3 &amp;a, const Coord3 &amp;b) { return sgn(a.X - b.X) || sgn(a.Y - b.Y) || sgn(a.Z - b.Z); }
+	friend bool operator==(const Coord3 &amp;a, const Coord3 &amp;b) { return !(a != b); }
+	Coord3 &amp;operator+=(const Coord3 &amp;b) { return X += b.X, Y += b.Y, Z += b.Z, *this; }
+	friend Coord3 operator+(Coord3 a, const Coord3 &amp;b) { return a += b; }
+	Coord3 &amp;operator-=(const Coord3 &amp;b) { return X -= b.X, Y -= b.Y, Z -= b.Z, *this; }
+	friend Coord3 operator-(Coord3 a, const Coord3 &amp;b) { return a -= b; }
+	Coord3 &amp;operator*=(lf d) { return X *= d, Y *= d, Z *= d, *this; }
+	friend Coord3 operator*(Coord3 a, lf d) { return a *= d; }
+	friend Coord3 operator*(lf d, Coord3 a) { return a *= d; }
+	Coord3 &amp;operator/=(lf d) { return X /= d, Y /= d, Z /= d, *this; }
+	friend Coord3 operator/(Coord3 a, lf d) { return a /= d; }
+	friend lf Dot(const Coord3 &amp;A, const Coord3 &amp;B) { return A.X * B.X + A.Y * B.Y + A.Z * B.Z; }
+	friend Coord3 Cross(const Coord3 &amp;A, const Coord3 &amp;B) { return {A.Y * B.Z - A.Z * B.Y, A.Z * B.X - A.X * B.Z, A.X * B.Y - A.Y * B.X}; }
+	friend lf norm(const Coord3 &amp;A) { return Dot(A, A); }
+	friend lf abs(const Coord3 &amp;A) { return sqrt(norm(A)); }
+	friend lf Angle(const Coord3 &amp;A, const Coord3 &amp;B) { return acos(Dot(A, B) / abs(A) / abs(B)); }
+	friend lf Area2(Coord3 A, Coord3 B, Coord3 C) { return abs(Cross(B - A, C - A)); }
+	friend lf Volume6(Coord3 A, Coord3 B, Coord3 C, Coord3 D) { return Dot(D - A, Cross(B - A, C - A)); }	 //四面体体积
+	friend Coord3 Centroid(Coord3 A, Coord3 B, Coord3 C, Coord3 D) { return (A + B + C + D) / 4.0; }		  //四面体的重心
+	friend lf DistanceToPlane(Coord3 p, Coord3 p0, const Coord3 &amp;n) { return Dot(p - p0, n) / abs(n); }		  //点p到平面p0-n的有向距离
+	friend Coord3 getPlaneProjection(Coord3 p, Coord3 p0, const Coord3 &amp;n) { return p - n * Dot(p - p0, n); } //点p在平面p0-n上的投影。n必须为单位向量
+	friend Coord3 LinePlaneIntersection(Coord3 p1, Coord3 p2, Coord3 p0, Coord3 n)							  //直线p1-p2 与平面p0-n的交点，假设交点唯一存在
+	{
+		Coord3 v = p2 - p1;
+		lf t = Dot(n, p0 - p1) / Dot(n, p2 - p1); //分母为0，直线与平面平行或在平面上
+		return p1 + v * t;						  //如果是线段 判断t是否在0~1之间
+	}
+	friend lf DistanceToLine(Coord3 P, Coord3 A, Coord3 B) //点P到直线AB的距离
+	{
+		Coord3 v1 = B - A, v2 = P - A;
+		return abs(Cross(v1, v2)) / abs(v1);
+	}
+	friend lf DistanceToSeg(Coord3 P, Coord3 A, Coord3 B) //点到线段的距离
+	{
+		if (A == B)
+			return abs(P - A);
+		Coord3 v1 = B - A, v2 = P - A, v3 = P - B;
+		if (sgn(Dot(v1, v2)) &lt; 0)
+			return abs(v2);
+		if (sgn(Dot(v1, v3)) &gt; 0)
+			return abs(v3);
+		return fabs(DistanceToLine(P, A, B));
+	}
+	friend bool LineDistance3D(Coord3 p1, Coord3 u, Coord3 p2, Coord3 v, lf &amp;s) //求异面直线 p1+s*u与p2+t*v的公垂线对应的s，如果平行|重合，返回0
+	{
+		lf b = Dot(u, u) * Dot(v, v) - Dot(u, v) * Dot(u, v);
+		if (!sgn(b))
+			return 0;
+		lf a = Dot(u, v) * Dot(v, p1 - p2) - Dot(v, v) * Dot(u, p1 - p2);
+		return s = a / b, 1;
+	}
+	friend bool SameSide(Coord3 p1, Coord3 p2, Coord3 a, Coord3 b) { return sgn(Dot(Cross(b - a, p1 - a), Cross(b - a, p2 - a))) &gt;= 0; } //p1和p2是否在线段a-b的同侧
+	friend bool PointInTri(Coord3 PP, Coord3 P[3])																						 //点P在三角形P0,P1,p中
+	{
+		return SameSide(PP, P[0], P[1], P[2]) &amp;&amp;
+			   SameSide(PP, P[1], P[0], P[2]) &amp;&amp;
+			   SameSide(PP, P[2], P[0], P[1]);
+	}
+	friend bool TriSegIntersection(Coord3 P[3], Coord3 A, Coord3 B, Coord3 &amp;PP) //三角形P0P1p是否和线段AB相交，如有则为PP
+	{
+		Coord3 n = Cross(P[1] - P[0], P[2] - P[0]);
+		if (sgn(Dot(n, B - A)) == 0)
+			return false;						 //线段A-B和平面P0P1p平行或共面
+		lf t = Dot(n, P[0] - A) / Dot(n, B - A); //平面A和直线P1-p有惟一交点
+		if (sgn(t) &lt; 0 || sgn(t - 1) &gt; 0)
+			return false; //不在线段AB上
+		return PointInTri(PP = A + (B - A) * t, P);
+	}
+	friend bool TriTriIntersection(Coord3 T1[3], Coord3 T2[3]) //空间两三角形是否相交
+	{
+		Coord3 P;
+		for (int i = 0; i &lt; 3; ++i)
+			if (TriSegIntersection(T1, T2[i], T2[(i + 1) % 3], P) ||
+				TriSegIntersection(T2, T1[i], T1[(i + 1) % 3], P))
+				return 1;
+		return 0;
+	}
+	friend lf SegSegDistance(Coord3 a1, Coord3 b1, Coord3 a2, Coord3 b2, Coord3 &amp;ans1, Coord3 &amp;ans2) //空间两直线上最近点对 返回最近距离 点对保存在ans1 ans2中
+	{
+		Coord3 v1 = (a1 - b1), v2 = (a2 - b2);
+		Coord3 N = Cross(v1, v2);
+		Coord3 ab = (a1 - a2);
+		lf ans = Dot(N, ab) / abs(N);
+		Coord3 d1 = b1 - a1, d2 = b2 - a2, cd = Cross(d1, d2);
+		lf nd = norm(cd), t1 = Dot(Cross(a2 - a1, d2), cd) / nd, t2 = Dot(Cross(a2 - a1, d1), cd) / nd;
+		return ans1 = a1 + (b1 - a1) * t1, ans2 = a2 + (b2 - a2) * t2, fabs(ans);
+	}
+	friend bool InsideWithMinDistance(Coord3 PP, Coord3 *P, lf dist) //判断PP是否在三角形P中，并且到三条边的距离都至少为dist。保证P,A,B,C共面
+	{
+		return PointInTri(PP, P) &amp;&amp;
+				   DistanceToLine(PP, P[0], P[1]) &gt;= dist ||
+			   DistanceToLine(PP, P[1], P[2]) &gt;= dist ||
+			   DistanceToLine(PP, P[2], P[0]) &gt;= dist;
+	}
+	friend lf minBall(const vector&lt;Coord3&gt; &amp;data, const lf eps = EPS * 1e-3) //模拟退火求最小球覆盖，EPS玄学调整；返回半径
+	{
+		lf step = 1, ans = INF;
+		for (Coord3 z{0, 0, 0}; step &gt; eps; step *= 0.99)
+		{
+			int s = 0;
+			for (int i = 0; i &lt; data.size(); ++i)
+				if (abs(z - data[s]) &lt; abs(z - data[i]))
+					s = i;
+			ans = min(ans, abs(z - data[s]));
+			z -= (z - data[s]) * step;
+		}
+		return ans;
+	}
+};
+struct Sphere
+{
+	Coord3 o;
+	lf r;
+	Coord3 point(lf lat, lf lng) const //经纬度确定球面上一点
+	{
+		lat *= M_PI / 180;
+		lng *= M_PI / 180;
+		return o + r * Coord3{cos(lat) * cos(lng), cos(lat) * sin(lng), sin(lat)};
+	}
+};
+struct ConvexPolyhedron //空间多边形和凸包问题
+{
+	struct Face
+	{
+		int v[3];
+		Face(int a, int b, int c) { v[0] = a, v[1] = b, v[2] = c; }
+		Coord3 Normal(const vector&lt;Coord3&gt; &amp;P) const { return Cross(P[v[1]] - P[v[0]], P[v[2]] - P[v[0]]); }
+		bool CanSee(const vector&lt;Coord3&gt; &amp;P, int i) const { return Dot(P[i] - P[v[0]], Normal(P)) &gt; 0; } //f是否能看见P[i]
+	};
+	vector&lt;Face&gt; faces;
+	vector&lt;Coord3&gt; p;
+	ConvexPolyhedron(vector&lt;Coord3&gt; P) : p(P)
+	{
+		for (int i = 0; i &lt; p.size(); ++i)
+			P[i] += Coord3{randEPS(), randEPS(), randEPS()};
+		vector&lt;vector&lt;int&gt;&gt; vis(P.size(), vector&lt;int&gt;(P.size()));
+		faces.push_back(Face(0, 1, 2)); //由于已经进行扰动，前三个点不共线
+		faces.push_back(Face(2, 1, 0));
+		for (int i = 3; i &lt; P.size(); ++i)
+		{
+			vector&lt;Face&gt; next;
+			for (int j = 0; j &lt; faces.size(); ++j) //计算每条边的「左面」的可见性
+			{
+				Face &amp;f = faces[j];
+				int res = f.CanSee(P, i);
+				if (!res)
+					next.push_back(f);
+				for (int k = 0; k &lt; 3; ++k)
+					vis[f.v[k]][f.v[(k + 1) % 3]] = res;
+			}
+			for (int j = 0; j &lt; faces.size(); ++j)
+				for (int k = 0; k &lt; 3; ++k)
+				{
+					int a = faces[j].v[k], b = faces[j].v[(k + 1) % 3];
+					if (vis[a][b] != vis[b][a] &amp;&amp; vis[a][b]) //(a,b)是分界线，左边对P[i]可见
+						next.push_back(Face(a, b, i));
+				}
+			swap(faces, next);
+		}
+	}
+	lf randEPS() { return (rand() / lf(RAND_MAX) - 0.5) * EPS; }
+	Coord3 centroid() //三维凸包重心
+	{
+		Coord3 C = p[0], tot{0, 0, 0};
+		lf totv = 0;
+		for (int i = 0; i &lt; faces.size(); ++i)
+		{
+			Coord3 p1 = p[faces[i].v[0]], p2 = p[faces[i].v[1]], p3 = p[faces[i].v[2]];
+			lf v = -Volume6(p1, p2, p3, C);
+			totv += v;
+			tot += v * Centroid(p1, p2, p3, C);
+		}
+		return tot / totv;
+	}
+	lf dist(Coord3 C) //凸包内一点到表面最近距离
+	{
+		lf ans = INF;
+		for (int i = 0; i &lt; faces.size(); ++i)
+		{
+			Coord3 p1 = p[faces[i].v[0]], p2 = p[faces[i].v[1]], p3 = p[faces[i].v[2]];
+			ans = min(ans, fabs(-Volume6(p1, p2, p3, C) / Area2(p1, p2, p3)));
+		}
+		return ans;
+	}
+};
+</code></pre><h1 id="高精度"><a href="/2019/01/26/%E9%AB%98%E7%B2%BE%E5%BA%A6/">高精度</a></h1><h2 id="无符号整数">无符号整数</h2><p><a href="https://vjudge.net/solution/16907599">使用范例</a></p><p>vector 自带大小比较为字典序比较， <code>!=</code> 、 <code>==</code> 运算，其余需要时一定记得重载！</p><p>减法，当被减数小于减数时减为 0。</p><pre><code class="language-cpp">struct Wint : vector&lt;int&gt; //继承vector
+{
+	static const int width = 9, base = 1e9;
+	Wint(unsigned long long n = 0) //普通初始化，当整型数和Wint同时运算时会提升至Wint
+	{
+		for (; n; n /= base)
+			push_back(n % base);
+	}
+	explicit Wint(const string &amp;s) //字符串初始化函数，未判断字符串合法情况
+	{
+		for (int len = int(s.size() - 1) / width + 1, b, e, i = 0; i &lt; len; ++i)
+			for (e = s.size() - i * width, b = max(0, e - width), push_back(0); b != e; ++b)
+				back() = back() * 10 + s[b] - '0';
+		trim(0);
+	}
+	Wint &amp;trim(bool up = 1) //去前导0，是否需要进位，很常用的小函数，为方便返回自身
+	{
+		for (int i = 1; up &amp;&amp; i &lt; size(); ++i)
+		{
+			if ((*this)[i - 1] &lt; 0)
+				--(*this)[i], (*this)[i - 1] += base;
+			if ((*this)[i - 1] &gt;= base)
+				(*this)[i] += (*this)[i - 1] / base, (*this)[i - 1] %= base;
+		}
+		while (!empty() &amp;&amp; back() &lt;= 0)
+			pop_back();
+		for (; up &amp;&amp; !empty() &amp;&amp; back() &gt;= base; (*this)[size() - 2] %= base)
+			push_back(back() / base);
+		return *this;
+	}
+	friend istream &amp;operator&gt;&gt;(istream &amp;is, Wint &amp;n)
+	{
+		string s; //懒
+		return is &gt;&gt; s, n = Wint(s), is;
+	}
+	friend ostream &amp;operator&lt;&lt;(ostream &amp;os, const Wint &amp;n)
+	{
+		if (n.empty())
+			return os.put('0');
+		os &lt;&lt; n.back();
+		char ch = os.fill('0');
+		for (int i = n.size() - 2; ~i; --i)
+			os.width(n.width), os &lt;&lt; n[i];
+		return os.fill(ch), os;
+	}
+	friend bool operator&lt;(const Wint &amp;a, const Wint &amp;b)
+	{
+		if (a.size() != b.size())
+			return a.size() &lt; b.size();
+		for (int i = a.size() - 1; ~i; --i)
+			if (a[i] != b[i])
+				return a[i] &lt; b[i];
+		return 0;
+	}
+	friend bool operator&gt;(const Wint &amp;a, const Wint &amp;b) { return b &lt; a; }
+	friend bool operator&lt;=(const Wint &amp;a, const Wint &amp;b) { return !(a &gt; b); }
+	friend bool operator&gt;=(const Wint &amp;a, const Wint &amp;b) { return !(a &lt; b); }
+	Wint &amp;operator+=(const Wint &amp;b)
+	{
+		if (size() &lt; b.size())
+			resize(b.size()); //保证有足够的位数
+		for (int i = 0; i &lt; b.size(); ++i)
+			(*this)[i] += b[i];
+		return trim(); //单独进位防自运算
+	}
+	friend Wint operator+(Wint a, const Wint &amp;b) { return a += b; }
+	Wint &amp;operator++() { return *this += 1; } //前置版本，懒
+	Wint operator++(int)					  //后置版本
+	{
+		Wint b(*this);
+		return ++*this, b;
+	}
+	Wint &amp;operator-=(const Wint &amp;b) //a&lt;b会使a变为0
+	{
+		if (size() &lt; b.size())
+			resize(b.size()); //保证有足够的位数
+		for (int i = 0; i &lt; b.size(); ++i)
+			(*this)[i] -= b[i];
+		return trim(); //单独进位防自运算
+	}
+	friend Wint operator-(Wint a, const Wint &amp;b) { return a -= b; }
+	Wint &amp;operator--() { return *this -= 1; } //前置版本，懒
+	Wint operator--(int)					  //后置版本
+	{
+		Wint b(*this);
+		return --*this, b;
+	}
+	Wint &amp;operator*=(const Wint &amp;b) //高精度乘法，常规写法
+	{
+		Wint c;
+		c.assign(size() + b.size(), 0);
+		for (int j = 0, k, l; j &lt; b.size(); ++j)
+			if (b[j]) //稀疏优化，特殊情况很有效
+				for (int i = 0; i &lt; size(); ++i)
+				{
+					unsigned long long n = (*this)[i];
+					for (n *= b[j], k = i + j; n; n /= base)
+						c[k++] += n % base;
+					for (l = i + j; c[l] &gt;= base || l + 1 &lt; k; c[l++] %= base)
+						c[l + 1] += c[l] / base;
+				}
+		return swap(c), trim(0);
+	}
+	/*
+	Wint &amp;operator*=(const Wint &amp;b) //一种效率略高但对位宽有限制的写法
+	{
+		vector&lt;unsigned long long&gt; n(size() + b.size(), 0); //防爆int
+		//乘法算完后统一进位效率高，防止乘法溢出（unsigned long long范围0~1.8e19）
+		//位宽为9时size()不能超过18（十进制162位），位宽为8时size()不能超过1800（十进制14400位）等等。
+		for (int j = 0; j != b.size(); ++j)
+			if (b[j]) //稀疏优化，特殊情况很有效
+				for (int i = 0; i != size(); ++i)
+					n[i + j] += (unsigned long long)(*this)[i] * b[j];
+		for (int i = 1; i &lt; n.size(); ++i) //这里用&lt;防止位数0，单独进位防自运算
+			n[i] += n[i - 1] / base, n[i - 1] %= base;
+		return assign(n.begin(), n.end()), trim(0);
+	}
+	Wint &amp;operator*=(const Wint &amp;b) //fft优化乘法，注意double仅15位有效数字，调小Wint::width不超过2，计算自2*log2(base)+2*log2(len)&lt;53
+	{
+		vector&lt;ll&gt; ax(begin(), end()), bx(b.begin(), b.end());
+		ax = FFT(size() + b.size()).ask(ax, bx);
+		for (int i = 1; i &lt; ax.size(); ++i)
+			ax[i] += ax[i - 1] / base, ax[i - 1] %= base;
+		return assign(ax.begin(), ax.end()), trim(0);
+	}
+	Wint &amp;operator*=(const Wint &amp;b) //ntt优化，Wint::width不超过2
+	{
+		vector&lt;ll&gt; ax(begin(), end()), bx(b.begin(), b.end());
+		ax = FNTT(size() + b.size(), (7 &lt;&lt; 26) + 1, 3).ask(ax, bx);
+		for (int i = 1; i &lt; ax.size(); ++i)
+			ax[i] += ax[i - 1] / base, ax[i - 1] %= base;
+		return assign(ax.begin(), ax.end()), trim(0);
+	}
+	*/
+	friend Wint operator*(Wint a, const Wint &amp;b) { return a *= b; }
+	Wint &amp;operator/=(Wint b)
+	{
+		Wint r, c, d = b.base / (b.back() + 1);
+		*this *= d, b *= d, c.assign(size(), 0);
+		for (int i = size() - 1; ~i; --i)
+		{
+			r.insert(r.begin(), (*this)[i]);
+			unsigned long long s = 0;
+			for (int j = b.size(); j + 1 &gt;= b.size(); --j) //b.size()==0肯定第一行就出问题的
+				s = s * b.base + (j &lt; r.size() ? r[j] : 0);
+			for (d = c[i] = s / b.back(), d *= b; r &lt; d; r += b)
+				--c[i];
+			r -= d;
+		}
+		return swap(c), trim(0); //r为加倍后的余数，可通过高精度除低精度得到真正余数，此处略
+	}
+	friend Wint operator/(Wint a, const Wint &amp;b) { return a /= b; }
+	Wint &amp;operator%=(const Wint &amp;b) { return *this -= *this / b * b; }
+	friend Wint operator%(Wint a, const Wint &amp;b) { return a %= b; }
+	//开平方，改自ZJU模板
+	bool cmp(long long c, int d, const Wint &amp;b) const
+	{
+		if ((int)b.size() - (int)size() &lt; d + 1 &amp;&amp; c)
+			return 1;
+		long long t = 0;
+		for (int i = b.size() - 1, lo = -(base &lt;&lt; 1); lo &lt;= t &amp;&amp; t &lt;= 0 &amp;&amp; ~i; --i)
+			if (t = t * base - b[i], 0 &lt;= i - d - 1 &amp;&amp; i - d - 1 &lt; size())
+				t += (*this)[i - d - 1] * c;
+		return t &gt; 0;
+	}
+	Wint &amp;sub(const Wint &amp;b, long long k, int d)
+	{
+		int l = b.size() + d;
+		for (int i = d + 1; i &lt;= l; ++i)
+		{
+			long long tmp = (*this)[i] - k * b[i - d - 1];
+			if (tmp &lt; 0)
+			{
+				(*this)[i + 1] += (tmp - base + 1) / base;
+				(*this)[i] = tmp - (tmp - base + 1) / base * base;
+			}
+			else
+				(*this)[i] = tmp;
+		}
+		for (int i = l + 1; i &lt; size() &amp;&amp; (*this)[i] &lt; 0; ++i)
+		{
+			(*this)[i + 1] += ((*this)[i] - base + 1) / base;
+			(*this)[i] -= ((*this)[i] - base + 1) / base * base;
+		}
+		return trim(0);
+	}
+	friend Wint sqrt(Wint a)
+	{
+		Wint n;
+		n.assign(a.size() + 1 &gt;&gt; 1, 0);
+		for (int i = n.size() - 1, l, r; ~i; --i)
+		{
+			for (l = 0, r = a.base, n[i] = l + r &gt;&gt; 1; r - l &gt; 1; n[i] = l + r &gt;&gt; 1)
+			{
+				if (n.cmp(n[i], i - 1, a))
+					r = n[i];
+				else
+					l = n[i];
+			}
+			a.sub(n, n[i], i - 1), n[i] += l + r &gt;&gt; 1;
+		}
+		for (int i = 0; i &lt; n.size(); ++i)
+			n[i] &gt;&gt;= 1;
+		return n.trim(0);
+	}
+	/*
+	friend Wint sqrt(const Wint &amp;a) //常规牛顿迭代实现的开平方算法，慢但是好敲
+	{
+		Wint b = a, c = (b + 1) / 2;
+		while (b != c)
+			swap(b, c), c = (b + a / b) / 2;
+		return c;
+	}
+	friend Wint sqrt(const Wint &amp;a)
+	{
+		Wint ret, t;
+		ret.assign((a.size() + 1) &gt;&gt; 1, 0);
+		for (int i = ret.size() - 1, l, r; ~i; --i)
+		{
+			for (l = 0, r = a.base; r - l &gt; 1;)
+			{
+				ret[i] = l + (r - l) / 2;
+				t = ret * ret;
+				if (a &lt; t)
+					r = ret[i];
+				else
+					l = ret[i];
+			}
+			if (!l &amp;&amp; i == ret.size() - 1)
+				ret.pop_back();
+			else
+				ret[i] = l;
+		}
+		return ret;
+	}
+	*/
+};
+</code></pre><h2 id="分数">分数</h2><p><a href="https://vjudge.net/solution/16733633">使用示范</a>。</p><pre><code class="language-cpp">struct Fraction
+{
+	ll num, den;
+	Fraction(ll n = 0, ll d = 1) : num(n), den(d)
+	{
+		d = __gcd(num, den), num /= d, den /= d;
+		if (den &lt; 0)
+			num = -num, den = -den;
+	}
+	friend Fraction operator+(const Fraction &amp;A, const Fraction &amp;B)
+	{
+		ll d = __gcd(A.den, B.den);
+		return Fraction(B.den / d * A.num + A.den / d * B.num, A.den / d * B.den);
+	}
+	Fraction &amp;operator+=(const Fraction &amp;c) { return *this = *this + c; }
+	Fraction operator-() const
+	{
+		Fraction r(*this);
+		return r.num = -r.num, r;
+	}
+	friend Fraction operator-(const Fraction &amp;a, const Fraction &amp;c) { return -c + a; }
+	Fraction &amp;operator-=(const Fraction &amp;c) { return *this = *this - c; }
+	friend Fraction operator*(const Fraction &amp;A, const Fraction &amp;B) { return Fraction(A.num * B.num, A.den * B.den); }
+	Fraction &amp;operator*=(const Fraction &amp;c) { return *this = *this * c; }
+	friend Fraction operator/(const Fraction &amp;A, const Fraction &amp;B) { return Fraction(A.num * B.den, A.den * B.num); }
+	Fraction &amp;operator/=(const Fraction &amp;c) { return *this = *this / c; }
+	friend Fraction operator%(const Fraction &amp;a, const Fraction &amp;c) { return Fraction(a.num * c.den % (c.num * a.den), a.den * c.den); }
+	Fraction &amp;operator%=(const Fraction &amp;c) { return *this = *this % c; }
+	friend bool operator==(const Fraction &amp;a, const Fraction &amp;b) { return a.num * b.den == a.den * b.num; }
+	friend bool operator!=(const Fraction &amp;a, const Fraction &amp;b) { return !(a == b); }
+	friend bool operator&lt;(const Fraction &amp;a, const Fraction &amp;b) { return a.num * b.den &lt; a.den * b.num; }
+	friend bool operator&gt;(const Fraction &amp;a, const Fraction &amp;b) { return b &lt; a; }
+	friend bool operator&lt;=(const Fraction &amp;a, const Fraction &amp;b) { return !(a &gt; b); }
+	friend bool operator&gt;=(const Fraction &amp;a, const Fraction &amp;b) { return !(a &lt; b); }
+	friend Fraction abs(Fraction f)
+	{
+		if (f.num &lt; 0)
+			f.num = -f.num;
+		return f;
+	}
+	friend ostream &amp;operator&lt;&lt;(ostream &amp;os, const Fraction &amp;f) { return !f.num ? os &lt;&lt; 0 : f.den == 1 ? os &lt;&lt; f.num : os &lt;&lt; f.num &lt;&lt; '/' &lt;&lt; f.den; }
+};
+</code></pre><h2 id="bitset-高精度">bitset 高精度</h2><p>代替整型进行位运算，更方便并且可以处理超过最大整形范围大小的位集合。 你可以把 bitset 看作可以位运算的 bool 数组，换言之，bitset 的大小是固定的。因此，用 bitset 做状态压缩是很方便的，也可以方便的实现集合的交并补操作。 bitset 仅重载了相等不等和位运算符，原生不支持四则运算和大小比较，所以很少代替高精度数。</p><pre><code class="language-cpp">typedef bitset&lt;127&gt; Bint;
+/*
+Bint b(unsigned long long u=0);//用u的低N位初始化b，N是一个可转成ULL类型的常量表达式，高位补0
+Bint bs(string s,int pos,int m=string::npos,char zero='0',char one='1');//用s从pos位开始的m位初始化b，s中只含zero和one
+
+b.size();//b的大小，即N
+b.count();//b中1的个数
+
+b[pos];//b中pos位的引用
+
+b.set();//b全赋1
+b.reset();//b全赋0
+b.flip();//b全反转
+
+b.to_ull();//b转成unsigned long long，b.size()&gt;64时出错
+b.to_string(char zero='0',char one='1');//按参数输出字符串
+
+os&lt;&lt;b;//按'0'和'1'打印b
+is&gt;&gt;b;//按'0'和'1'读入b，当下一个字符不是'0'或'1'或读到b.size()个数后停止
+
+==、!=、&lt;&lt;、&gt;&gt;、&amp;、|、^//保持它们在整型运算中的含义
+*/
+//大小比较，其他运算符类似
+bool operator&lt;(const Bint &amp;a, const Bint &amp;b)
+{
+	for (int i = a.size() - 1; ~i; --i)
+		if (a[i] != b[i])
+			return a[i] &lt; b[i];
+	return 0;
+}
+bool operator!=(const Bint &amp;a, const Bint &amp;b)
+{
+	for (int i = a.size() - 1; ~i; --i)
+		if (a[i] != b[i])
+			return 1;
+	return 0;
+}
+//加法
+Bint operator+(const Bint &amp;a, const Bint &amp;b) { return b.any() ? (a ^ b) + ((a &amp; b) &lt;&lt; 1) : a; }
+Bint &amp;operator+=(Bint &amp;a, const Bint &amp;b) { return a = a + b; }
+//减法
+Bint operator-(const Bint &amp;a) { return Bint(1) + ~a; }
+Bint &amp;operator-=(Bint &amp;a, const Bint &amp;b) { return a += -b; }
+Bint operator-(Bint a, const Bint &amp;b) { return a -= b; }
+//乘法
+Bint operator*(Bint a, Bint b)
+{
+	Bint r(0);
+	for (; b.any(); b &gt;&gt;= 1, a += a)
+		if (b[0])
+			r += a;
+	return r;
+}
+Bint &amp;operator*=(Bint &amp;a, const Bint &amp;b) { return a = a * b; }
+//整除，取模
+Bint operator%=(Bint &amp;dividend, const Bint &amp;divisor)
+{
+	if (dividend &lt; divisor || divisor.none())
+		return dividend;
+	Bint c, res = 0;
+	for (int k; divisor &lt; dividend;)
+	{
+		for (k = 0, c = divisor; !(dividend &lt; c); c &lt;&lt;= 1, ++k)
+			if (dividend &lt; divisor + c)
+			{
+				res += 1 &lt;&lt; k;
+				break;
+			}
+		if (dividend &lt; divisor + c)
+			break;
+		res += 1 &lt;&lt; (k - 1);
+		dividend -= c &gt;&gt; 1;
+	}
+	return dividend; //res是商
+}
+//输入输出，bitset已经原生重载了输入输出运算符，避免歧义。
+istream &amp;getb(istream &amp;is, Bint &amp;val)
+{
+	int sign = 1, ch = is.get();
+	for (; !isdigit(ch) &amp;&amp; ch != EOF; ch = is.get())
+		if (ch == '-')
+			sign = -sign;
+	for (val = 0; isdigit(ch); ch = is.get())
+		val = (val &lt;&lt; 3) + (val &lt;&lt; 1) + (ch ^ '0');
+	if (sign == -1)
+		val = -val;
+	return is.putback(ch);
+}
+ostream &amp;putb(ostream &amp;os, const Bint &amp;val)
+{
+	if (Bint(9) &lt; val)
+		putb(os, val / 10);
+	return os.put(val.to_ulong() % 10 + '0');
+}
+</code></pre><h1 id="c语言相关"><a href="/2019/01/25/C++%E8%AF%AD%E8%A8%80%E7%9B%B8%E5%85%B3/">C++语言相关</a></h1><h2 id="gcc-内置位运算">GCC 内置位运算</h2><pre><code class="language-cpp">int __builtin_clz(unsigned int x);      //求前缀0的个数
+int __builtin_ctz(unsigned int x);      //求后缀0的个数
+int __builtin_ffs(unsigned int x);      //x的二进制末尾最后一个1的位置，从1开始
+int __builtin_popcount(unsigned int x); //x二进制中1的个数，相当于bitset::count()
+int __builtin_parity(unsigned int x);   //判断x的二进制中1的个数的奇（1）偶（0）性，这些函数都有相应的usigned long和usigned long long版本，只需要在函数名后面加上l或ll就可以了，比如__builtin_clzll
+</code></pre><h2 id="开栈">开栈</h2><h3 id="for-c">For C++</h3><pre><code class="language-cpp">#pragma comment(linker, "/STACK:102400000,102400000") //For C++
+</code></pre><h3 id="for-g">For G++</h3><pre><code class="language-cpp">int main() //For G++
+{
+	int size = 256 &lt;&lt; 20; //256MB
+	char *p = (char *)malloc(size) + size;
+	__asm__ __volatile__("movq %0, %%rsp\n" ::"r"(p)); //64bit，一定要最后写一句`exit(0);`退出程序，否则会得到非零退出的错误，可能RE。
+}
+</code></pre><h2 id="读入优化">读入优化</h2><h3 id="c-文件指针版">C 文件指针版</h3><pre><code class="language-cpp">ll getll(FILE *in = stdin)
+{
+	ll val = 0, sgn = 1, ch = getc(in);
+	for (; !isdigit(ch) &amp;&amp; ch != EOF; ch = getc(in))
+		if (ch == '-')
+			sgn = -sgn;
+	for (; isdigit(ch); ch = getc(in))
+		val = val * 10 + ch - '0';
+	return ungetc(ch, in), sgn * val;
+}
+lf getlf(FILE *in = stdin)
+{
+	lf val = getll(in), p = val &lt; 0 ? -1 : 1;
+	ll ch = getc(in);
+	if (ch == '.')
+		for (ch = getc(in); isdigit(ch); ch = getc(in))
+			val += (p /= 10) * (ch - '0');
+	return ungetc(ch, in), val;
+}
+</code></pre><h3 id="仿-cio-流沙雕版">仿 C++IO 流沙雕版</h3><p><a href="https://vjudge.net/solution/14388745">使用前</a></p><p><a href="https://vjudge.net/solution/14388713">使用后</a></p><pre><code class="language-cpp">#define cin kin
+struct Istream
+{
+	char b[20 &lt;&lt; 20], *i, *e; //20MB
+	Istream(FILE *in) : i(b), e(b + fread(b, sizeof(*b), sizeof(b), in)) {}
+	bool eof() const
+	{
+		return i == e;
+	}
+	Istream &amp;operator&gt;&gt;(long long &amp;val)
+	{
+		return val = strtoll(i, &amp;i, 10 /*进制，取值2~36*/), *this;
+	}
+	Istream &amp;operator&gt;&gt;(ll &amp;val) //极限快
+	{
+		while (*i &lt; '0')
+			++i; //无符号
+		for (val = 0; *i &gt;= '0'; ++i)
+			val = (val &lt;&lt; 3) + (val &lt;&lt; 1) + *i - '0';
+		return *this;
+	}
+	Istream &amp;operator&gt;&gt;(double &amp;val)
+	{
+		return val = strtod(i, &amp;i), *this;
+	}
+	Istream &amp;operator&gt;&gt;(string &amp;s)
+	{
+		while (!eof() &amp;&amp; isspace(*i))
+			++i;
+		for (s.clear(); !eof() &amp;&amp; !isspace(*i); ++i)
+			s += *i;
+		return *this;
+	}
+} kin(stdin);
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

@@ -1,0 +1,188 @@
+<!DOCTYPE html><html><head><title> 并行与分布式计算（5） &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="并行与分布式计算（5）" /><meta property="og:locale" content="en_US" /><meta name="description" content="题目要求 现实世界的很多场景中，需要计算最短路径，如导航中的路径规划等，但是如何在大规模路径中快速找出最短路径，是一个具有挑战性的问题。本项目要求利用MPI+OpenMP，从一个至少包含1万个节点，10万条边的图中，寻找最短路径，边上的权重可随机产生。统一测试程序的执行时间，进行排名，根据排名计算成绩。" /><meta property="og:description" content="题目要求 现实世界的很多场景中，需要计算最短路径，如导航中的路径规划等，但是如何在大规模路径中快速找出最短路径，是一个具有挑战性的问题。本项目要求利用MPI+OpenMP，从一个至少包含1万个节点，10万条边的图中，寻找最短路径，边上的权重可随机产生。统一测试程序的执行时间，进行排名，根据排名计算成绩。" /><link rel="canonical" href="http://localhost:4000/2019/05/27/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97-5/" /><meta property="og:url" content="http://localhost:4000/2019/05/27/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97-5/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-05-27T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="并行与分布式计算（5）" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/05/27/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97-5/","datePublished":"2019-05-27T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/05/27/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%88%86%E5%B8%83%E5%BC%8F%E8%AE%A1%E7%AE%97-5/"},"headline":"并行与分布式计算（5）","description":"题目要求 现实世界的很多场景中，需要计算最短路径，如导航中的路径规划等，但是如何在大规模路径中快速找出最短路径，是一个具有挑战性的问题。本项目要求利用MPI+OpenMP，从一个至少包含1万个节点，10万条边的图中，寻找最短路径，边上的权重可随机产生。统一测试程序的执行时间，进行排名，根据排名计算成绩。","dateModified":"2019-05-27T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E9%A2%98%E7%9B%AE%E8%A6%81%E6%B1%82">题目要求</a><li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">使用说明</a><ol><li><a href="#%E7%BC%96%E8%AF%91">编译</a><li><a href="#%E8%BF%90%E8%A1%8C%E5%B9%B6%E6%B5%8B%E8%AF%95%E6%97%B6%E9%97%B4">运行并测试时间</a></ol><li><a href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">实现原理</a><ol><li><a href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E9%80%89%E6%8B%A9">数据结构的选择</a><li><a href="#%E8%BE%B9%E7%9A%84%E5%AD%98%E5%82%A8">边的存储</a><li><a href="#%E5%A0%86%E7%9A%84%E5%AE%9E%E7%8E%B0">堆的实现</a><li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</a><li><a href="#%E8%AF%BB%E5%85%A5%E9%83%A8%E5%88%86%E7%9A%84%E4%BC%98%E5%8C%96">读入部分的优化</a></ol><li><a href="#%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81">程序源码</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">并行与分布式计算（5）</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 27 May 2019 <i class="fas fa-file-word fa-fw"></i> 7024字 <i class="fas fa-clock fa-fw"></i> 24分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="题目要求">题目要求</h2><p>现实世界的很多场景中，需要计算最短路径，如导航中的路径规划等，但是如何在大规模路径中快速找出最短路径，是一个具有挑战性的问题。本项目要求利用MPI+OpenMP，从一个至少包含1万个节点，10万条边的图中，寻找最短路径，边上的权重可随机产生。统一测试程序的执行时间，进行排名，根据排名计算成绩。</p><blockquote><p>几次更新之后数据达到了两万顶点，一亿四千万条边…</p></blockquote><h2 id="使用说明">使用说明</h2><p>以下指令均需要先<code>cd</code>进文件所在目录。样例数据<code>10001x10001GraphExamples.txt</code>实在是太大，就没有一起上传了，需要在运行参数上指明其地址，并且代码对文件名不做检查，如果文件不存在会发生段错误。</p><h3 id="编译">编译</h3><ul><li><code>mpicc</code>使用mpicc作为编译器<li><code>-O3</code>编译优化</ul><pre><code class="language-bash">$ mpicc -O3 -ompi_dijkstra mpi_dijkstra.c
+</code></pre><h3 id="运行并测试时间">运行并测试时间</h3><blockquote><p>由于我只有一台双核四进程的机器，因此本地测试的时候只测试了4个进程。考虑到最终测试环境有3台主机，希望TA大大在测试的时候调整为12个进程同时运行，3台主机每台主机上运行4个进程；并且每一台主机上都要有输入文件。</p></blockquote><p>程序由第一个运行参数指明并行的进程数，并将结果输出到屏幕上，例如，下面<code>10001x10001GraphExamples.txt</code>是输入文件名，测试时需要放进同目录。</p><pre><code class="language-bash">$ time mpirun -n 4 ./mpi_dijkstra 10001x10001GraphExamples.txt
+2
+20000&lt;-826&lt;-0
+real    0m1.484s
+user    0m3.984s
+sys     0m1.313s
+</code></pre><p>第1行是最短路径长度，第2行是（从右向左方向）路径上各点，再后面是运行时间。由于做了挺多的优化（见下），在我的机器上1.484s内就可以跑完。考虑到最终测试环境有3台主机，12进程同时并行的运行时间仍然是值得期待的。</p><p>当然，由于每个进程都要读取文件，而机械硬盘的读取实际上是单线程的，同一台机器上多进程同时读取文件会使硬盘频繁地进行随机读取，从而导致读取性能下降。我的程序还支持各进程的并发读取控制。如下，<strong>当接受更多的参数时，我的程序会把它作为每个进程的运行主机标识</strong>，相同标识的进程之间读取是不能够并发的。关于并发读取控制部分的详细解释在后面。</p><p>由于我的机器是固态硬盘，并发读取之后性能没有下降，开启并发读取控制之后，时间反而有了比较大的增加，甚至慢于一个进程运行的结果（主要是我的机器是固态硬盘，文件读取速度较快；如果是在随机读取性能较差的机械硬盘上，并发读取控制可能会有比较好的效果；此外，在<strong>多次运行</strong>本程序时也同样不需要并发读取控制，因为这时候<code>mmap</code>是直接对文件在内存中的映射做操作，不涉及硬盘上的随机读取，也有更佳的时间表现）。</p><pre><code class="language-bash">$ time mpirun -n 4 ./mpi_dijkstra 10001x10001GraphExamples.txt 1 1 1 1
+2
+20000&lt;-826&lt;-0
+real    0m4.696s
+user    0m13.047s
+sys     0m5.000s
+</code></pre><p>以下是一个进程的运行结果，供对比。</p><pre><code class="language-bash">$ time mpirun -n 1 ./mpi_dijkstra 10001x10001GraphExamples.txt
+2
+20000&lt;-13915&lt;-0
+real    0m4.105s
+user    0m3.250s
+sys     0m0.688s
+</code></pre><blockquote><p>如果测试环境是3台主机，第1台主机负责0~3号进程，第2台主机负责4~7号进程，第三台主机负责8~11号进程，可以像这样配置并发读取控制：</p><pre><code class="language-bash">./mpi_dijkstra 10001x10001GraphExamples.txt 1 1 1 1 2 2 2 2 3 3 3 3
+</code></pre></blockquote><h2 id="实现原理">实现原理</h2><p>简单的来说，我的实现方案是，每个进程（进程）负责读入文件的一部分，构造并维护原图的一个子图。在Dijkstra算法的每一轮中，每个进程用各自的图上的边去更新答案；每一轮结束后，各进程<strong>「选举」</strong>出下一轮考虑的顶点，直到选举出终点<code>T</code>的时候退出。</p><h3 id="数据结构的选择">数据结构的选择</h3><p>图的数据结构选择了邻接表。如果使用邻接矩阵的话，<code>20000*20000</code>大小的<code>int</code>数组占用内存就已经达到了1.6GB。如果每个进程维护自己的子图的话内存上是很难受的，而共用同一个矩阵又势必在读入的时候引入临界区的问题，也就是要加锁。经过测试，加锁之后我的机器上的运行时间达到了4s。邻接表虽然需要维护大量的指针变量，但是边数是已经知道的（约一亿四千万条边）。当然，边的数量再增加的时候，也只需要修改源码中的宏常量<code>E</code>即可。这样，每个进程的图之间是相互独立的，避开了读入时的临界区问题，不需要加锁。</p><pre><code class="language-c">#define E 160000009		//边数
+</code></pre><p>经典的串行Dijkstra算法通常会使用堆来维护剩余顶点中到起点最近的点，从而把单次选举的复杂度从O(N)降到O(log N)。在我实现的并行的版本中，每个进程维护一个自己的堆，而堆中用于比较的权值是<strong>这个顶点的答案被本进程更新后的答案</strong>。这样做的道理是，每个进程在每一轮中更新后的答案是会有区别的，因此堆里的权值很容易就会失效，如果在失效的时候就从堆里删除这个点，那么运行时的效率就会大大下降。因此，在同步完每一轮更新的答案之后，各进程单独检查一下堆顶的元素是否失效，如果失效则删除堆顶元素直到合法或堆空。</p><p>因此，最终期待的时间复杂度为O(E/P+Nlog N)，其中E是边数，N是顶点数，P是并行时的进程数（每一条边至多被一个进程读入并访问一次用于更新答案；每个进程都要维护一个堆来选举下一个顶点）。</p><h3 id="边的存储">边的存储</h3><p>如果不加说明一下的话，边的存储结构可能看起来会有一些奇怪。</p><pre><code class="language-c">struct Edge
+{
+	int from;
+	short to, len;
+};
+</code></pre><p><code>struct Edge</code>同时用在邻接表中的边、记录答案的<code>ans</code>数组、每个进程维护的堆，下面一点点来说明。</p><p>在邻接表中，<code>struct Edge</code>是邻接链表的每个节点。<code>from</code>指向了链表的上一条边，由于边数超过了16位数据结构的限制，因此<code>from</code>是32位的；<code>to</code>指向这条边的终点；<code>len</code>是边长。</p><p>在ans数组中，<code>from</code>变量用来记录到达这个顶点最短路上的前一个点，<code>to</code>这里没有用上，<code>len</code>记录到达这一点的最短路。可能你已经注意到了，<code>struct Edge</code>中的变量类型有一些奇怪。这样做的好处是，<code>struct Edge</code>的大小恰好相当于<code>MPI_INT64_T</code>，并且最高位是从<code>len</code>的最高位开始的，在<code>MPI_Allreduce</code>中可以直接使用<code>MPI_MIN</code>来同步最优的答案以及选举下一个顶点（还做了一个特殊处理，当距离相等时，优先选举<code>T</code>作为答案）。</p><pre><code class="language-c">cur = qSiz &amp;&amp; q[0].len &lt; ans[T].len ? q[0] : ans[T];
+if (cur.to++ == T) //优先选择T
+	cur.to = 0;
+MPI_Allreduce(
+	MPI_IN_PLACE,
+	&amp;cur,
+	1,
+	MPI_INT64_T,
+	MPI_MIN,
+	MPI_COMM_WORLD);
+if (!cur.to--)
+	cur.to = T;
+</code></pre><p>实际情况下，有大概一万五千个顶点到起点的最短路长都小于2，用16位<code>short</code>去存<code>to</code>和<code>len</code>是完全足够的，还减小了内存消耗。</p><p>在堆中，我们仍然需要记录进堆时的答案，因此和<code>ans</code>数组的用法一样，只是要用到<code>to</code>用来标记了顶点的序号。</p><h3 id="堆的实现">堆的实现</h3><p>由于想保持语言的纯粹性，没有用C++，所以自己实现了STL里面的<code>push_heap</code>和<code>pop_heap</code>两个操作。</p><pre><code class="language-c">// 将ans[e[j].to]入堆
+int i = qSiz++;
+while (i &gt; 0)
+{
+	int p = (i - 1) / 2;
+	if (q[p].len &lt;= ans[e[j].to].len)
+		break;
+	q[i] = q[p];
+	i = p;
+}
+q[i] = ans[e[j].to];
+</code></pre><pre><code class="language-c">//将q[0]出堆
+--qSiz;
+int i = 0;
+while (i &lt; qSiz / 2)
+{
+	int ch = i * 2 + 1;
+	if (ch + 1 &lt; qSiz &amp;&amp; q[ch].len &gt; q[ch + 1].len)
+		++ch;
+	if (q[qSiz].len &lt;= q[ch].len)
+		break;
+	q[i] = q[ch];
+	i = ch;
+}
+q[i] = q[qSiz];
+</code></pre><pre><code class="language-c">#define HEAP_SIZE 65535
+</code></pre><p>经过测试，堆的大小设置成这么大已经足够，即使只有一个进程也不会溢出。</p><h3 id="初始化">初始化</h3><p>给起点的距离赋值<code>-INF</code>，而省去了把距离数组全部初始化成<code>INF</code>的操作。最终输出结果时加上这个<code>INF</code>即可。</p><h3 id="读入部分的优化">读入部分的优化</h3><p>由于输入文件达到了1.74G，对读入部分优化的效果最明显。</p><p>最开始我使用了标准库的函数<code>fread</code>，将输入文件整体读进内存之后做并行化字符串切割。这里遇到了一个问题，加上存储图的结构，进程的内存占用超过了2G，因此编译时要加上<code>-mcmodel=medium</code>解除内存模型限制。然而即使在NVMe固态硬盘上（所用机器是<em>VAIO Z Flip 2016</em>，硬盘读取速度可以达到3G/s），单次<code>fread</code>的时间都超过了0.5s。</p><p>经过查询资料，我换用了Linux系统下提供的接口函数<code>mmap</code>。这个函数可以将文件直接映射到内存，不用经过内核缓冲区。并且使用<code>mmap</code>在MPI下还有一个额外的好处：将<code>mmap</code>参数设置为<code>PROT_READ</code>（只读）、<code>MAP_SHARED</code>（共享访问）后，文件实际上只被加载到内存中一次，各个进程访问的是内存中的同一块地址，既加快了文件读入，也减少了多进程时额外的内存占用。</p><p>在运行的开始，文件被<code>mmap</code>进内存后，各进程根据自己的进程id计算自己的读取偏移量。具体做法是先直接按比例计算出位置，随后定位到最近的一个换行符。</p><p>各进程计算出自己读入起点的偏移量后，需要获得下一个进程的偏移量作为自己的读入终点。这里使用<code>MPI_Sendrecv_replace</code>实现偏移量的传递。</p><p>然而，这样做会引来一个新的问题，就是随机读取时的性能下降问题。由于我用的机器是固态硬盘，带来的影响较小。在机械硬盘上，多进程同时读取文件的不同位置会使硬盘的磁头不断地重新寻址，从而导致随机读取的性能大幅下降。换言之，假如测试的机器没有做<em>raid 0</em>的话，其读文件的过程其实是单线程的。因此，我这样实现了一个并发读取控制：每个进程读取文件前需要先从同一台主机的之前的已经读取过的进程接受消息；读取文件之后向本主机没有读取文件的进程发送就绪消息。这样，同一台主机在同一时刻只会有一个进程在访问硬盘，并且是顺序读入的，避免了频繁重新寻址造成的读入性能下降。</p><p>当然，操作系统会将访问的文件放入内存中缓存。因此，在<strong>多次运行</strong>本程序时就不需要并发读取控制了，因为这时候<code>mmap</code>是直接对文件在内存中的映射做操作，不涉及硬盘上的随机读写，也有更佳的时间表现。</p><h2 id="程序源码">程序源码</h2><pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;mpi.h&gt;
+#define N 20001			//点数
+#define E 160000009		//边数
+#define S 0				//起点
+#define T 20000			//终点
+#define INF 16383		//正无穷，且两个正无穷相加不会溢出
+#define HEAP_SIZE 65535 // 堆的大小
+struct Edge
+{
+	int from;
+	short to, len;
+} e[E],					//链表
+	q[HEAP_SIZE],		//小根堆
+	ans[N],				//本节点维护的答案
+	cur = {S, S, -INF}; //当前访问到的点
+int v[N],				//链表头
+	id,					//当前进程号
+	numThreads;			//当前进程总数
+int main(int argc, char **argv)
+{
+	MPI_Init(&amp;argc, &amp;argv);
+	MPI_Comm_rank(MPI_COMM_WORLD, &amp;id);
+	MPI_Comm_size(MPI_COMM_WORLD, &amp;numThreads);
+	int fd = open(argv[1], O_RDONLY), fs = lseek(fd, 0, SEEK_END), fi = fs / numThreads * id;
+	const char *b = (const char *)mmap(NULL, fs, PROT_READ, MAP_SHARED, fd, 0);
+	if (id)
+		while (b[fi] != '\n')
+			++fi;
+	int offset = fi;
+	MPI_Sendrecv_replace( //传递偏移量到offset
+		&amp;offset,
+		1,
+		MPI_INT,
+		(id + numThreads - 1) % numThreads,
+		0,
+		(id + 1) % numThreads,
+		0,
+		MPI_COMM_WORLD,
+		MPI_STATUSES_IGNORE);
+	if (argc - 2 &gt;= numThreads) //并发读入控制
+		for (int i = 0, fe = id ? fi : fs; i &lt; id; ++i)
+			if (!strcmp(argv[2 + id], argv[2 + i])) //接受就绪信号
+				MPI_Recv(&amp;fe, 1, MPI_INT, i, i, MPI_COMM_WORLD, MPI_STATUSES_IGNORE);
+	for (int fe = id + 1 &lt; numThreads ? offset : fs, tot = 1, i = 0, a[3];; ++i)
+	{
+		while (fi &lt; fe &amp;&amp; b[fi] &lt; '0')
+			++fi;
+		if (fi &gt;= fe)
+			break;
+		for (a[i] = 0; fi &lt; fe &amp;&amp; b[fi] &gt;= '0'; ++fi)
+			a[i] = a[i] * 10 + b[fi] - '0';
+		if (i == 2)
+		{
+			i = -1;
+			e[tot].len = a[2];
+			e[tot].to = a[1];
+			e[tot].from = v[a[0]];
+			v[a[0]] = tot++;
+		}
+	}
+	if (argc - 2 &gt;= numThreads) //并发读入控制
+		for (int i = id + 1, fe = id ? fi : fs; i &lt; numThreads; ++i)
+			if (!strcmp(argv[2 + id], argv[2 + i])) //发送就绪信号
+				MPI_Send(&amp;offset, 1, MPI_INT, i, id, MPI_COMM_WORLD);
+	for (int qSiz = 0; cur.to != T;) //开始跑最短路
+	{
+		ans[cur.to] = cur;
+		for (int j = v[cur.to]; j; j = e[j].from)
+			if (ans[e[j].to].len &gt; cur.len + e[j].len)
+			{
+				ans[e[j].to].len = cur.len + e[j].len;
+				ans[e[j].to].to = e[j].to;
+				ans[e[j].to].from = cur.to;
+				int i = qSiz++;
+				while (i &gt; 0)
+				{
+					int p = (i - 1) / 2;
+					if (q[p].len &lt;= ans[e[j].to].len)
+						break;
+					q[i] = q[p];
+					i = p;
+				}
+				q[i] = ans[e[j].to];
+			}
+		while (qSiz &amp;&amp; (q[0].to == cur.to || q[0].len &gt; ans[q[0].to].len)) //从堆顶删除无效元素
+		{
+			--qSiz;
+			int i = 0;
+			while (i &lt; qSiz / 2)
+			{
+				int ch = i * 2 + 1;
+				if (ch + 1 &lt; qSiz &amp;&amp; q[ch].len &gt; q[ch + 1].len)
+					++ch;
+				if (q[qSiz].len &lt;= q[ch].len)
+					break;
+				q[i] = q[ch];
+				i = ch;
+			}
+			q[i] = q[qSiz];
+		}
+		cur = qSiz &amp;&amp; q[0].len &lt; ans[T].len ? q[0] : ans[T];
+		if (cur.to++ == T) //优先选择T
+			cur.to = 0;
+		MPI_Allreduce(
+			MPI_IN_PLACE,
+			&amp;cur,
+			1,
+			MPI_INT64_T,
+			MPI_MIN,
+			MPI_COMM_WORLD);
+		if (!cur.to--)
+			cur.to = T;
+	}
+	if (!id)
+		for (printf("%d\n%d", cur.len + INF, cur.to); cur.to != S; cur = ans[cur.from])
+			printf("&lt;-%d", cur.from);
+	MPI_Finalize();
+}
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>
