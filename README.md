@@ -32,7 +32,7 @@
 School of Computer Science and Engineering, China University of Mining and Technology, Xuzhou
 
 - Bachelor of Computer Science, Sept. 2017 - Jul. 2021
-<!--  - Advised by [Prof. X. Zhang](https://xianweiz.github.io/) at [NSCC-GZ](http://www.nscc-gz.cn/index.html)>
+
 
 <!-- .slide vertical=true -->
 <!--
