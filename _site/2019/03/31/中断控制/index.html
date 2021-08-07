@@ -1,0 +1,395 @@
+<!DOCTYPE html><html><head><title> 中断控制 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="中断控制" /><meta property="og:locale" content="en_US" /><meta name="description" content="实验题目" /><meta property="og:description" content="实验题目" /><link rel="canonical" href="http://localhost:4000/2019/03/31/%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/" /><meta property="og:url" content="http://localhost:4000/2019/03/31/%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-03-31T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="中断控制" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/03/31/%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/","datePublished":"2019-03-31T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/31/%E4%B8%AD%E6%96%AD%E6%8E%A7%E5%88%B6/"},"headline":"中断控制","description":"实验题目","dateModified":"2019-03-31T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E5%AE%9E%E9%AA%8C%E9%A2%98%E7%9B%AE">实验题目</a><li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">实验目的</a><li><a href="#%E5%AE%9E%E9%AA%8C%E8%A6%81%E6%B1%82">实验要求</a><li><a href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88">实验方案</a><ol><li><a href="#%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83">实验环境</a><ol><li><a href="#%E8%BD%AF%E4%BB%B6">软件</a><li><a href="#%E7%A1%AC%E4%BB%B6">硬件</a><ol><li><a href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">开发环境配置</a><li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE">虚拟机配置</a></ol></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E5%8E%9F%E7%90%86">实验原理</a></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B">实验过程</a><ol><li><a href="#%E5%AE%9E%E9%AA%8C%E4%BB%A3%E7%A0%81">实验代码</a><ol><li><a href="#bootloaderasm">bootloader.asm</a><li><a href="#kernelasm">kernel.asm</a></ol><li><a href="#kernerc">kerner.c</a><ol><li><a href="#linkld">link.ld</a><li><a href="#prg1asmprg4asm">prg1.asm~prg4.asm</a><li><a href="#makefile">Makefile</a></ol><li><a href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C">运行结果</a></ol><li><a href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93">实验总结</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">中断控制</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 31 Mar 2019 <i class="fas fa-file-word fa-fw"></i> 7406字 <i class="fas fa-clock fa-fw"></i> 25分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="实验题目">实验题目</h2><p>中断控制</p><h2 id="实验目的">实验目的</h2><ul><li>学习中断机制知识，掌握中断处理程序设计的要求<li>设计一个汇编程序，实现时钟中断处理程序<li>扩展 MyOS2，增加时钟中断服务，利用时钟中断实现与时间有关的操作</ul><h2 id="实验要求">实验要求</h2><ul><li>操作系统工作期间，利用时钟中断，在屏幕 24 行 79 列位置轮流显示<code>|</code>、<code>/</code>和<code>\</code>，适当控制显示速度，以方便观察效果。<li>编写键盘中断响应程序，原有的你设计的用户程序运行时，键盘事件会做出有事反应：当键盘有按键时，屏幕适当位置显示<code>OUCH!OUCH!</code>。<li>在内核中，对 33 号、34 号、35 号和 36 号中断编写中断服务程序，分别在屏幕 1/4 区域内显示一些个性化信息。再编写一个汇编语言的程序，作为用户程序，利用<code>int 33</code>、<code>int 34</code>、<code>int 35</code>和<code>int 36</code>产生中断调用你这 4 个服务程序。</ul><h2 id="实验方案">实验方案</h2><h3 id="实验环境">实验环境</h3><h4 id="软件">软件</h4><ul><li>Windows 10, 64-bit (Build 17763) 10.0.17763<li>Windows Subsystem for Linux [Ubuntu 18.04.2 LTS]：WSL 是以软件的形式运行在 Windows 下的 Linux 子系统，是近些年微软推出来的新工具，可以在 Windows 系统上原生运行 Linux。<li>gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04)：C 语言程序编译器，Ubuntu 自带。<li>NASM version 2.13.02：汇编程序编译器，通过<code>sudo apt install nasm</code>安装在 WSL 上。<li>Oracle VM VirtualBox 6.0.4 r128413 (Qt5.6.2)：轻量开源的虚拟机软件。<li>VSCode - Insiders v1.33.0：好用的文本编辑器，有丰富的插件。<li>hexdump for VSCode 1.7.2: VSCode 中一个好用的十六进制显示插件。<li>GNU Make 4.1：安装在 Ubuntu 下，一键编译并连接代码，生成最终的文件。</ul><p>大部分开发环境安装在 WSL 上，较之于双系统、虚拟机等其他开发方案，更加方便，也方便直接使用 Linux 下的一些指令。</p><h4 id="硬件">硬件</h4><h5 id="开发环境配置">开发环境配置</h5><p>所用机器型号为 VAIO Z Flip 2016</p><ul><li>Intel(R) Core(TM) i7-6567U CPU @3.30GHZ 3.31GHz<li>8.00GB RAM</ul><h5 id="虚拟机配置">虚拟机配置</h5><ul><li>处理器内核总数：1<li>RAM：4MB</ul><h3 id="实验原理">实验原理</h3><p>本次实验的关键在于写中断向量表。x86 计算机在启动时会自动进入实模式状态。系统的 BIOS 初始化<code>8259A</code>的各中断线的类型（参见前图），在内存的低位区（地址为<code>0~1023[3FFH]</code>，1KB）创建含 256 个中断向量的表 IVT （每个<code>向量[地址]</code>占 4 个字节，格式为：<code>16位段值:16位偏移值</code>）。</p><p>要实现「无敌风火轮」，可以利用时钟中断，对 8 号中断进行编程。在屏幕固定位置显示风火轮的字符，随后将字符修改为下一个。随后将 0x08 放入 0x20 的位置，处理时钟中断函数的入口放入 0x22。最后需要告诉硬件端口已经处理完中断，并正常返回。</p><p>在实验过程中，还遇到了进入操作系统时显示风火轮但是没有转起来的问题。经过思考，发现<a href="https://wu-kan.cn/_posts/2019-03-28-用汇编与C语言开发独立内核/">上一个实验</a>中写的<code>getch</code>是阻塞函数。于是，重新写了这个函数，重复扫描键盘缓冲区，有字符键入时再读进来。</p><h2 id="实验过程">实验过程</h2><h3 id="实验代码">实验代码</h3><h4 id="bootloaderasm">bootloader.asm</h4><p>和<a href="https://wu-kan.cn/_posts/2019-03-28-用汇编与C语言开发独立内核/">上一个实验</a>中的代码完全相同，不再放出。</p><h4 id="kernelasm">kernel.asm</h4><p>操作系统内核的汇编部分代码，提供<code>int 33</code>~<code>int 36</code>中断在屏幕的四个象限上显示自定义信息，检测到<code>Ctrl + C</code>时返回。</p><p>同时，提供了如下的全局函数供 C 语言部分调用。</p><ul><li><code>_getch</code>从屏幕上无回显地读入一个字符。<li><code>_getCursor</code>返回屏幕光标的位置。<li><code>_setCursor</code>设置屏幕光标的位置。<li><code>_putC</code>向光标位置写入一个字符。<li><code>_pageUP</code>屏幕内容向上滚动。<li><code>_loadProgram</code>加载用户程序。</ul><pre><code class="language-nasm">%macro print 5 ; string, length, x, y, color
+	pusha
+	push ax
+	push bx
+	push cx
+	push dx
+	push bp
+	push ds
+	push es
+	mov ax, 0b800H
+	mov gs, ax
+	mov ax, cs
+	mov ds, ax
+	mov bp, %1
+	mov ax, ds
+	mov es, ax
+	mov cx, %2
+	mov ax, 1300H
+	mov dh, %3
+	mov dl, %4
+	mov bx, %5
+	int 10H
+	pop es
+	pop ds
+	pop bp
+	pop dx
+	pop cx
+	pop bx
+	pop ax
+	popa
+%endmacro
+%macro setIVT 2
+	push es
+	push ds
+	push si
+	pusha
+	mov ax, 0000H
+	mov es, ax
+	mov ax, %1
+	mov bx, 4
+	mul bx
+	mov si, ax
+	mov ax, %2
+	mov [es:si], ax
+	add si, 2
+	mov ax, cs
+	mov [es:si], ax
+	popa
+	pop si
+	pop ds
+	pop es
+%endmacro
+	bits 16
+	UserPrgOffset equ 0a100H
+	PrgSectorOffset equ 0
+	extern terminal
+	global _start
+	global _getch
+	global _getCursor
+	global _setCursor
+	global _putC
+	global _pageUP
+	global _loadProgram
+_start:
+	setIVT 8, int8
+	setIVT 33, int33
+	setIVT 34, int34
+	setIVT 35, int35
+	setIVT 36, int36
+	call terminal
+	ret
+_getCursor:
+	push ebp
+	mov ebp, esp
+	push ebx
+	sub esp, 4
+	mov eax, 768
+	mov edx, 0
+	mov ebx, edx
+	int 0x10
+	mov eax, edx
+	mov dword [ebp-8], eax
+	mov eax, dword [ebp-8]
+	add esp, 4
+	pop ebx
+	pop ebp
+	ret
+_getch:
+	mov ah, 01H
+	int 16H
+	jz _getch
+	mov ah, 00H
+	int 16H
+	ret
+_setCursor:
+	push ebp
+	mov ebp, esp
+	push ebx
+	mov eax, 512
+	mov ecx, 0
+	mov edx, dword [ebp+8]
+	mov ebx, ecx
+	int 0x10
+	pop ebx
+	pop ebp
+	ret
+_putC:
+	push ebp
+	mov ebp, esp
+	push ebx
+	mov eax, dword [ebp+8]
+	or ah, 9
+	mov edx, dword [ebp+12]
+	mov ecx, 1
+	mov ebx, edx
+	int 0x10
+	pop ebx
+	pop ebp
+	ret
+_pageUP:
+	push ebp
+	mov ebp, esp
+	mov eax, dword [ebp+8]
+	or ah, 6
+	mov ecx, 0
+	mov edx, 184fh
+	int 0x10
+	pop ebp
+	ret
+_loadProgram:
+	push ebp
+	mov ebp, esp
+	push ax
+	push bx
+	push cx
+	push dx
+	push es
+	mov ax, cs
+	mov es, ax
+	mov bx, UserPrgOffset
+	mov ah, 2
+	mov al, 2
+	mov dl, 0
+	mov dh, 1
+	mov ch, 0
+	mov cl, byte [ebp+8]
+	add cl, PrgSectorOffset
+	int 13H
+	call UserPrgOffset
+	pop es
+	pop dx
+	pop cx
+	pop bx
+	pop ax
+	mov esp, ebp
+	pop ebp
+	ret
+int8:
+	cli
+	pusha
+	push eax
+	call draw_slash
+	mov al, 20H
+	out 20H, al
+	out 0a0H, al
+	pop eax
+	popa
+	sti
+	iret
+int33:
+	mov word[n], 12
+	mov word[m], 30
+	mov word[top], 2
+	mov word[left], 40
+	mov word[length], 8
+	mov word[msg], msg1
+	call show
+	iret
+int34:
+	mov word[n], 12
+	mov word[m], 30
+	mov word[top], 2
+	mov word[left], 0
+	mov word[length], 10
+	mov word[msg], msg2
+	call show
+	iret
+int35:
+	mov word[n], 12
+	mov word[m], 20
+	mov word[top], 13
+	mov word[left], 0
+	mov word[length], 20
+	mov word[msg], msg3
+	call show
+	iret
+int36:
+	mov word[n], 12
+	mov word[m], 14
+	mov word[top], 13
+	mov word[left], 40
+	mov word[length], 26
+	mov word[msg], msg4
+	call show
+	iret
+draw_slash:
+	print bar,1,24,78,7
+	cmp byte[bar],'|'
+	jne rslash
+	mov byte[bar],'/'
+	ret
+rslash:
+	cmp byte[bar],'/'
+	jne hslash
+	mov byte[bar],'-'
+	ret
+hslash:
+	cmp byte[bar],'-'
+	jne lslash
+	mov byte[bar],'\'
+	ret
+lslash:
+	mov byte[bar],'|'
+	ret
+show:
+	dec dword[cnt]
+	jnz show
+	mov dword[cnt],99999999
+	mov word ax, [t]
+	mov word bx, [n]
+	add bx, bx
+	sub bx, 2
+	xor dx, dx
+	div bx
+	cmp dx, [n]
+	jb xok
+	sub bx, dx
+	mov dx, bx
+xok:
+	add dx, [top]
+	mov word[x], dx
+	mov word ax, [t]
+	mov word bx, [m]
+	add bx,bx
+	sub bx,2
+	xor dx, dx
+	div bx
+	cmp dx, [m]
+	jb yok
+	sub bx, dx
+	mov dx, bx
+yok:
+	add dx,[left]
+	mov word [y],dx
+	inc word[t]
+	print [msg],[length],[x],[y],[x]
+	mov ah, 01H
+	int 16H
+	jz show
+	print msgouch,10,[x],[y],[x]
+	mov ah, 00H
+	int 16H
+	cmp ax, 2e03H
+	jne show
+	ret
+datadef:
+	cnt dd 1
+	t dw 0
+	x dw 1
+	y dw 0
+	n dw 12
+	m dw 32
+	top dw 2
+	left dw 40
+	length dw 8
+	msg dw 1
+	msg1 db ' wu-kan '
+	msg2 db ' 17341163 '
+	msg3 db ' wu.kan@foxmail.com '
+	msg4 db ' https://wu-kan.github.io '
+	msgouch db 'Ouch!Ouch!'
+	bar db '|'
+</code></pre><h3 id="kernerc">kerner.c</h3><p>操作系统内核 C 语言部分的代码。</p><p>和上一实验相比：</p><ul><li>去掉了全部的内嵌汇编，改为调用外部汇编函数<li>修改了<code>clear</code>清屏的逻辑，原来是写若干个回车，现在是屏幕向上滚动一页并将光标移至首行首列<li>修改了显示回车的逻辑，原来是写若干个空格直至光标移动到下一行，现在直接移动光标</ul><p>函数不能传字符变量的问题仍然没有解决。</p><pre><code class="language-c">#define SCREEN_WIDTH 80
+#define SCREEN_HEIGHT 25
+#define MAX_BUF_LEN (SCREEN_WIDTH * SCREEN_HEIGHT)
+#define PROGRAM_NUM 4
+extern int _getch();
+extern int _getCursor();
+extern void _pageUP(int);
+extern void _loadProgram(int);
+extern void _setCursor(int cur);
+extern void _putC(int ch, int color);
+void putchar(char c)
+{
+	int cur = _getCursor(), curX = cur &gt;&gt; 8, curY = cur - (curX &lt;&lt; 8);
+	if (c == '\r' || c == '\n')
+	{
+		if (++curX &gt;= SCREEN_HEIGHT)
+			--curX, _pageUP(1);
+		return _setCursor(curX &lt;&lt; 8);
+	}
+	_putC(c, 0x07);
+	if (++curY &gt;= SCREEN_WIDTH)
+		putchar('\n');
+	_setCursor(curX &lt;&lt; 8 | curY);
+}
+void gets(char *s)
+{
+	for (;; ++s)
+	{
+		putchar(*s = _getch());
+		if (*s == '\r' || *s == '\n')
+			break;
+	}
+	*s = 0;
+}
+void printf(const char *s)
+{
+	for (; *s; ++s)
+		putchar(*s);
+}
+int strcmp(const char *s1, const char *s2)
+{
+	while (*s1 &amp;&amp; (*s1 == *s2))
+		++s1, ++s2;
+	return (int)*s1 - (int)*s2;
+}
+void terminal()
+{
+	const struct
+	{
+		const char *name, *size, *command;
+		int address;
+	} prg[PROGRAM_NUM] =
+		{{"prg1", "    3 bytes", "exec 1", 1},
+		 {"prg2", "    3 bytes", "exec 2", 2},
+		 {"prg3", "    3 bytes", "exec 3", 3},
+		 {"prg4", "    3 bytes", "exec 4", 4}};
+	char str[MAX_BUF_LEN] = "$ ";
+	printf(str), gets(str);
+	const char
+		CLEAR_COM[] = "clear",
+		HELP_COM[] = "help",
+		EXEC_COM[] = "exec",
+		EXIT_COM[] = "exit",
+		LS_COM[] = "ls";
+	if (!strcmp(str, CLEAR_COM))
+		_pageUP(SCREEN_HEIGHT), _setCursor(0);
+	else if (!strcmp(str, HELP_COM))
+	{
+		const char
+			HELP_INFO[] =
+				"WuK-shell v0.0.2\n"
+				"These shell commands are defined internally.\n"
+				"Command         Description\n"
+				"clear        -- Clean the screen\n"
+				"help         -- Show this list\n"
+				"exec         -- Execute all the user programs\n"
+				"exec [num]   -- Execute the num-th program\n"
+				"exit         -- Exit OS\n"
+				"ls           -- Show existing programs\n";
+		printf(HELP_INFO);
+	}
+	else if (!strcmp(str, EXEC_COM))
+		for (int i = 0; i &lt; PROGRAM_NUM; ++i)
+			_loadProgram(prg[i].address);
+	else if (!strcmp(str, EXIT_COM))
+		return;
+	else if (!strcmp(str, LS_COM))
+		for (int i = 0; i &lt; PROGRAM_NUM; ++i)
+			printf(prg[i].name), printf(prg[i].size), putchar('\n');
+	else
+		for (int i = 0;; ++i)
+		{
+			if (i == PROGRAM_NUM)
+			{
+				printf(str);
+				const char
+					COMM_NOT_FOUND[] =
+						" : command not found, type \'help\' for available commands list.\n";
+				printf(COMM_NOT_FOUND);
+				break;
+			}
+			if (!strcmp(str, prg[i].command))
+			{
+				_loadProgram(prg[i].address);
+				break;
+			}
+		}
+	terminal();
+}
+</code></pre><h4 id="linkld">link.ld</h4><p>将<code>wukos.asm</code>和<code>kernel.c</code>两个文件编译出来的内容连接起来。和<a href="https://wu-kan.cn/_posts/2019-03-28-用汇编与C语言开发独立内核/">上一个实验</a>中的完全相同，不再放出。</p><h4 id="prg1asmprg4asm">prg1.asm~prg4.asm</h4><p>直接调用 int 33、int 34、int 35 和 int 36 四个中断实现（编译出来的大小仅有 3bytes）。</p><pre><code class="language-nasm">org 0a100H
+int 33
+ret
+</code></pre><p>上面是 prg1.asm 的内容，其余同理，不再放出。</p><h4 id="makefile">Makefile</h4><p>和<a href="https://wu-kan.cn/_posts/2019-03-28-用汇编与C语言开发独立内核/">上一个实验</a>完全相同，不再放出。</p><h3 id="运行结果">运行结果</h3><p><img src="/assets/image/2019-03-31-1.jpg" alt="1" /> 如上图，进入操作系统后开始了「无敌风火轮」（右下角）。 <img src="/assets/image/2019-03-31-2.jpg" alt="2" /> 如上图，使用<code>exec</code>指令轮流运行我的四个程序，分别调用软中断<code>int 33</code>~<code>int 36</code>。按下 Ctrl+C 可以退出程序。程序检测到键盘输入，因此显示<code>Ouch!Ouch!</code></p><p>风火轮仍然在转。 <img src="/assets/image/2019-03-31-3.jpg" alt="3" /> 输入若干指令。</p><p>风火轮仍然在转。 <img src="/assets/image/2019-03-31-4.jpg" alt="4" /> 继续输入若干指令，此时超出屏幕显示范围，自动滚屏。</p><p>风火轮仍然在转。</p><h2 id="实验总结">实验总结</h2><p>这次实验让我深入理解了中断服务程序的工作原理。中断响应后，先到内存指定位置找到中断向量表，然后跳转到中断服务程序。中断服务程序需先保存寄存器。中断服务程序完成后，需先还原寄存器，然后调用中断返回指令。所以在做实验的时候，就需要修改操作系统内核，使操作系统内核修改中断向量表，才能实现自定义中断服务程序。</p><p>在实验中，因为乱用宏以及没有恢复寄存器出了挺多问题，好在最终一一解决了。这也让我意识到之前的代码写的有多差、有多少隐患。因此，几乎将原先的代码完全重构了一遍。希望自己还是要多多注意一下这方面的问题。</p></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

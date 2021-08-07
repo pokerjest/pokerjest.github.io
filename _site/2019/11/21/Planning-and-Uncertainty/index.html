@@ -1,0 +1,1111 @@
+<!DOCTYPE html><html><head><title> Planning and Uncertainty &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="Planning and Uncertainty" /><meta property="og:locale" content="en_US" /><meta name="description" content="$2\times 2$ Rubik’s Cube" /><meta property="og:description" content="$2\times 2$ Rubik’s Cube" /><link rel="canonical" href="http://localhost:4000/2019/11/21/Planning-and-Uncertainty/" /><meta property="og:url" content="http://localhost:4000/2019/11/21/Planning-and-Uncertainty/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-11-21T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="Planning and Uncertainty" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/11/21/Planning-and-Uncertainty/","datePublished":"2019-11-21T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/11/21/Planning-and-Uncertainty/"},"headline":"Planning and Uncertainty","description":"$2\\times 2$ Rubik’s Cube","dateModified":"2019-11-21T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#2times-2-rubiks-cube">$2\times 2$ Rubik’s Cube</a><ol><li><a href="#cube_domainpddl">cube_domain.pddl</a><li><a href="#cube1pddl">cube1.pddl</a><li><a href="#cube1txt">cube1.txt</a><li><a href="#cube2pddl">cube2.pddl</a><li><a href="#cube2txt">cube2.txt</a><li><a href="#cube3pddl">cube3.pddl</a><li><a href="#cube3txt">cube3.txt</a><li><a href="#cube4pddl">cube4.pddl</a><li><a href="#cube4txt">cube4.txt</a></ol><li><a href="#diagnosing-by-bayesian-networks">Diagnosing by Bayesian Networks</a><ol><li><a href="#variables-and-their-domais">Variables and their domais</a><li><a href="#cpts">CPTS</a><li><a href="#calculation">Calculation</a><li><a href="#codediagnosingpy">CodeDiagnosing.py</a><li><a href="#resultdiagnosingtxt">ResultDiagnosing.txt</a></ol></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">Planning and Uncertainty</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 21 Nov 2019 <i class="fas fa-file-word fa-fw"></i> 16690字 <i class="fas fa-clock fa-fw"></i> 56分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="2times-2-rubiks-cube">$2\times 2$ Rubik’s Cube</h2><p>Please solve the $2\times 2$ Rubik’s Cube by using FF planner. Here are 4 cases for you to verify the correctness of your programs. You should hand in 5 files, including a domain file (<code>cube_domain.pddl</code>) and 4 data files (<code>cube1.pddl</code>, <code>cube2.pddl</code>, <code>cube3.pddl</code>,<code>cube4.pddl</code>).</p><p>For more information about $2\times 2$ Rubik’s Cube, such as actions R, U and F, please refer to <a href="https://rubiks-cube-solver.com/2x2/">https://rubiks-cube-solver.com/2x2/</a>.</p><p>做的时候遇到一些问题，网页版的<a href="http://editor.planning.domains">PDDL Editor</a>仅能跑出第一组数据，其他几组数据会超时。多次修改无效的情况下，我选择在 linux 系统下本地安装规划器完成这一项。依次运行下述指令，安装规划器。注意<code>make</code>的时候，如果提示缺少库文件，需要自己手动装。</p><pre><code class="language-bash">wget http://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
+tar zxvf FF-v2.3.tgz
+cd FF-v2.3
+make
+</code></pre><p>将生成目录<code>/FF-v2.3</code>下的二进制文件<code>ff</code>拷贝到当前目录下，终端下依次执行如下四条指令运行规划并将结果写到对应文本文件内。</p><pre><code class="language-bash">./ff -o cube_domain.pddl -f cube1.pddl &gt; cube1.txt
+./ff -o cube_domain.pddl -f cube2.pddl &gt; cube2.txt
+./ff -o cube_domain.pddl -f cube3.pddl &gt; cube3.txt
+./ff -o cube_domain.pddl -f cube4.pddl &gt; cube4.txt
+</code></pre><p>以下是源代码和运行结果。其中，<code>cube1 ?x ?y ?z</code>指某一块方块在 x 轴、y 轴、z 轴三个方向上可视面的颜色，其它同。</p><h3 id="cube_domainpddl"><code>cube_domain.pddl</code></h3><pre><code class="language-pddl">(define
+    (domain cube)
+    (:predicates
+        (cube1 ?x ?y ?z)
+        (cube2 ?x ?y ?z)
+        (cube3 ?x ?y ?z)
+        (cube4 ?x ?y ?z)
+        (cube5 ?x ?y ?z)
+        (cube6 ?x ?y ?z)
+        (cube7 ?x ?y ?z)
+        (cube8 ?x ?y ?z)
+    )
+    (:action U:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube5 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube5 ?x ?y ?z)
+                        )
+                        (cube7 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube7 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube7 ?x ?y ?z)
+                        )
+                        (cube8 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube8 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube8 ?x ?y ?z)
+                        )
+                        (cube6 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube5 ?y ?x ?z)
+                    )
+                )
+            )
+        )
+    )
+    (:action Urev:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube5 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube5 ?x ?y ?z)
+                        )
+                        (cube6 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube8 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube8 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube8 ?x ?y ?z)
+                        )
+                        (cube7 ?y ?x ?z)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube7 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube7 ?x ?y ?z)
+                        )
+                        (cube5 ?y ?x ?z)
+                    )
+                )
+            )
+        )
+    )
+    (:action R:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube2 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube2 ?x ?y ?z)
+                        )
+                        (cube6 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube8 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube8 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube8 ?x ?y ?z)
+                        )
+                        (cube4 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube4 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube4 ?x ?y ?z)
+                        )
+                        (cube2 ?x ?z ?y)
+                    )
+                )
+            )
+        )
+    )
+    (:action Rrev:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube2 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube2 ?x ?y ?z)
+                        )
+                        (cube4 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube4 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube4 ?x ?y ?z)
+                        )
+                        (cube8 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube8 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube8 ?x ?y ?z)
+                        )
+                        (cube6 ?x ?z ?y)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube2 ?x ?z ?y)
+                    )
+                )
+            )
+        )
+    )
+    (:action F:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube1 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube1 ?x ?y ?z)
+                        )
+                        (cube5 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube5 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube5 ?x ?y ?z)
+                        )
+                        (cube6 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube2 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube2 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube2 ?x ?y ?z)
+                        )
+                        (cube1 ?z ?y ?x)
+                    )
+                )
+            )
+        )
+    )
+    (:action Frev:effect
+        (and
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube1 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube1 ?x ?y ?z)
+                        )
+                        (cube2 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube2 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube2 ?x ?y ?z)
+                        )
+                        (cube6 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube6 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube6 ?x ?y ?z)
+                        )
+                        (cube5 ?z ?y ?x)
+                    )
+                )
+            )
+            (forall
+                (?x ?y ?z)
+                (when
+                    (cube5 ?x ?y ?z)
+                    (and
+                        (not
+                            (cube5 ?x ?y ?z)
+                        )
+                        (cube1 ?z ?y ?x)
+                    )
+                )
+            )
+        )
+    )
+)
+</code></pre><h3 id="cube1pddl"><code>cube1.pddl</code></h3><pre><code class="language-pddl">(define
+    (problem cube1)
+    (:domain cube)
+    (:objects Y W B G O R)
+    (:init
+        (cube1 B O Y)
+        (cube2 G R W)
+        (cube3 R Y B)
+        (cube4 O B W)
+        (cube5 O Y G)
+        (cube6 B R W)
+        (cube7 O W G)
+        (cube8 Y R G)
+    )
+    (:goal
+        (and
+            (cube1 R W B)
+            (cube2 O W B)
+            (cube3 R Y B)
+            (cube4 O Y B)
+            (cube5 R W G)
+            (cube6 O W G)
+            (cube7 R Y G)
+            (cube8 O Y G)
+        )
+    )
+)
+</code></pre><h3 id="cube1txt"><code>cube1.txt</code></h3><pre><code class="language-bash">
+ff: parsing domain file
+domain 'CUBE' defined
+ ... done.
+ff: parsing problem file
+problem 'CUBE1' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   10 into depth [1]
+                                   8            [1][2][3]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1][2]
+                                   4            [1][2][3][4][5][6][7]
+                                   1            [1]
+                                   0
+
+ff: found legal plan as follows
+
+step    0: R
+        1: UREV
+        2: RREV
+        3: UREV
+        4: FREV
+        5: R
+        6: F
+        7: R
+        8: FREV
+        9: UREV
+       10: F
+       11: U
+       12: RREV
+       13: UREV
+       14: FREV
+       15: U
+
+
+time spent:    0.02 seconds instantiating 6 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 1512 facts and 6 actions
+               0.00 seconds creating final representation with 1512 relevant facts
+               0.10 seconds building connectivity graph
+               0.04 seconds searching, evaluating 194 states, to a max depth of 7
+               0.16 seconds total time
+
+
+</code></pre><h3 id="cube2pddl"><code>cube2.pddl</code></h3><pre><code class="language-pddl">(define
+    (problem cube2)
+    (:domain cube)
+    (:objects Y W B G O R)
+    (:init
+        (cube1 B R W)
+        (cube2 O B Y)
+        (cube3 W G R)
+        (cube4 R Y G)
+        (cube5 G O Y)
+        (cube6 B W O)
+        (cube7 R B Y)
+        (cube8 O G W)
+    )
+    (:goal
+        (and
+            (cube1 W B R)
+            (cube2 Y B R)
+            (cube3 W G R)
+            (cube4 Y G R)
+            (cube5 W B O)
+            (cube6 Y B O)
+            (cube7 W G O)
+            (cube8 Y G O)
+        )
+    )
+)
+</code></pre><h3 id="cube2txt"><code>cube2.txt</code></h3><pre><code class="language-bash">
+ff: parsing domain file
+domain 'CUBE' defined
+ ... done.
+ff: parsing problem file
+problem 'CUBE2' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   13 into depth [1][2]
+                                  12            [1]
+                                  11            [1][2]
+                                  10            [1]
+                                   8            [1][2]
+                                   6            [1][2][3][4][5]
+                                   5            [1][2][3][4][5][6]
+                                   4            [1][2][3][4][5]
+                                   3            [1][2][3][4][5][6][7][8][9]
+                                   2            [1][2][3]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   13
+                          12
+                          10
+                           8
+                           6
+                           5
+                           4
+                           3
+                           2
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: RREV
+        1: FREV
+        2: U
+        3: FREV
+        4: U
+        5: FREV
+        6: R
+        7: FREV
+        8: U
+        9: RREV
+       10: FREV
+       11: R
+       12: UREV
+       13: F
+       14: U
+       15: RREV
+       16: UREV
+       17: FREV
+       18: U
+       19: F
+       20: UREV
+       21: RREV
+       22: F
+       23: R
+       24: FREV
+       25: R
+       26: F
+       27: R
+       28: FREV
+       29: RREV
+       30: UREV
+       31: R
+       32: U
+       33: RREV
+       34: U
+       35: F
+       36: UREV
+       37: FREV
+       38: UREV
+       39: RREV
+       40: F
+       41: R
+       42: U
+       43: R
+       44: UREV
+       45: RREV
+
+
+time spent:    0.02 seconds instantiating 6 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 1512 facts and 6 actions
+               0.01 seconds creating final representation with 1512 relevant facts
+               0.09 seconds building connectivity graph
+               0.67 seconds searching, evaluating 8733 states, to a max depth of 9
+               0.79 seconds total time
+
+</code></pre><h3 id="cube3pddl"><code>cube3.pddl</code></h3><pre><code class="language-pddl">(define
+    (problem cube3)
+    (:domain cube)
+    (:objects Y W B G O R)
+    (:init
+        (cube1 R Y G)
+        (cube2 O G W)
+        (cube3 Y O B)
+        (cube4 W B R)
+        (cube5 O W B)
+        (cube6 Y O G)
+        (cube7 W R G)
+        (cube8 R Y B)
+    )
+    (:goal
+        (and
+            (cube1 Y R B)
+            (cube2 W R B)
+            (cube3 Y O B)
+            (cube4 W O B)
+            (cube5 Y R G)
+            (cube6 W R G)
+            (cube7 Y O G)
+            (cube8 W O G)
+        )
+    )
+)
+</code></pre><h3 id="cube3txt"><code>cube3.txt</code></h3><pre><code class="language-bash">
+ff: parsing domain file
+domain 'CUBE' defined
+ ... done.
+ff: parsing problem file
+problem 'CUBE3' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   10 into depth [1]
+                                   9            [1][2]
+                                   8            [1]
+                                   7            [1][2][3][4]
+                                   5            [1][2][3][4]
+                                   4            [1][2][3][4][5][6][7][8][9]
+                                   3            [1]
+                                   2            [1][2]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   10
+                           9
+                           8
+                           7
+                           6
+                           5
+                           4
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: UREV
+        1: R
+        2: UREV
+        3: RREV
+        4: UREV
+        5: FREV
+        6: R
+        7: FREV
+        8: RREV
+        9: U
+       10: R
+       11: F
+       12: R
+       13: FREV
+       14: RREV
+       15: U
+       16: FREV
+       17: UREV
+       18: F
+       19: UREV
+       20: RREV
+       21: F
+       22: R
+       23: FREV
+       24: R
+       25: F
+       26: R
+       27: FREV
+       28: RREV
+       29: UREV
+       30: R
+       31: U
+       32: RREV
+       33: U
+       34: F
+       35: UREV
+       36: FREV
+       37: UREV
+       38: RREV
+       39: F
+       40: R
+       41: U
+       42: R
+       43: UREV
+       44: RREV
+
+
+time spent:    0.00 seconds instantiating 6 easy, 0 hard action templates
+               0.00 seconds reachability analysis, yielding 1512 facts and 6 actions
+               0.02 seconds creating final representation with 1512 relevant facts
+               0.08 seconds building connectivity graph
+               0.13 seconds searching, evaluating 1710 states, to a max depth of 9
+               0.23 seconds total time
+
+
+</code></pre><h3 id="cube4pddl"><code>cube4.pddl</code></h3><pre><code class="language-pddl">(define
+    (problem cube4)
+    (:domain cube)
+    (:objects Y W B G O R)
+    (:init
+        (cube1 B O Y)
+        (cube2 W O G)
+        (cube3 B O W)
+        (cube4 R G W)
+        (cube5 G Y R)
+        (cube6 Y O G)
+        (cube7 B Y R)
+        (cube8 R B W)
+    )
+    (:goal
+        (and
+            (cube1 B R W)
+            (cube2 G R W)
+            (cube3 B O W)
+            (cube4 G O W)
+            (cube5 B R Y)
+            (cube6 G R Y)
+            (cube7 B O Y)
+            (cube8 G O Y)
+        )
+    )
+)
+</code></pre><h3 id="cube4txt"><code>cube4.txt</code></h3><pre><code class="language-bash">
+ff: parsing domain file
+domain 'CUBE' defined
+ ... done.
+ff: parsing problem file
+problem 'CUBE4' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   14 into depth [1]
+                                  12            [1][2]
+                                  11            [1]
+                                   9            [1]
+                                   7            [1][2][3]
+                                   6            [1][2]
+                                   5            [1][2][3][4]
+                                   4            [1][2][3][4][5][6][7]
+                                   2            [1][2][3]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   14
+                          12
+                          11
+                           9
+                           7
+                           6
+                           5
+                           2
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: FREV
+        1: R
+        2: FREV
+        3: R
+        4: FREV
+        5: RREV
+        6: UREV
+        7: F
+        8: R
+        9: U
+       10: R
+       11: F
+       12: RREV
+       13: FREV
+       14: R
+       15: F
+       16: RREV
+       17: FREV
+       18: R
+       19: F
+       20: U
+       21: FREV
+       22: UREV
+       23: F
+       24: R
+       25: F
+       26: RREV
+       27: FREV
+       28: R
+       29: FREV
+       30: UREV
+       31: RREV
+       32: U
+       33: FREV
+       34: UREV
+       35: R
+       36: U
+       37: F
+       38: U
+       39: FREV
+       40: UREV
+
+
+time spent:    0.00 seconds instantiating 6 easy, 0 hard action templates
+               0.01 seconds reachability analysis, yielding 1512 facts and 6 actions
+               0.00 seconds creating final representation with 1512 relevant facts
+               0.08 seconds building connectivity graph
+               0.15 seconds searching, evaluating 2462 states, to a max depth of 7
+               0.24 seconds total time
+
+
+</code></pre><h2 id="diagnosing-by-bayesian-networks">Diagnosing by Bayesian Networks</h2><p>终端运行下述指令，将结果写到文本文件中。</p><pre><code class="language-bash">python Diagnosing.py &gt; Diagnosing.txt
+</code></pre><h3 id="variables-and-their-domais">Variables and their domais</h3><pre><code class="language-python"># (1)PatientAge:['0-30','31-65','65+']
+# (2)CTScanResult:['Ischemic Stroke','Hemmorraghic Stroke']
+# (3)MRIScanResult: ['Ischemic Stroke','Hemmorraghic Stroke']
+# (4)StrokeType: ['Ischemic Stroke','Hemmorraghic Stroke', 'Stroke Mimic']
+# (5)Anticoagulants: ['Used','Not used']
+# (6)Mortality:['True', 'False']
+# (7)Disability: ['Negligible', 'Moderate', 'Severe']
+</code></pre><h3 id="cpts">CPTS</h3><pre><code class="language-python"># (1)
+[PatientAge]
+
+['0-30', 0.10],
+['31-65', 0.30],
+['65+', 0.60]
+
+# (2)
+[CTScanResult]
+
+['Ischemic Stroke',0.7],
+[ 'Hemmorraghic Stroke',0.3]
+
+# (3)
+[MRIScanResult]
+
+['Ischemic Stroke',0.7],
+[ 'Hemmorraghic Stroke',0.3]
+
+# (4)
+[Anticoagulants]
+
+[Used',0.5],
+['Not used',0.5]
+
+# (5)
+[CTScanResult, MRIScanResult,StrokeType])
+
+['Ischemic Stroke','Ischemic Stroke','Ischemic Stroke',0.8],
+['Ischemic Stroke','Hemmorraghic Stroke','Ischemic Stroke',0.5],
+[ 'Hemmorraghic Stroke','Ischemic Stroke','Ischemic Stroke',0.5],
+[ 'Hemmorraghic Stroke','Hemmorraghic Stroke','Ischemic Stroke',0],
+
+['Ischemic Stroke','Ischemic Stroke','Hemmorraghic Stroke',0],
+['Ischemic Stroke','Hemmorraghic Stroke','Hemmorraghic Stroke',0.4],
+[ 'Hemmorraghic Stroke','Ischemic Stroke','Hemmorraghic Stroke',0.4],
+[ 'Hemmorraghic Stroke','Hemmorraghic Stroke','Hemmorraghic Stroke',0.9],
+
+['Ischemic Stroke','Ischemic Stroke','Stroke Mimic',0.2],
+['Ischemic Stroke','Hemmorraghic Stroke','Stroke Mimic',0.1],
+[ 'Hemmorraghic Stroke','Ischemic Stroke','Stroke Mimic',0.1],
+[ 'Hemmorraghic Stroke','Hemmorraghic Stroke','Stroke Mimic',0.1],
+
+# (6)
+[StrokeType, Anticoagulants, Mortality]
+
+['Ischemic Stroke', 'Used', 'False',0.28],
+['Hemmorraghic Stroke', 'Used', 'False',0.99],
+['Stroke Mimic', 'Used', 'False',0.1],
+['Ischemic Stroke','Not used', 'False',0.56],
+['Hemmorraghic Stroke', 'Not used', 'False',0.58],
+['Stroke Mimic', 'Not used', 'False',0.05],
+
+['Ischemic Stroke',  'Used' ,'True',0.72],
+['Hemmorraghic Stroke', 'Used', 'True',0.01],
+['Stroke Mimic', 'Used', 'True',0.9],
+['Ischemic Stroke',  'Not used' ,'True',0.44],
+['Hemmorraghic Stroke', 'Not used', 'True',0.42 ],
+['Stroke Mimic', 'Not used', 'True',0.95]
+
+# (7)
+[StrokeType, PatientAge, Disability]
+
+['Ischemic Stroke',   '0-30','Negligible', 0.80],
+['Hemmorraghic Stroke', '0-30','Negligible', 0.70],
+['Stroke Mimic',        '0-30', 'Negligible',0.9],
+['Ischemic Stroke',     '31-65','Negligible', 0.60],
+['Hemmorraghic Stroke', '31-65','Negligible', 0.50],
+['Stroke Mimic',        '31-65', 'Negligible',0.4],
+['Ischemic Stroke',     '65+'  , 'Negligible',0.30],
+['Hemmorraghic Stroke', '65+'  , 'Negligible',0.20],
+['Stroke Mimic',        '65+'  , 'Negligible',0.1],
+
+['Ischemic Stroke',     '0-30' ,'Moderate',0.1],
+['Hemmorraghic Stroke', '0-30' ,'Moderate',0.2],
+['Stroke Mimic',        '0-30' ,'Moderate',0.05],
+['Ischemic Stroke',     '31-65','Moderate',0.3],
+['Hemmorraghic Stroke', '31-65','Moderate',0.4],
+['Stroke Mimic',        '31-65','Moderate',0.3],
+['Ischemic Stroke',     '65+'  ,'Moderate',0.4],
+['Hemmorraghic Stroke', '65+'  ,'Moderate',0.2],
+['Stroke Mimic',        '65+'  ,'Moderate',0.1],
+
+['Ischemic Stroke',     '0-30' ,'Severe',0.1],
+['Hemmorraghic Stroke', '0-30' ,'Severe',0.1],
+['Stroke Mimic',        '0-30' ,'Severe',0.05],
+['Ischemic Stroke',     '31-65','Severe',0.1],
+['Hemmorraghic Stroke', '31-65','Severe',0.1],
+['Stroke Mimic',        '31-65','Severe',0.3],
+['Ischemic Stroke',     '65+'  ,'Severe',0.3],
+['Hemmorraghic Stroke', '65+'  ,'Severe',0.6],
+['Stroke Mimic',        '65+'  ,'Severe',0.8]
+</code></pre><h3 id="calculation">Calculation</h3><p>Please implement the VE algorithm (C++ or Python) to calculate the following probability value:</p><ol><li>p1 = P(Mortality=’True’ $\land$ CTScanResult=’Ischemic Stroke’ $\mid$ PatientAge=’31-65’ )<li>p2 = P(Disability=’Moderate’ $\land$ CTScanResult=’Hemmorraghic Stroke’ $\mid$ PatientAge=’65+’ $\land$ MRIScanResult=’Hemmorraghic Stroke’)<li>p3 = P(StrokeType=’Hemmorraghic Stroke’ $\mid$ PatientAge=’65+’ $\land$ CTScanResult=’Hemmorraghic Stroke’ $\land$ MRIScanResult=’Ischemic Stroke’)<li>p4 = P(Anticoagulants=’Used’ $\mid$ PatientAge=’31-65’)<li>p5 = P(Disability=’Negligible’)</ol><h3 id="codediagnosingpy">Code<code>Diagnosing.py</code></h3><p>为了简化代码实现，下面变量取值的<code>0</code>、<code>1</code>、<code>2</code>代表该变量取值在对应 domain 中的下标。在<a href="https://wu-kan.cn/_posts/2019-11-14-Variable-Elimination/">之前做过的实验</a>上改改就成功了。</p><pre><code class="language-python">class VariableElimination:
+    @staticmethod
+    def inference(factorList, queryVariables,
+                  orderedListOfHiddenVariables, evidenceList):
+        for ev in evidenceList:
+             # Your code here
+            for factor in factorList:
+                if ev in factor.varList:
+                    if len(factor.varList) &gt; 1:
+                        factorList.append(
+                            factor.restrict(ev, evidenceList[ev]))
+                    factorList.remove(factor)
+
+        for var in orderedListOfHiddenVariables:
+            # Your code here
+            new_var_list = []
+            for e in factorList:
+                if var in e.varList:
+                    new_var_list.append(e)
+            first = True
+            for e in new_var_list:
+                for i in factorList:
+                    if i.name == e.name:
+                        factorList.remove(i)
+                if first:
+                    new_var = e
+                    first = False
+                else:
+                    new_var = new_var.multiply(e)
+
+            factorList.append(new_var.sumout(var))
+        print("RESULT:")
+        res = factorList[0]
+        for factor in factorList[1:]:
+            res = res.multiply(factor)
+        total = sum(res.cpt.values())
+        res.cpt = {k: v/total for k, v in res.cpt.items()}
+        res.printInf()
+
+    @staticmethod
+    def printFactors(factorList):
+        for factor in factorList:
+            factor.printInf()
+
+
+class Util:
+    @staticmethod
+    def to_binary(num, len):
+        return format(num, '0' + str(len) + 'b')
+
+
+class Node:
+    def __init__(self, name, var_list):
+        self.name = name
+        self.varList = var_list
+        self.cpt = {}
+
+    def setCpt(self, cpt):
+        self.cpt = cpt
+
+    def printInf(self):
+        print("Name = " + self.name)
+        print(" vars " + str(self.varList))
+        for key in self.cpt:
+            print("   key: " + key + " val : " + str(self.cpt[key]))
+        print()
+
+    def multiply(self, factor):
+        """function that multiplies with another factor"""
+        # Your code here
+        new_cpt = {}
+        new_var_list = list(self.varList)
+        idx1 = []
+        idx2 = []
+        for var in factor.varList:
+            if var in new_var_list:
+                idx1.append(self.varList.index(var))
+                idx2.append(factor.varList.index(var))
+            else:
+                new_var_list.append(var)
+        for k1, v1 in self.cpt.items():
+            for k2, v2 in factor.cpt.items():
+                flag = True
+                for i in range(len(idx1)):
+                    if k1[idx1[i]] != k2[idx2[i]]:
+                        flag = False
+                        break
+                if flag:
+                    new_key = k1
+                    for i in range(len(k2)):
+                        if i not in idx2:
+                            new_key += k2[i]
+                    new_cpt[new_key] = v1 * v2
+
+        new_node = Node("f" + str(new_var_list), new_var_list)
+        new_node.setCpt(new_cpt)
+        return new_node
+
+    def sumout(self, variable):
+        """function that sums out a variable given a factor"""
+        # Your code here
+        new_cpt = {}
+        new_var_list = list(self.varList)
+        new_var_list.remove(variable)
+        idx = self.varList.index(variable)
+        for k, v in self.cpt.items():
+            tmp = k[:idx] + k[idx+1:]
+            if tmp not in new_cpt.keys():
+                new_cpt[tmp] = v
+            else:
+                new_cpt[tmp] += v
+
+        new_node = Node("f" + str(new_var_list), new_var_list)
+        new_node.setCpt(new_cpt)
+        return new_node
+
+    def restrict(self, variable, value):
+        """function that restricts a variable to some value
+        in a given factor"""
+        # Your code here
+        new_cpt = {}
+        new_var_list = list(self.varList)
+        new_var_list.remove(variable)
+        idx = self.varList.index(variable)
+        value = str(value)
+        for k, v in self.cpt.items():
+            if k[idx] == value:
+                new_cpt[k[:idx] + k[idx+1:]] = v
+
+        new_node = Node("f" + str(new_var_list), new_var_list)
+        new_node.setCpt(new_cpt)
+        return new_node
+
+
+PatientAge = Node("PatientAge", ["PatientAge"])
+MRIScanResult = Node("MRIScanResult", ["MRIScanResult"])
+CTScanResult = Node("CTScanResult", ["CTScanResult"])
+Anticoagulants = Node("Anticoagulants", ["Anticoagulants"])
+StrokeType = Node("StrokeType", ["StrokeType",
+                                 "CTScanResult", "MRIScanResult"])
+Disability = Node("Disability", ["Disability", "StrokeType", "PatientAge"])
+Mortality = Node("Mortality", ["Mortality", "StrokeType", "Anticoagulants"])
+PatientAge.setCpt({'0': 0.10, '1': 0.30, '2': 0.60})
+CTScanResult.setCpt({'0': 0.7, '1': 0.3})
+MRIScanResult.setCpt({'0': 0.7, '1': 0.3})
+Anticoagulants.setCpt({'0': 0.5, '1': 0.5})
+StrokeType.setCpt({'000': 0.8, '001': 0.5,
+                   '010': 0.5, '011': 0.0,
+                   '100': 0.0, '101': 0.4,
+                   '110': 0.4, '111': 0.9,
+                   '200': 0.2, '201': 0.1,
+                   '210': 0.1, '211': 0.1})
+Mortality.setCpt({'000': 0.56, '001': 0.28,
+                  '010': 0.58, '011': 0.99,
+                  '020': 0.05, '021': 0.10,
+                  '100': 0.44, '101': 0.72,
+                  '110': 0.42, '111': 0.01,
+                  '120': 0.95, '121': 0.90})
+Disability.setCpt({'000': 0.80, '010': 0.70, '020': 0.90,
+                   '001': 0.60, '011': 0.50, '021': 0.40,
+                   '002': 0.30, '012': 0.20, '022': 0.10,
+                   '100': 0.10, '110': 0.20, '120': 0.05,
+                   '101': 0.30, '111': 0.40, '121': 0.30,
+                   '102': 0.40, '112': 0.20, '122': 0.10,
+                   '200': 0.10, '210': 0.10, '220': 0.05,
+                   '201': 0.10, '211': 0.10, '221': 0.30,
+                   '202': 0.30, '212': 0.60, '222': 0.80})
+
+
+print("P1 **********************")
+VariableElimination.inference(
+    [PatientAge, MRIScanResult, CTScanResult, Anticoagulants, StrokeType,
+        Disability, Mortality], ['Mortality', 'CTScanResult'],
+    ['MRIScanResult', 'Anticoagulants', 'StrokeType', 'Disability'],
+    {'PatientAge': 1}
+)
+
+print("P2 **********************")
+VariableElimination.inference(
+    [PatientAge, MRIScanResult, CTScanResult, Anticoagulants, StrokeType,
+        Disability, Mortality], ['Disability', 'CTScanResult'],
+    ['Anticoagulants', 'StrokeType', 'Mortality'],
+    {'PatientAge': 2, 'MRIScanResult': 1}
+)
+
+print("P3 **********************")
+VariableElimination.inference(
+    [PatientAge, MRIScanResult, CTScanResult, Anticoagulants,
+        StrokeType, Disability, Mortality], ['StrokeType'],
+    ['Disability', 'Anticoagulants', 'Mortality'],
+    {'PatientAge': 2, 'CTScanResult': 1, 'MRIScanResult': 0}
+)
+
+print("P4 **********************")
+VariableElimination.inference(
+    [PatientAge, MRIScanResult, CTScanResult, Anticoagulants,
+        StrokeType, Disability, Mortality], ['Anticoagulants'],
+    ['MRIScanResult', 'CTScanResult', 'StrokeType', 'Disability', 'Mortality'],
+    {'PatientAge': 1}
+)
+
+print("P5 **********************")
+VariableElimination.inference(
+    [PatientAge, MRIScanResult, CTScanResult, Anticoagulants,
+        StrokeType, Disability, Mortality], ['Disability'],
+    ['PatientAge', 'MRIScanResult', 'CTScanResult',
+        'Anticoagulants', 'StrokeType', 'Mortality'],
+    {}
+)
+</code></pre><h3 id="resultdiagnosingtxt">Result<code>Diagnosing.txt</code></h3><pre><code class="language-bash">P1 **********************
+RESULT:
+Name = f['CTScanResult', 'Mortality']
+ vars ['CTScanResult', 'Mortality']
+   key: 00 val : 0.283605
+   key: 01 val : 0.41639499999999996
+   key: 10 val : 0.17587499999999998
+   key: 11 val : 0.12412500000000001
+
+P2 **********************
+RESULT:
+Name = f['CTScanResult', 'Disability']
+ vars ['CTScanResult', 'Disability']
+   key: 00 val : 0.16800000000000004
+   key: 01 val : 0.20300000000000004
+   key: 02 val : 0.329
+   key: 10 val : 0.057
+   key: 11 val : 0.057
+   key: 12 val : 0.18600000000000005
+
+P3 **********************
+RESULT:
+Name = f['StrokeType']
+ vars ['StrokeType']
+   key: 0 val : 0.5000000000000001
+   key: 1 val : 0.4
+   key: 2 val : 0.10000000000000002
+
+P4 **********************
+RESULT:
+Name = f['Anticoagulants']
+ vars ['Anticoagulants']
+   key: 0 val : 0.5000000000000001
+   key: 1 val : 0.49999999999999994
+
+P5 **********************
+RESULT:
+Name = f['Disability']
+ vars ['Disability']
+   key: 0 val : 0.38977
+   key: 1 val : 0.292515
+   key: 2 val : 0.317715
+
+
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

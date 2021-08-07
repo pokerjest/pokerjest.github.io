@@ -1,0 +1,323 @@
+<!DOCTYPE html><html><head><title> 矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结） &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）" /><meta property="og:locale" content="en_US" /><meta name="description" content="跟着这篇博客复习扫描线+线段树…" /><meta property="og:description" content="跟着这篇博客复习扫描线+线段树…" /><link rel="canonical" href="http://localhost:4000/2019/02/26/%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4-%E7%9F%A9%E5%BD%A2%E5%91%A8%E9%95%BF%E5%B9%B6-%E7%BA%BF%E6%AE%B5%E6%A0%91-%E6%89%AB%E6%8F%8F%E7%BA%BF%E6%80%BB%E7%BB%93/" /><meta property="og:url" content="http://localhost:4000/2019/02/26/%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4-%E7%9F%A9%E5%BD%A2%E5%91%A8%E9%95%BF%E5%B9%B6-%E7%BA%BF%E6%AE%B5%E6%A0%91-%E6%89%AB%E6%8F%8F%E7%BA%BF%E6%80%BB%E7%BB%93/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-02-26T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/02/26/%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4-%E7%9F%A9%E5%BD%A2%E5%91%A8%E9%95%BF%E5%B9%B6-%E7%BA%BF%E6%AE%B5%E6%A0%91-%E6%89%AB%E6%8F%8F%E7%BA%BF%E6%80%BB%E7%BB%93/","datePublished":"2019-02-26T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/26/%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E5%B9%B6-%E7%9F%A9%E5%BD%A2%E9%9D%A2%E7%A7%AF%E4%BA%A4-%E7%9F%A9%E5%BD%A2%E5%91%A8%E9%95%BF%E5%B9%B6-%E7%BA%BF%E6%AE%B5%E6%A0%91-%E6%89%AB%E6%8F%8F%E7%BA%BF%E6%80%BB%E7%BB%93/"},"headline":"矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）","description":"跟着这篇博客复习扫描线+线段树…","dateModified":"2019-02-26T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#atlantis">Atlantis</a><li><a href="#%E8%A6%86%E7%9B%96%E7%9A%84%E9%9D%A2%E7%A7%AF">覆盖的面积</a><li><a href="#picture">Picture</a><ol><li><a href="#%E8%A7%A3%E6%B3%95%E4%B8%80">解法一</a><li><a href="#%E8%A7%A3%E6%B3%95%E4%BA%8C">解法二</a></ol></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">矩形面积并、矩形面积交、矩形周长并（线段树、扫描线总结）</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 26 Feb 2019 <i class="fas fa-file-word fa-fw"></i> 6579字 <i class="fas fa-clock fa-fw"></i> 22分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><p>跟着<a href="https://blog.csdn.net/lwt36/article/details/48908031">这篇博客</a>复习扫描线+线段树…</p><h2 id="atlantis">Atlantis</h2><p><a href="https://vjudge.net/problem/HDU-1542">题目链接</a></p><p>求矩形并，即平面上至少被一个矩形覆盖的面积。</p><blockquote><p>离散化: 这些技巧都是老生常谈的了，不然浮点数怎么建树，离散化 x 坐标就可以了。</p><p>扫描线: 首先把矩形按 y 轴分成两条边，上边和下边，对 x 轴建树，扫描线可以看成一根平行于 x 轴的直线。从 y=0 开始往上扫，下边表示要计算面积+1，上边表示已经扫过了 −1，直到扫到最后一条平行于 xx 轴的边但是真正在做的时候，不需要完全模拟这个过程，一条一条边地插入线段树就好了。</p><p>线段树: 用于动态维护扫描线在往上走时，x 轴哪些区域是有合法面积的。这种线段树是不用懒标记的，因为没有查询操作</p></blockquote><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef double ll;
+struct Ranker : vector&lt;ll&gt;
+{
+	void init() { sort(begin(), end()), resize(unique(begin(), end()) - begin()); }
+	int ask(ll x) const { return lower_bound(begin(), end(), x) - begin(); }
+};
+struct AreaUnion
+{
+	struct Seg
+	{
+		ll l, r, h;
+		int f;
+		bool operator&lt;(const Seg &amp;rhs) const { return h &lt; rhs.h; }
+	};
+	struct Node
+	{
+		int cnt;
+		ll sum;
+	};
+	vector&lt;Seg&gt; s;
+	vector&lt;Node&gt; v;
+	Ranker rk;
+	void add(ll l, ll b, ll r, ll t)
+	{
+		rk.push_back(l);
+		rk.push_back(r);
+		s.push_back({l, r, b, 1});
+		s.push_back({l, r, t, -1});
+	}
+	void upd(int ql, int qr, int c, int l, int r, int rt = 1)
+	{
+		if (ql &lt;= l &amp;&amp; r &lt;= qr)
+			v[rt].cnt += c;
+		else
+		{
+			int m = l + r &gt;&gt; 1;
+			if (ql &lt;= m)
+				upd(ql, qr, c, l, m, rt &lt;&lt; 1);
+			if (qr &gt; m)
+				upd(ql, qr, c, m + 1, r, rt &lt;&lt; 1 | 1);
+		}
+		v[rt].sum = v[rt].cnt ? rk[r + 1] - rk[l] : l &lt; r ? v[rt &lt;&lt; 1].sum + v[rt &lt;&lt; 1 | 1].sum : 0;
+	}
+	ll ask()
+	{
+		rk.init();
+		sort(s.begin(), s.end());
+		v.assign(rk.size() * 4, Node());
+		ll ans = 0;
+		for (int i = 0; i + 1 &lt; s.size(); ++i)
+		{
+			upd(rk.ask(s[i].l), rk.ask(s[i].r) - 1, s[i].f, 0, rk.size() - 1);
+			ans += v[1].sum * (s[i + 1].h - s[i].h);
+		}
+		return ans;
+	}
+};
+int main()
+{
+	for (int kase = 0, n; ~scanf("%d", &amp;n) &amp;&amp; n;)
+	{
+		AreaUnion a;
+		for (int i = 0; i &lt; n; ++i)
+		{
+			ll l, b, r, t;
+			scanf("%lf%lf%lf%lf", &amp;l, &amp;b, &amp;r, &amp;t);
+			a.add(l, b, r, t);
+		}
+		printf("Test case #%d\nTotal explored area: %.2lf\n\n", ++kase, a.ask());
+	}
+}
+</code></pre><h2 id="覆盖的面积">覆盖的面积</h2><p><a href="https://vjudge.net/problem/HDU-1255">题目链接</a></p><p>求矩形交，即平面上至少被覆盖两次的面积。线段树上维护被覆盖一次的长度和被覆盖两次的长度。</p><blockquote><p>前面的与矩形面积并类似，不同的是要考虑至少覆盖一次 one 和至少覆盖两次 two 的更新。</p><p>尤其是当前被覆盖了一次的时候，由于没有 down 操作，父亲节点的信息是没有同步到儿子节点的，这样的话 up 就要考虑了。</p><p>父亲被记录覆盖了一次，但是如果儿子被覆盖过，这些操作都是在这个父亲这个大区间上的，就相当于父亲区间被覆盖了至少两次，所以 two 和 one 都要更新。</p></blockquote><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef double ll;
+struct Ranker : vector&lt;ll&gt;
+{
+	void init() { sort(begin(), end()), resize(unique(begin(), end()) - begin()); }
+	int ask(ll x) const { return lower_bound(begin(), end(), x) - begin(); }
+};
+struct AreaIntersection
+{
+	struct Seg
+	{
+		ll l, r, h;
+		int f;
+		bool operator&lt;(const Seg &amp;rhs) const { return h &lt; rhs.h; }
+	};
+	struct Node
+	{
+		int cnt;
+		ll one, two;
+	};
+	vector&lt;Seg&gt; s;
+	vector&lt;Node&gt; v;
+	Ranker rk;
+	void add(ll l, ll b, ll r, ll t)
+	{
+		rk.push_back(l);
+		rk.push_back(r);
+		s.push_back({l, r, b, 1});
+		s.push_back({l, r, t, -1});
+	}
+	void upd(int ql, int qr, int c, int l, int r, int rt = 1)
+	{
+		if (ql &lt;= l &amp;&amp; r &lt;= qr)
+			v[rt].cnt += c;
+		else
+		{
+			int m = l + r &gt;&gt; 1;
+			if (ql &lt;= m)
+				upd(ql, qr, c, l, m, rt &lt;&lt; 1);
+			if (qr &gt; m)
+				upd(ql, qr, c, m + 1, r, rt &lt;&lt; 1 | 1);
+		}
+		if (v[rt].cnt == 0)
+		{
+			v[rt].one = l != r ? v[rt &lt;&lt; 1].one + v[rt &lt;&lt; 1 | 1].one : 0;
+			v[rt].two = l != r ? v[rt &lt;&lt; 1].two + v[rt &lt;&lt; 1 | 1].two : 0;
+		}
+		else
+		{
+			v[rt].one = rk[r + 1] - rk[l];
+			if (v[rt].cnt &gt; 1)
+				v[rt].two = rk[r + 1] - rk[l];
+			else
+				v[rt].two = l != r ? v[rt &lt;&lt; 1].one + v[rt &lt;&lt; 1 | 1].one : 0;
+		}
+	}
+	ll ask()
+	{
+		rk.init();
+		sort(s.begin(), s.end());
+		v.assign(rk.size() * 4, Node());
+		ll ans = 0;
+		for (int i = 0; i + 1 &lt; s.size(); ++i)
+		{
+			upd(rk.ask(s[i].l), rk.ask(s[i].r) - 1, s[i].f, 0, rk.size() - 1);
+			ans += v[1].two * (s[i + 1].h - s[i].h);
+		}
+		return ans;
+	}
+};
+int main()
+{
+	int t, n;
+	for (scanf("%d", &amp;t); t--;)
+	{
+		AreaIntersection a;
+		scanf("%d", &amp;n);
+		for (ll l, b, r, t; n--;)
+		{
+			scanf("%lf%lf%lf%lf", &amp;l, &amp;b, &amp;r, &amp;t);
+			a.add(l, b, r, t);
+		}
+		printf("%.2lf\n", a.ask());
+	}
+}
+</code></pre><h2 id="picture">Picture</h2><p><a href="https://vjudge.net/problem/HDU-1828">题目链接</a></p><p>求矩形周长并。</p><h3 id="解法一">解法一</h3><blockquote><p>可以用类似矩形面积并的办法，不过这次我们，不算面积罢了。</p><p>需要注意的是，由于周长的线会被重复覆盖，每次需要和上一次的作差。</p><p>但是这样仅仅是 x 轴的，不过可以再对 y 轴做一次加起来就可以了。</p></blockquote><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef int ll;
+struct Ranker : vector&lt;ll&gt;
+{
+	void init() { sort(begin(), end()), resize(unique(begin(), end()) - begin()); }
+	int ask(ll x) const { return lower_bound(begin(), end(), x) - begin(); }
+};
+struct HalfPerimeter
+{
+	struct Seg
+	{
+		ll l, r, h;
+		int f;
+		bool operator&lt;(const Seg &amp;rhs) const { return h != rhs.h ? h &lt; rhs.h : f &gt; rhs.f; }
+	};
+	struct Node
+	{
+		int cnt;
+		ll sum;
+	};
+	vector&lt;Seg&gt; s;
+	vector&lt;Node&gt; v;
+	Ranker rk;
+	ll add(ll l, ll b, ll r, ll t)
+	{
+		rk.push_back(l);
+		rk.push_back(r);
+		s.push_back({l, r, b, 1});
+		s.push_back({l, r, t, -1});
+	}
+	void upd(int L, int R, int c, int l, int r, int rt = 1)
+	{
+		if (L &lt;= l &amp;&amp; r &lt;= R)
+			v[rt].cnt += c;
+		else
+		{
+			int m = l + r &gt;&gt; 1;
+			if (L &lt;= m)
+				upd(L, R, c, l, m, rt &lt;&lt; 1);
+			if (R &gt; m)
+				upd(L, R, c, m + 1, r, rt &lt;&lt; 1 | 1);
+		}
+		v[rt].sum = v[rt].cnt ? rk[r + 1] - rk[l] : l != r ? v[rt &lt;&lt; 1].sum + v[rt &lt;&lt; 1 | 1].sum : 0;
+	}
+	ll ask()
+	{
+		rk.init();
+		sort(s.begin(), s.end());
+		v.assign(rk.size() &lt;&lt; 2, Node());
+		ll ans = 0;
+		for (int i = 0; i &lt; s.size(); ++i)
+		{
+			ll last = v[1].sum;
+			upd(rk.ask(s[i].l), rk.ask(s[i].r) - 1, s[i].f, 0, rk.size() - 1);
+			ans += abs(v[1].sum - last);
+		}
+		return ans;
+	}
+};
+int main()
+{
+	for (int n; ~scanf("%d", &amp;n);)
+	{
+		HalfPerimeter x, y;
+		for (int i = 0, l, b, r, t; i &lt; n; ++i)
+		{
+			scanf("%d%d%d%d", &amp;l, &amp;b, &amp;r, &amp;t);
+			x.add(l, b, r, t);
+			y.add(b, l, t, r);
+		}
+		printf("%d\n", x.ask() + y.ask());
+	}
+}
+</code></pre><h3 id="解法二">解法二</h3><blockquote><p>也可以只对 x 轴做一次扫描线，只要同时维护 y 轴竖线（就是求矩形面积并的时候的高）的个数 vtl。</p><p>需要的注意的是竖线重合的情况，需要再开变量 lbd、rbd 来判断重合，避免重复计算。</p></blockquote><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef int ll;
+struct Ranker : vector&lt;ll&gt;
+{
+	void init() { sort(begin(), end()), resize(unique(begin(), end()) - begin()); }
+	int ask(ll x) const { return lower_bound(begin(), end(), x) - begin(); }
+};
+struct Perimeter
+{
+	struct Seg
+	{
+		ll l, r, h;
+		int f;
+		bool operator&lt;(const Seg &amp;rhs) const { return h &lt; rhs.h; }
+	};
+	struct Node
+	{
+		int cnt;
+		ll sum, vtl, lbd, rbd;
+	};
+	vector&lt;Seg&gt; s;
+	vector&lt;Node&gt; v;
+	Ranker rk;
+	void add(ll l, ll b, ll r, ll t)
+	{
+		rk.push_back(l);
+		rk.push_back(r);
+		s.push_back({l, r, b, 1});
+		s.push_back({l, r, t, -1});
+	}
+	void upd(int ql, int qr, int c, int l, int r, int rt = 1)
+	{
+		if (ql &lt;= l &amp;&amp; r &lt;= qr)
+			v[rt].cnt += c;
+		else
+		{
+			int m = l + r &gt;&gt; 1;
+			if (ql &lt;= m)
+				upd(ql, qr, c, l, m, rt &lt;&lt; 1);
+			if (qr &gt; m)
+				upd(ql, qr, c, m + 1, r, rt &lt;&lt; 1 | 1);
+		}
+		if (v[rt].cnt)
+		{
+			v[rt].lbd = v[rt].rbd = 1;
+			v[rt].sum = rk[r + 1] - rk[l];
+			v[rt].vtl = 2;
+		}
+		else if (l == r)
+			v[rt].sum = v[rt].vtl = v[rt].lbd = v[rt].rbd = 0;
+		else
+		{
+			v[rt].lbd = v[rt &lt;&lt; 1].lbd;
+			v[rt].rbd = v[rt &lt;&lt; 1 | 1].rbd;
+			v[rt].sum = v[rt &lt;&lt; 1].sum + v[rt &lt;&lt; 1 | 1].sum;
+			v[rt].vtl = v[rt &lt;&lt; 1].vtl + v[rt &lt;&lt; 1 | 1].vtl;
+			if (v[rt &lt;&lt; 1].rbd &amp;&amp; v[rt &lt;&lt; 1 | 1].lbd)
+				v[rt].vtl -= 2;
+		}
+	}
+	ll ask()
+	{
+		rk.init();
+		sort(s.begin(), s.end());
+		v.assign(rk.size() &lt;&lt; 2, Node());
+		ll ans = 0;
+		for (int i = 0; i + 1 &lt; s.size(); ++i)
+		{
+			ll pre = v[1].sum;
+			upd(rk.ask(s[i].l), rk.ask(s[i].r) - 1, s[i].f, 0, rk.size() - 1);
+			ans += v[1].vtl * (s[i + 1].h - s[i].h) + abs(v[1].sum - pre);
+		}
+		return ans + abs(v[1].sum);
+	}
+};
+int main()
+{
+	for (int n; ~scanf("%d", &amp;n);)
+	{
+		Perimeter p;
+		for (int i = 0, l, b, r, t; i &lt; n; ++i)
+		{
+			scanf("%d%d%d%d", &amp;l, &amp;b, &amp;r, &amp;t);
+			p.add(l, b, r, t);
+		}
+		printf("%d\n", p.ask());
+	}
+}
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

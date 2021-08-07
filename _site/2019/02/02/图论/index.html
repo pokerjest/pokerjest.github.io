@@ -1,0 +1,820 @@
+<!DOCTYPE html><html><head><title> 图论 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="图论" /><meta property="og:locale" content="en_US" /><meta name="description" content="这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。" /><meta property="og:description" content="这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。" /><link rel="canonical" href="http://localhost:4000/2019/02/02/%E5%9B%BE%E8%AE%BA/" /><meta property="og:url" content="http://localhost:4000/2019/02/02/%E5%9B%BE%E8%AE%BA/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-02-02T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="图论" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/02/02/%E5%9B%BE%E8%AE%BA/","datePublished":"2019-02-02T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/02/%E5%9B%BE%E8%AE%BA/"},"headline":"图论","description":"这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。","dateModified":"2019-02-02T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E6%9C%80%E7%9F%AD%E8%B7%AF">最短路</a><ol><li><a href="#dijkstra-%E7%AE%97%E6%B3%95">Dijkstra 算法</a><li><a href="#bellmanford-%E7%AE%97%E6%B3%95">BellmanFord 算法</a><ol><li><a href="#%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F%E7%B3%BB%E7%BB%9F">差分约束系统</a></ol><li><a href="#floyed-%E6%B1%82%E5%A4%9A%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF">Floyed 求多源最短路</a><li><a href="#astar-%E6%B1%82-k-%E7%9F%AD%E8%B7%AF">Astar 求 k 短路</a></ol><li><a href="#%E7%BD%91%E7%BB%9C%E6%B5%81">网络流</a><ol><li><a href="#isap-%E6%B1%82%E6%9C%80%E5%A4%A7%E6%B5%81">ISAP 求最大流</a><li><a href="#primaldual-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">PrimalDual 求费用流</a><li><a href="#ek-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">EK 求费用流</a><li><a href="#zkw-%E6%B1%82%E8%B4%B9%E7%94%A8%E6%B5%81">ZKW 求费用流</a><li><a href="#%E4%B8%8A%E4%B8%8B%E7%95%8C%E6%9C%89%E6%BA%90%E6%B1%87%E7%BD%91%E7%BB%9C%E6%B5%81">上下界有源汇网络流</a><li><a href="#%E5%88%A4%E6%96%AD%E8%BE%B9%E6%98%AF%E5%90%A6%E5%B1%9E%E4%BA%8E%E6%9F%90%E4%B8%80%E5%89%B2%E9%9B%86">判断边是否属于某一割集</a><li><a href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E8%BD%AC%E8%B4%B9%E7%94%A8%E6%B5%81">线性规划转费用流</a></ol><li><a href="#%E6%AC%A7%E6%8B%89%E8%B7%AF">欧拉路</a><ol><li><a href="#%E6%B7%B7%E5%90%88%E5%9B%BE%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF%E5%88%A4%E5%AE%9A">混合图欧拉回路判定</a></ol><li><a href="#%E8%BF%9E%E9%80%9A%E6%80%A7">连通性</a><ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE%E6%B1%82%E5%89%B2%E5%92%8C%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F">无向图求割和双连通分量</a><ol><li><a href="#%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%9B%BE%E7%9A%84%E6%9E%84%E9%80%A0">双连通图的构造</a></ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE%E6%B1%82%E8%BE%B9%E5%8F%8C%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E6%9C%89%E5%90%91%E5%9B%BE%E6%B1%82%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F">无向图求边双连通分量&amp;有向图求强连通分量</a><ol><li><a href="#2-sat">2-SAT</a><ol><li><a href="#2-sat-%E6%9A%B4%E5%8A%9B%E6%90%9C%E7%B4%A2%E6%B1%82%E5%AD%97%E5%85%B8%E5%BA%8F%E6%9C%80%E5%B0%8F%E7%9A%84%E8%A7%A3">2-SAT 暴力搜索求字典序最小的解</a></ol></ol></ol><li><a href="#%E4%BA%8C%E5%88%86%E5%9B%BE">二分图</a><ol><li><a href="#hungary-%E6%B1%82%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">Hungary 求最大匹配</a><li><a href="#hopcroftkarp-%E6%B1%82%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">HopcroftKarp 求最大匹配</a><li><a href="#kuhnmunkres-%E6%B1%82%E6%9C%80%E4%BC%98%E5%AE%8C%E5%A4%87%E5%8C%B9%E9%85%8D">KuhnMunkres 求最优完备匹配</a></ol><li><a href="#%E5%B8%A6%E8%8A%B1%E6%A0%91">带花树</a><ol><li><a href="#%E4%B8%80%E8%88%AC%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D">一般图最大匹配</a></ol><li><a href="#%E6%A0%91%E5%BD%A2%E5%9B%BE">树形图</a><ol><li><a href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91">最小生成树</a><ol><li><a href="#%E6%97%A0%E5%90%91%E5%9B%BE">无向图</a><li><a href="#%E6%9C%89%E5%90%91%E5%9B%BE">有向图</a></ol><li><a href="#%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%E4%B8%8E-lca">树链剖分与 LCA</a><li><a href="#%E7%82%B9%E5%89%96%E7%82%B9%E5%88%86%E6%B2%BB">点剖（点分治）</a></ol></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">图论</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 02 Feb 2019 <i class="fas fa-file-word fa-fw"></i> 21918字 <i class="fas fa-clock fa-fw"></i> 74分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><p>这里用类似邻接表的方法存图。有的算法可能需要邻接矩阵，详见线性代数部分。</p><pre><code class="language-cpp">struct Graph
+{
+	struct Vertex
+	{
+		vector&lt;int&gt; o, i;		//相关出边和入边编号
+		int siz, dep, top, dfn; //树链剖分中使用，依次代表子树节点数、深度、所在链的顶端节点、dfs序
+	};
+	struct Edge : pair&lt;int, int&gt;
+	{
+		ll len, cap; //边长、容量，图论算法使用
+	};
+	vector&lt;Vertex&gt; v; //点集
+	vector&lt;Edge&gt; e;   //边集
+	Graph(int n) : v(n) {}
+	void add(const Edge &amp;ed)
+	{
+		if (ed.first == ed.second)
+			return; //如果有需要请拆点
+		v[ed.first].o.push_back(e.size());
+		v[ed.second].i.push_back(e.size());
+		e.push_back(ed);
+	}
+	int ch(int u, int i = 0) { return e[v[u].o[i]].second; } //u的第i个孩子节点
+	int fa(int u, int i = 0) { return e[v[u].i[i]].first; } //u的第i个父节点
+};
+</code></pre><h2 id="最短路">最短路</h2><h3 id="dijkstra-算法">Dijkstra 算法</h3><p><a href="https://vjudge.net/solution/19427495">使用示例</a>，适用于边权为正的情况（无论有向图还是无向图），用于求单源最短路。</p><p>直接给出其优先队列优化的版本。另外，由于<code>priority_queue</code>并不提供修改优先级的操作，为避免重复扩展，这里选择将新元素直接插入队列并在运行时判断该点是否被处理，并不影响结果的正确性。</p><pre><code class="language-cpp">struct Dijkstra : Graph
+{
+	vector&lt;ll&gt; d;
+	vector&lt;int&gt; p;
+	Dijkstra(int n) : Graph(n) {}
+	void ask(int s)
+	{
+		d.assign(v.size(), INF);
+		p.assign(v.size(), e.size());
+		priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+		for (q.push(make_pair(d[s] = 0, s)); !q.empty();)
+		{
+			ll dis = -q.top().first;
+			int u = q.top().second;
+			if (q.pop(), d[u] &lt; dis)
+				continue;
+			for (int i = 0, k, to; i != v[u].o.size(); ++i)
+				if (k = v[u].o[i], to = e[k].second,
+					d[to] &gt; d[u] + e[k].len)
+				{
+					d[to] = d[u] + e[k].len, p[to] = k;
+					q.push(make_pair(-d[to], to));
+				}
+		}
+	}
+};
+</code></pre><h3 id="bellmanford-算法">BellmanFord 算法</h3><p><a href="https://vjudge.net/solution/16970652">使用示例</a>，直接给出其队列优化、国内称之为 SPFA 算法的版本。较之 Dijkstra 算法，此算法不够快速稳定但是可以允许负边存在，当 s 到达负权回路时会直接返回 0。稀疏图上性能优秀。</p><pre><code class="language-cpp">struct BellmanFord : Graph
+{
+	vector&lt;ll&gt; d;
+	vector&lt;int&gt; p;
+	BellmanFord(int n) : Graph(n) {}
+	bool ask(int s)
+	{
+		d.assign(v.size(), INF);
+		p.assign(v.size(), e.size());
+		vector&lt;int&gt; cnt(v.size(), 0), flag(v.size(), d[s] = 0);
+		for (deque&lt;int&gt; q(cnt[s] = flag[s] = 1, s); !q.empty(); q.pop_front())
+			for (int u = q.front(), i = flag[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+				if (k = v[u].o[i], to = e[k].second,
+					d[to] &gt; d[u] + e[k].len)
+				{
+					d[to] = d[u] + e[k].len, p[to] = k;
+					if (!flag[to])
+					{
+						if (v.size() == ++cnt[to])
+							return 0;
+						flag[to] = 1, q.push_back(to);
+					}
+				}
+		return 1;
+	}
+};
+</code></pre><h4 id="差分约束系统">差分约束系统</h4><p>按如下方式建图、跑 SPFA：</p><p>对每个不等式$x_i−x_j\leq d$，从$j$向$i$连一条边，边长为$d$。</p><p>若不等号的方向相反，即$x_i−x_j\geq d$，则在不等式两边同时乘以$-1$，变成$x_j−x_i\leq -d$，即从$i$到$j$连一条边，边长为$d$。</p><h3 id="floyed-求多源最短路">Floyed 求多源最短路</h3><p>不连通的权置 INF。</p><pre><code class="language-cpp">void floyed(Mat &amp;a, int n) // 其实一般手打即可，没必要套这个鬼模板…
+{
+	for (int k = 0; k &lt; n; ++k)
+		for (int i = 0; i &lt; n; ++i)
+			for (int j = 0; j &lt; n; ++j)
+				if (a[i][j] &gt; a[i][k] + a[k][j])
+					a[i][j] = a[i][k] + a[k][j];
+}
+</code></pre><h3 id="astar-求-k-短路">Astar 求 k 短路</h3><p><a href="https://vjudge.net/solution/16970766">使用示例</a>，在这个比较坑的例子中需要在调用前补一句<code>if(s==t)++k;</code>。<strong>k 下标从 0 开始，即最短路==第 0 短路</strong>。</p><p>朴素的想法是使用<code>priority_queue</code>从原点出发向外探索，当取出终点 t 第 k 次时就得到第 k 短路，类似 bfs 的思想，缺陷是越往后状态数越多。</p><p>我们在反向图上从$t\to s$跑 Astar 算法，通过优先展开到 s 近的状态，使搜索方向靠近答案，而不是一层一层全都展开，估价函数$f\approx g+h$，f 是估计的 s 到 t 的距离，g 是到达当前点已经点的花费，h 是预计剩下的花费。这里 h 取当前点的距离到 s 距离，可通过从 s 跑一遍 Dijkstra 可以预处理得出。</p><p>Astar 算法是只有到达终点的时候才能统计答案，这导致可能拓展很多个状态才能得到一个用来更新答案的有效状态。例如一个 n 元环，当我们到达终点之后,可能还要拓展 n 次才能得到下一个状态，于是时间复杂度就被卡到$O(nk)$。</p><pre><code class="language-cpp">struct Astar : Dijkstra
+{
+	vector&lt;ll&gt; ans;
+	Astar(int n) : Dijkstra(n) {}
+	void ask(int s, int t, int k)
+	{
+		Dijkstra::ask(s);
+		ans.assign(k, INF);
+		if (d[t] == INF)
+			return;
+		vector&lt;int&gt; cnt(v.size(), 0);
+		priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+		for (q.push(make_pair(-d[t], t)); cnt[s] &lt; k &amp;&amp; !q.empty();)
+		{
+			ll dis = -q.top().first;
+			int u = q.top().second;
+			if (u == s)
+				ans[cnt[s]] = dis;
+			if (q.pop(), ++cnt[u] &gt; k)
+				continue;
+			for (int i = 0, k; i &lt; v[u].i.size(); ++i)
+				k = v[u].i[i], q.push(make_pair(d[u] - d[e[k].first] - e[k].len - dis, e[k].first));
+		}
+	}
+};
+</code></pre><h2 id="网络流">网络流</h2><h3 id="isap-求最大流">ISAP 求最大流</h3><p><a href="https://vjudge.net/solution/16970964">使用示例</a></p><pre><code class="language-cpp">struct ISAP : Graph
+{
+	ll flow;
+	vector&lt;ll&gt; f;
+	vector&lt;int&gt; h, cur, gap;
+	ISAP(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0;
+		Graph::add(ed);
+	}
+	ll dfs(int s, int u, int t, ll r)
+	{
+		if (r == 0 || u == t)
+			return r;
+		ll _f, _r = 0;
+		for (int &amp;i = cur[u], k; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], h[u] == h[e[k].second] + 1)
+			{
+				_f = dfs(s, e[k].second, t, min(r - _r, e[k].cap - f[k]));
+				f[k] += _f, f[k ^ 1] -= _f, _r += _f;
+				if (_r == r || h[s] &gt;= v.size())
+					return _r;
+			}
+		if (!--gap[h[u]])
+			h[s] = v.size();
+		return ++gap[++h[u]], cur[u] = 0, _r;
+	}
+	void ask(int s, int t)
+	{
+		h.assign(v.size(), 0);
+		cur.assign(v.size(), 0);
+		gap.assign(v.size() + 2, 0);
+		/*
+		for (deque&lt;int&gt; q(h[t] = gap[t] = 1, t); !q.empty(); q.pop_front()) //优化，加了能快一点
+			for (int i = 0, u = q.front(), k, to; i &lt; v[u].o.size(); ++i)
+				if (to = e[v[u].o[i]].second, !h[to])
+					++gap[h[to] = h[u] + 1], q.push_back(to);
+		*/
+		for (f.assign(e.size(), flow = 0); h[s] &lt; v.size();)
+			flow += dfs(s, s, t, INF);
+	}
+};
+</code></pre><h3 id="primaldual-求费用流">PrimalDual 求费用流</h3><p><a href="https://vjudge.net/solution/16971249">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。性能优秀，只能跑非负权图。</p><pre><code class="language-cpp">struct PrimalDual : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; f;
+	PrimalDual(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	void ask(int s, int t) //询问s到t的最小费用最大流，答案存在flow、cost中
+	{
+		vector&lt;int&gt; p(v.size(), e.size());
+		vector&lt;ll&gt; d(v.size(), INF), h(v.size(), 0);
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			priority_queue&lt;pair&lt;ll, int&gt;&gt; q;
+			for (q.push(make_pair(d[s] = 0, s)); !q.empty();)
+			{
+				ll dis = -q.top().first;
+				int u = q.top().second;
+				if (q.pop(), d[u] &lt; dis)
+					continue;
+				for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], to = e[k].second,
+						e[k].cap &gt; f[k] &amp;&amp; d[to] &gt; d[u] + e[k].len + h[u] - h[to])
+					{
+						d[to] = d[u] + e[k].len + h[u] - h[to], p[to] = k;
+						q.push(make_pair(-d[to], to));
+					}
+			}
+			if (d[t] == INF)
+				return;
+			for (int i = 0; i &lt; d.size(); ++i)
+				if (d[i] != INF)
+					h[i] += d[i], d[i] = INF;
+			ll _f = INF;
+			for (int u = t; u != s; u = e[p[u]].first)
+				_f = min(_f, e[p[u]].cap - f[p[u]]);
+			for (int u = t; u != s; u = e[p[u]].first)
+				cost += _f * e[p[u]].len, f[p[u]] += _f, f[p[u] ^ 1] -= _f;
+			flow += _f;
+		}
+	}
+};
+</code></pre><h3 id="ek-求费用流">EK 求费用流</h3><p><a href="https://vjudge.net/solution/16971149">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。BellmanFord 算法找增广路，可能被卡但是可以跑负费用流（最大费用流）。</p><pre><code class="language-cpp">struct EdmondKarp : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; f;
+	EdmondKarp(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	void ask(int s, int t)
+	{
+		vector&lt;int&gt; p(v.size(), e.size());
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			vector&lt;ll&gt; d(v.size(), INF);
+			vector&lt;int&gt; flag(v.size(), d[s] = 0);
+			for (deque&lt;int&gt; q(flag[s] = 1, s); !q.empty(); q.pop_front())
+				for (int u = q.front(), i = flag[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], to = e[k].second,
+						e[k].cap &gt; f[k] &amp;&amp; d[to] &gt; d[u] + e[k].len)
+					{
+						d[to] = d[u] + e[k].len, p[to] = k;
+						if (!flag[to])
+							q.push_back(to), flag[to] = 1;
+					}
+			if (d[t] == INF)
+				return;
+			ll _f = INF;
+			for (int u = t; u != s; u = e[p[u]].first)
+				_f = min(_f, e[p[u]].cap - f[p[u]]);
+			for (int u = t; u != s; u = e[p[u]].first)
+				cost += _f * e[p[u]].len, f[p[u]] += _f, f[p[u] ^ 1] -= _f;
+			flow += _f;
+		}
+	}
+};
+</code></pre><h3 id="zkw-求费用流">ZKW 求费用流</h3><p><a href="https://vjudge.net/solution/16971099">使用示例</a>，定义一条边的费用为流量*边长，求总费用最小的最大流。</p><p>对于最终流量较大，而费用取值范围不大的图，或者是增广路径比较短的图（如二分图），zkw 算法都会比较快，原因是充分发挥优势。比如流多说明可以同一费用反复增广，费用窄说明不用改太多距离标号就会有新增广路，增广路径短可以显著改善最坏情况，因为即使每次就只增加一条边也可以很快凑成最短路。如果恰恰相反，流量不大，费用不小，增广路还较长，就不适合 zkw 算法了。</p><pre><code class="language-cpp">struct ZKW : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; h, f;
+	vector&lt;int&gt; vis;
+	ZKW(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.first, ed.second), ed.cap = 0, ed.len *= -1;
+		Graph::add(ed);
+	}
+	ll dfs(int u, int t, ll r)
+	{
+		if (r == 0 || u == t)
+			return r;
+		if (vis[u])
+			return 0;
+		ll _f = vis[u] = 1, _r = 0;
+		for (int i = 0, k; r &gt; _r &amp;&amp; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], h[e[k].second] + e[k].len == h[u])
+				_f = dfs(e[k].second, t, min(r - _r, e[k].cap - f[k])), f[k] += _f, f[k ^ 1] -= _f, _r += _f;
+		return _r;
+	}
+	void ask(int s, int t)
+	{
+		h.assign(v.size(), 0);
+		vis.assign(v.size(), 0);
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			ll _f = dfs(s, t, INF), d = INF;
+			flow += _f, cost += _f * h[s];
+			for (int u = 0; u &lt; v.size(); ++u)
+				for (int i = 0, k; vis[u] &amp;&amp; i &lt; v[u].o.size(); ++i)
+					if (k = v[u].o[i], !vis[e[k].second] &amp;&amp; e[k].cap &gt; f[k])
+						d = min(d, e[k].len + h[e[k].second] - h[e[k].first]);
+			if (d == INF)
+				return;
+			for (int i = 0; i &lt; v.size(); ++i)
+				if (vis[i])
+					h[i] += d, vis[i] = 0;
+		}
+	}
+};
+</code></pre><h3 id="上下界有源汇网络流">上下界有源汇网络流</h3><p>T 向 S 连容量正无穷的边，将有源汇转化为无源汇。每条边容量减去下界，设$in[i]$表示流入 i 的下界之和减去流出 i 的下界之和。新建超级源汇 SS,TT，对于$in[i]&gt;0$的点，SS 向 i 连容量为$in[i]$的边。对于$in[i]&lt;0$的点，i 向 TT 连容量为$−in[i]$的边。</p><p>求出以 SS,TT 为源汇的最大流，如果等于$\sum in<a href="in[i] &gt; 0">i</a>$则存在可行流。再求出以 S,T 为源汇的最大流即为最大流。</p><p>费用流：建完图后等价于求以 SS,TT 为源汇的的费用流。</p><p>上下界费用流：先把下界的费用加入答案。</p><h3 id="判断边是否属于某一割集">判断边是否属于某一割集</h3><p>在残余网络 (还有流量的边) 中求强连通分量，顶点不在同一 SCC 且满流的边。</p><p>判断边是否为全部最小割集的边： 在上一条的基础上，还要满足起点与 S 在同一 SCC，且终点与 T 在同一 SCC。</p><h3 id="线性规划转费用流">线性规划转费用流</h3><p>首先添加松弛变量，将不等号都变为等号。分别用下一个式子减去上一个式子，如果每个变量只出现了两次且符号一正一负，那么可以转化为费用流。对于每个式子建立一个点，那么每个变量对应一条边，从一个点流出，向另一个点流入。这样，对于等式右边的常数，如果是正的，对应从源点向该点连一条流量 C，费用 0 的边；如果是负的对应从该点向汇点连一条流量 −C，费用 0 的边。对于每个变量，从它系数为正的式子向系数为负的式子连一条容量为 inf，费用为它在目标函数里系数的边。这样网络流模型就构造完毕了。</p><h2 id="欧拉路">欧拉路</h2><p><a href="https://vjudge.net/solution/16970884">使用示例</a>，给定无孤立结点图 G，若存在一条路，经过图中每边一次且仅一次，该条路称为欧拉路。</p><ul><li>无向图：当仅当该图所有顶点的度数为偶数（此时为回路），或除两个度数为奇数外（作为路径的起点和终点）、其余全为偶数。<li>有向图：当仅当该图所有顶点出度=入度（此时为回路），或一个顶点出度=入度+1（作为起点）、另一个顶点入度=出度+1（作为终点）、其他顶点出度=入度。</ul><pre><code class="language-cpp">struct Fleury : Graph
+{
+	vector&lt;int&gt; vis, cur, p;
+	Fleury(int n) : Graph(n) {}
+	void dfs(int u)
+	{
+		for (int &amp;i = cur[u], k; i &lt; v[u].i.size(); ++i) //遍历原图的反向图，这里加了一个「当前弧」优化
+			if (k = v[u].i[i], !vis[k] &amp;&amp; !vis[k ^ 1])   //无向图需要同时检查反向边未被访问过
+			{
+				vis[k] = 1;
+				dfs(e[k].first);
+				p.push_back(k);
+			}
+	}
+	void ask() //查询欧拉回路，路径上边的序号按顺序存在p中
+	{
+		vis.assign(e.size(), 0), cur.assign(v.size(), 0), p.clear();
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (v[i].i.size() % 2)
+				return dfs(i);
+		dfs(0);
+	}
+};
+</code></pre><h3 id="混合图欧拉回路判定">混合图欧拉回路判定</h3><p>首先给无向边随便定一个方向，设$\deg x$为 x 连出去的边数 − 连入 x 的边数。若存在$\deg x$为奇数，或者图不连通，则无解。否则建立源点 S，汇点 T。对于一个点 x，若$\deg x&gt;0$，则 S 向 x 连边，容量$\frac{\deg x}{2}$；若$\deg x&lt;0$，则 x 向 T 连边，容量$-\frac{\deg x}{2}$。 对于一条定了向的无向边$x\to y$，x 向 y 连边，容量 1，求出最大流，若与 S 和 T 连的每条边都满流，则有解。</p><h2 id="连通性">连通性</h2><h3 id="无向图求割和双连通分量">无向图求割和双连通分量</h3><p><a href="https://vjudge.net/solution/19427352">使用示例 1</a></p><p><a href="https://vjudge.net/solution/19427379">使用示例 2</a></p><ul><li>割边：在连通图中，删除了连通图的某条边后，图不再连通。这样的边被称为割边，也叫做桥。<li>割点：在连通图中，删除了连通图的某个点以及与这个点相连的边后，图不再连通。这样的点被称为割点。构造 dfs 搜索树，在树上有两类节点可以成为割点：<ul><li>对根节点 u，若其有两棵或两棵以上的子树，则该根结点 u 为割点；<li>对非根非叶节点 u，若其中的某棵子树的节点均没有指向 u 的祖先节点的回边，说明删除 u 之后，根结点与该棵子树的节点不再连通；则节点 u 为割点。</ul></ul><p>对于一个无向图的子图，当删除其中任意一条边后，不改变图内点的连通性，这样的子图叫做边的双连通子图。而当子图的边数达到最大时，叫做边的双连通分量。原理是图中所有割边再求一次 SCC，可<strong>直接</strong>使用求 SCC 的代码。</p><p>对于一个无向图的子图，当删除其中任意一个点后，不改变图内点的连通性，这样的子图叫做点的双连通子图。而当子图的边数达到最大时，叫做点的双连通分量。下面给出求点双连通分量的代码。</p><pre><code class="language-cpp">struct BiconnectedConnectedComponenet : Graph
+{
+	vector&lt;int&gt; dep, bid, stak, cutPoint, cutEdge; //bid边的端点所属双连通块
+	BiconnectedConnectedComponenet(int n) : Graph(n) {}
+	void ask()
+	{
+		dep.assign(v.size(), v.size());
+		bid.assign(e.size(), e.size());
+		cutPoint.assign(v.size(), 0);
+		cutEdge.assign(e.size(), 0);
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (dep[i] == v.size())
+				dfs(i, v.size());
+	}
+	int dfs(int u, int fa)
+	{
+		int low = dep[u] = fa != v.size() ? dep[fa] + 1 : 0;
+		for (int i = 0, k, to, lowto; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa)
+			{
+				if (dep[to] == v.size())
+				{
+					stak.push_back(k);
+					low = min(low, lowto = dfs(to, u));
+					if (lowto &gt; dep[u])
+						cutEdge[k] = cutEdge[k ^ 1] = 1;
+					if (lowto &gt;= dep[u])
+						for (cutPoint[u] = fa != v.size() || i;;)
+						{
+							int x = stak.back();
+							stak.pop_back();
+							bid[x] = bid[x ^ 1] = k;
+							if (x == k)
+								break;
+						}
+				}
+				else if (dep[to] &lt; dep[u])
+				{
+					stak.push_back(k);
+					low = min(low, dep[to]);
+				}
+			}
+		return low;
+	}
+};
+</code></pre><h4 id="双连通图的构造">双连通图的构造</h4><p>先求出所有的桥，然后删除这些桥边，剩下的每个连通块都是一个双连通子图。把每个双连通子图收缩为一个顶点，再把桥边加回来，最后的这个图一定是一棵树，边连通度为 1。统计出树中度为 1 的节点的个数，即为叶节点的个数，记为<code>leaf</code>。至少在树上添加<code>(leaf+1)/2</code>条边，就能使树达到边双连通：先把两个最近公共祖先最远的两个叶节点之间连接一条边，这样可以把这两个点到祖先的路径上所有点收缩到一起，因为一个形成的环一定是双连通的；然后再找两个最近公共祖先最远的两个叶节点，这样一对一对找完，恰好是<code>(leaf+1)/2</code>次，把所有点收缩到了一起。</p><h3 id="无向图求边双连通分量有向图求强连通分量">无向图求边双连通分量&amp;有向图求强连通分量</h3><p><a href="https://vjudge.net/solution/19427182">无向图求边双连通分量</a></p><p><a href="https://vjudge.net/solution/19427243">有向图求强连通分量</a></p><pre><code class="language-cpp">struct StronglyConnectedComponenet : Graph
+{
+	vector&lt;int&gt; dep, sid, stak; //sid=点所属连通块内一点
+	StronglyConnectedComponenet(int n) : Graph(n) {}
+	void ask()
+	{
+		dep.assign(v.size(), v.size());
+		sid.assign(v.size(), v.size());
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (dep[i] == v.size())
+				dfs(i, v.size());
+	}
+	int dfs(int u, int fa)
+	{
+		int low = dep[u] = fa != v.size() ? dep[fa] + 1 : 0;
+		stak.push_back(u);
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa /*, 1*/) //求强连通分量把注释去掉，即允许走回边
+			{
+				if (dep[to] == v.size())
+					low = min(low, dfs(to, u));
+				else if (sid[to] == v.size())
+					low = min(low, dep[to]);
+			}
+		if (low == dep[u])
+			for (;;)
+			{
+				int x = stak.back();
+				stak.pop_back();
+				sid[x] = u;
+				if (x == u)
+					break;
+			}
+		return low;
+	}
+};
+</code></pre><h4 id="2-sat">2-SAT</h4><p><a href="https://vjudge.net/solution/23340315">使用示例</a>，n 个布尔变量$x_0\dots x_{n-1}$，逻辑表达式$Y=(A_0+B_0)(A_1+B_1)\dots(A_{m-1}+B_{m-1})$，其中$A_i,B_i\in\lbrace x_j,\overline{x_j}\rbrace $，判断是否存在$x_0\dots x_{n-1}$的取值使得 Y 值为 1。因为$A+B=(\overline A\to B)(\overline B\to A)$，所以对于一个要求$A+B$，我们连$\overline A\to B,\overline B\to A$两条边。如果有一条边$A\to B$，意味着如果 A 成立那么 B 必然成立。若$\exists i,x_i,\overline{x_i}\in$同一 SCC，则不存在。</p><p>模板要求顶点数<code>v.size()</code>是偶数，<code>i</code>与<code>i ^ 1</code>互为相反变量且奇数下标代表布尔变量为真的情况。最后输出结果在<code>ok</code>中。不满足对任意 i<code>ok[i] ^ ok[i ^ 1] == 1</code>时，<code>ask</code>函数返回<code>false</code>。</p><pre><code class="language-cpp">struct TwoSat : StronglyConnectedComponenet
+{
+	vector&lt;int&gt; ok;
+	TwoSat(int n) : StronglyConnectedComponenet(n) {}
+	void addOR(int a, int b) { add({a ^ 1, b}), add({b ^ 1, a}); }
+	void addXOR(int a, int b) { addOR(a, b), addOR(a ^ 1, b ^ 1); }
+	void addXNOR(int a, int b) { addOR(a, b ^ 1), addOR(a ^ 1, b); }
+	int ask()
+	{
+		StronglyConnectedComponenet::ask();
+		for (int i = 0; i &lt; v.size(); i += 2)
+			if (sid[i] == sid[i ^ 1])
+				return 0;
+		vector&lt;vector&lt;int&gt;&gt; g(v.size());
+		vector&lt;int&gt; ind(v.size(), 0), cf(v.size(), 0), stak;
+		for (int i = 0; i &lt; v.size(); ++i)
+		{
+			cf[sid[i]] = sid[i ^ 1];
+			for (int j = 0, k; j &lt; v[i].o.size(); ++j)
+				if (sid[e[k = v[i].o[j]].second] != sid[i])
+					g[sid[e[k].second]].push_back(sid[i]), ++ind[sid[i]];
+		}
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (sid[i] == i &amp;&amp; !ind[i])
+				stak.push_back(i);
+		for (ok.assign(v.size(), -1); !stak.empty();)
+		{
+			int u = stak.back();
+			stak.pop_back();
+			if (ok[u] &lt; 0)
+				ok[u] = 1, ok[cf[u]] = 0;
+			for (int i = 0; i &lt; g[u].size(); ++i)
+				if (!--ind[g[u][i]])
+					stak.push_back(g[u][i]);
+		}
+		for (int i = 0; i &lt; v.size(); ++i)
+			if (i != sid[i])
+				ok[i] = ok[sid[i]];
+		return 1;
+	}
+};
+</code></pre><h5 id="2-sat-暴力搜索求字典序最小的解">2-SAT 暴力搜索求字典序最小的解</h5><p><a href="https://vjudge.net/solution/23340324">使用示例</a>，时间复杂度最坏为为$O(VE)$。</p><pre><code class="language-cpp">struct TwoSat : Graph
+{
+	vector&lt;int&gt; ok;
+	TwoSat(int n) : Graph(n) {}
+	void addOR(int a, int b) { add({a ^ 1, b}), add({b ^ 1, a}); }
+	void addXOR(int a, int b) { addOR(a, b), addOR(a ^ 1, b ^ 1); }
+	void addXNOR(int a, int b) { addOR(a, b ^ 1), addOR(a ^ 1, b); }
+	int dfs(int u, vector&lt;int&gt; &amp;stak)
+	{
+		if (ok[u ^ 1])
+			return 0;
+		if (ok[u])
+			return 1;
+		ok[u] = 1;
+		stak.push_back(u);
+		for (int i = 0; i &lt; v[u].o.size(); ++i)
+			if (!dfs(e[v[u].o[i]].second, stak))
+				return 0;
+		return 1;
+	}
+	int ask()
+	{
+		ok.assign(v.size(), 0);
+		for (int i = 0; i &lt; v.size(); i += 2)
+			if (!ok[i] &amp;&amp; !ok[i ^ 1])
+			{
+				vector&lt;int&gt; stak;
+				if (!dfs(i, stak))
+				{
+					for (int j = 0; j &lt; stak.size(); ++j)
+						ok[stak[j]] = 0;
+					if (!dfs(i ^ 1, stak))
+						return 0;
+				}
+			}
+		return 1;
+	}
+};
+</code></pre><h2 id="二分图">二分图</h2><p>二分图的一个等价定义是：不含有含奇数条边的环的图。</p><p>完美匹配图中所有的顶点都是匹配点。</p><p>二分图的最小点覆盖（最小割）是指最少的顶点数使得二分图 G 中的每条边都至少与其中一个点相关联。二分图中，最小割=最大匹配。</p><p>二分图的最小边覆盖（最大独立集）是指用尽量少的不相交简单路径覆盖二分图中的所有顶点。二分图中，最小点覆盖+最小边覆盖=总点数。</p><p>Hall 定理：二分图中的两部分顶点组成的集合分别为 X,Y ，则有一组无公共点的边，一端恰好为组成 X 的点的充分必要条件是：X 中的任意 k 个点至少与 Y 中的 k 个点相邻。对于区间图只需要考虑极端情况，线段树维护。</p><p>关键点：一定在最大匹配中的点。 求出任意一个最大匹配，那么只需要考虑哪些匹配点不一定在。 假设是考虑左侧的点，右侧类似： 将匹配边从右往左，非匹配边从左到右，从左侧每个未匹配点开始 DFS 到的匹配点都不是关键点。</p><p>关键边：求出任意一个最大匹配，将匹配边从右到左，剩余边从左到右，求出 SCC。 对于一条边：若它位于当前匹配中，那么若两端点位于同一 SCC，则是可能在，否则必定在；若它不位于当前匹配中，那么若两端点位于同一 SCC，则是可能在，否则必定不在。</p><h3 id="hungary-求最大匹配">Hungary 求最大匹配</h3><p><a href="https://vjudge.net/solution/21880920">使用示例</a></p><p>左边 nl 个点$0\dots nl-1$，右边 nr 个点$0\dots nr-1$，取<code>n=max(nl,nr)</code>，左 i 右 j 间相连则<code>g[i].push_back(j);</code>。</p><p>生成<code>fl[i]</code>表示左边第 i 个匹配右边第<code>fl[i]</code>个，<code>fr</code>同理。时间复杂度$O(n^3)$。未匹配的值为<code>fl[i] == N</code>。匹配是一个边集，其中任意两条边都没有公共顶点；扫一遍<code>fl</code>或<code>fr</code>判断有多少不等于<code>N</code>即为最大匹配数。</p><pre><code class="language-cpp">struct Hungary
+{
+	vector&lt;int&gt; g[N];
+	int n, fl[N], fr[N], vr[N];
+	int dfs(int x, int rt)
+	{
+		for (auto y : g[x])
+			if (vr[y] != rt)
+				if (vr[y] = rt, fr[y] == N || dfs(fr[y], rt))
+					return fl[fr[y] = x] = y, 1;
+		return 0;
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N), fill(vr, vr + n, N);
+		for (int i = 0; i &lt; n; ++i)
+			if (fl[i] == N)
+				dfs(i, i); //找完全匹配时如果返回值为0可直接return
+	}
+};
+</code></pre><h3 id="hopcroftkarp-求最大匹配">HopcroftKarp 求最大匹配</h3><p><a href="https://vjudge.net/solution/21880796">使用示例</a>，时间复杂度$O(\sqrt{\vert V\vert }\vert E\vert )$，稀疏图上效果明显。</p><pre><code class="language-cpp">struct HopcroftKarp
+{
+	vector&lt;int&gt; g[N];
+	int n, fl[N], fr[N], hl[N], hr[N], q[N];
+	bool dfs(int x)
+	{
+		int c = hl[x] + 1, y = hl[x] = N;
+		for (auto y : g[x])
+			if (hr[y] == c)
+				if (hr[y] = N, fr[y] == N || dfs(fr[y]))
+					return fl[fr[y] = x] = y, 1;
+		return 0;
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N);
+		for (int x = 0; x &lt; n; ++x)
+			for (auto y : g[x])
+				if (fr[y] == N)
+				{
+					fl[fr[y] = x] = y;
+					break;
+				}
+		for (int ql, qr, ok;;)
+		{
+			fill(hl, hl + n, N), fill(hr, hr + n, N);
+			for (int x = ql = qr = ok = 0; x &lt; n; ++x)
+				if (fl[x] == N)
+					hl[q[qr++] = x] = 0;
+			while (ql &lt; qr)
+				for (auto y : g[q[ql++]])
+					if (hr[y] == N)
+					{
+						hr[y] = hl[q[ql - 1]] + 1;
+						if (fr[y] == N)
+							ok = 1;
+						else if (hl[fr[y]] == N)
+							hl[q[qr++] = fr[y]] = hr[y] + 1;
+					}
+			if (!ok)
+				return;
+			for (int x = 0; x &lt; n; ++x)
+				if (fl[x] == N)
+					dfs(x);
+		}
+	}
+};
+</code></pre><h3 id="kuhnmunkres-求最优完备匹配">KuhnMunkres 求最优完备匹配</h3><p><a href="https://vjudge.net/solution/21880965">使用示例</a>。</p><p>左 x 右 y 代价<code>a[x][y]</code>。最大费用流时，a 初始化 0；最大费用最大流时，a 初始化<code>-N*INF</code>。</p><pre><code class="language-cpp">struct KuhnMunkres
+{
+	ll a[N][N], hl[N], hr[N], slk[N];
+	int n, fl[N], fr[N], vl[N], vr[N], pre[N], q[N], ql, qr;
+	int check(int i)
+	{
+		if (vl[i] = 1, fl[i] != N)
+			return vr[q[qr++] = fl[i]] = 1;
+		while (i != N)
+			swap(i, fr[fl[i] = pre[i]]);
+		return 0;
+	}
+	void bfs(int s)
+	{
+		fill(slk, slk + n, INF), fill(vl, vl + n, 0), fill(vr, vr + n, 0);
+		for (vr[q[ql = 0] = s] = qr = 1;;)
+		{
+			for (ll d; ql &lt; qr;)
+				for (int i = 0, j = q[ql++]; i &lt; n; ++i)
+					if (!vl[i] &amp;&amp; slk[i] &gt;= (d = hl[i] + hr[j] - a[i][j]))
+						if (pre[i] = j, d)
+							slk[i] = d;
+						else if (!check(i))
+							return;
+			ll d = INF;
+			for (int i = 0; i &lt; n; ++i)
+				if (!vl[i] &amp;&amp; d &gt; slk[i])
+					d = slk[i];
+			for (int i = 0; i &lt; n; ++i)
+			{
+				if (vl[i])
+					hl[i] += d;
+				else
+					slk[i] -= d;
+				if (vr[i])
+					hr[i] -= d;
+			}
+			for (int i = 0; i &lt; n; ++i)
+				if (!vl[i] &amp;&amp; !slk[i] &amp;&amp; !check(i))
+					return;
+		}
+	}
+	void ask()
+	{
+		fill(fl, fl + n, N), fill(fr, fr + n, N), fill(hr, hr + n, 0);
+		for (int i = 0; i &lt; n; ++i)
+			hl[i] = *max_element(a[i], a[i] + n);
+		for (int j = 0; j &lt; n; ++j)
+			bfs(j);
+	}
+};
+</code></pre><h2 id="带花树">带花树</h2><h3 id="一般图最大匹配">一般图最大匹配</h3><p><a href="http://uoj.ac/submission/342734">使用示例</a></p><pre><code class="language-cpp">struct Blossom : Graph
+{
+	vector&lt;int&gt; f;
+	Blossom(int n) : Graph(n) {}
+	void ask()
+	{
+		f.assign(v.size(), v.size());
+		vector&lt;int&gt; vis(v.size());
+		for (int s = 0, cnt = vis.back(); s &lt; v.size(); ++s)
+			if (f[s] == v.size())
+			{
+				UnionfindSet ufs(v.size());
+				vector&lt;int&gt; pre(v.size(), v.size()), flag(v.size(), 2);
+				for (deque&lt;int&gt; q(flag[s] = 1, s); !q.empty() &amp;&amp; f[s] == v.size(); q.pop_front())
+					for (int i = 0, x = q.front(), y, a, b; i &lt; v[x].o.size(); ++i)
+						if (y = e[v[x].o[i]].second, y != f[x] &amp;&amp; flag[y] &amp;&amp; ufs.ask(x) != ufs.ask(y))
+						{
+							if (flag[y] == 1)
+							{
+								for (a = x, b = y, ++cnt;; swap(a, b))
+									if (a != v.size())
+									{
+										if (vis[a = ufs.ask(a)] == cnt)
+											break;
+										vis[a] = cnt, a = f[a] != v.size() ? pre[f[a]] : v.size();
+									}
+								if (ufs.ask(x) != a)
+									pre[x] = y;
+								if (ufs.ask(y) != a)
+									pre[y] = x;
+								for (int p[2] = {x, y}, j = 0; j &lt; 2; ++j)
+									for (int x = p[j], y, z; x != a; ufs.merge(y, x), ufs.merge(x = z, y))
+									{
+										if (ufs.ask(z = pre[y = f[x]]) != a)
+											pre[z] = y;
+										if (!flag[y])
+											flag[y] = 1, q.push_back(y);
+										if (!flag[z])
+											flag[z] = 1, q.push_back(z);
+									}
+							}
+							else if (f[y] != v.size())
+								pre[y] = x, flag[y] = 0, flag[f[y]] = 1, q.push_back(f[y]);
+							else
+							{
+								for (pre[y] = x; y != v.size();)
+									swap(y, f[f[y] = pre[y]]);
+								break;
+							}
+						}
+			}
+	}
+};
+</code></pre><h2 id="树形图">树形图</h2><h3 id="最小生成树">最小生成树</h3><h4 id="无向图">无向图</h4><p>同时给出 Prim 算法（生成新树）、Kruskal 算法（消耗小）。</p><pre><code class="language-cpp">struct Prim : Graph
+{
+	struct DisGreater
+	{
+		bool operator()(const Edge &amp;e1, const Edge &amp;e2)
+		{
+			return e1.len &gt; e2.len;
+		}
+	};
+	ll ans;
+	vector&lt;int&gt; vis;
+	priority_queue&lt;Edge, vector&lt;Edge&gt;, DisGreater&gt; q;
+	Prim(const Graph &amp;g, int root) : Tree(n), ans(0), vis(g.v.size(), 0) //生成新树，每条边都要有等长反向边
+	{
+		for (insert(root, g); !q.empty();)
+		{
+			Edge ed = q.top();
+			if (q.pop(), !vis[ed.second])
+				insert(ed.second, g), ans += ed.len, add(ed);
+		}
+	}
+	void insert(int u, const Graph &amp;g) //把点和对应的相连的边加入集合
+	{
+		vis[u] = 1;
+		for (int i = 0, k; i &lt; g.v[u].o.size(); ++i)
+			if (k = g.v[u].o[i], !vis[g.e[k].second])
+				q.push(g.e[k]);
+	}
+};
+ll kruskal(vector&lt;Edge&gt; &amp;e, int n) //会清空边集e，每条边被认作无向边
+{
+	ll ret = 0;
+	UnionFindSet ufs(n);
+	for (sort(e.begin(), e.end(), DisGreater()); !e.empty(); e.pop_back())
+		if (ufs.fa(e.back().from) != ufs.fa(e.back().to))
+		{
+			ufs.merge(e.back().from, e.back().to);
+			ret += e.back().len;
+		}
+	return /*ufs.siz&gt;1?INF:*/ ret; //视情况选择去注释
+}
+</code></pre><h4 id="有向图">有向图</h4><p><a href="https://vjudge.net/solution/16971789">使用示例</a></p><p>指定以 root 为根，如果没有限定根那么新建一个虚拟点作为根，向所有边连边长<strong>最大边长+1</strong>的边，在最后生成的图中去掉此边。时间复杂度$O(VE)$。</p><pre><code class="language-cpp">ll zhuLiu(vector&lt;Edge&gt; &amp;e, int root, int n) //不存在返回INF
+{
+	for (ll ret = 0;;)
+	{
+		vector&lt;ll&gt; in(n, INF);
+		vector&lt;int&gt; pre(n, n);
+		for (int i = 0, to; i &lt; e.size(); ++i)
+		{
+			if (e[i].first == (to = e[i].second))
+				swap(e[i--], e.back()), e.pop_back();
+			else if (in[to] &gt; e[i].len)
+				in[to] = e[i].len, pre[to] = e[i].first;
+		}
+		for (int i = in [root] = 0; i &lt; n; ++i)
+			if (in[i] == INF)
+				return INF;
+		vector&lt;int&gt; id(n, n), vis(n, n);
+		int tn = 0;
+		for (int i = 0, v; i &lt; n; ++i)
+		{
+			for (ret += in [v = i]; vis[v] != i &amp;&amp; id[v] == n &amp;&amp; v != root; v = pre[v])
+				vis[v] = i;
+			if (v != root &amp;&amp; id[v] == n)
+			{
+				for (int u = pre[v]; u != v; u = pre[u])
+					id[u] = tn;
+				id[v] = tn++;
+			}
+		}
+		if (!tn)
+			return ret;
+		for (int i = 0; i &lt; n; ++i)
+			if (id[i] == n)
+				id[i] = tn++;
+		for (int i = 0, v; i &lt; e.size(); ++i)
+			if ((e[i].first = id[e[i].first]) != (e[i].second = id[v = e[i].second]))
+				e[i].len -= in[v];
+		n = tn, root = id[root];
+	}
+}
+</code></pre><h3 id="树链剖分与-lca">树链剖分与 LCA</h3><p><a href="https://vjudge.net/solution/16971586">使用示例</a></p><pre><code class="language-cpp">struct Diagram : Graph
+{
+	Fenwick data; //暂用树状数组作为默认数据结构
+	Diagram(const Graph &amp;g, int root) : Graph(g.v.size()), data(g.v.size())
+	{
+		build(root, g);
+		int cnt = v[root].dfn = v[root].dep = 1;
+		dfs(v[root].top = root, cnt);
+	}
+	void build(int u, const Graph &amp;g) //无向图dfs建树，且重边在最前，u为根节点
+	{
+		v[u].siz = 1;
+		for (int i = 0, k, to; i &lt; g.v[u].o.size(); ++i)
+			if (k = g.v[u].o[i], to = g.e[k].second, !v[to].siz) //没访问过的点siz默认0
+			{
+				build(to, g);
+				v[u].siz += v[to].siz;
+				Graph::add(g.e[k]);
+				if (v[ch(u)].siz &lt; v[to].siz) //重边移到最前
+					swap(v[u].o.front(), v[u].o.back());
+			}
+	}
+	void dfs(int u, int &amp;cnt)
+	{
+		for (int i = 0, to; i &lt; v[u].o.size(); ++i)
+		{
+			v[to = ch(u, i)].dfn = ++cnt;
+			v[to].top = i ? to : v[u].top;
+			v[to].dep = v[u].dep + 1;
+			dfs(to, cnt);
+		}
+	}
+	int lca(int x, int y)
+	{
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		return y;
+	}
+	ll ask(int x, int y)
+	{
+		ll ans = 0;
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			ans += data.ask(v[v[x].top].dfn, v[x].dfn);
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		return ans += data.ask(v[y].dfn, v[x].dfn);
+	}
+	void add(int x, int y, ll pv)
+	{
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			data.add(v[v[x].top].dfn, v[x].dfn, pv);
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		data.add(v[y].dfn, v[x].dfn, pv);
+	}
+};
+</code></pre><h3 id="点剖点分治">点剖（点分治）</h3><p><a href="https://vjudge.net/solution/16971666">使用示例</a>，零号点为虚节点。</p><pre><code class="language-cpp">struct TreeDiv : Graph
+{
+	int root;
+	vector&lt;int&gt; mx, siz, vis;
+	TreeDiv(int n) : Graph(n), mx(n, n), siz(n), vis(n) {}
+	void dfsRoot(int u, int fa)
+	{
+		for (int i = mx[u] = siz[u] = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa &amp;&amp; !vis[to])
+				if (dfsRoot(to, u), siz[u] += siz[to], mx[u] &lt; siz[to])
+					mx[u] = siz[to];
+		if (mx[u] &lt; mx[0] - ++siz[u])
+			mx[u] = mx[0] - siz[u];
+		if (mx[root] &gt;= mx[u])
+			root = u;
+	}
+	void dfsDis(int u, int fa, ll d)
+	{
+		//用d更新答案
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, to != fa &amp;&amp; !vis[to])
+				dfsDis(to, u, d + e[k].len);
+	}
+	int cal(int u, ll d) //返回符合要求的点对数
+	{
+		return dfsDis(u, 0, d), /*得到答案*/;
+	}
+	void dfs(int u = 1)
+	{
+		dfsRoot(u, root = 0), ans += cal(u = root, 0), vis[u] = 1;
+		for (int i = 0, k, to; i &lt; v[u].o.size(); ++i)
+			if (k = v[u].o[i], to = e[k].second, !vis[to])
+				ans -= cal(to, e[k].len), mx[0] = siz[to], dfs(to);
+	}
+};
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

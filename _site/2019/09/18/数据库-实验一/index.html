@@ -1,0 +1,299 @@
+<!DOCTYPE html><html><head><title> 数据库·实验一 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="数据库·实验一" /><meta property="og:locale" content="en_US" /><meta name="description" content="Accessing the Database" /><meta property="og:description" content="Accessing the Database" /><link rel="canonical" href="http://localhost:4000/2019/09/18/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%9E%E9%AA%8C%E4%B8%80/" /><meta property="og:url" content="http://localhost:4000/2019/09/18/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%9E%E9%AA%8C%E4%B8%80/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-09-18T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="数据库·实验一" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/09/18/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%9E%E9%AA%8C%E4%B8%80/","datePublished":"2019-09-18T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/09/18/%E6%95%B0%E6%8D%AE%E5%BA%93-%E5%AE%9E%E9%AA%8C%E4%B8%80/"},"headline":"数据库·实验一","description":"Accessing the Database","dateModified":"2019-09-18T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#accessing-the-database">Accessing the Database</a><li><a href="#basic-sql">Basic SQL</a><ol><li><a href="#find-the-names-of-all-the-instructors-from-biology-department">Find the names of all the instructors from Biology department</a><li><a href="#find-the-names-of-courses-in-computer-science-department-which-have-3-credits">Find the names of courses in Computer science department which have 3 credits</a><li><a href="#for-the-student-with-id-12345-or-any-other-value-show-all-course-id-and-title-of-all-courses-registered-for-by-the-student">For the student with ID 12345 (or any other value), show all course id and title of all courses registered for by the student</a><li><a href="#as-above-but-show-the-total-number-of-credits-for-such-courses-taken-by-that-student-dont-display-the-tot-creds-value-from-the-student-table-you-should-use-sql-aggregation-on-courses-taken-by-the-student">As above, but show the total number of credits for such courses (taken by that student). Don’t display the tot creds value from the student table, you should use SQL aggregation on courses taken by the student</a><li><a href="#as-above-but-display-the-total-credits-for-each-of-the-students-along-with-the-id-of-the-student-dont-bother-about-the-name-of-the-student-dont-bother-about-students-who-have-not-registered-for-any-course-they-can-be-omitted">As above, but display the total credits for each of the students, along with the ID of the student; don’t bother about the name of the student. (Don’t bother about students who have not registered for any course, they can be omitted)</a><li><a href="#find-the-names-of-all-students-who-have-taken-any-comp-sci-course-ever-there-should-be-no-duplicate-names">Find the names of all students who have taken any Comp. Sci. course ever (there should be no duplicate names)</a><li><a href="#display-the-ids-of-all-instructors-who-have-never-taught-a-couse-note-1-oracle-uses-the-keyword-minus-in-place-of-except-2-interpret-taught-as-taught-or-is-scheduled-to-teach">Display the IDs of all instructors who have never taught a couse. Note: (1) Oracle uses the keyword minus in place of except; (2) interpret 」taught」 as 」taught or is scheduled to teach」</a><li><a href="#as-above-but-display-the-names-of-the-instructors-also-not-just-the-ids">As above, but display the names of the instructors also, not just the IDs</a><li><a href="#you-need-to-create-a-movie-database-create-three-tables-one-for-actorsaid-name-one-for-moviesmid-title-and-one-for-actor-rolemid-aid-rolename-use-appropriate-data-types-for-each-of-the-attributes-and-add-appropriate-primaryforeign-key-constraints">You need to create a movie database. Create three tables, one for actors(AID, name), one for movies(MID, title) and one for actor role(MID, AID, rolename). Use appropriate data types for each of the attributes, and add appropriate primary/foreign key constraints</a><li><a href="#insert-data-to-the-above-tables-approx-3-to-6-rows-in-each-table-including-data-for-actor-charlie-chaplin-and-for-yourself-using-your-roll-number-as-id">Insert data to the above tables (approx 3 to 6 rows in each table), including data for actor 」Charlie Chaplin」, and for yourself (using your roll number as ID)</a><li><a href="#write-a-query-to-list-all-movies-in-which-actor-charlie-chaplin-has-acted-along-with-the-number-of-roles-he-had-in-that-movie">Write a query to list all movies in which actor 」Charlie Chaplin」 has acted, along with the number of roles he had in that movie</a><li><a href="#write-a-query-to-list-all-actors-who-have-not-acted-in-any-movie">Write a query to list all actors who have not acted in any movie</a><li><a href="#list-names-of-actors-along-with-titles-of-movies-they-have-acted-in-if-they-have-not-acted-in-any-movie-show-the-movie-title-as-null-do-not-use-sql-outerjoin-syntax-here-write-it-from-scratch">List names of actors, along with titles of movies they have acted in. If they have not acted in any movie, show the movie title as null. (Do not use SQL outerjoin syntax here, write it from scratch.)</a></ol><li><a href="#intermediate-sql">Intermediate SQL</a><ol><li><a href="#find-the-maximum-and-minimum-enrollment-across-all-sections-considering-only-sections-that-had-some-enrollment-dont-worry-about-those-that-had-no-students-taking-that-section">Find the maximum and minimum enrollment across all sections, considering only sections that had some enrollment, don’t worry about those that had no students taking that section</a><li><a href="#find-all-sections-that-had-the-maximum-enrollment-along-with-the-enrollment-using-a-subquery">Find all sections that had the maximum enrollment (along with the enrollment), using a subquery</a><li><a href="#as-in-in-q1-but-now-also-include-sections-with-no-students-taking-them-the-enrollment-for-such-sections-should-be-treated-as-0-do-this-in-two-di%EF%AC%80erent-ways-and-create-require-data-for-testing">As in in Q1, but now also include sections with no students taking them; the enrollment for such sections should be treated as 0. Do this in two diﬀerent ways (and create require data for testing)</a><ol><li><a href="#using-a-scalar-subquery">Using a scalar subquery</a><li><a href="#using-aggregation-on-a-left-outer-join-use-the-sql-natural-left-outer-join-syntax">Using aggregation on a left outer join (use the SQL natural left outer join syntax)</a></ol><li><a href="#find-all-courses-whose-identifier-starts-with-the-string-cs-1">Find all courses whose identifier starts with the string 」CS-1」</a><li><a href="#find-instructors-who-have-taught-all-the-above-courses">Find instructors who have taught all the above courses</a><ol><li><a href="#using-the-not-exists--except--structure">Using the 」not exists … except …」 structure</a><li><a href="#using-matching-of-counts-which-we-covered-in-class-dont-forget-the-distinct-clause">Using matching of counts which we covered in class (don’t forget the distinct clause!)</a></ol><li><a href="#insert-each-instructor-as-a-student-with-tot-creds--0-in-the-same-department">Insert each instructor as a student, with tot creds = 0, in the same department</a><li><a href="#now-delete-all-the-newly-added-students-above-note-already-existing-students-who-happened-to-have-tot-creds--0-should-not-get-deleted">Now delete all the newly added 」students」 above (note: already existing students who happened to have tot creds = 0 should not get deleted)</a><li><a href="#some-of-you-may-have-noticed-that-the-tot-creds-value-for-students-did-not-match-the-credits-from-courses-they-have-taken-write-and-execute-query-to-update-tot-creds-based-on-the-credits-passed-to-bring-the-database-back-to-consistency-this-query-is-provided-in-the-bookslides">Some of you may have noticed that the tot creds value for students did not match the credits from courses they have taken. Write and execute query to update tot creds based on the credits passed, to bring the database back to consistency. (This query is provided in the book/slides.)</a><li><a href="#update-the-salary-of-each-instructor-to-10000-times-the-number-of-course-sections-they-have-taught">Update the salary of each instructor to 10000 times the number of course sections they have taught</a><li><a href="#create-your-own-query-define-what-you-want-to-do-in-english-then-write-the-query-in-sql-make-it-as-difficult-as-you-wish-the-harder-the-better">Create your own query: define what you want to do in English, then write the query in SQL. Make it as difficult as you wish, the harder the better</a></ol></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">数据库·实验一</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 18 Sep 2019 <i class="fas fa-file-word fa-fw"></i> 12017字 <i class="fas fa-clock fa-fw"></i> 41分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="accessing-the-database">Accessing the Database</h2><p>The first laboratory exercise is to connect to a database, populate it with data, and run very simple SQL queries.</p><ul><li>In case a shared database is provided for course students, user accounts need to be created on the database. Otherwise, the lab should also cover setting up a database system. Information on setting up a database may be found <a href="https://www.db-book.com/db6/lab-dir/index.html">here</a><li>The next step is to connect to the database. Although most databases have their own text-based interface, we recommend using a graphical interface such as the database browser of the Netbeans IDE, or a database specific interface. More information on accessing these interfaces may be found <a href="https://www.db-book.com/db6/lab-dir/index.html">here</a>.<li>The next step is to create tables and load sample data. Scripts for these tasks can be found <a href="http://db-book.com/db6/lab-dir/sample_tables-dir/index.html">here</a>.<li>Try out some queries, and see what they do. Some example queries:<ul><li>select * from instructor<li>select name from instructor where dept_name = ‘Comp. Sci.’ and salary &gt; 70000<li>select * from instructor, department where instructor.dept_name = department.dept_name</ul></ul><pre><code class="language-bash">mysql&gt; CREATE DATABASE school;
+mysql&gt; use school;
+mysql&gt; source \path\to\DDL-MySQL.sql
+mysql&gt; source \path\to\smallRelationsInsertFile.sql
+</code></pre><h2 id="basic-sql">Basic SQL</h2><p>This lab covers simple SQL queries. A sample lab (for a 2 to 3 hour session) can be found <a href="https://www.db-book.com/db6/lab-dir/labexercises-dir/Lab1.html">here</a>.</p><h3 id="find-the-names-of-all-the-instructors-from-biology-department">Find the names of all the instructors from Biology department</h3><pre><code class="language-sql">mysql&gt; select name from instructor where dept_name = 'Biology';
++-------+
+| name  |
++-------+
+| Crick |
++-------+
+1 row in set (0.02 sec)
+</code></pre><h3 id="find-the-names-of-courses-in-computer-science-department-which-have-3-credits">Find the names of courses in Computer science department which have 3 credits</h3><pre><code class="language-sql">mysql&gt; select title from course where credits = 3;
++---------------------------+
+| title                     |
++---------------------------+
+| Computational Biology     |
+| Robotics                  |
+| Image Processing          |
+| Database System Concepts  |
+| Intro. to Digital Systems |
+| Investment Banking        |
+| World History             |
+| Music Video Production    |
++---------------------------+
+8 rows in set (0.00 sec)
+</code></pre><h3 id="for-the-student-with-id-12345-or-any-other-value-show-all-course-id-and-title-of-all-courses-registered-for-by-the-student">For the student with ID 12345 (or any other value), show all course id and title of all courses registered for by the student</h3><pre><code class="language-sql">mysql&gt; select course_id, title
+    -&gt; from takes natural join course
+    -&gt; where ID = 12345;
++-----------+----------------------------+
+| course_id | title                      |
++-----------+----------------------------+
+| CS-101    | Intro. to Computer Science |
+| CS-190    | Game Design                |
+| CS-315    | Robotics                   |
+| CS-347    | Database System Concepts   |
++-----------+----------------------------+
+4 rows in set (0.02 sec)
+</code></pre><h3 id="as-above-but-show-the-total-number-of-credits-for-such-courses-taken-by-that-student-dont-display-the-tot-creds-value-from-the-student-table-you-should-use-sql-aggregation-on-courses-taken-by-the-student">As above, but show the total number of credits for such courses (taken by that student). Don’t display the tot creds value from the student table, you should use SQL aggregation on courses taken by the student</h3><pre><code class="language-sql">mysql&gt; select sum(credits)
+    -&gt; from takes natural join course
+    -&gt; where ID = 12345;
++--------------+
+| sum(credits) |
++--------------+
+|           14 |
++--------------+
+1 row in set (0.02 sec)
+</code></pre><h3 id="as-above-but-display-the-total-credits-for-each-of-the-students-along-with-the-id-of-the-student-dont-bother-about-the-name-of-the-student-dont-bother-about-students-who-have-not-registered-for-any-course-they-can-be-omitted">As above, but display the total credits for each of the students, along with the ID of the student; don’t bother about the name of the student. (Don’t bother about students who have not registered for any course, they can be omitted)</h3><pre><code class="language-sql">mysql&gt; select ID, sum(credits)
+    -&gt; from takes natural join course
+    -&gt; group by ID;
++-------+--------------+
+| ID    | sum(credits) |
++-------+--------------+
+| 98988 |            8 |
+| 00128 |            7 |
+| 12345 |           14 |
+| 45678 |           11 |
+| 54321 |            8 |
+| 76543 |            7 |
+| 98765 |            7 |
+| 76653 |            3 |
+| 23121 |            3 |
+| 19991 |            3 |
+| 55739 |            3 |
+| 44553 |            4 |
++-------+--------------+
+12 rows in set (0.02 sec)
+</code></pre><h3 id="find-the-names-of-all-students-who-have-taken-any-comp-sci-course-ever-there-should-be-no-duplicate-names">Find the names of all students who have taken any Comp. Sci. course ever (there should be no duplicate names)</h3><pre><code class="language-sql">mysql&gt; select distinct S.name from student as S,
+    -&gt; (select * from takes natural join course) as C
+    -&gt; where S.ID = C.ID and C.dept_name = 'Comp. Sci.';
++----------+
+| name     |
++----------+
+| Zhang    |
+| Shankar  |
+| Levy     |
+| Williams |
+| Brown    |
+| Bourikas |
++----------+
+6 rows in set (0.00 sec)
+</code></pre><h3 id="display-the-ids-of-all-instructors-who-have-never-taught-a-couse-note-1-oracle-uses-the-keyword-minus-in-place-of-except-2-interpret-taught-as-taught-or-is-scheduled-to-teach">Display the IDs of all instructors who have never taught a couse. Note: (1) Oracle uses the keyword minus in place of except; (2) interpret 」taught」 as 」taught or is scheduled to teach」</h3><pre><code class="language-sql">mysql&gt; select ID from instructor
+    -&gt; where ID not in (
+    -&gt;   select ID
+    -&gt;   from instructor natural join teaches);
++-------+
+| ID    |
++-------+
+| 76543 |
+| 58583 |
+| 33456 |
++-------+
+3 rows in set (0.02 sec)
+</code></pre><h3 id="as-above-but-display-the-names-of-the-instructors-also-not-just-the-ids">As above, but display the names of the instructors also, not just the IDs</h3><pre><code class="language-sql">mysql&gt; select name, ID from instructor
+    -&gt; where ID not in (select ID from instructor natural join teaches);
++-----------+-------+
+| name      | ID    |
++-----------+-------+
+| Gold      | 33456 |
+| Califieri | 58583 |
+| Singh     | 76543 |
++-----------+-------+
+3 rows in set (0.00 sec)
+</code></pre><h3 id="you-need-to-create-a-movie-database-create-three-tables-one-for-actorsaid-name-one-for-moviesmid-title-and-one-for-actor-rolemid-aid-rolename-use-appropriate-data-types-for-each-of-the-attributes-and-add-appropriate-primaryforeign-key-constraints">You need to create a movie database. Create three tables, one for actors(AID, name), one for movies(MID, title) and one for actor role(MID, AID, rolename). Use appropriate data types for each of the attributes, and add appropriate primary/foreign key constraints</h3><pre><code class="language-sql">create table actors (
+  AID varchar(20),
+  name varchar(50),
+  primary key (AID)
+);
+create table movies (
+  MID varchar(20),
+  title varchar(50),
+  primary key (MID)
+);
+create table actor_role (
+  MID varchar(20),
+  AID varchar(20),
+  rolename varchar(30),
+  primary key (MID,AID,rolename),
+  foreign key (MID) references movies(MID),
+  foreign key (AID) references actors(AID)
+);
+</code></pre><h3 id="insert-data-to-the-above-tables-approx-3-to-6-rows-in-each-table-including-data-for-actor-charlie-chaplin-and-for-yourself-using-your-roll-number-as-id">Insert data to the above tables (approx 3 to 6 rows in each table), including data for actor 」Charlie Chaplin」, and for yourself (using your roll number as ID)</h3><pre><code class="language-sql">delete from actor_role;
+delete from actors;
+delete from movies;
+insert into actors values ('01','Charlie Chaplin');
+insert into movies values ('M1','City Lights');
+insert into actor_role values ('M1','01','Tramp');
+insert into actors values ('02','Stephen Chow');
+insert into movies values ('M2','Kung Fu Hustle');
+insert into actor_role values ('M2','02','Kung Fu Hustle');
+insert into actors values ('03','Jay Chou');
+insert into movies values ('M3','Initial D');
+insert into actor_role values ('M3','03','Fujiwara Takumi');
+insert into actors values ('04','Kan Wu');
+</code></pre><h3 id="write-a-query-to-list-all-movies-in-which-actor-charlie-chaplin-has-acted-along-with-the-number-of-roles-he-had-in-that-movie">Write a query to list all movies in which actor 」Charlie Chaplin」 has acted, along with the number of roles he had in that movie</h3><pre><code class="language-sql">mysql&gt; select name, title, count(rolename)
+    -&gt; from actor_role natural join movies natural join actors
+    -&gt; where name = 'Charlie Chaplin' group by MID;
++-----------------+-------------+-----------------+
+| name            | title       | count(rolename) |
++-----------------+-------------+-----------------+
+| Charlie Chaplin | City Lights |               1 |
++-----------------+-------------+-----------------+
+1 row in set (0.00 sec)
+</code></pre><h3 id="write-a-query-to-list-all-actors-who-have-not-acted-in-any-movie">Write a query to list all actors who have not acted in any movie</h3><p>没错就是我了。</p><pre><code class="language-sql">mysql&gt; select name from actors
+    -&gt; where name not in (
+    -&gt;   select distinct name
+    -&gt;   from actor_role natural join actors);
++--------+
+| name   |
++--------+
+| Kan Wu |
++--------+
+1 row in set (0.00 sec)
+</code></pre><h3 id="list-names-of-actors-along-with-titles-of-movies-they-have-acted-in-if-they-have-not-acted-in-any-movie-show-the-movie-title-as-null-do-not-use-sql-outerjoin-syntax-here-write-it-from-scratch">List names of actors, along with titles of movies they have acted in. If they have not acted in any movie, show the movie title as null. (Do not use SQL outerjoin syntax here, write it from scratch.)</h3><pre><code class="language-sql">ERROR 1248 (42000): Every derived table must have its own alias
+</code></pre><p>这里遇到一个问题，每个子查询都要有一个别名。</p><pre><code class="language-sql">mysql&gt; select * from (
+    -&gt; (select name, title
+    -&gt; from actors, movies, actor_role
+    -&gt; where actors.AID = actor_role.AID and movies.MID = actor_role.MID)
+    -&gt; union
+    -&gt; (select name as name, null as title from
+    -&gt; (select name from actors
+    -&gt; where name not in
+    -&gt; (select distinct name
+    -&gt; from actor_role natural join actors)
+    -&gt; ) as alias1)
+    -&gt; ) as alias2;
++-----------------+----------------+
+| name            | title          |
++-----------------+----------------+
+| Charlie Chaplin | City Lights    |
+| Stephen Chow    | Kung Fu Hustle |
+| Jay Chou        | Initial D      |
+| Kan Wu          | NULL           |
++-----------------+----------------+
+4 rows in set (0.00 sec)
+</code></pre><h2 id="intermediate-sql">Intermediate SQL</h2><p>This lab covers more complex SQL queries. A sample lab (for a 2 to 3 hour session) can be found <a href="https://www.db-book.com/db6/lab-dir/labexercises-dir/Lab2.html">here</a>.</p><h3 id="find-the-maximum-and-minimum-enrollment-across-all-sections-considering-only-sections-that-had-some-enrollment-dont-worry-about-those-that-had-no-students-taking-that-section">Find the maximum and minimum enrollment across all sections, considering only sections that had some enrollment, don’t worry about those that had no students taking that section</h3><pre><code class="language-sql">mysql&gt; select max(enrollment), min(enrollment)
+    -&gt; from (select sec_id, semester, year, count(distinct id) as enrollment
+    -&gt; from takes
+    -&gt; group by sec_id, semester, year) as alias1;
++-----------------+-----------------+
+| max(enrollment) | min(enrollment) |
++-----------------+-----------------+
+|               7 |               1 |
++-----------------+-----------------+
+1 row in set (0.02 sec)
+</code></pre><h3 id="find-all-sections-that-had-the-maximum-enrollment-along-with-the-enrollment-using-a-subquery">Find all sections that had the maximum enrollment (along with the enrollment), using a subquery</h3><pre><code class="language-sql">mysql&gt; with T(sec_id, semester, year, enrollment) as (select sec_id, semester, year, count(distinct id)from takes group by sec_id, semester, year)
+    -&gt; select T.sec_id, T.semester, T.year, T.enrollment from T, (select max(enrollment) as ma, min(enrollment) from T) as tmp
+    -&gt; where T.enrollment = tmp.ma;
++--------+----------+------+------------+
+| sec_id | semester | year | enrollment |
++--------+----------+------+------------+
+| 1      | Fall     | 2009 |          7 |
++--------+----------+------+------------+
+1 row in set (0.00 sec)
+</code></pre><h3 id="as-in-in-q1-but-now-also-include-sections-with-no-students-taking-them-the-enrollment-for-such-sections-should-be-treated-as-0-do-this-in-two-diﬀerent-ways-and-create-require-data-for-testing">As in in Q1, but now also include sections with no students taking them; the enrollment for such sections should be treated as 0. Do this in two diﬀerent ways (and create require data for testing)</h3><pre><code class="language-sql">delete from course where course_id = 'CS-001';
+delete from section where sec_id = '1' and semester = 'Fall' and year = '2010';
+insert into course(course_id) values ('CS-001');
+insert into section(course_id, sec_id, semester, year) values ('CS-001','1','Fall','2010');
+</code></pre><h4 id="using-a-scalar-subquery">Using a scalar subquery</h4><pre><code class="language-sql">mysql&gt; select distinct sec_id, semester, year, (
+    -&gt;   select count(distinct id) from takes
+    -&gt;   where (
+    -&gt;     takes.sec_id, takes.semester, takes.year
+    -&gt;   ) = (
+    -&gt;     section.sec_id, section.semester, section.year))
+    -&gt; as cnt from section;
++--------+----------+------+------+
+| sec_id | semester | year | cnt  |
++--------+----------+------+------+
+| 1      | Fall     | 2010 |    0 |
+| 1      | Fall     | 2009 |    7 |
+| 1      | Spring   | 2010 |    6 |
+| 1      | Summer   | 2009 |    1 |
+| 1      | Summer   | 2010 |    1 |
+| 1      | Spring   | 2009 |    1 |
+| 2      | Spring   | 2009 |    2 |
+| 2      | Spring   | 2010 |    1 |
++--------+----------+------+------+
+8 rows in set (0.00 sec)
+</code></pre><h4 id="using-aggregation-on-a-left-outer-join-use-the-sql-natural-left-outer-join-syntax">Using aggregation on a left outer join (use the SQL natural left outer join syntax)</h4><pre><code class="language-sql">mysql&gt; select distinct sec_id, semester, year, ifnull(cnt,0)
+    -&gt; from section left outer join (
+    -&gt;   select sec_id, semester, year, count(distinct id) as cnt
+    -&gt;   from takes group by sec_id, semester, year) as T
+    -&gt; using (sec_id, semester, year);
++--------+----------+------+---------------+
+| sec_id | semester | year | ifnull(cnt,0) |
++--------+----------+------+---------------+
+| 1      | Fall     | 2010 |             0 |
+| 1      | Fall     | 2009 |             7 |
+| 1      | Spring   | 2010 |             6 |
+| 1      | Summer   | 2009 |             1 |
+| 1      | Summer   | 2010 |             1 |
+| 1      | Spring   | 2009 |             1 |
+| 2      | Spring   | 2009 |             2 |
+| 2      | Spring   | 2010 |             1 |
++--------+----------+------+---------------+
+8 rows in set (0.00 sec)
+</code></pre><h3 id="find-all-courses-whose-identifier-starts-with-the-string-cs-1">Find all courses whose identifier starts with the string 」CS-1」</h3><pre><code class="language-sql">mysql&gt; select course_id, title
+    -&gt; from section natural join course
+    -&gt; where course_id like 'CS-1%';
++-----------+----------------------------+
+| course_id | title                      |
++-----------+----------------------------+
+| CS-101    | Intro. to Computer Science |
+| CS-101    | Intro. to Computer Science |
+| CS-190    | Game Design                |
+| CS-190    | Game Design                |
++-----------+----------------------------+
+4 rows in set (0.00 sec)
+</code></pre><h3 id="find-instructors-who-have-taught-all-the-above-courses">Find instructors who have taught all the above courses</h3><h4 id="using-the-not-exists--except--structure">Using the 」not exists … except …」 structure</h4><pre><code class="language-sql">mysql&gt; select distinct ID, name from (
+    -&gt;   select * from teaches natural join instructor)
+    -&gt; as T where not exists (
+    -&gt;   select cs_course.course_id from (
+    -&gt;     select course_id from course
+    -&gt;     where course_id like 'CS-1%')
+    -&gt;   as cs_course where cs_course.course_id not in (
+    -&gt;     select course_id from (
+    -&gt;       select * from teaches natural join instructor)
+    -&gt;     as S where S.name = T.name));
+Empty set (0.00 sec)
+</code></pre><h4 id="using-matching-of-counts-which-we-covered-in-class-dont-forget-the-distinct-clause">Using matching of counts which we covered in class (don’t forget the distinct clause!)</h4><pre><code class="language-sql">mysql&gt; with S(course_id) as (
+    -&gt;   select distinct course_id
+    -&gt;   from teaches natural join instructor
+    -&gt;   where course_id like 'CS-1%')
+    -&gt; select distinct ID, name from (
+    -&gt;   select * from teaches natural join instructor) as T
+    -&gt; where ((select count(course_id) from S)=(
+    -&gt;   select count(distinct course_id)
+    -&gt;   from teaches natural join instructor
+    -&gt;   where name = T.name and course_id like 'CS-1%'
+    -&gt; ));
+Empty set (0.00 sec)
+</code></pre><h3 id="insert-each-instructor-as-a-student-with-tot-creds--0-in-the-same-department">Insert each instructor as a student, with tot creds = 0, in the same department</h3><p>这里报错是因为学生 ID 和教师 ID 冲突。</p><pre><code class="language-sql">mysql&gt; insert into student
+    -&gt; select ID, name, dept_name, '0'
+    -&gt; from instructor;
+ERROR 1062 (23000): Duplicate entry '76543' for key 'PRIMARY'
+</code></pre><h3 id="now-delete-all-the-newly-added-students-above-note-already-existing-students-who-happened-to-have-tot-creds--0-should-not-get-deleted">Now delete all the newly added 」students」 above (note: already existing students who happened to have tot creds = 0 should not get deleted)</h3><p>因为上一问报错了，因此这一问实际上什么都没删除。</p><pre><code class="language-sql">mysql&gt; delete from student
+    -&gt; where (ID, name, dept_name) in (
+    -&gt;   select ID, name, dept_name
+    -&gt;   from instructor);
+Query OK, 0 rows affected (0.00 sec)
+</code></pre><h3 id="some-of-you-may-have-noticed-that-the-tot-creds-value-for-students-did-not-match-the-credits-from-courses-they-have-taken-write-and-execute-query-to-update-tot-creds-based-on-the-credits-passed-to-bring-the-database-back-to-consistency-this-query-is-provided-in-the-bookslides">Some of you may have noticed that the tot creds value for students did not match the credits from courses they have taken. Write and execute query to update tot creds based on the credits passed, to bring the database back to consistency. (This query is provided in the book/slides.)</h3><pre><code class="language-sql">mysql&gt; update student as S set tot_cred = (
+    -&gt;   select sum(credits)
+    -&gt;   from takes natural join course
+    -&gt;   where S.ID = takes.ID and takes.grade is not null);
+Query OK, 13 rows affected (0.03 sec)
+Rows matched: 13  Changed: 13  Warnings: 0
+</code></pre><h3 id="update-the-salary-of-each-instructor-to-10000-times-the-number-of-course-sections-they-have-taught">Update the salary of each instructor to 10000 times the number of course sections they have taught</h3><p>这一步出现报错，和数据库的约束条件冲突。</p><pre><code class="language-sql">mysql&gt; update instructor as I set salary = 10000 * (
+    -&gt;   select count(distinct sec_id, semester, year)
+    -&gt;   from teaches as T where I.ID = T.ID);
+ERROR 3819 (HY000): Check constraint 'instructor_chk_1' is violated.
+</code></pre><h3 id="create-your-own-query-define-what-you-want-to-do-in-english-then-write-the-query-in-sql-make-it-as-difficult-as-you-wish-the-harder-the-better">Create your own query: define what you want to do in English, then write the query in SQL. Make it as difficult as you wish, the harder the better</h3><p>这里统计的是上过任何一门由计算机系开设课程的学生数量。</p><pre><code class="language-sql">mysql&gt; select count(S.name) from student as S,(
+    -&gt;   select * from takes natural join course) as C
+    -&gt; where S.ID = C.ID and C.dept_name = 'Comp. Sci.';
++---------------+
+| count(S.name) |
++---------------+
+|            15 |
++---------------+
+1 row in set (0.00 sec)
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

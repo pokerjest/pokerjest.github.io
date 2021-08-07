@@ -1,0 +1,389 @@
+<!DOCTYPE html><html><head><title> 数论 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="数论" /><meta property="og:locale" content="en_US" /><meta name="description" content="辗转相除法" /><meta property="og:description" content="辗转相除法" /><link rel="canonical" href="http://localhost:4000/2019/02/01/%E6%95%B0%E8%AE%BA/" /><meta property="og:url" content="http://localhost:4000/2019/02/01/%E6%95%B0%E8%AE%BA/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2019-02-01T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="数论" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2019/02/01/%E6%95%B0%E8%AE%BA/","datePublished":"2019-02-01T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/02/01/%E6%95%B0%E8%AE%BA/"},"headline":"数论","description":"辗转相除法","dateModified":"2019-02-01T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#%E8%BE%97%E8%BD%AC%E7%9B%B8%E9%99%A4%E6%B3%95">辗转相除法</a><ol><li><a href="#%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">裴蜀定理</a><ol><li><a href="#%E6%8E%A8%E8%AE%BA">推论</a></ol></ol><li><a href="#%E5%90%8C%E4%BD%99%E7%B3%BB%E8%BF%90%E7%AE%97">同余系运算</a><ol><li><a href="#%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86%E8%A7%A3%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E7%BB%84">中国剩余定理解同余方程组</a><li><a href="#%E4%BA%8C%E6%AC%A1%E5%89%A9%E4%BD%99">二次剩余</a></ol><li><a href="#%E6%AC%A7%E6%8B%89%E7%AD%9B">欧拉筛</a><ol><li><a href="#%E7%9B%B4%E6%8E%A5%E6%B1%82%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">直接求欧拉函数</a><li><a href="#%E5%B8%B8%E8%A7%81%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0%E5%8F%98%E6%8D%A2">常见数论函数变换</a><ol><li><a href="#%E5%89%8D%E7%BC%80%E5%92%8C">前缀和</a><li><a href="#%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94">莫比乌斯反演</a></ol></ol><li><a href="#pollardrho-%E5%A4%A7%E6%95%B0%E7%B4%A0%E5%9B%A0%E5%AD%90%E5%88%86%E8%A7%A3">PollardRho 大数素因子分解</a><li><a href="#%E5%BF%AB%E9%80%9F%E5%8F%98%E6%8D%A2">快速变换</a><ol><li><a href="#%E8%9D%B4%E8%9D%B6%E5%8F%98%E6%8D%A2%E9%9B%B7%E5%BE%B7%E5%8F%98%E6%8D%A2">蝴蝶变换（雷德变换）</a><li><a href="#%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2">快速傅里叶变换</a><li><a href="#%E5%BF%AB%E9%80%9F%E6%95%B0%E8%AE%BA%E5%8F%98%E6%8D%A2">快速数论变换</a><ol><li><a href="#%E5%B8%B8%E8%A7%81%E7%B4%A0%E6%95%B0%E7%9A%84%E5%8E%9F%E6%A0%B9">常见素数的原根</a></ol><li><a href="#%E5%BF%AB%E9%80%9F%E6%B2%83%E5%B0%94%E4%BB%80%E5%8F%98%E6%8D%A2">快速沃尔什变换</a><ol><li><a href="#and">AND</a><li><a href="#or">OR</a><li><a href="#xor">XOR</a><li><a href="#xnornandnor">XNOR、NAND、NOR</a></ol></ol><li><a href="#pell-%E6%96%B9%E7%A8%8B">Pell 方程</a><li><a href="#bertrand-%E7%8C%9C%E6%83%B3">Bertrand 猜想</a><li><a href="#%E5%A8%81%E5%B0%94%E9%80%8A%E5%AE%9A%E7%90%86">威尔逊定理</a><li><a href="#jacobis-four-square-theorem">Jacobi’s Four Square Theorem</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">数论</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 01 Feb 2019 <i class="fas fa-file-word fa-fw"></i> 11552字 <i class="fas fa-clock fa-fw"></i> 39分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="辗转相除法">辗转相除法</h2><pre><code class="language-cpp">ll gcd(ll a, ll b) { return b ? gcd(b, a % b) : a; } //a、b的最大公约数
+ll lcm(ll a, ll b) { return a / gcd(a, b) * b; }	 //a、b的最小公倍数
+ll gcd(ll a, ll b, ll &amp;x, ll &amp;y)					 //扩展欧几里得，引用返回a*x+b*y=gcd(a,b)绝对值之和最小的解
+{
+	if (!a)
+		return x = 0, y = 1, b;
+	ll d = gcd(b % a, a, y, x);
+	return x -= b / a * y, d;
+}
+ll gcd(ll a, ll b) //无取模求gcd
+{
+	for (ll t = 1, c, d;;)
+	{
+		if (a == b)
+			return t * a;
+		if (a &lt; b)
+			swap(a, b);
+		if (a &amp; 1)
+			c = 0;
+		else
+			a &gt;&gt;= 1, c = 1;
+		if (b &amp; 1)
+			d = 0;
+		else
+			b &gt;&gt;= 1, d = 1;
+		if (c &amp;&amp; d)
+			t &lt;&lt;= 1;
+		else if (!c &amp;&amp; !d)
+			a -= b;
+	}
+}
+</code></pre><h3 id="裴蜀定理">裴蜀定理</h3><p>对任何$a,b\in Z$和它们的最大公约数$d$，关于未知数$x,y$的线性不定方程（称为裴蜀等式）：$ax+by=c$当仅当$d\vert c$，可知有无穷多解。特别地，$ax+by=d$一定有解。</p><h4 id="推论">推论</h4><p>$a,b$互质的充要条件是$ax+by=1$有整数解。</p><h2 id="同余系运算">同余系运算</h2><p>三种乘法的比较，结论是如果可以用<code>__int128</code>就用，否则就用第一种：</p><ul><li><a href="https://vjudge.net/solution/19521824">使用<code>__int128</code></a><li><a href="https://vjudge.net/solution/19853184">第一种同余乘法</a><li><a href="https://vjudge.net/solution/19521800">第二种同余乘法</a></ul><p>求乘法逆元的另外一种方法是用欧拉定理$x^{\phi(m)}\equiv1\pmod m$，x 的逆是$x^{\phi(m)-1}$。特别地，m 为素数时$\phi(m)=m-1$，此时 x 的逆就是<code>pow(x,m-2,m)</code>。</p><p>log 函数：m 为素数时<a href="https://vjudge.net/solution/19395246">求解模方程</a>$a^x\equiv b\pmod m$。设 P 为质数，G 为 P 的原根，则$x^y\equiv b\pmod P$等价于$y\ ind\ x\equiv b\pmod{P-1}$，其中$G\ ind\ x\equiv x\pmod P$。</p><pre><code class="language-cpp">struct Mod
+{
+	const ll M, SM;
+	Mod(ll M) : M(M), SM(sqrt(M) + 0.5) {}
+	ll qadd(ll &amp;a, ll b) const { return a += b, a &gt;= M ? a -= M : a; } //假如a+b&lt;2*M，就不必取模了，取模运算耗时很高
+	ll add(ll a, ll b) const { return qadd(a = (a + b) % M, M); }	  //考虑a和b不在同余系内甚至为负数的情况
+	ll mul(ll a, ll b) const { return add(a * b, M); } //ll类型是int的时候小心 a*b 爆精度
+	ll inv(ll a) const { return pow(a, M - 2); } //要求M为素数，否则return pow(a, phi(M) - 1);
+	ll pow(ll a, ll b) const
+	{
+		ll r = 1;
+		/*
+		if (b &lt; 0)
+			b = -b, a = inv(a);
+		*/
+		for (a = add(a, M); b; b &gt;&gt;= 1, a = mul(a, a))
+			if (b &amp; 1)
+				r = mul(r, a);
+		return r;
+	}
+	/*
+	ll mul(ll a, ll b) const { return add(a * b, -M * (ll)((long double)a / M * b)); } //long double 有效位数16~18位，模数过大时慎用！
+	ll mul(ll a, ll b) const //Head算法，无循环快速计算同余乘法，根据a*b是否爆ll替换a*b%M，需要a&lt;M且b&lt;M，可以调用时手动取模
+	{
+		ll c = a / SM, d = b / SM;
+		a %= SM, b %= SM;
+		ll e = add(add(a * d, b * c), c * d / SM * (SM * SM - M));
+		return add(add(a * b, e % SM * SM), add(c * d % SM, e / SM) * (SM * SM - M));
+	}
+	ll mul(ll a, ll b) const //龟速乘
+	{
+		ll r = 0;
+		for (a %= M; b; b &gt;&gt;= 1, qadd(a, a))
+			if (b &amp; 1)
+				qadd(r, a);
+		return r;
+	}
+	ll inv(ll a) const //模m下a的乘法逆元，不存在返回-1（m为素数时a不为0必有逆元）
+	{
+		ll x, y, d = gcd(a, M, x, y);
+		return d == 1 ? add(x, M) : -1;
+	}
+	vector&lt;ll&gt; sol(ll a, ll b) const //解同余方程，返回ax=b(mod M)循环节内所有解
+	{
+		vector&lt;ll&gt; ans;
+		ll x, y, d = gcd(a, M, x, y);
+		if (b % d)
+			return ans;
+		ans.push_back(mul((b / d) % (M / d), x));
+		for (ll i = 1; i &lt; d; ++i)
+			ans.push_back(add(ans.back(), M / d));
+		return ans;
+	}
+	ll log(ll a, ll b) const
+	{
+		unordered_map&lt;ll, ll&gt; x;
+		for (ll i = 0, e = 1; i &lt;= SM; ++i, e = mul(e, a))
+			if (!x.count(e))
+				x[e] = i;
+		for (ll i = 0, v = inv(pow(a, SM)); i &lt;= SM; ++i, b = mul(b, v))
+			if (x.count(b))
+				return i * SM + x[b];
+		return -1;
+	}
+	*/
+};
+</code></pre><h3 id="中国剩余定理解同余方程组">中国剩余定理解同余方程组</h3><p><a href="https://vjudge.net/solution/14375815">使用示例</a></p><pre><code class="language-cpp">ll crt(const vector&lt;pair&lt;ll, ll&gt;&gt; &amp;v) //同余方程组，x%v[i].first==v[i].second，不存在返回-1
+{
+	ll m = v[0].first, r = v[0].second, c, d, x, y, z;
+	for (int i = 1; i &lt; v.size(); ++i)
+	{
+		if (c = v[i].second - r, d = gcd(m, v[i].first, x, y), c % d)
+			return -1;
+		gcd(m / d, z = v[i].first / d, x, y), r += c / d * x % z * m, r %= m *= z;
+	}
+	return r &lt; 0 ? r + m : r;
+}
+struct Excrt
+{
+	vector&lt;ll&gt; b2, a2;
+	int n;
+	void init()
+	{
+		scanf("%d", &amp;n);
+		ll q, qq;
+		for (int i = 0; i &lt; n; i++)
+			scanf("%lld%lld", &amp;q, &amp;qq), b2.push_back(q), a2.push_back(qq);
+	}
+	ll get()
+	{
+		ll M, ans, x = 0, y = 0;
+		M = 1, ans = 0;
+		for (int i = 0; i &lt; n; i++)
+		{
+			ll a = M, b = b2[i], c = (a2[i] - ans % b + b) % b; //ax=c(mod b)
+			ll gcd = exgcd(a, b, x, y), bg = b / gcd;
+			if (c % gcd != 0)
+			{
+				return -1;
+			} //返回-1表示无解
+			x = mul(x, c / gcd, bg);
+			y = M / gcd * b;
+			ans = (x * M + ans) % y; //???k???????
+			if (ans &lt; 0)
+				ans += y;
+			M = y; //M??k?m?lcm
+		}
+		return ans;
+	}
+};
+</code></pre><h3 id="二次剩余">二次剩余</h3><pre><code class="language-cpp">struct QuadraticRes
+{
+	struct numb
+	{
+		ll x, y;
+	};
+	numb mul(const numb &amp;a, const numb &amp;b, ll p)
+	{
+		return (numb){(a.x * b.x % p + a.y * b.y % p * w % p) % p, (a.x * b.y + a.y * b.x) % p};
+	}
+	ll pow2(numb a, ll b, ll p)
+	{
+		numb ret = {1, 0}, tem = a;
+		while (b)
+		{
+			if (b &amp; 1)
+				ret = mul(ret, tem, p);
+			tem = mul(tem, tem, p), b &gt;&gt;= 1;
+		}
+		return ret.x % p;
+	}
+	ll get(ll n, ll p)
+	{
+		if (Mod(p).pow(n, p / 2) == p - 1)
+		{
+			return -1;
+		} //此时无解
+		while (1)
+		{
+			ll a = rand();
+			w = (a * a - n + p) % p;
+			if (Mod(p).pow(w, p / 2) == p - 1)
+			{
+				return pow2((numb){a, 1}, p / 2 + 1, p); //还有一个解是p减去这个值
+			}
+		}
+	}
+};
+</code></pre><h2 id="欧拉筛">欧拉筛</h2><p>欧拉函数$\phi(n)$是小于 n 的正整数中与 n 互素的数的数目。特别地，规定$\phi(1)=1$，易知 n&gt;2 时都为偶数。</p><p>欧拉函数是积性函数，即对任意素数$p,q$满足下列关系：$\phi(pq)=\phi(p)\phi(q)=(p-1)(q-1)$对任何两个互质的正整数$x, m(m\geq2)$有欧拉定理：$x^{\phi(m)}\equiv1\pmod m$当 m 为素数 p 时，此式变为费马小定理：$x^{p-1}\equiv1\pmod p$利用欧拉函数和它本身不同质因数的关系，用筛法$O(N)$预处理某个范围内所有数的欧拉函数值，并求出素数表。同时，利用计算欧拉函数过程中求出的最小素因子 m，可以实现$O(log N)$的素因数分解。</p><p>同时求莫比乌斯函数$\mu(n)$，存在<code>mu</code>中。</p><pre><code class="language-cpp">struct EulerSieve
+{
+	vector&lt;int&gt; p, m, phi, mu; //素数序列，最小素因子，欧拉函数，莫比乌斯函数
+	EulerSieve(int N) : m(N, 0), phi(N, 0), mu(N, 0)
+	{
+		phi[1] = mu[1] = 1;					 //m[1]=0,m[i]==i可判断i是素数
+		for (long long i = 2, k; i &lt; N; ++i) //防i*p[j]爆int
+		{
+			if (!m[i])
+				p.push_back(m[i] = i), phi[i] = i - 1, mu[i] = -1; //i是素数
+			for (int j = 0; j &lt; p.size() &amp;&amp; (k = i * p[j]) &lt; N; ++j)
+			{
+				phi[k] = phi[i] * p[j];
+				if ((m[k] = p[j]) == m[i])
+				{
+					mu[k] = 0;
+					break;
+				}
+				phi[k] -= phi[i];
+				mu[k] = -mu[i];
+			}
+		}
+	}
+};
+</code></pre><h3 id="直接求欧拉函数"><a href="https://vjudge.net/solution/19396361">直接求欧拉函数</a></h3><pre><code class="language-cpp">ll phi(ll n)
+{
+	ll phi = n;
+	for (ll i = 2; i * i &lt;= n; ++i)
+		if (!(n % i))
+			for (phi = phi / i * (i - 1); !(n % i);)
+				n /= i;
+	if (n &gt; 1)
+		phi = phi / n * (n - 1);
+	return phi;
+}
+</code></pre><h3 id="常见数论函数变换">常见数论函数变换</h3><p>$\sum_{d\vert n}\mu(d)=[n=1]$</p><p>$\phi(n)=\sum_{i=1}^n[\gcd(i,n)=1]=\sum_{i=1}^n\sum_{k\mid i,k\mid n}\mu(k)=\sum_{k\mid n}\frac nk\mu(k)$</p><h4 id="前缀和">前缀和</h4><p>欧拉函数前缀和$S_\phi(n)=\frac{(n+1)n}2-\sum_{d=1}^nS_\phi(\frac{n}{d})$</p><p>莫比乌斯函数前缀和$S_\mu(n)=1-\sum_{d=1}^nS_\mu(\frac{n}{d})$</p><h4 id="莫比乌斯反演">莫比乌斯反演</h4><p>若$f(n)=\sum_{d\vert n}g(d)$，则$g(n)=\sum_{d\vert n}\mu(d)f(\frac{n}{d})$</p><p>若$f(n)=\sum_{i=1}^nt(i)g(\frac{n}{i})$，则$g(n)=\sum_{i=1}^n\mu(i)t(i)f(\frac{n}{i})$（此时代$t(i)=[gcd(n,i)&gt;1]$可得上式）</p><p>举例（其中$T=kd$）：</p>\[\sum_{i=1}^n\sum_{j=1}^m\gcd(i,j)\\ =\sum_d d\sum_{i=1}^n\sum_{j=1}^m[\gcd (i,j)=d]\\ =\sum_{d}d\sum_{i=1}^{\lfloor\frac nd\rfloor}\sum_{j=1}^{\lfloor\frac md\rfloor}[\gcd (i,j)=1]\\ =\sum_{d}d\sum_{i=1}^{\lfloor\frac nd\rfloor}\sum_{j=1}^{\lfloor\frac md\rfloor}\sum_{k\mid i,k\mid j}\mu(k)\\ =\sum_d d\sum_k\mu(k)\sum_{k\mid i}^{\lfloor\frac nd\rfloor}\sum_{k\mid j}^{\lfloor\frac md\rfloor}\\ =\sum_{d}d\sum_k\mu(k)\lfloor\frac n{kd}\rfloor\lfloor\frac m{kd}\rfloor\\ =\sum_{T}\lfloor\frac nT\rfloor\lfloor\frac mT\rfloor\sum_{k\mid T}\frac Tk\mu(k)\\ =\sum_{T}\lfloor\frac nT\rfloor\lfloor\frac mT\rfloor\varphi(T)\]<p>$\varphi(T)$可以使用线性筛预处理处理，我们就可以枚举$T$求上式了，时间复杂度$O(n)$。多组数据$n,m$询问上式，时间复杂度就变成了$O(Tn)$。事实上，$\lfloor\frac{n}{T}\rfloor$是不会轻易变化的，是过了连续的一段后才发生变化的，那么我们就可以计算出这一段的结束位置，对$\varphi$函数作前缀和，就可以直接分块了，这样的时间复杂度是$O(T\sqrt{n})$的。</p><h2 id="pollardrho-大数素因子分解">PollardRho 大数素因子分解</h2><p>时间复杂度$O(N^{1/4})$，数据多的时候可考虑欧拉筛优化。</p><p>注意这里模乘法很容易爆 long long，看情况选用快速乘法。</p><pre><code class="language-cpp">struct PollardRho
+{
+	bool isPrime(ll n, int S = 12) //MillerRabin素数测试，S为测试次数，用前S个素数测一遍，S=12可保证unsigned long long范围内无错；n&lt;2请特判
+	{
+		static ll d, u, t, p[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37};
+		for (d = n - 1; !(d &amp; 1);)
+			d &gt;&gt;= 1; //未对0，1做特判！
+		Mod mo(n);
+		for (int i = 0; i &lt; S; ++i)
+		{
+			if (!(n % p[i]))
+				return n == p[i];
+			for (t = mo.pow(p[i], u = d); t != n - 1 &amp;&amp; t != 1 &amp;&amp; u != n - 1;)
+				t = mo.mul(t, t), u &lt;&lt;= 1;
+			if (t != n - 1 &amp;&amp; !(u &amp; 1))
+				return 0;
+		}
+		return 1;
+	}
+	void fac(ll n, vector&lt;ll&gt; &amp;factor)
+	{
+		/*
+		if (n &lt; e.m.size()) //欧拉筛预处理优化，可以防止很多小素数因子的情况
+		{
+			for (; n &gt; 1; n /= e.m[n])
+				factor.push_back(e.m[n]);
+			return;
+		}
+		*/
+		if (isPrime(n))
+			return factor.push_back(n);
+		Mod mo(n);
+		for (ll c = 1;; ++c)
+			for (ll i = 0, k = 1, x = rand() % (n - 1) + 1, y, p;;)
+			{
+				if (++i == k)
+					y = x, k &lt;&lt;= 1;
+				if (x = mo.add(mo.mul(x, x), c), p = __gcd(abs(x - y), n), p == n)
+					break;
+				if (p &gt; 1)
+					return fac(p, factor), fac(n / p, factor);
+			}
+	}
+};
+</code></pre><h2 id="快速变换">快速变换</h2><h3 id="蝴蝶变换雷德变换">蝴蝶变换（雷德变换）</h3><p>保存 FTT 和 FNTT 时交换的对应位置（即保存的是置换）。</p><pre><code class="language-cpp">struct Rader : vector&lt;int&gt;
+{
+	Rader(int n) : vector&lt;int&gt;(1 &lt;&lt; int(ceil(log2(n))))
+	{
+		for (int i = at(0) = 0; i &lt; size(); ++i)
+			if (at(i) = at(i &gt;&gt; 1) &gt;&gt; 1, i &amp; 1)
+				at(i) += size() &gt;&gt; 1;
+	}
+};
+</code></pre><h3 id="快速傅里叶变换">快速傅里叶变换</h3><p><a href="https://vjudge.net/solution/21912936">使用示例</a>，高精度乘法。</p><p><a href="https://vjudge.net/solution/21914340">任意模数 FFT</a></p><pre><code class="language-cpp">struct FFT : Rader
+{
+	vector&lt;complex&lt;lf&gt;&gt; w;
+	FFT(int n) : Rader(n), w(size())
+	{
+		for (int i = 0; i &lt; size(); ++i)
+			w[i] = polar(1.0, 2 * M_PI * i / size());
+	}
+	void fft(vector&lt;complex&lt;lf&gt;&gt; &amp;x) const
+	{
+		for (int i = 0; i &lt; x.size(); ++i)
+			if (i &lt; at(i))
+				std::swap(x[i], x[at(i)]);
+		for (int i = 1; i &lt; size(); i &lt;&lt;= 1)
+			for (int j = 0; j &lt; i; ++j)
+				for (int k = j; k &lt; size(); k += i &lt;&lt; 1)
+				{
+					complex&lt;lf&gt; t = w[size() / (i &lt;&lt; 1) * j] * x[k + i];
+					x[k + i] = x[k] - t, x[k] += t;
+				}
+	}
+	vector&lt;ll&gt; ask(const vector&lt;ll&gt; &amp;a, const vector&lt;ll&gt; &amp;b) const
+	{
+		vector&lt;complex&lt;lf&gt;&gt; xa(a.begin(), a.end()), xb(b.begin(), b.end());
+		xa.resize(size()), xb.resize(size()), fft(xa), fft(xb);
+		for (int i = 0; i &lt; size(); ++i)
+			xa[i] *= xb[i];
+		fft(xa);
+		vector&lt;ll&gt; ans(size());
+		for (int i = 0; i &lt; size(); ++i)
+			ans[i] = xa[(size() - i) &amp; (size() - 1)].real() / size() + 0.5;
+		return ans;
+	}
+	vector&lt;ll&gt; askMod(const vector&lt;ll&gt; &amp;a, const vector&lt;ll&gt; &amp;b, ll M) const //任意模数
+	{
+		vector&lt;complex&lt;lf&gt;&gt; e(size()), c(size());
+		for (int i = 0; i &lt; a.size(); ++i)
+			e[i].real(a[i] &amp; 0x7fff), e[i].imag(a[i] &gt;&gt; 15);
+		for (int i = 0; i &lt; b.size(); ++i)
+			c[i].real(b[i] &amp; 0x7fff), c[i].imag(b[i] &gt;&gt; 15);
+		fft(e), fft(c);
+		vector&lt;complex&lt;lf&gt;&gt; d(c);
+		for (int i = 0; i &lt; size(); ++i)
+		{
+			int fr = (size() - i) &amp; (size() - 1);
+			c[i] *= 0.5 * complex&lt;lf&gt;(e[i].X + e[fr].X, e[i].Y - e[fr].Y);
+			d[i] *= 0.5 * complex&lt;lf&gt;(e[i].Y + e[fr].Y, e[fr].X - e[i].X);
+		}
+		fft(c), fft(d);
+		vector&lt;ll&gt; ans(size());
+		for (int i = 0; i &lt; size(); ++i)
+		{
+			ll fr = (size() - i) &amp; (size() - 1),
+			   p = c[fr].X / size() + 0.5,
+			   o = c[fr].Y / size() + 0.5,
+			   x = d[fr].X / size() + 0.5,
+			   u = d[fr].Y / size() + 0.5;
+			ans[i] = (p % M + ((o + x) % M &lt;&lt; 15) + (u % M &lt;&lt; 30)) % M;
+		}
+		return ans;
+	}
+};
+</code></pre><h3 id="快速数论变换">快速数论变换</h3><p>原理和 FFT 相同，解决特殊情况下 FFT 的浮点误差，并且可以在同余系进行变换。</p><p>对于形如$m=2^nc+1$的费马素数，记其原根为 g，则旋转因子为$g^{(m-1)/n}$，满足$g^{m-1}=1$且$2^n\mid m-1$。</p><p><a href="https://vjudge.net/solution/21913390">使用示例</a></p><pre><code class="language-cpp">struct FNTT : Rader, Mod
+{
+	vector&lt;ll&gt; w;
+	FNTT(int N, ll M, ll G) : Rader(N), Mod(M), w(size(), pow(G, (M - 1) / size()))
+	{
+		for (int i = w[0] = 1; i &lt; size(); ++i)
+			w[i] = mul(w[i], w[i - 1]);
+	}
+	void fntt(vector&lt;ll&gt; &amp;x) const
+	{
+		for (int i = 0; i &lt; size(); ++i)
+			if (i &lt; at(i))
+				std::swap(x[i], x[at(i)]);
+		for (int i = 1, j; i &lt; size(); i &lt;&lt;= 1)
+			for (int j = 0; j &lt; i; ++j)
+				for (int k = j; k &lt; size(); k += i &lt;&lt; 1)
+				{
+					ll t = mul(w[size() / (i &lt;&lt; 1) * j], x[k + i]);
+					qadd(x[k + i] = x[k], M - t), qadd(x[k], t);
+				}
+	}
+	vector&lt;ll&gt; ask(vector&lt;ll&gt; a, vector&lt;ll&gt; b) const
+	{
+		a.resize(size()), b.resize(size()), fntt(a), fntt(b);
+		for (int i = 0; i &lt; size(); ++i)
+			a[i] = mul(a[i], b[i]);
+		fntt(a), reverse(a.begin() + 1, a.end());
+		ll u = inv(size());
+		for (int i = 0; i &lt; size(); ++i)
+			a[i] = mul(a[i], u);
+		return a;
+	}
+};
+</code></pre><h4 id="常见素数的原根"><a href="https://blog.csdn.net/hnust_xx/article/details/76572828">常见素数的原根</a></h4><table><thead><tr><th>r * 2 ^ k + 1<th>r<th>k<th>g，mod(r * 2 ^ k + 1)的原根<tbody><tr><td>3<td>1<td>1<td>2<tr><td>5<td>1<td>2<td>2<tr><td>17<td>1<td>4<td>3<tr><td>97<td>3<td>5<td>5<tr><td>193<td>3<td>6<td>5<tr><td>257<td>1<td>8<td>3<tr><td>7681<td>15<td>9<td>17<tr><td>12289<td>3<td>12<td>11<tr><td>40961<td>5<td>13<td>3<tr><td>65537<td>1<td>16<td>3<tr><td>786433<td>3<td>18<td>10<tr><td>5767169<td>11<td>19<td>3<tr><td>7340033<td>7<td>20<td>3<tr><td>23068673<td>11<td>21<td>3<tr><td>104857601<td>25<td>22<td>3<tr><td>167772161<td>5<td>25<td>3<tr><td>469762049<td>7<td>26<td>3<tr><td>998244353<td>119<td>23<td>3<tr><td>1004535809<td>479<td>21<td>3<tr><td>2013265921<td>15<td>27<td>31<tr><td>2281701377<td>17<td>27<td>3<tr><td>3221225473<td>3<td>30<td>5<tr><td>75161927681<td>35<td>31<td>3<tr><td>77309411329<td>9<td>33<td>7<tr><td>206158430209<td>3<td>36<td>22<tr><td>2061584302081<td>15<td>37<td>7<tr><td>2748779069441<td>5<td>39<td>3<tr><td>6597069766657<td>3<td>41<td>5<tr><td>39582418599937<td>9<td>42<td>5<tr><td>79164837199873<td>9<td>43<td>5<tr><td>263882790666241<td>15<td>44<td>7<tr><td>1231453023109121<td>35<td>45<td>3<tr><td>1337006139375617<td>19<td>46<td>3<tr><td>3799912185593857<td>27<td>47<td>5<tr><td>4222124650659841<td>15<td>48<td>19<tr><td>7881299347898369<td>7<td>50<td>6<tr><td>31525197391593473<td>7<td>52<td>3<tr><td>180143985094819841<td>5<td>55<td>6<tr><td>1945555039024054273<td>27<td>56<td>5<tr><td>4179340454199820289<td>29<td>57<td>3</table><h3 id="快速沃尔什变换">快速沃尔什变换</h3><p>如果要在同余系中进行运算，则下面代码需要修改。</p><pre><code class="language-cpp">void fwt(vector&lt;ll&gt; &amp;x, void f(ll &amp;l, ll &amp;r))
+{
+	for (int i = 1; i &lt; x.size(); i &lt;&lt;= 1)
+		for (int j = 0; j &lt; i; ++j)
+			for (int k = j; k &lt; x.size(); k += i &lt;&lt; 1)
+				f(x[k], x[k + i]);
+}
+void fwt(ll *b, ll *e, void f(ll &amp;l, ll &amp;r)) //再给一个递归二分的代码便于理解
+{
+	if (e - b &lt; 2)
+		return;
+	ll *m = b + (e - b) / 2;
+	fwt(b, m, f), fwt(m, e, f);
+	while (m &lt; e)
+		f(*(b++), *(m++));
+}
+</code></pre><h4 id="and">AND</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r) { l += r; }
+void utf(ll &amp;l, ll &amp;r) { l -= r; }
+</code></pre><h4 id="or">OR</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r) { r += l; }
+void utf(ll &amp;l, ll &amp;r) { r -= l; }
+</code></pre><h4 id="xor">XOR</h4><pre><code class="language-cpp">void tf(ll &amp;l, ll &amp;r)
+{
+	ll tl = l + r, tr = l - r;
+	l = tl, r = tr;
+}
+void utf(ll &amp;l, ll &amp;r) { tf(l, r), l &gt;&gt;= 1, r &gt;&gt;= 1; }
+</code></pre><h4 id="xnornandnor">XNOR、NAND、NOR</h4><p>直接用异或运算、与运算、或运算的方法求出来，然后将互反的两位交换即可。</p><h2 id="pell-方程">Pell 方程</h2><p>形如$x^2-Dy^2=1$（D 为任意正整数）的方程称为佩尔方程，必有最小正整数解$(x_0,y_0)$，用</p><p>$x_n=x_0x_{n-1}+Dy_0y_{n-1},y_n=y_0x_{n-1}+x_0y_{n-1}$</p><p>可递推方程的第 n 小整数解（可用矩阵快速幂求），同时还有</p><p>$2x_0x_n=x_{n-1}+x_{n+1},2x_0y_n=y_{n-1}+y_{n+1}$</p><h2 id="bertrand-猜想">Bertrand 猜想</h2><p>$\forall n&gt;3,\exist n&lt;p&lt;n\times 2$其中 n 为整数，p 为质数。</p><h2 id="威尔逊定理">威尔逊定理</h2><p>当且仅当 p 为素数时：$(p-1)!\equiv -1\pmod p$，</p><h2 id="jacobis-four-square-theorem">Jacobi’s Four Square Theorem</h2><p>设$a^2+b^2+c^2+d^2=n$的自然数解个数为$r4(n)$，$d(n)$为$n$的约数和，由 Jacobi’s Four Square Theorem 可知，若$n$是奇数，则$r4(n)=8d(n)$，否则$r4(n)=24d(k)$，$k$是$n$去除所有$2$后的结果。</p></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>

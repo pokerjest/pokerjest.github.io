@@ -1,0 +1,825 @@
+<!DOCTYPE html><html><head><title> ACM-ICPC 2018 焦作赛区网络预赛 &middot; wu-kan</title><!-- Begin Jekyll SEO tag v2.7.1 --><meta name="generator" content="Jekyll v3.9.0" /><meta property="og:title" content="ACM-ICPC 2018 焦作赛区网络预赛" /><meta property="og:locale" content="en_US" /><meta name="description" content="Magic Mirror" /><meta property="og:description" content="Magic Mirror" /><link rel="canonical" href="http://localhost:4000/2018/09/19/ACM-ICPC-2018-%E7%84%A6%E4%BD%9C%E8%B5%9B%E5%8C%BA%E7%BD%91%E7%BB%9C%E9%A2%84%E8%B5%9B/" /><meta property="og:url" content="http://localhost:4000/2018/09/19/ACM-ICPC-2018-%E7%84%A6%E4%BD%9C%E8%B5%9B%E5%8C%BA%E7%BD%91%E7%BB%9C%E9%A2%84%E8%B5%9B/" /><meta property="og:site_name" content="wu-kan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2018-09-19T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="ACM-ICPC 2018 焦作赛区网络预赛" /><meta name="google-site-verification" content="YIKi1rBnyUaS-DMYiluseI5kZzTwjCkTFmKkSkMZDJk" /><meta name="baidu-site-verification" content="szbTSfUGAB" /> <script type="application/ld+json"> {"@type":"BlogPosting","url":"http://localhost:4000/2018/09/19/ACM-ICPC-2018-%E7%84%A6%E4%BD%9C%E8%B5%9B%E5%8C%BA%E7%BD%91%E7%BB%9C%E9%A2%84%E8%B5%9B/","datePublished":"2018-09-19T00:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/09/19/ACM-ICPC-2018-%E7%84%A6%E4%BD%9C%E8%B5%9B%E5%8C%BA%E7%BD%91%E7%BB%9C%E9%A2%84%E8%B5%9B/"},"headline":"ACM-ICPC 2018 焦作赛区网络预赛","description":"Magic Mirror","dateModified":"2018-09-19T00:00:00+08:00","@context":"https://schema.org"}</script> <!-- End Jekyll SEO tag --><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1" /><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="alternate" href="/feed.xml" title="RSS" type="application/rss+xml" /><link rel="apple-touch-icon-precomposed" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" /><link rel="shortcut icon" href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/gh/poole/lanyon@v1.1.0/public/css/poole.min.css,gh/poole/lanyon@v1.1.0/public/css/lanyon.min.css,gh/poole/lanyon@v1.1.0/public/css/syntax.min.css" /> <script async="async" src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Dreamer-Paul/Pio@2.4/static/pio.min.css" /><style> @media only print { .pio-container { display: none; } }</style><script async="async" src="https://cdn.jsdelivr.net/combine/gh/Dreamer-Paul/Pio@2.4/static/l2d.min.js,gh/Dreamer-Paul/Pio@2.4/static/pio.min.js" onload=' let pio_container = document.createElement("div"); pio_container.classList.add("pio-container"); pio_container.classList.add("right"); pio_container.style.bottom = "-2rem"; pio_container.style.zIndex = "1"; document.body.insertAdjacentElement("beforeend", pio_container); let pio_action = document.createElement("div"); pio_action.classList.add("pio-action"); pio_container.insertAdjacentElement("beforeend", pio_action); let pio_canvas = document.createElement("canvas"); pio_canvas.id = "pio"; pio_canvas.style.width = "14rem"; pio_canvas.width = "600"; pio_canvas.height = "800"; pio_container.insertAdjacentElement("beforeend", pio_canvas); let pio = new Paul_Pio({ "mode": "fixed", "hidden": true, "night": "for(let i=7; i<16; ++i) if(document.body.classList.contains(`theme-base-0`+i.toString(16))) { document.body.classList.remove(`theme-base-0`+i.toString(16)); document.body.classList.add(`theme-base-0`+((i-6)%9+7).toString(16)); break; }", "content": { "link": ["https:\/\/jekyll-theme-WuK.wu-kan.cn"], "skin": ["要换成我的朋友吗？", "让她放个假吧~"], "hidden": true, "custom": [{ "selector": "a", "type": "link", }, { "selector": ".sidebar-toggle", "text": "打开侧边栏叭~" }, { "selector": ".effect-info", "text": "哇，你发现了什么！" }, { "selector": "#sidebar-search-input", "text": "想搜索什么呢？很多干货哦！" }, { "selector": "#toc", "text": "这是目录~" }, { "selector": ".page-title", "text": "这是标题~" }, { "selector": ".v", "text": "评论没有审核，要对自己的发言负责哦~" }] }, "model": [ "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/33/model.2018.bls-winter.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/platelet-2/model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/xiaomai/xiaomai.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/mashiro/seifuku.model.json", "https:\/\/cdn.jsdelivr.net/gh/imuncle/live2d/model/Violet/14.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/Kobayaxi/Kobayaxi.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/mikoto/mikoto.model.json", "https:\/\/cdn.jsdelivr.net/gh/xiaoski/live2d_models_collection/uiharu/uiharu.model.json"] });' ></script> <script src='https://zz.bdstatic.com/linksubmit/push.js' async="async" ></script><style> .wrap { transition-property: width,background-size,transform; transition-duration: .3s; transition-timing-function: ease-in-out; min-height: 100%; display: inline-block; background-size: 100% auto; background-position: 0% 0%; background-repeat: no-repeat; background-attachment: fixed; background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/74559485_p1.webp); } @media (min-aspect-ratio: 2400/1850) { .wrap { background-image: url(https://Mizuno-Ai.wu-kan.cn/pixiv/71932901_p0.webp); } } .sidebar-overlay #sidebar-checkbox:checked ~ .wrap { width: calc(100% - 14rem); background-size: calc(100% - 14rem) auto; transform: translateX(14rem); } .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .wrap { transform: translateX(0); }</style><style> .sidebar, html, h1, h2, h3, h4, h5, h6 { font-family: "Courier New", "Courier", "Hiragino Sans GB", "WenQuanYi Micro Hei", "Microsoft YaHei Light", "Microsoft JhengHei", monospace; }</style><style> td, th { padding: 0px; border: 0px; } table { border: 0px; } table tbody { display: block; overflow: scroll; } table thead, tbody tr { display: table; table-layout: fixed; width: 100%; }</style><style> img { display: inline-block; margin: 0; }</style><style> ::-webkit-scrollbar { width: 3px; height: 3px; } ::-webkit-scrollbar-thumb { background-image: linear-gradient(45deg, Cyan 0%, Magenta 50%, Yellow 100%); }</style><style> ::selection { color: White; background: Black; }</style><body class="theme-base-0d layout-reverse sidebar-overlay"> <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular styles, `#sidebar-checkbox` for behavior. --> <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" /> <!-- Toggleable sidebar --><div class="sidebar" id="sidebar"><div class="sidebar-item"><div class="effect effect-right_to_left"> <img class="effect-img" src="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320" alt="img" /><div class="effect-info"> SYSU超算17级在读<br/> 水野爱<br/> HPC<br/> 田宫例四驱车<br/> <a href="mailto:i@wu-kan.cn"> <i class="fas fa-envelope"></i> </a> <a href="https://github.com/wu-kan"> <i class="fab fa-github"></i> </a> <a href="https://codeforces.com/profile/WuK"> <i class="fas fa-chart-bar"></i> </a> <a href="https://vjudge.net/user/WuK"> <i class="fas fa-smile"></i> </a> <a href="https://www.zhihu.com/people/wu.kan/activities"> <i class="fab fa-zhihu"></i> </a> <iframe src="https://music.163.com/outchain/player?type=0&id=155059595&auto=0&height=32" width=100% height=52 frameborder="no" border="0" marginwidth="0" marginheight="0" ></iframe></div></div></div><nav class="sidebar-nav"> <a class="sidebar-nav-item" href="/"> <i class="fas fa-home fa-fw"></i> 首页 </a> <a class="sidebar-nav-item" href="/comments/"> <i class="fas fa-comments fa-fw"></i> 留言 </a> <a class="sidebar-nav-item" href="/tags/"> <i class="fas fa-tags fa-fw"></i> 标签 </a> <a class="sidebar-nav-item" href="/archive/"> <i class="fas fa-archive fa-fw"></i> 归档 </a> <a class="sidebar-nav-item" href="/merger/"> <i class="fas fa-coffee fa-fw"></i> 打赏 </a></nav><div class="sidebar-item"><style> #sidebar-search-input { background: none; border: none; color: White; width: 100%; } #sidebar-search-results-container { overflow: auto auto; max-height: 66.6vh; }</style><input id="sidebar-search-input" placeholder="搜索博文" /><ol id="sidebar-search-results-container" ></ol><script src='https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.9.1' async='async' onload=' SimpleJekyllSearch({ json: "/assets/simple-jekyll-search/search.json", searchInput: document.getElementById("sidebar-search-input"), resultsContainer: document.getElementById("sidebar-search-results-container"), searchResultTemplate: `<li><a href="{url}">{title}</a>`, limit: 999, fuzzy: true })' ></script><style> #toc { overflow: auto auto; max-height: 66.6vh; }</style><ol id="toc"><li><a href="#magic-mirror">Magic Mirror</a><li><a href="#mathematical-curse">Mathematical Curse</a><li><a href="#password">Password</a><li><a href="#sequence">Sequence</a><li><a href="#jiu-yuan-wants-to-eat">Jiu Yuan Wants to Eat</a><li><a href="#modular-production-line">Modular Production Line</a><li><a href="#give-candies">Give Candies</a><li><a href="#string-and-times">String and Times</a><li><a href="#save-the-room">Save the Room</a><li><a href="#participate-in-e-sports">Participate in E-sports</a><li><a href="#transport-ship">Transport Ship</a><li><a href="#poor-god-water">Poor God Water</a></ol><style> .sidebar-checkbox { display: none; } .sidebar-toggle { position: fixed; }</style><style> .sidebar { overflow: scroll; min-height: 101%; }</style><style> .effect { margin: 1rem; perspective: 900px; } .effect-info { text-align: center; position: absolute; top: 0; transform-style: preserve-3d; } .effect-img { z-index: 11; width: 100%; height: 100%; position: relative; transition: all 0.5s ease-in-out; } .effect-img:before { position: absolute; display: block; } .effect-right_to_left .effect-img { transform-origin: 0% 50%; } .effect-right_to_left:hover .effect-img { transform: rotate3d(0, 1, 0, -180deg); }</style><div> <i class="fas fa-cog fa-spin fa-fw"></i> <span id="run_time_day"> <i class="fas fa-spinner fa-pulse"></i> </span>天 <span id="run_time_hour"> <i class="fas fa-spinner fa-pulse"></i> </span>时 <span id="run_time_minute"> <i class="fas fa-spinner fa-pulse"></i> </span>分 <span id="run_time_second"> <i class="fas fa-spinner fa-pulse"></i> </span>秒 <script> setInterval(function (d,h,m,s,b) { function setzero(i) { return i < 10 ? "0" + i : i; } let BirthDay = new Date(b); let today = new Date(); let timeold = (today.getTime() - BirthDay.getTime()); let sectimeold = timeold / 1000; let secondsold = Math.floor(sectimeold); let msPerDay = 24 * 60 * 60 * 1000; let e_daysold = timeold / msPerDay; let daysold = Math.floor(e_daysold); let e_hrsold = (e_daysold - daysold) * 24; let hrsold = Math.floor(e_hrsold); let e_minsold = (e_hrsold - hrsold) * 60; let minsold = Math.floor((e_hrsold - hrsold) * 60); let seconds = Math.floor((e_minsold - minsold) * 60); d.textContent = daysold; h.textContent = setzero(hrsold); m.textContent = setzero(minsold); s.textContent = setzero(seconds); }, 1000, document.getElementById("run_time_day"), document.getElementById("run_time_hour"), document.getElementById("run_time_minute"), document.getElementById("run_time_second"), "10/04/2017 11:03:56")// 这是我第一篇CSDN博客的时间 </script></div><div><div> <i class="fas fa-eye fa-fw"></i> <span id="busuanzi_value_page_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>次</div><div> <i class="fas fa-paw fa-fw"></i> <span id="busuanzi_value_site_pv"> <i class="fas fa-spinner fa-pulse"></i> </span>枚</div><div> <i class="fas fa-user-friends fa-fw"></i> <span id="busuanzi_value_site_uv"> <i class="fas fa-spinner fa-pulse"></i> </span>人</div><script src='https://cdn.jsdelivr.net/npm/busuanzi@2.3.0' async='async' ></script></div><div> <i class="fas fa-thumbs-up fa-fw"></i> <a href="https://jekyll-theme-WuK.wu-kan.cn"> jekyll-theme-WuK </a></div><div> <i class="fas fa-copyright fa-fw"></i> 2017-2021 WuK</div><div> <i class="fas fa-info-circle fa-fw"></i> <a href="http://beian.miit.gov.cn"> 粤ICP备 20024947号 </a></div><div> <img src="https://i.loli.net/2021/03/17/Y47tDZTrcy2xwRa.png" class="fa-fw"></img> <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407"> 皖公网安备 34070202000407号 </a></div></div></div><!-- Wrap is the content to shift when toggling the sidebar. We wrap the content to avoid any CSS collisions with our real content. --><div class="wrap"><style> @media only screen { pre { max-height: 66.6vh; overflow: auto; } }</style><style> .container { min-width: 66.6%; } @media only print { .container { min-width: 100%; } }</style><style> .container.content { padding: 2rem; box-shadow: 0 0 2rem rgba(255,255,255,0.9); background-color: rgba(255,255,255,0.9); animation-duration: 2s; animation-name: fadeIn; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }</style><div class="container content"><div class="page"><h1 class="page-title">ACM-ICPC 2018 焦作赛区网络预赛</h1><div class="post"> <span class="post-date"> <i class="fas fa-calendar-day fa-fw"></i> 19 Sep 2018 <i class="fas fa-file-word fa-fw"></i> 17455字 <i class="fas fa-clock fa-fw"></i> 59分 <br/> <i class="fas fa-coffee fa-fw"></i> <a href="/merger/">如果这篇博客帮助到你，可以请我喝一杯咖啡~</a> <br/> <i class="fab fa-creative-commons-by fa-fw"></i> <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="license"> CC BY 4.0 </a> （除特别声明或转载文章外） </span><h2 id="magic-mirror"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2011">Magic Mirror</a></h2><pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+int T;
+char s[20], a[20] = "JESSIE", b[20] = "jessie";
+bool o;
+int main()
+{
+	scanf("%d", &amp;T);
+	while (T--)
+	{
+		scanf("%s", s);
+		if (strlen(s) != 6)
+		{
+			printf("Dare you say that again?\n");
+			continue;
+		}
+		o = true;
+		for (int i = 0; i &lt; 6; i++)
+			if ((s[i] != a[i]) &amp;&amp; (s[i] != b[i]))
+			{
+				o = false;
+				break;
+			}
+		if (o)
+			printf("Good guy!\n");
+		else
+			printf("Dare you say that again?\n");
+	}
+}
+</code></pre><h2 id="mathematical-curse"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2012">Mathematical Curse</a></h2><pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int t, n, m, k;
+long long a[1010];
+char s[10];
+long long mx[1010][10], mn[1010][10];
+int main()
+{
+	scanf("%d", &amp;t);
+	while (t--)
+	{
+		scanf("%d%d%d", &amp;n, &amp;m, &amp;k);
+		for (int i = 1; i &lt;= n; i++)
+			scanf("%lld", &amp;a[i]);
+		scanf("%s", s);
+		memset(mx, 0, sizeof(mx));
+		memset(mn, 0, sizeof(mn));
+		mx[0][0] = mn[0][0] = k;
+		for (int i = 1; i &lt;= n; i++)
+			for (int j = 1; (j &lt;= m) &amp;&amp; (j &lt;= i); j++)
+			{
+				mx[i][0] = mn[i][0] = k;
+				if (s[j - 1] == '+')
+					mx[i][j] = mx[i - 1][j - 1] + a[i], mn[i][j] = mn[i - 1][j - 1] + a[i];
+				else if (s[j - 1] == '-')
+					mx[i][j] = mx[i - 1][j - 1] - a[i], mn[i][j] = mn[i - 1][j - 1] - a[i];
+				else if (s[j - 1] == '*')
+				{
+					if (a[i] &gt;= 0)
+						mx[i][j] = mx[i - 1][j - 1] * a[i], mn[i][j] = mn[i - 1][j - 1] * a[i];
+					else
+						mx[i][j] = mn[i - 1][j - 1] * a[i], mn[i][j] = mx[i - 1][j - 1] * a[i];
+				}
+				else
+				{
+					if (a[i] &gt;= 0)
+						mx[i][j] = mx[i - 1][j - 1] / a[i], mn[i][j] = mn[i - 1][j - 1] / a[i];
+					else
+						mx[i][j] = mn[i - 1][j - 1] / a[i], mn[i][j] = mx[i - 1][j - 1] / a[i];
+				}
+				if (i &gt; j)
+					mx[i][j] = max(mx[i][j], mx[i - 1][j]), mn[i][j] = min(mn[i][j], mn[i - 1][j]);
+			}
+		printf("%lld\n", mx[n][m]);
+	}
+}
+</code></pre><h2 id="password"><a href="https://nanti.jisuanke.com/t/31712">Password</a></h2><pre><code class="language-cpp">
+</code></pre><h2 id="sequence"><a href="https://nanti.jisuanke.com/t/31713">Sequence</a></h2><pre><code class="language-cpp">
+</code></pre><h2 id="jiu-yuan-wants-to-eat"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2015">Jiu Yuan Wants to Eat</a></h2><p>链剖+双标记维护区间和，区间取反操作等价于区间乘 <code>-1</code> 后区间加 <code>-1</code> 。 时限卡的有点紧，线段树用 vector 建的时候卡时限 2832ms/3000ms，改成数组也要跑 2448ms/3000ms。</p><pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+using namespace std;
+typedef unsigned long long ll;
+const int N = 1e5 + 9;
+struct Node
+{
+	int l, r;
+	ll mul, add, sum;
+	void upd(ll m, ll a)
+	{
+		mul *= m;
+		add = add * m + a;
+		sum = sum * m + a * (r - l + 1);
+	}
+	void up(const Node &amp;lc, const Node &amp;rc) { sum = lc.sum + rc.sum; }
+	void down(Node &amp;lc, Node &amp;rc) { lc.upd(mul, add), rc.upd(mul, add), mul = 1, add = 0; }
+} v[N &lt;&lt; 2];
+struct SegmentTree
+{
+	SegmentTree(int l, int r) { build(l, r); }
+	void build(int l, int r, int rt = 1)
+	{
+		v[rt] = {l, r};
+		if (l == r)
+			return;
+		int m = v[rt].r + v[rt].l &gt;&gt; 1;
+		build(l, m, rt &lt;&lt; 1), build(m + 1, r, rt &lt;&lt; 1 | 1), v[rt].up(v[rt &lt;&lt; 1], v[rt &lt;&lt; 1 | 1]);
+	}
+	void upd(int l, int r, ll mul, ll add, int rt = 1)
+	{
+		if (l &lt;= v[rt].l &amp;&amp; v[rt].r &lt;= r)
+			return v[rt].upd(mul, add);
+		v[rt].down(v[rt &lt;&lt; 1], v[rt &lt;&lt; 1 | 1]);
+		int m = v[rt].r + v[rt].l &gt;&gt; 1;
+		if (m &gt;= r)
+			upd(l, r, mul, add, rt &lt;&lt; 1);
+		else if (m &lt; l)
+			upd(l, r, mul, add, rt &lt;&lt; 1 | 1);
+		else
+			upd(l, m, mul, add, rt &lt;&lt; 1), upd(m + 1, r, mul, add, rt &lt;&lt; 1 | 1);
+		v[rt].up(v[rt &lt;&lt; 1], v[rt &lt;&lt; 1 | 1]);
+	}
+	Node ask(int l, int r, int rt = 1)
+	{
+		if (l &lt;= v[rt].l &amp;&amp; v[rt].r &lt;= r)
+			return v[rt];
+		v[rt].down(v[rt &lt;&lt; 1], v[rt &lt;&lt; 1 | 1]);
+		int m = v[rt].l + v[rt].r &gt;&gt; 1;
+		if (m &gt;= r)
+			return ask(l, r, rt &lt;&lt; 1);
+		if (m &lt; l)
+			return ask(l, r, rt &lt;&lt; 1 | 1);
+		return v[0].up(ask(l, m, rt &lt;&lt; 1), ask(m + 1, r, rt &lt;&lt; 1 | 1)), v[0];
+	}
+};
+struct Graph
+{
+	struct Vertex
+	{
+		vector&lt;int&gt; o, i;		//相关出边和入边编号
+		int siz, dep, top, dfn; //树链剖分中使用，依次代表子树节点数、深度、所在链的顶端节点、dfs序
+	};
+	typedef pair&lt;int, int&gt; Edge;
+	vector&lt;Vertex&gt; v; //点集
+	vector&lt;Edge&gt; e;	  //边集
+	Graph(int n) : v(n) {}
+	void add(const Edge &amp;ed)
+	{
+		v[ed.first].o.push_back(e.size());
+		v[ed.second].i.push_back(e.size());
+		e.push_back(ed);
+	}
+	int ch(int u, int i = 0) { return e[v[u].o[i]].second; } //u的第i个孩子节点
+	int fa(int u, int i = 0) { return e[v[u].i[i]].first; }	 //u的第i个父节点
+};
+struct Diagram : Graph
+{
+	SegmentTree data; //暂用树状数组作为默认数据结构
+	Diagram(const Graph &amp;g, int root) : Graph(g.v.size()), data(0, g.v.size() - 1)
+	{
+		build(root, g);
+		int cnt = v[root].dfn = v[root].dep = 1;
+		dfs(v[root].top = root, cnt);
+	}
+	void build(int u, const Graph &amp;g) //无向图dfs建树，且重边在最前，u为根节点
+	{
+		v[u].siz = 1;
+		for (int i = 0, k, to; i &lt; g.v[u].o.size(); ++i)
+			if (k = g.v[u].o[i], to = g.e[k].second, !v[to].siz) //没访问过的点siz默认0
+			{
+				build(to, g);
+				v[u].siz += v[to].siz;
+				Graph::add(g.e[k]);
+				if (v[ch(u)].siz &lt; v[to].siz) //重边移到最前
+					swap(v[u].o.front(), v[u].o.back());
+			}
+	}
+	void dfs(int u, int &amp;cnt)
+	{
+		for (int i = 0, to; i &lt; v[u].o.size(); ++i)
+		{
+			v[to = ch(u, i)].dfn = ++cnt;
+			v[to].top = i ? to : v[u].top;
+			v[to].dep = v[u].dep + 1;
+			dfs(to, cnt);
+		}
+	}
+	Node ask(int x, int y)
+	{
+		Node ans;
+		ans.sum = 0;
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			ans.up(ans, data.ask(v[v[x].top].dfn, v[x].dfn));
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		return ans.up(ans, data.ask(v[y].dfn, v[x].dfn)), ans;
+	}
+	void upd(int x, int y, ll mul, ll add)
+	{
+		for (; v[x].top != v[y].top; x = fa(v[x].top))
+		{
+			if (v[v[x].top].dep &lt; v[v[y].top].dep)
+				swap(x, y);
+			data.upd(v[v[x].top].dfn, v[x].dfn, mul, add);
+		}
+		if (v[x].dep &lt; v[y].dep)
+			swap(x, y);
+		data.upd(v[y].dfn, v[x].dfn, mul, add);
+	}
+};
+int main()
+{
+	for (int n; ~scanf("%d", &amp;n);)
+	{
+		Graph g(n + 1);
+		for (int i = 2, b; i &lt;= n; ++i)
+			scanf("%d", &amp;b), g.add({b, i});
+		Diagram d(g, 1);
+		scanf("%d", &amp;n);
+		for (int i = 0, u, v; i &lt; n; ++i)
+		{
+			ll x;
+			scanf("%llu%d%d", &amp;x, &amp;u, &amp;v);
+			if (x == 1)
+				scanf("%llu", &amp;x), d.upd(u, v, x, 0);
+			else if (x == 2)
+				scanf("%llu", &amp;x), d.upd(u, v, 1, x);
+			else if (x == 3)
+				d.upd(u, v, -1, -1);
+			else
+				printf("%llu\n", d.ask(u, v).sum);
+		}
+	}
+}
+</code></pre><h2 id="modular-production-line"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2016">Modular Production Line</a></h2><pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;queue&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+typedef long long ll;
+const ll N = 100009, NPOS = -1, INF = 1e18;
+struct Ranker : vector&lt;ll&gt;
+{
+	void init()
+	{
+		sort(begin(), end()), resize(unique(begin(), end()) - begin());
+	}
+	int ask(ll x) const
+	{
+		return lower_bound(begin(), end(), x) - begin();
+	}
+};
+struct Graph
+{
+	struct Vertex
+	{
+		vector&lt;int&gt; a /*,b*/; //相关出边和入边编号
+							  //int siz,dep,top,dfn;//树链剖分中使用，依次代表子树节点数、深度、所在链的顶端节点、dfs序
+	};
+	struct Edge
+	{
+		int from, to;
+		ll dist, cap; //边长、容量，图论算法使用
+	};
+	vector&lt;Vertex&gt; v; //点集
+	vector&lt;Edge&gt; e;	  //边集
+	Graph(int n) : v(n) {}
+	void add(const Edge &amp;ed)
+	{
+		if (ed.from == ed.to)
+			return; //如果有需要请拆点
+		v[ed.from].a.push_back(e.size());
+		//v[ed.to].b.push_back(e.size());
+		e.push_back(ed);
+	}
+};
+struct EdmondKarp : Graph
+{
+	ll flow, cost;
+	vector&lt;ll&gt; f;
+	EdmondKarp(int n) : Graph(n) {}
+	void add(Edge ed)
+	{
+		Graph::add(ed);
+		swap(ed.from, ed.to), ed.cap = 0, ed.dist *= -1;
+		Graph::add(ed);
+	}
+	void ask(int s, int t)
+	{
+		vector&lt;int&gt; p(v.size(), NPOS);
+		for (f.assign(e.size(), flow = cost = 0);;)
+		{
+			vector&lt;ll&gt; d(v.size(), INF);
+			vector&lt;int&gt; flag(v.size(), d[s] = 0);
+			for (deque&lt;int&gt; q(flag[s] = 1, s); !q.empty(); q.pop_front())
+				for (int u = q.front(), i = flag[u] = 0, k, to; i &lt; v[u].a.size(); ++i)
+					if (k = v[u].a[i], to = e[k].to,
+						e[k].cap &gt; f[k] &amp;&amp; d[to] &gt; d[u] + e[k].dist)
+					{
+						d[to] = d[u] + e[k].dist, p[to] = k;
+						if (!flag[to])
+							q.push_back(to), flag[to] = 1;
+					}
+			if (d[t] == INF)
+				return;
+			ll _f = INF;
+			for (int u = t; u != s; u = e[p[u]].from)
+				_f = min(_f, e[p[u]].cap - f[p[u]]);
+			for (int u = t; u != s; u = e[p[u]].from)
+				cost += _f * e[p[u]].dist, f[p[u]] += _f, f[p[u] ^ 1] -= _f;
+			flow += _f;
+		}
+	}
+};
+int t, n, m, k, x[N], y[N], w[N];
+int main()
+{
+	for (scanf("%d", &amp;t); t--;)
+	{
+		Ranker rk;
+		scanf("%d%d%d", &amp;n, &amp;k, &amp;m);
+		for (int i = 0; i &lt; m; ++i)
+		{
+			scanf("%d%d%d", &amp;x[i], &amp;y[i], &amp;w[i]);
+			rk.push_back(x[i]);
+			rk.push_back(++y[i]);
+		}
+		rk.init();
+		EdmondKarp g(rk.size() + 2);
+		for (int i = 0; i &lt; rk.size(); ++i)
+			g.add({i, i + 1, 0, k});
+		for (int i = 0; i &lt; m; ++i)
+			g.add({rk.ask(x[i]), rk.ask(y[i]), -w[i], 1});
+		g.add({rk.size() + 1, 0, 0, k});
+		g.ask(rk.size() + 1, rk.size());
+		printf("%lld\n", -g.cost);
+	}
+}
+</code></pre><h2 id="give-candies"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2017">Give Candies</a></h2><p>答案是$2^{n-2}$，用费马小定理把指数对 M-1 取模后进行运算避免更多的高精度运算。</p><pre><code class="language-c">#include &lt;stdio.h&gt;
+#define mul(a, b, c) (1LL * (a) * (b) % (c))
+typedef int ll;
+const ll M = 1e9 + 7;
+ll pow(ll a, ll b, ll m)
+{
+	ll r = 1;
+	for (a %= m; b; b &gt;&gt;= 1, a = mul(a, a, m))
+		if (b &amp; 1)
+			r = mul(r, a, m);
+	return r;
+}
+char s[100009];
+int t, n;
+int main()
+{
+	for (scanf("%d", &amp;t); t--;)
+	{
+		scanf("%s", s);
+		for (int i = n = 0; s[i]; ++i)
+			n = mul(n, 10, M - 1) + s[i] - '0';
+		printf("%d\n", pow(2, n + M - 2, M));
+	}
+}
+</code></pre><h2 id="string-and-times"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2018">String and Times</a></h2><p>拉一个后缀数组的板子跑掉了。</p><pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+struct SufArr
+{
+	vector&lt;int&gt; sa, rk, h;
+	SufArr(const vector&lt;int&gt; &amp;s, int m) : sa(s.size(), 0), rk(s), h(s.size(), 0)
+	{
+		vector&lt;int&gt; cnt(s.size() + m, 0);
+		for (int i = 0; i &lt; s.size(); ++i)
+			++cnt[rk[i]];
+		for (int i = 1; i &lt; m; ++i)
+			cnt[i] += cnt[i - 1];
+		for (int i = 0; i &lt; s.size(); ++i)
+			sa[--cnt[rk[i]]] = i;
+		for (int k = 1, j = 0; k &lt;= s.size() &amp;&amp; j &lt; s.size() - 1; k &lt;&lt;= 1)
+		{
+			for (int i = 0; i &lt; s.size(); ++i)
+			{
+				if (j = sa[i] - k, j &lt; 0)
+					j += s.size();
+				h[cnt[rk[j]]++] = j;
+			}
+			cnt[0] = sa[h[0]] = j = 0;
+			for (int i = 1; i &lt; s.size(); ++i)
+			{
+				if (rk[h[i]] != rk[h[i - 1]] || rk[h[i] + k] != rk[h[i - 1] + k])
+					cnt[++j] = i;
+				sa[h[i]] = j;
+			}
+			swap(rk, sa), swap(sa, h);
+		}
+		for (int i = 0, k = 0, j = rk[0]; i &lt; s.size() - 1; ++i, ++k)
+			for (; ~k &amp;&amp; s[i] != s[sa[j - 1] + k]; j = rk[sa[j] + 1], --k)
+				h[j] = k;
+	}
+};
+struct SparseTable
+{
+	typedef int ll;
+	vector&lt;vector&lt;ll&gt;&gt; f;
+	SparseTable(const vector&lt;ll&gt; &amp;a) : f(log2(a.size()) + 1, a)
+	{
+		for (int k = 0; k + 1 &lt; f.size(); ++k)
+			for (int i = 0; i + (1 &lt;&lt; k) &lt; a.size(); ++i)
+				f[k + 1][i] = min(f[k][i], f[k][i + (1 &lt;&lt; k)]);
+	}
+	ll ask(int l, int r)
+	{
+		int k = log2(r - l + 1);
+		return min(f[k][l], f[k][r + 1 - (1 &lt;&lt; k)]);
+	}
+};
+ll cal(SufArr &amp;sa, SparseTable &amp;st, int k) //原串中至少出现k次的子串数量
+{
+	ll ans = 0;
+	if (k &gt; 1)
+		for (int l = 2, r = k; r &lt; sa.h.size(); ++l, ++r)
+			ans += max(st.ask(l, r) - sa.h[l - 1], 0);
+	else
+		for (int i = 1; i &lt; sa.h.size(); ++i)
+			ans += sa.h.size() - 1 - sa.sa[i] - sa.h[i];
+	return ans;
+}
+char s[2000009];
+int main()
+{
+	for (int a, b; ~scanf("%s%d%d", s, &amp;a, &amp;b);)
+	{
+		SufArr sa(vector&lt;int&gt;(s, s + strlen(s) + 1), 'Z' + 1);
+		SparseTable st(sa.h);
+		printf("%lld\n", cal(sa, st, a) - cal(sa, st, b + 1));
+	}
+}
+</code></pre><h2 id="save-the-room"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2019">Save the Room</a></h2><pre><code class="language-c">#include &lt;stdio.h&gt;
+int main()
+{
+	for (int a, b, c; ~scanf("%d%d%d", &amp;a, &amp;b, &amp;c);)
+		printf(a % 2 &amp;&amp; b % 2 &amp;&amp; c % 2 ? "No\n" : "Yes\n");
+}
+</code></pre><h2 id="participate-in-e-sports"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2020">Participate in E-sports</a></h2><p>交了个高精度开根号上去。</p><pre><code class="language-cpp">#include &lt;cmath&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+typedef long long ll;
+struct Wint : vector&lt;int&gt; //继承vector
+{
+	static const int width = 9, base = 1e9;
+	Wint(unsigned long long n = 0) //普通初始化，当整型数和Wint同时运算时会提升至Wint
+	{
+		for (; n; n /= base)
+			push_back(n % base);
+	}
+	explicit Wint(const string &amp;s) //字符串初始化函数，未判断字符串合法情况
+	{
+		for (int len = int(s.size() - 1) / width + 1, b, e, i = 0; i &lt; len; ++i)
+			for (e = s.size() - i * width, b = max(0, e - width), push_back(0); b != e; ++b)
+				back() = back() * 10 + s[b] - '0';
+		trim(0);
+	}
+	Wint &amp;trim(bool up = 1) //去前导0，是否需要进位，很常用的小函数，为方便返回自身
+	{
+		for (int i = 1; up &amp;&amp; i &lt; size(); ++i)
+		{
+			if ((*this)[i - 1] &lt; 0)
+				--(*this)[i], (*this)[i - 1] += base;
+			if ((*this)[i - 1] &gt;= base)
+				(*this)[i] += (*this)[i - 1] / base, (*this)[i - 1] %= base;
+		}
+		while (!empty() &amp;&amp; back() &lt;= 0)
+			pop_back();
+		for (; up &amp;&amp; !empty() &amp;&amp; back() &gt;= base; (*this)[size() - 2] %= base)
+			push_back(back() / base);
+		return *this;
+	}
+	friend istream &amp;operator&gt;&gt;(istream &amp;is, Wint &amp;n)
+	{
+		string s; //懒
+		return is &gt;&gt; s, n = Wint(s), is;
+	}
+	friend ostream &amp;operator&lt;&lt;(ostream &amp;os, const Wint &amp;n)
+	{
+		if (n.empty())
+			return os.put('0');
+		os &lt;&lt; n.back();
+		char ch = os.fill('0');
+		for (int i = n.size() - 2; ~i; --i)
+			os.width(n.width), os &lt;&lt; n[i];
+		return os.fill(ch), os;
+	}
+	friend bool operator&lt;(const Wint &amp;a, const Wint &amp;b)
+	{
+		if (a.size() != b.size())
+			return a.size() &lt; b.size();
+		for (int i = a.size() - 1; ~i; --i)
+			if (a[i] != b[i])
+				return a[i] &lt; b[i];
+		return 0;
+	}
+	friend bool operator&gt;(const Wint &amp;a, const Wint &amp;b)
+	{
+		return b &lt; a;
+	}
+	friend bool operator&lt;=(const Wint &amp;a, const Wint &amp;b)
+	{
+		return !(a &gt; b);
+	}
+	friend bool operator&gt;=(const Wint &amp;a, const Wint &amp;b)
+	{
+		return !(a &lt; b);
+	}
+	Wint &amp;operator+=(const Wint &amp;b)
+	{
+		if (size() &lt; b.size())
+			resize(b.size()); //保证有足够的位数
+		for (int i = 0; i &lt; b.size(); ++i)
+			(*this)[i] += b[i];
+		return trim(); //单独进位防自运算
+	}
+	friend Wint operator+(Wint a, const Wint &amp;b)
+	{
+		return a += b;
+	}
+	Wint &amp;operator++() //前置版本
+	{
+		return *this += 1; //懒
+	}
+	Wint operator++(int) //后置版本
+	{
+		Wint b(*this);
+		return ++*this, b;
+	}
+	Wint &amp;operator-=(const Wint &amp;b) //a&lt;b会使a变为0
+	{
+		if (size() &lt; b.size())
+			resize(b.size()); //保证有足够的位数
+		for (int i = 0; i &lt; b.size(); ++i)
+			(*this)[i] -= b[i];
+		return trim(); //单独进位防自运算
+	}
+	friend Wint operator-(Wint a, const Wint &amp;b)
+	{
+		return a -= b;
+	}
+	Wint &amp;operator--() //前置版本
+	{
+		return *this -= 1; //懒
+	}
+	Wint operator--(int) //后置版本
+	{
+		Wint b(*this);
+		return --*this, b;
+	}
+	Wint &amp;operator*=(const Wint &amp;b) //高精度乘法，常规写法
+	{
+		Wint c;
+		c.assign(size() + b.size(), 0);
+		for (int j = 0, k, l; j &lt; b.size(); ++j)
+			if (b[j]) //稀疏优化，特殊情况很有效
+				for (int i = 0; i &lt; size(); ++i)
+				{
+					unsigned long long n = (*this)[i];
+					for (n *= b[j], k = i + j; n; n /= base)
+						c[k++] += n % base;
+					for (l = i + j; c[l] &gt;= base || l + 1 &lt; k; c[l++] %= base)
+						c[l + 1] += c[l] / base;
+				}
+		return swap(c), trim(0);
+	}
+	/*
+	Wint&amp; operator*=(const Wint &amp;b)//一种效率略高但对位宽有限制的写法
+	{
+		vector&lt;unsigned long long&gt; n(size()+b.size(),0);//防爆int
+		//乘法算完后统一进位效率高，防止乘法溢出（unsigned long long范围0~1.8e19）
+		//位宽为9时size()不能超过18（十进制162位），位宽为8时size()不能超过1800（十进制14400位）等等。
+		for(int j=0; j!=b.size(); ++j)
+			if(b[j])//稀疏优化，特殊情况很有效
+				for(int i=0; i!=size(); ++i)
+					n[i+j]+=(unsigned long long)(*this)[i]*b[j];
+		for(int i=1; i&lt;n.size(); ++i)//这里用&lt;防止位数0，单独进位防自运算
+			n[i]+=n[i-1]/base,n[i-1]%=base;
+		return assign(n.begin(),n.end()),trim(0);
+	}
+	Wint&amp; operator*=(const Wint &amp;b)//fft优化乘法，注意double仅15位有效数字，调小Wint::width不超过2，计算自2*log2(base)+2*log2(len)&lt;53
+	{
+	    vector&lt;ll&gt; ax(begin(),end()),bx(b.begin(),b.end());
+	    ax=FFT(size()+b.size()).ask(ax,bx);
+	    for(int i=1; i&lt;ax.size(); ++i)
+	        ax[i]+=ax[i-1]/base,ax[i-1]%=base;
+	    return assign(ax.begin(),ax.end()),trim(0);
+	}
+	Wint&amp; operator*=(const Wint &amp;b)//ntt优化，Wint::width不超过2
+	{
+	    vector&lt;ll&gt; ax(begin(),end()),bx(b.begin(),b.end());
+	    ax=FNTT(size()+b.size(),(7&lt;&lt;26)+1,3).ask(ax,bx);
+	    for(int i=1; i&lt;ax.size(); ++i)
+	        ax[i]+=ax[i-1]/base,ax[i-1]%=base;
+	    return assign(ax.begin(),ax.end()),trim(0);
+	}
+	*/
+	friend Wint operator*(Wint a, const Wint &amp;b)
+	{
+		return a *= b;
+	}
+	Wint &amp;operator/=(Wint b)
+	{
+		Wint r, c, d = b.base / (b.back() + 1);
+		*this *= d, b *= d, c.assign(size(), 0);
+		for (int i = size() - 1; ~i; --i)
+		{
+			r.insert(r.begin(), (*this)[i]);
+			unsigned long long s = 0;
+			for (int j = b.size(); j + 1 &gt;= b.size(); --j) //b.size()==0肯定第一行就出问题的
+				s = s * b.base + (j &lt; r.size() ? r[j] : 0);
+			for (d = c[i] = s / b.back(), d *= b; r &lt; d; r += b)
+				--c[i];
+			r -= d;
+		}
+		return swap(c), trim(0); //r为加倍后的余数，可通过高精度除低精度得到真正余数，此处略
+	}
+	friend Wint operator/(Wint a, const Wint &amp;b)
+	{
+		return a /= b;
+	}
+	Wint &amp;operator%=(const Wint &amp;b)
+	{
+		return *this -= *this / b * b;
+	}
+	friend Wint operator%(Wint a, const Wint &amp;b)
+	{
+		return a %= b;
+	}
+	//开平方，改自ZJU模板
+	bool cmp(long long c, int d, const Wint &amp;b) const
+	{
+		if ((int)b.size() - (int)size() &lt; d + 1 &amp;&amp; c)
+			return 1;
+		long long t = 0;
+		for (int i = b.size() - 1, lo = -(base &lt;&lt; 1); lo &lt;= t &amp;&amp; t &lt;= 0 &amp;&amp; ~i; --i)
+			if (t = t * base - b[i], 0 &lt;= i - d - 1 &amp;&amp; i - d - 1 &lt; size())
+				t += (*this)[i - d - 1] * c;
+		return t &gt; 0;
+	}
+	Wint &amp;sub(const Wint &amp;b, long long k, int d)
+	{
+		int l = b.size() + d;
+		for (int i = d + 1; i &lt;= l; ++i)
+		{
+			long long tmp = (*this)[i] - k * b[i - d - 1];
+			if (tmp &lt; 0)
+			{
+				(*this)[i + 1] += (tmp - base + 1) / base;
+				(*this)[i] = tmp - (tmp - base + 1) / base * base;
+			}
+			else
+				(*this)[i] = tmp;
+		}
+		for (int i = l + 1; i &lt; size() &amp;&amp; (*this)[i] &lt; 0; ++i)
+		{
+			(*this)[i + 1] += ((*this)[i] - base + 1) / base;
+			(*this)[i] -= ((*this)[i] - base + 1) / base * base;
+		}
+		return trim(0);
+	}
+	friend Wint sqrt(Wint a)
+	{
+		Wint n;
+		n.assign(a.size() + 1 &gt;&gt; 1, 0);
+		for (int i = n.size() - 1, l, r; ~i; --i)
+		{
+			for (l = 0, r = a.base, n[i] = l + r &gt;&gt; 1; r - l &gt; 1; n[i] = l + r &gt;&gt; 1)
+			{
+				if (n.cmp(n[i], i - 1, a))
+					r = n[i];
+				else
+					l = n[i];
+			}
+			a.sub(n, n[i], i - 1), n[i] += l + r &gt;&gt; 1;
+		}
+		for (int i = 0; i &lt; n.size(); ++i)
+			n[i] &gt;&gt;= 1;
+		return n.trim(0);
+	}
+	/*
+	friend Wint sqrt(const Wint &amp;a)//常规牛顿迭代实现的开平方算法，慢但是好敲
+	{
+	    Wint b=a,c=(b+1)/2;
+	    while(b!=c)swap(b,c),c=(b+a/b)/2;
+	    return c;
+	}
+	friend Wint sqrt(const Wint &amp;a)
+	{
+	    Wint ret,t;
+	    ret.assign((a.size()+1)&gt;&gt;1,0);
+	    for(int i=ret.size()-1,l,r; ~i; --i)
+	    {
+	        for(l=0,r=a.base; r-l&gt;1;)
+	        {
+	            ret[i]=l+(r-l)/2;
+	            t=ret*ret;
+	            if(a&lt;t)r=ret[i];
+	            else l=ret[i];
+	        }
+	        if(!l&amp;&amp;i==ret.size()-1)ret.pop_back();
+	        else ret[i]=l;
+	    }
+	    return ret;
+	}
+	*/
+};
+int check(Wint n)
+{
+	Wint sn = sqrt(n);
+	return sn * sn == n;
+}
+int main()
+{
+	int t;
+	for (cin &gt;&gt; t; t--;)
+	{
+		Wint n;
+		cin &gt;&gt; n;
+		int ans = check(n) * 2 + check(n * (n - 1) / 2);
+		cout &lt;&lt; (ans == 0 ? "League of Legends\n" : ans == 1 ? "Clash Royale\n" : ans == 2 ? "Hearth Stone\n" : "Arena of Valor\n");
+	}
+}
+</code></pre><h2 id="transport-ship"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2021">Transport Ship</a></h2><p>拆成 01 背包。</p><pre><code class="language-cpp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+const int N = 511, S = 32767 &gt;&gt; 1, M = 1e9 + 7;
+int t, n, q, m, v[N], f[N][S];
+int main()
+{
+	for (scanf("%d", &amp;t); t--;)
+	{
+		scanf("%d%d", &amp;n, &amp;q);
+		for (int i = m = 0, V, C; i &lt; n; ++i)
+		{
+			scanf("%d%d", &amp;V, &amp;C);
+			for (int i = 0; i &lt; C; ++i)
+				v[++m] = (1 &lt;&lt; i) * V;
+		}
+		for (int i = f[0][0] = 1; i &lt;= m; ++i)
+			for (int s = 0; s &lt; S; ++s)
+				if (f[i][s] = f[i - 1][s], s &gt;= v[i])
+					f[i][s] = (f[i][s] + f[i - 1][s - v[i]]) % M;
+		for (int i = 0, s; i &lt; q; ++i)
+		{
+			scanf("%d", &amp;s);
+			printf("%d\n", f[m][s]);
+		}
+	}
+}
+</code></pre><h2 id="poor-god-water"><a href="https://vjudge.net/problem/%E8%AE%A1%E8%92%9C%E5%AE%A2-A2022">Poor God Water</a></h2><p>矩阵乘一下。</p><pre><code class="language-cpp">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#define mul(a, b, c) (1LL * (a) * (b) % (c))
+using namespace std;
+typedef long long ll;
+const ll N = 9, M = 1e9 + 7;
+struct Matrix
+{
+	static int n;
+	ll a[N][N];
+	Matrix(ll k = 0)
+	{
+		for (int i = 0; i &lt; n; ++i)
+			fill(a[i], a[i] + n, 0), a[i][i] = k;
+	}
+	ll *operator[](int n)
+	{
+		return a[n];
+	}
+};
+int Matrix::n = N;
+Matrix operator*(const Matrix &amp;a, const Matrix &amp;b)
+{
+	Matrix r(0);
+	for (int i = 0; i &lt; r.n; ++i)
+		for (int j = 0; j &lt; r.n; ++j)
+			for (int k = 0; k &lt; r.n; ++k)
+				r.a[i][j] = (r.a[i][j] + mul(a.a[i][k], b.a[k][j], M)) % M;
+	return r;
+}
+Matrix pow(Matrix a, ll b)
+{
+	Matrix r(1);
+	for (; b; b &gt;&gt;= 1, a = a * a)
+		if (b &amp; 1)
+			r = r * a;
+	return r;
+}
+int main()
+{
+	ll t, n, ans;
+	for (scanf("%lld", &amp;t); t--;)
+	{
+		scanf("%lld", &amp;n);
+		if (n &lt; 3)
+		{
+			printf("%d\n", n == 1 ? 3 : 9);
+			continue;
+		}
+		Matrix A, P;
+		for (int i = 0; i &lt; N; ++i)
+			A[i][0] = 1;
+		P[0][3] = P[0][6] = 1;
+		P[1][0] = P[1][3] = P[1][6] = 1;
+		P[2][0] = P[2][3] = 1;
+		P[3][1] = P[3][4] = P[3][7] = 1;
+		P[4][1] = P[4][7] = 1;
+		P[5][1] = P[5][4] = 1;
+		P[6][5] = P[6][8] = 1;
+		P[7][2] = P[7][8] = 1;
+		P[8][2] = P[8][5] = 1;
+		A = pow(P, n - 2) * A;
+		for (int i = ans = 0; i &lt; N; ++i)
+			ans = (ans + A[i][0]) % M;
+		printf("%lld\n", ans);
+	}
+}
+</code></pre></div><script repo="wu-kan/utterances-storage" src="https://utteranc.es/client.js" issue-term="url" theme="github-light" crossorigin="anonymous" async="async" ></script></div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" /><style> .katex-display>.katex { white-space: normal; }</style><script src="https://cdn.jsdelivr.net/combine/npm/katex@0.13.11/dist/katex.min.js,npm/katex@0.13.11/dist/contrib/auto-render.min.js" async="async" onload='renderMathInElement(document.body, { delimiters: [{left: "$$", right: "$$", display: true}, { left: "$", right: "$", display: false }, {left: "\\(", right: "\\)", display: false}, {left: "\\[", right: "\\]", display: true}]})' ></script><style> pre.language-mermaid, code.language-mermaid { display: none; } @media only screen { .mermaid { overflow: auto auto; max-width: 100%; max-height: 66.6vh; } }</style><script src="https://cdn.jsdelivr.net/npm/mermaid@8.10.1/dist/mermaid.min.js" async="async" onload=' for(let x of document.getElementsByClassName("language-mermaid")) if(x.nodeName=="CODE") { let m = document.createElement("div"); m.classList.add("mermaid"); m.textContent = x.textContent; x.parentNode.insertAdjacentElement("beforebegin", m); }' ></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.css,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.css,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.css,npm/prism-themes@1.5.0/themes/prism-nord.min.css" /> <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/components/prism-core.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js,npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js,npm/prismjs@1.23.0/plugins/toolbar/prism-toolbar.min.js,npm/prismjs@1.23.0/plugins/match-braces/prism-match-braces.min.js" async="async" data-autoloader-path="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/" onload=' for(let x of document.getElementsByClassName("content")) x.classList.add("line-numbers","match-braces"); Prism.plugins.toolbar.registerButton("select-code", function (env) { let button = document.createElement("button"); button.textContent = "select this " + env.language; button.addEventListener("click", function () { if (document.body.createTextRange) { let range = document.body.createTextRange(); range.moveToElementText(env.element); range.select(); } else if (window.getSelection) { let selection = window.getSelection(); let range = document.createRange(); range.selectNodeContents(env.element); selection.removeAllRanges(); selection.addRange(range); } }); return button; })' ></script></div><label for="sidebar-checkbox" class="sidebar-toggle"></label>
